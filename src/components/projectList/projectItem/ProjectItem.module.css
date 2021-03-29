@@ -6,7 +6,8 @@
         list-style: none;
         overflow: hidden;
         background-color: #8C72DF;
-        padding: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
         width: 136px;
         height: 136px;
     }
@@ -19,6 +20,7 @@
     .title{
         margin-top: 0;
         margin-bottom: 6px;
+        padding-right: 10px;
         font-style: normal;
         font-weight: 800;
         font-size: 16px;
@@ -29,6 +31,7 @@
     }
 
     .description{
+        padding-right: 10px;
         font-style: normal;
         font-weight: normal;
         font-size: 10px;
@@ -65,7 +68,8 @@
         overflow: hidden;
         background-color: #8C72DF;
         margin-bottom: 20px;
-        padding: 20px;
+        padding-left: 20px;
+        padding-top: 20px;
         width: 216px;
         height: 216px;
     }
@@ -75,6 +79,7 @@
 
     .title{
         margin-bottom: 10px;
+        padding-right: 20px;
         font-size: 26px;
         line-height: 32px;
         letter-spacing: 0.04em;
@@ -85,6 +90,7 @@
     }
 
     .description{
+        padding-right: 20px;
         font-size: 14px;
         line-height: 17px;
         letter-spacing: 0.04em;
@@ -125,7 +131,8 @@
 @media screen and (min-width: 1280px) {
     .projectItem{
         margin-bottom: 30px;
-        padding: 28px 30px 28px 30px;
+        padding-left: 28px;
+        padding-top: 20px;
         width: 270px;
         height: 270px;
     }
@@ -136,6 +143,7 @@
 
     .title{
         margin-bottom: 10px;
+        padding-right: 28px;
         font-size: 26px;
         line-height: 32px;
         letter-spacing: 0.04em;
@@ -143,6 +151,7 @@
     }
 
     .description{
+        padding-right: 28px;
         font-size: 14px;
         line-height: 17px;
         letter-spacing: 0.04em;
