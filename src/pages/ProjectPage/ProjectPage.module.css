@@ -1,0 +1,100 @@
+@media screen and (min-width: 320px){
+    .pageTitle{
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 36px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        color: #181C27;
+    }
+
+    .buttonAdd{
+        background-color: #FF6B08;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        width: 44px;
+        height: 44px;
+    }
+
+    .pageText{
+       display: none;
+    }
+
+    .icon{
+        fill: white;
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+@media screen and (max-width: 767px){
+    .buttonAdd{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media screen and (min-width: 767px){
+
+    .pageCreate{
+        margin-right: 86px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .buttonBox{
+        display: flex;
+        align-items: center;
+    }
+
+    .pageTitle{
+        padding-top: 40px;
+        padding-bottom: 30px;
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .buttonAdd{
+    }
+
+    .icon{
+        fill: black;
+    }
+}
+
+@media screen and (min-width: 1279px){
+
+    .pageCreate{
+        margin-right: 40px;
+    }
+
+    .pageTitle{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: 0.04em;
+    }
+
+    .pageText{
+        display: block;
+        margin-left: 20px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
+        color: #181C27;;
+    }
+
+
+}
+
+

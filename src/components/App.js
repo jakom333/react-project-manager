@@ -1,10 +1,9 @@
-import ProjectList from './projectList/ProjectList';
+import ProjectPage from '../pages/ProjectPage/ProjectPage';
 
 function App() {
   return (
     <div>
-      <h1>Hello world</h1>
-      <ProjectList/>
+      <ProjectPage/>
     </div>
   );
 }

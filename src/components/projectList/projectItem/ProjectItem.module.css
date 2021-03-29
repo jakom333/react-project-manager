@@ -1,14 +1,23 @@
 
-@media screen and (min-width: 320px){
+
+@media screen and (max-width: 767px){
     .projectItem{
+        /*margin-right: 10px;*/
+        margin-bottom: 10px;
+        position: relative;
         border-radius: 5px;
         list-style: none;
-        position: relative;
+        overflow: hidden;
         background-color: #8C72DF;
         padding: 10px;
         width: 136px;
         height: 136px;
     }
+
+    /*.projectItem:not(:nth-child(2n)) {*/
+    /*    margin-right: 10px;*/
+    /*}*/
+
 
     .title{
         margin-top: 0;
@@ -43,19 +52,37 @@
         background-color: #FFFFFF;
     }
 
-    .deleteIcon{
+    /*.buttonDelete{*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*    align-items: center;*/
+    /*    width: 30px;*/
+    /*    height: 30px;*/
+    /*}*/
 
-        object-fit: contain;
+    .deleteIcon{
+        fill: black;
+        width: 16px;
+        height: 16px
     }
 
 }
 
 @media screen and (min-width: 768px) {
     .projectItem{
+        position: relative;
+        border-radius: 5px;
+        list-style: none;
+        overflow: hidden;
+        background-color: #8C72DF;
+        margin-bottom: 20px;
         padding: 20px;
         width: 216px;
         height: 216px;
     }
+    /*.projectItem:not(:nth-child(3n)) {*/
+    /*    margin-right: 20px;*/
+    /*}*/
 
     .title{
         margin-bottom: 10px;
@@ -63,6 +90,9 @@
         line-height: 32px;
         letter-spacing: 0.04em;
         color: #FFFFFF;
+        margin-top: 0;
+        font-style: normal;
+        font-weight: 800;
     }
 
     .description{
@@ -70,26 +100,51 @@
         line-height: 17px;
         letter-spacing: 0.04em;
         color: #FFFFFF;
+        font-style: normal;
+        font-weight: normal;
+
     }
 
     .buttonDelete{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 34px;
         height: 34px;
+        outline: none;
+        border: none;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
 
     }
 
     .deleteIcon{
-        object-fit: contain;
+        fill: black;
+        width: 18px;
+        height: 18px
+    }
+
+    .deleteIcon{
+        fill: black;
     }
 
 }
 
 @media screen and (min-width: 1280px) {
     .projectItem{
+        /*margin-right: 30px;*/
+        margin-bottom: 30px;
         padding: 28px 30px 28px 30px;
         width: 270px;
         height: 270px;
     }
+
+    /*.projectItem:not(:nth-child(4n)) {*/
+    /*    margin-right: 30px;*/
+    /*}*/
 
     .title{
         margin-bottom: 10px;
@@ -106,11 +161,21 @@
         color: #FFFFFF;
     }
 
-    .buttonDelete{
-    }
+}
 
-    .deleteIcon{
-        object-fit: contain;
-    }
 
+.defaultColor{
+    background-color: #FFFFFF;
+}
+
+.violetColor{
+    background-color: #8C72DF;
+}
+
+.orangeColor{
+    background-color: #FF765F;
+}
+
+.greenColor {
+    background-color: #71DF87;
 }

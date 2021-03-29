@@ -1,15 +1,18 @@
 import React from 'react';
 import styles from './ProjectItem.module.css'
+import sprite from '../../../icons/symbol-defs.svg'
 
-const ProjectItem = ()=> {
+const ProjectItem = ({item})=> {
+console.log(item)
+
 
     return (
       <li className={styles.projectItem}>
-        <h3 className={styles.title}>Name project</h3>
-        <p className={styles.description}> img elements must have an alt prop, either</p>
+        <h3 className={styles.title}>{item.title}</h3>
+        <p className={styles.description}>{item.description}</p>
           <button type="button" className={styles.buttonDelete}>
             <svg className={styles.deleteIcon} >
-              <use href="../../../icons/symbol-defs.svg#icon-save"></use>
+              <use href={sprite + '#icon-delete-bin'}></use>
             </svg>
           </button>
       </li>
