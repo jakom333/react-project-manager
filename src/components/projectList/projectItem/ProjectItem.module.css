@@ -1,0 +1,113 @@
+
+@media screen and (min-width: 320px){
+    .projectItem{
+        border-radius: 5px;
+        list-style: none;
+        position: relative;
+        background-color: #8C72DF;
+        padding: 10px;
+        width: 136px;
+        height: 136px;
+    }
+
+    .title{
+        margin-top: 0;
+        margin-bottom: 6px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+
+    }
+
+    .description{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+    .iconBox{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: #FFFFFF;
+    }
+
+    .deleteIcon{
+  object-fit: contain;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .projectItem{
+        padding: 20px;
+        width: 216px;
+        height: 216px;
+    }
+
+    .title{
+        margin-bottom: 10px;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+    .description{
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+    .iconBox{
+        width: 34px;
+        height: 34px;
+
+    }
+
+    .deleteIcon{
+        object-fit: contain;
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+    .projectItem{
+        padding: 28px 30px 28px 30px;
+        width: 270px;
+        height: 270px;
+    }
+
+    .title{
+        margin-bottom: 10px;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+    .description{
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+    .iconBox{
+    }
+
+    .deleteIcon{
+        object-fit: contain;
+    }
+
+}
