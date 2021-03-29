@@ -1,6 +1,5 @@
 @media screen and (max-width: 767px){
     .projectItem{
-        /*margin-right: 10px;*/
         margin-bottom: 10px;
         position: relative;
         border-radius: 5px;
@@ -125,7 +124,6 @@
 
 @media screen and (min-width: 1280px) {
     .projectItem{
-        /*margin-right: 30px;*/
         margin-bottom: 30px;
         padding: 28px 30px 28px 30px;
         width: 270px;
