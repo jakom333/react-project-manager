@@ -31,7 +31,9 @@
         color: #FFFFFF;
     }
 
-    .iconBox{
+    .buttonDelete{
+        outline: none;
+        border: none;
         position: absolute;
         right: 10px;
         bottom: 10px;
@@ -42,7 +44,8 @@
     }
 
     .deleteIcon{
-  object-fit: contain;
+
+        object-fit: contain;
     }
 
 }
@@ -69,7 +72,7 @@
         color: #FFFFFF;
     }
 
-    .iconBox{
+    .buttonDelete{
         width: 34px;
         height: 34px;
 
@@ -103,7 +106,7 @@
         color: #FFFFFF;
     }
 
-    .iconBox{
+    .buttonDelete{
     }
 
     .deleteIcon{

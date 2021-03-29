@@ -7,9 +7,11 @@ const ProjectItem = ()=> {
       <li className={styles.projectItem}>
         <h3 className={styles.title}>Name project</h3>
         <p className={styles.description}> img elements must have an alt prop, either</p>
-          <div className={styles.iconBox}>
-              <img className={styles.deleteIcon} src='#'/>
-          </div>
+          <button type="button" className={styles.buttonDelete}>
+            <svg className={styles.deleteIcon} >
+              <use href="../../../icons/symbol-defs.svg#icon-save"></use>
+            </svg>
+          </button>
       </li>
     );
 
