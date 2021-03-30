@@ -45,6 +45,10 @@ text-align: center;
   color: #FF6B08;
 }
 
+.greyColor{
+  color: rgba(24, 28, 39, 0.6);
+}
+
 
 @media screen and (min-width: 480px) {
   .container {
