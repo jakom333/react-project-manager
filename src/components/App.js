@@ -1,9 +1,7 @@
+import ChartModal from './graph/modal/ChartModal';
+
 function App() {
-  return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
-  );
+  return <></>;
 }
 
 export default App;
