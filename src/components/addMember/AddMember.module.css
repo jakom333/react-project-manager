@@ -1,0 +1,59 @@
+.formContainer{
+    width: 320px ;
+    outline: 1px solid tomato;
+    padding-top: 63px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px;
+    text-align: center;
+ }
+
+ 
+  .titleForm {
+font-weight: 500;
+font-size: 26px;
+line-height: 32px;
+display: block;
+align-items: center;
+text-align: center;
+color:  #181C27;
+margin-bottom: 30px;
+}
+  
+
+  .input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #181C27;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom:30px ;
+    width: 280px;
+    color: #181C27;
+     opacity: 60%;
+  }
+  
+  .input:focus {
+    outline-color: #FF6B08;
+  }
+
+  .addedMembers{
+font-size: 14px;
+line-height: 17px;
+color: rgba(24, 28, 39, 0.6);
+text-align: left;
+margin-bottom: 20px;
+}
+
+.message{
+font-size: 20px;
+line-height: 20px;
+letter-spacing: 0.04em;
+color: #181C27;
+text-align: left;
+margin-bottom: 60px;
+}
