@@ -1,0 +1,53 @@
+.elipse1 {
+  position: absolute;
+  width: 298px;
+  height: 298px;
+  bottom: 0;
+  left: 20%;
+  z-index: 0;
+}
+.elipse2 {
+  position: absolute;
+  width: 252px;
+  height: 252px;
+  left: -72px;
+  top: 574px;
+}
+.elipse3 {
+  position: absolute;
+  width: 118px;
+  height: 118px;
+  top: 367px;
+  left: 111px;
+}
+.elipse4 {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 240px;
+  left: 230px;
+}
+.elipse5 {
+  position: absolute;
+  width: 78px;
+  height: 78px;
+  top: 155px;
+  right: 475px;
+}
+.elipse6 {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 129px;
+  right: 225px;
+}
+.union_white {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.union_orange {
+  position: absolute;
+  right: 0;
+  bottom: 33px;
+}

@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+ a {
+  text-decoration: none;
+}
+
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.66;
+  letter-spacing: 0.04em;
+  color: #181C27;
+}
+  
+
+/*==================MOBILE=========================*/
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+/* 
+:global(.title){ 
+font-weight: 500;
+font-size: 36px;
+line-height: 1.22;
+align-items: center;
+text-align: center;
+} */
+
+}
+
+
+/*==================TABLET=========================*/
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 40px;
+  }
+}
+
+/*==================DESKTOP=========================*/
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 0 55px;
+    max-width: 1280px;
+  }
+}  
+
+
+
