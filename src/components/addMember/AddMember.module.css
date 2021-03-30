@@ -1,11 +1,16 @@
+
+@value accentColor from '../../main.module.css';
+
+
 .formContainer{
-    width: 320px ;
+    max-width: 320px ;
     outline: 1px solid tomato;
     padding-top: 63px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 80px;
     text-align: center;
+    margin: 0 auto;
  }
 
  
@@ -29,25 +34,18 @@ margin-bottom: 30px;
     outline: none;
     border: none;
     border-bottom: 1px solid #181C27;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 16px;
     margin-bottom:30px ;
-    width: 280px;
+    max-width: 280px;
     color: #181C27;
-     opacity: 60%;
+    opacity: 60%;
   }
   
   .input:focus {
     outline-color: #FF6B08;
   }
 
-  .addedMembers{
-font-size: 14px;
-line-height: 17px;
-color: rgba(24, 28, 39, 0.6);
-text-align: left;
-margin-bottom: 20px;
-}
 
 .message{
 font-size: 20px;
@@ -56,4 +54,16 @@ letter-spacing: 0.04em;
 color: #181C27;
 text-align: left;
 margin-bottom: 60px;
+}
+
+
+/*==================TABLET=========================*/
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 480px;
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }

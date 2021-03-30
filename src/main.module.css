@@ -20,44 +20,40 @@ ul {
   text-decoration: none;
 }
 
-/*==================MOBILE=========================*/
 
 body {
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.66;
   letter-spacing: 0.04em;
   color: #181C27;
-;
 }
   
-.title{ 
+
+/*==================MOBILE=========================*/
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+/* 
+:global(.title){ 
 font-weight: 500;
 font-size: 36px;
 line-height: 1.22;
 align-items: center;
 text-align: center;
-}
+} */
 
-.accentColor{
-  color: #FF6B08;
-}
-
-.greyColor{
-  color: rgba(24, 28, 39, 0.6);
 }
 
 
-@media screen and (min-width: 480px) {
-  .container {
-    max-width: 480px;
-     padding: 0 20px;
-       width: 100%;
-  margin: 0 auto;
-  }
-}
+/*==================TABLET=========================*/
 
 @media screen and (min-width: 768px) {
   .container {
@@ -65,6 +61,8 @@ text-align: center;
     padding: 0 40px;
   }
 }
+
+/*==================DESKTOP=========================*/
 
 @media screen and (min-width: 1280px) {
   .container {
