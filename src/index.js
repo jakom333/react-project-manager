@@ -1,15 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< Updated upstream
-import { BrowserRouter } from 'react-router-dom';
-import App from './components/App.jsx';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-=======
 import App from './components/App.js';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -25,7 +15,6 @@ ReactDOM.render(
         </BrowserRouter>
       </PersistGate>
     </Provider>
->>>>>>> Stashed changes
   </React.StrictMode>,
   document.getElementById('root'),
 );
