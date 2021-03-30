@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.title {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.label {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.04em;
+  color: rgba(24, 28, 39, 0.6);
+
+  margin-left: 28px;
+}
+.input {
+  width: 280px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(24, 28, 39, 0.2);
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 58px;
+}
+.inputHours {
+  composes: input;
+  margin-bottom: 40px;
+}
+.button {
+  width: 154px;
+  height: 44px;
+  display: block;
+  margin: 0 auto;
+}
+.buttonCancel {
+  composes: button;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.04em;
+    margin-bottom: 50px;
+  }
+  .label {
+    font-size: 18px;
+    line-height: 22px;
+    margin-left: 40px;
+  }
+  .input{
+    width: 429px;
+    margin-left: 32px;
+    margin-bottom: 49px;
+  }
+  .inputHours{
+    width: 220px;
+  }
+  .button{
+    margin-left: 170px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .label{
+    margin-left: 58px;
+  }
+  .input{
+    margin-left: 50px;
+  }
+  .button{
+    margin-left: 188px;
+  }
+}
