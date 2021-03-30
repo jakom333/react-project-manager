@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import CancelButton from '../../shared/cancelButton/CancelButton';
+import MembersList from '../membersList/MembersList';
 import styles from './AddMember.module.css';
 
 const initialState = {
@@ -25,7 +27,7 @@ const AddMember = () => {
     // <Modal>
     <div className={styles.formContainer}>
       <h2 className={styles.titleForm}>Add new project member</h2>
-      <div onSubmit={handleSubmit} className={styles.memberForm}>
+      <form onSubmit={handleSubmit} className={styles.memberForm}>
         <input
           className={styles.input}
           name="email"
@@ -34,12 +36,12 @@ const AddMember = () => {
           onChange={handleChange}
           value={member.email}
         />
-        <p className={styles.addedMembers}> Added users: </p>
-        <p className={styles.message}>You have not added any users yet</p>
+        <MembersList />
         <button type="submit" className={styles.btn}>
-          Add project member
+          Add member
         </button>
-      </div>
+      </form>
+      <CancelButton />
     </div>
   );
 };
