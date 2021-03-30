@@ -1,13 +1,32 @@
-import MainModal from '../shared/mainModal/MainModal';
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+// import MainModal from '../shared/mainModal/MainModal';
+import Main from './main/Main';
 
 const App = () => {
+  // const [showModal, setShowModal] = useState(false);
+  const history = useHistory();
+  useEffect(() => {
+    if (history.location.pathname === '/') {
+      history.push('/registration');
+    }
+  }, [history]);
+
   return (
     <div>
-      <h1>Hello world</h1>
-      <button type="button">Open modal</button>
-      <MainModal open={true}>
-        <h2>In Modal</h2>
-      </MainModal>
+      <Main />
+
+      {/* <h1>Hello world</h1>
+      <button type="button" onClick={() => setShowModal(true)}>
+        Open modal
+      </button>
+      <MainModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        onClose={() => setShowModal(false)}
+      >
+        <h2>Hello in Modal, it will be form in here</h2>
+      </MainModal> */}
     </div>
   );
 };

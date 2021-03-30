@@ -1,83 +1,49 @@
-import React, { useCallback, useEffect, useRef } from 'react';
-import { Portal } from '@reach/portal';
-import { CSSTransition } from 'react-transition-group';
-import {
-  clearAllBodyScrollLocks,
-  disableBodyScroll,
-  enableBodyScroll,
-} from 'body-scroll-lock';
+import React, { useRef } from 'react';
+import styles from './MainModal.module.css';
+import sprite from '../../icons/symbol-defs.svg';
 
-import css from './MainModal.module.css';
+const MainModal = ({
+  children,
+  showModal,
+  onClose,
+  setShowModal,
+  callback,
+}) => {
+  const modalRef = useRef();
 
-const MainModal = ({ open, onClose, children }) => {
-  const ref = useRef();
-
-  const handleKey = useCallback(
-    event => {
-      if (event.key === 'Escape') {
-        return onClose && onClose();
-      }
-    },
-    [onClose],
-  );
-
-  const handleBackdrop = useCallback(
-    ({ target, currentTarget }) => {
-      if (target === currentTarget) {
-        onClose && onClose();
-      }
-    },
-    [onClose],
-  );
-
-  useEffect(() => {
-    if (ref.current) {
-      if (open) {
-        disableBodyScroll(ref.current);
-        window.addEventListener('keydown', handleKey);
-      } else {
-        enableBodyScroll(ref.current);
-      }
+  const closeModal = evt => {
+    if (evt.target === modalRef.current) {
+      setShowModal(false);
     }
-
-    return () => {
-      window.removeEventListener('keydown', handleKey);
-      clearAllBodyScrollLocks();
-    };
-  }, [open, handleKey]);
-
-  const fade = {
-    enter: css.enter,
-    enterActive: css.enterActive,
-    exit: css.exit,
-    exitActive: css.exitActive,
   };
 
   return (
-    <Portal>
-      <CSSTransition in={open} timeout={300} classNames={fade} unmountOnExit>
-        <div className={css.container}>
-          <div
-            className={css.overlay}
-            role="none presentation"
-            tabIndex={-1}
-            onClick={handleBackdrop}
-          />
-          <div className={css.dialog__container}>
-            <div role="dialog" ref={ref} className={css.modal}>
-              <button
-                onClick={() => onClose()}
-                aria-label="Close panel"
-                className={css.close_button}
-              >
-                X
-              </button>
-              {children}
-            </div>
-          </div>
+    showModal && (
+      <div className={styles.mainModal} ref={modalRef} onClick={closeModal}>
+        <div className={styles.container}>
+          <button
+            type="button"
+            className={styles.closeBtn}
+            onClick={() => onClose()}
+          >
+            <svg>
+              <use href={sprite + '#icon-cross'} />
+            </svg>
+          </button>
+          {children}
+          <button type="button" className={styles.closeBtn} onClick={callback}>
+            Готово
+          </button>
+          <button
+            type="button"
+            className={styles.closeBtn}
+            onClick={() => onClose()}
+          >
+            Отмена
+          </button>
         </div>
-      </CSSTransition>
-    </Portal>
+      </div>
+    )
   );
 };
 
