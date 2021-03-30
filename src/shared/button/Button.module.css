@@ -1,0 +1,18 @@
+.button {
+  border-radius: 25px;
+  padding: 11px 44px 11px 44px;
+  background-color: #ff6b08;
+  color: white;
+  border: none;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+}
+
+.button:hover {
+  background: rgba(33, 17, 177, 0.658);
+  transition: 0.5s ease-in-out;
+  color: #fff;
+}
+

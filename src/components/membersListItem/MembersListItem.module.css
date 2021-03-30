@@ -1,0 +1,17 @@
+.membersListItem{
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 18px;
+line-height: 22px;
+color: #181C27;
+
+}
+
+.deleteBtn{
+  display: inline-block;
+  background-color: grey;
+  border-radius: 50%;
+ font-size: 5px;
+ height: 16px;
+}
