@@ -41,10 +41,10 @@ align-items: center;
 text-align: center;
 }
 
+.accentColor{
+  color: #FF6B08;
+}
 
-
-
-/* 
 
 @media screen and (min-width: 480px) {
   .container {
@@ -67,7 +67,7 @@ text-align: center;
     padding: 0 55px;
     max-width: 1280px;
   }
-}  */
+}  
 
 
 
