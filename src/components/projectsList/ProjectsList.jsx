@@ -23,7 +23,28 @@ const ProjectsList = () => {
       title: "Project 4",
       description: "Project 1 description",
       id: "4"
-    }
+    },
+    {
+      title: "Project 5",
+      description: "Project 1 description",
+      id: "5"
+    },
+    {
+      title: "Project 6",
+      description: "Project 1 description",
+      id: "6"
+    },
+    {
+      title: "Project 7",
+      description: "Project 1 description",
+      id: "7"
+    },
+    {
+      title: "Project 8",
+      description: "Project 1 description",
+      id: "8"
+    },
+
   ]
 
 

@@ -6,41 +6,35 @@
 }
 
 
+.projectItem{
+    box-sizing: border-box;
+  }
+
 @media screen and (max-width: 767px){
     .projectItem{
-        color: ;
-        margin-bottom: 10px;
+        padding: 10px;
+        margin: 5px;
         position: relative;
         border-radius: 5px;
         list-style: none;
         overflow: hidden;
         background-color:  #8c72df;
-        padding-left: 10px;
-        padding-top: 10px;
         width: 136px;
         height: 136px;
     }
 
-    /*.projectItem:not(:nth-child(2n)) {*/
-    /*    margin-right: 10px;*/
-    /*}*/
-
-
     .title{
         margin-top: 0;
         margin-bottom: 6px;
-        padding-right: 10px;
         font-style: normal;
         font-weight: 800;
         font-size: 16px;
         line-height: 20px;
         letter-spacing: 0.04em;
         color: #FFFFFF;
-
     }
 
     .description{
-        padding-right: 10px;
         font-style: normal;
         font-weight: normal;
         font-size: 10px;
@@ -76,19 +70,14 @@
         list-style: none;
         overflow: hidden;
         background-color: #8C72DF;
-        margin-bottom: 20px;
-        padding-left: 20px;
-        padding-top: 20px;
+        margin: 10px;
+        padding: 20px;
         width: 216px;
         height: 216px;
     }
-    /*.projectItem:not(:nth-child(3n)) {*/
-    /*    margin-right: 20px;*/
-    /*}*/
 
     .title{
         margin-bottom: 10px;
-        padding-right: 20px;
         font-size: 26px;
         line-height: 32px;
         letter-spacing: 0.04em;
@@ -99,7 +88,6 @@
     }
 
     .description{
-        padding-right: 20px;
         font-size: 14px;
         line-height: 17px;
         letter-spacing: 0.04em;
@@ -134,21 +122,19 @@
 }
 
 @media screen and (min-width: 1280px) {
+
     .projectItem{
-        margin-bottom: 30px;
-        padding-left: 28px;
-        padding-top: 20px;
+        box-sizing: border-box;
+        padding: 28px 30px;
         width: 270px;
         height: 270px;
+        margin: 15px;
     }
 
-    /*.projectItem:not(:nth-child(4n)) {*/
-    /*    margin-right: 30px;*/
-    /*}*/
 
     .title{
+        width: 210px;
         margin-bottom: 10px;
-        padding-right: 28px;
         font-size: 26px;
         line-height: 32px;
         letter-spacing: 0.04em;
@@ -156,7 +142,6 @@
     }
 
     .description{
-        padding-right: 28px;
         font-size: 14px;
         line-height: 17px;
         letter-spacing: 0.04em;
@@ -171,65 +156,54 @@
     background-color: #FFFFFF;
 }
 
-.projectItem:nth-child(1n){
+.projectItem:nth-child(8n + ){
     background-color: var( --violet);
 }
-
-.projectItem:nth-child(2n){
+.projectItem:nth-child(8n + 1){
     background-color: var( --coral);
 }
-
-.projectItem:nth-child(3n){
+.projectItem:nth-child(8n + 2){
     background-color:  var( --green);
 }
-
-.projectItem:nth-child(4n){
+.projectItem:nth-child(8n + 6){
+    background-color: var( --orange);
+}
+.projectItem:nth-child(8n + 5){
+    background-color: var( --violet);
+}
+.projectItem:nth-child(8n + 4){
+    background-color: var( --coral);
+}
+.projectItem:nth-child(8n + 7){
+    background-color:  var( --green);
+}
+.projectItem:nth-child(8n + 8){
     background-color: var( --orange);
 }
 
-.projectItem:nth-child(5n){
-    background-color: var( --orange);
-}
 
-.projectItem:nth-child(6n){
-    background-color:  var( --green);
-}
-.projectItem:nth-child(7n){
-    background-color: var( --coral);
-}
-.projectItem:nth-child(8n){
-    background-color: var( --violet);
-}
-
-
-.projectItem:nth-child(1n) .deleteIcon{
+.projectItem:nth-child(8n + 3) .deleteIcon{
     fill: var( --violet);
 }
-
-.projectItem:nth-child(2n) .deleteIcon{
+.projectItem:nth-child(8n + 1) .deleteIcon{
     fill: var( --coral);
 }
-
-.projectItem:nth-child(3n) .deleteIcon{
+.projectItem:nth-child(8n + 2) .deleteIcon{
     fill: var( --green);
 }
-
-.projectItem:nth-child(4n) .deleteIcon{
+.projectItem:nth-child(8n + 6) .deleteIcon{
     fill:  var( --orange);
 }
-
-.projectItem:nth-child(5n) .deleteIcon{
+.projectItem:nth-child(8n + 5) .deleteIcon{
+    fill: var( --violet);
+}
+.projectItem:nth-child(8n + 4) .deleteIcon{
+    fill: var( --coral);
+}
+.projectItem:nth-child(8n + 7) .deleteIcon{
+    fill: var( --green);
+}
+.projectItem:nth-child(8n + 8) .deleteIcon{
     fill: var( --orange);
 }
 
-.projectItem:nth-child(6n) .deleteIcon{
-    fill: var( --green);
-}
-
-.projectItem:nth-child(7n) .deleteIcon{
-    fill: var( --coral);
-}
-
-.projectItem:nth-child(8n) .deleteIcon{
-    fill: var( --violet);
-}

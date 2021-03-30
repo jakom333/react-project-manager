@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectsList from '../../components/projectsList/ProjectsList';
 import styles from './ProjectsPage.module.css';
-import ButtonCreate from '../../shared/buttonCreate/ButtonCreate';
+import RoundButton from '../../shared/roundButton/RoundButton';
 
 
 const ProjectsPage = () => {
@@ -11,7 +11,7 @@ const ProjectsPage = () => {
          <div className={styles.pageCreate}>
           <h2 className={styles.pageTitle}>PROJECTS</h2>
            <div className={styles.buttonBox}>
-             <ButtonCreate/>
+             <RoundButton />
              <p className={styles.pageText}>Create project</p>
            </div>
         </div>

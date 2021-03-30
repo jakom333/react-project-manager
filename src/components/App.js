@@ -1,9 +1,11 @@
-import ProjectsPage from '../pages/ProjectsPage/ProjectsPage';
+import ProjectsPage from '../pages/projectsPage/ProjectsPage';
+import SprintsList from './sprintsList/SprintsList';
 
 function App() {
   return (
     <div>
       <ProjectsPage/>
+      {/*<SprintsList/>*/}
     </div>
   );
 }
