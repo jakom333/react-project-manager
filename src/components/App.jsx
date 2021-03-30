@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Header from './header/Header';
 // import MainModal from '../shared/mainModal/MainModal';
 import Main from './main/Main';
 
@@ -14,6 +15,9 @@ const App = () => {
 
   return (
     <div>
+      <Header />
+      {/* <RegistrationPage /> */}
+      {/* <LoginPage /> */}
       <Main />
 
       {/* <h1>Hello world</h1>
