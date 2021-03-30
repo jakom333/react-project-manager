@@ -1,0 +1,38 @@
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.taskCard {
+  display: block;
+  border: 1px solid #000;
+  width: 280px;
+  min-height: 214px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .taskList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 0;
+    gap: 25px;
+  }
+
+  .taskCard {
+    width: 216px;
+    min-height: 214px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .taskCard {
+    width: 869px;
+    min-height: 95px;
+  }
+}
