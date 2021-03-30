@@ -4,7 +4,7 @@ import SprintsList from './sprintsList/SprintsList';
 function App() {
   return (
     <div>
-      <ProjectsPage/>
+      {/* <ProjectsPage/> */}
       {/*<SprintsList/>*/}
     </div>
   );
