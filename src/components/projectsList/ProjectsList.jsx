@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './ProjectList.module.css'
+import styles from './ProjectsList.module.css'
 import ProjectItem from './projectItem/ProjectItem';
 
-const ProjectList = () => {
+const ProjectsList = () => {
   const projects =[
     {
       title: "Project 1",
@@ -37,4 +37,4 @@ const ProjectList = () => {
 
 }
 
-export default ProjectList;
+export default ProjectsList;

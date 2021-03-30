@@ -1,11 +1,20 @@
+:root {
+    --violet: #8c72df;
+    --coral: #FF765F;
+    --green: #71DF87;
+    --orange: #f78335;
+}
+
+
 @media screen and (max-width: 767px){
     .projectItem{
+        color: ;
         margin-bottom: 10px;
         position: relative;
         border-radius: 5px;
         list-style: none;
         overflow: hidden;
-        background-color: #8C72DF;
+        background-color:  #8c72df;
         padding-left: 10px;
         padding-top: 10px;
         width: 136px;
@@ -53,7 +62,7 @@
     }
 
     .deleteIcon{
-        fill: black;
+        fill: #8c72df;
         width: 16px;
         height: 16px
     }
@@ -117,13 +126,9 @@
     }
 
     .deleteIcon{
-        fill: black;
+        fill: #8c72df;
         width: 18px;
         height: 18px
-    }
-
-    .deleteIcon{
-        fill: black;
     }
 
 }
@@ -160,19 +165,71 @@
 
 }
 
+/*====color cardProject=====*/
 
 .defaultColor{
     background-color: #FFFFFF;
 }
 
-.violetColor{
-    background-color: #8C72DF;
+.projectItem:nth-child(1n){
+    background-color: var( --violet);
 }
 
-.orangeColor{
-    background-color: #FF765F;
+.projectItem:nth-child(2n){
+    background-color: var( --coral);
 }
 
-.greenColor {
-    background-color: #71DF87;
+.projectItem:nth-child(3n){
+    background-color:  var( --green);
+}
+
+.projectItem:nth-child(4n){
+    background-color: var( --orange);
+}
+
+.projectItem:nth-child(5n){
+    background-color: var( --orange);
+}
+
+.projectItem:nth-child(6n){
+    background-color:  var( --green);
+}
+.projectItem:nth-child(7n){
+    background-color: var( --coral);
+}
+.projectItem:nth-child(8n){
+    background-color: var( --violet);
+}
+
+
+.projectItem:nth-child(1n) .deleteIcon{
+    fill: var( --violet);
+}
+
+.projectItem:nth-child(2n) .deleteIcon{
+    fill: var( --coral);
+}
+
+.projectItem:nth-child(3n) .deleteIcon{
+    fill: var( --green);
+}
+
+.projectItem:nth-child(4n) .deleteIcon{
+    fill:  var( --orange);
+}
+
+.projectItem:nth-child(5n) .deleteIcon{
+    fill: var( --orange);
+}
+
+.projectItem:nth-child(6n) .deleteIcon{
+    fill: var( --green);
+}
+
+.projectItem:nth-child(7n) .deleteIcon{
+    fill: var( --coral);
+}
+
+.projectItem:nth-child(8n) .deleteIcon{
+    fill: var( --violet);
 }
