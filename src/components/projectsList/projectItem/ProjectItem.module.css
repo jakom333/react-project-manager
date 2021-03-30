@@ -1,0 +1,209 @@
+:root {
+    --violet: #8c72df;
+    --coral: #FF765F;
+    --green: #71DF87;
+    --orange: #f78335;
+}
+
+
+.projectItem{
+    box-sizing: border-box;
+  }
+
+@media screen and (max-width: 767px){
+    .projectItem{
+        padding: 10px;
+        margin: 5px;
+        position: relative;
+        border-radius: 5px;
+        list-style: none;
+        overflow: hidden;
+        background-color:  #8c72df;
+        width: 136px;
+        height: 136px;
+    }
+
+    .title{
+        margin-top: 0;
+        margin-bottom: 6px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+    .description{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+    .buttonDelete{
+        outline: none;
+        border: none;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: #FFFFFF;
+    }
+
+    .deleteIcon{
+        fill: #8c72df;
+        width: 16px;
+        height: 16px
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .projectItem{
+        position: relative;
+        border-radius: 5px;
+        list-style: none;
+        overflow: hidden;
+        background-color: #8C72DF;
+        margin: 10px;
+        padding: 20px;
+        width: 216px;
+        height: 216px;
+    }
+
+    .title{
+        margin-bottom: 10px;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        margin-top: 0;
+        font-style: normal;
+        font-weight: 800;
+    }
+
+    .description{
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: normal;
+
+    }
+
+    .buttonDelete{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 34px;
+        height: 34px;
+        outline: none;
+        border: none;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+
+    }
+
+    .deleteIcon{
+        fill: #8c72df;
+        width: 18px;
+        height: 18px
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+
+    .projectItem{
+        box-sizing: border-box;
+        padding: 28px 30px;
+        width: 270px;
+        height: 270px;
+        margin: 15px;
+    }
+
+
+    .title{
+        width: 210px;
+        margin-bottom: 10px;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+    .description{
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
+
+}
+
+/*====color cardProject=====*/
+
+.defaultColor{
+    background-color: #FFFFFF;
+}
+
+.projectItem:nth-child(8n + ){
+    background-color: var( --violet);
+}
+.projectItem:nth-child(8n + 1){
+    background-color: var( --coral);
+}
+.projectItem:nth-child(8n + 2){
+    background-color:  var( --green);
+}
+.projectItem:nth-child(8n + 6){
+    background-color: var( --orange);
+}
+.projectItem:nth-child(8n + 5){
+    background-color: var( --violet);
+}
+.projectItem:nth-child(8n + 4){
+    background-color: var( --coral);
+}
+.projectItem:nth-child(8n + 7){
+    background-color:  var( --green);
+}
+.projectItem:nth-child(8n + 8){
+    background-color: var( --orange);
+}
+
+
+.projectItem:nth-child(8n + 3) .deleteIcon{
+    fill: var( --violet);
+}
+.projectItem:nth-child(8n + 1) .deleteIcon{
+    fill: var( --coral);
+}
+.projectItem:nth-child(8n + 2) .deleteIcon{
+    fill: var( --green);
+}
+.projectItem:nth-child(8n + 6) .deleteIcon{
+    fill:  var( --orange);
+}
+.projectItem:nth-child(8n + 5) .deleteIcon{
+    fill: var( --violet);
+}
+.projectItem:nth-child(8n + 4) .deleteIcon{
+    fill: var( --coral);
+}
+.projectItem:nth-child(8n + 7) .deleteIcon{
+    fill: var( --green);
+}
+.projectItem:nth-child(8n + 8) .deleteIcon{
+    fill: var( --orange);
+}
+
