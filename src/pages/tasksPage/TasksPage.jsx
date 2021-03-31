@@ -7,7 +7,7 @@ import RightBar from '../../components/taskPageContainer/rightBar/RightBar';
 import RightItemBar from '../../components/taskPageContainer/rightItemBar/RightItemBar';
 import SprintList from '../../components/taskPageContent/sprintList/SprintList';
 
-const SprintPage = () => {
+const TasksPage = () => {
   return (
     <MainPageContainer>
       <LeftBar>
@@ -23,4 +23,4 @@ const SprintPage = () => {
   );
 };
 
-export default SprintPage;
+export default TasksPage;
