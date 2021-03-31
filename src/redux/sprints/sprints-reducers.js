@@ -22,21 +22,23 @@ const sprints = createReducer([], {
   },
 });
 
-const loading = createReducer(false, {
-  [addSprintRequest]: () => true,
-  [addSprintSucces]: () => false,
-  [addSprintError]: () => false,
-  [deleteSprintRequest]: () => true,
-  [deleteSprintSucces]: () => false,
-  [deleteSprintError]: () => false,
-  [fetchSprintsRequest]: () => true,
-  [fetchSprintsSucces]: () => false,
-  [fetchSprintsError]: () => false,
-});
+// const loading = createReducer(false, {
+//   [addSprintRequest]: () => true,
+//   [addSprintSucces]: () => false,
+//   [addSprintError]: () => false,
+//   [deleteSprintRequest]: () => true,
+//   [deleteSprintSucces]: () => false,
+//   [deleteSprintError]: () => false,
+//   [fetchSprintsRequest]: () => true,
+//   [fetchSprintsSucces]: () => false,
+//   [fetchSprintsError]: () => false,
+// });
 
 // const error = createReducer(null, {  });
 
-export default combineReducers({
-  sprints,
-  loading,
-});
+// export default combineReducers({
+//   sprints,
+//   loading,
+// });
+
+export default sprints;
