@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 const PrivateRoute = ({ component: Component, ...routeProps }) => {
   // const isAuthenticated = useSelector(authSelectors.getIsAuthenticated);
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return isAuthenticated ? (
     <Route {...routeProps} render={props => <Component {...props} />} />
