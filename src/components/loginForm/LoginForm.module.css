@@ -1,11 +1,11 @@
-*,
+/* *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: rgba(250, 250, 250, 1);
-}
+} */
 
 .container {
   padding: 0 20px;
