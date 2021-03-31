@@ -148,7 +148,7 @@ line-height: 20px;
     padding-right: 62px;
     padding-bottom: 75px;
   /* text-align: center; */
-    max-width: 480px;
+    width: 512px;
  }
 
  
@@ -190,7 +190,8 @@ line-height: 22px;
     max-width: 530px ;
      padding-top: 121px;
     padding-left: 50px;
-    padding-right: 50px;
+    padding-right: 100px;
+    width: 530px;
 
  }
 

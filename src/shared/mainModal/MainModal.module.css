@@ -80,12 +80,13 @@
 }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1280px){
 
 
 
 .container {
    position: absolute;
+   /* padding-right: 100px; */
   right: 0; 
   height: 100vh;
   background: #fff;

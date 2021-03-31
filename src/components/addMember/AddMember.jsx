@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import MembersList from '../membersList/MembersList';
 import styles from './AddMember.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
