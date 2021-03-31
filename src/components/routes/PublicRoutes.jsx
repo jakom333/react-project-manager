@@ -14,7 +14,7 @@ const PublicRoute = ({ component: Component, path, exact, restricted }) => {
       render={props => <Component {...props} />}
     />
   ) : (
-    <Redirect to="/projects" />
+    <Redirect to='/projects' />
   );
 };
 

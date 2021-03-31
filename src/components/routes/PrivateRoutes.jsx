@@ -14,7 +14,7 @@ const PrivateRoute = ({ component: Component, path, exact }) => {
       render={props => <Component {...props} />}
     />
   ) : (
-    <Redirect to="/registration" />
+    <Redirect to='/registration' />
   );
 };
 

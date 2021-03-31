@@ -4,21 +4,8 @@ body {
   padding: 0;
 }
 
-.mainPageContainer {
-  width: 320px;
-  margin: 0 auto;
-}
-
 @media (min-width: 768px) {
   .mainPageContainer {
     display: flex;
-    margin: 0 auto;
-    width: 768px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .mainPageContainer {
-    width: 1280px;
   }
 }
