@@ -5,7 +5,6 @@ import RoundButton from '../../shared/roundButton/RoundButton';
 import sprite from '../../icons/symbol-defs.svg';
 
 const SprintsList = () => {
-
   return (
     <div className={styles.box}>
       <div className={styles.boxBack}>
@@ -24,7 +23,7 @@ const SprintsList = () => {
           </li>
         </ul>
         <div className={styles.sideButtonBox}>
-          <RoundButton/>
+          <RoundButton />
           <p className={styles.sidePlusText}>Створити проект</p>
         </div>
       </div>
@@ -43,7 +42,10 @@ const SprintsList = () => {
             <p className={styles.pageText}>Create sprint</p>
           </div>
         </div>
-        <p className={styles.description}>Короткий опис проекту, якщо він є, розміщуєтсья тут. Ширина тектового блоку</p>
+        <p className={styles.description}>
+          Короткий опис проекту, якщо він є, розміщуєтсья тут. Ширина тектового
+          блоку
+        </p>
         <div className={styles.addPeopleBox}>
           <button type='button' className={styles.buttonAddPeople}>
             <svg className={styles.iconAddPeople}>
@@ -67,8 +69,8 @@ const SprintsList = () => {
           </li>
         </ul>
       </div>
-    </div>);
-
+    </div>
+  );
 };
 
 export default SprintsList;

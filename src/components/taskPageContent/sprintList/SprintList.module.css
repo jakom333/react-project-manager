@@ -5,6 +5,14 @@
   border-bottom: 1px solid rgb(221, 226, 226);
 }
 
+.sprintsButtonCreateContainer {
+  display: none;
+}
+
+.sprintsList {
+  display: none;
+}
+
 .leftPanelSprintssContainer {
   display: none;
 }
@@ -35,6 +43,10 @@
     border-bottom: none;
   }
 
+  .sprintsButtonCreateContainer {
+    display: block;
+  }
+
   .leftPanelSprintsContainer {
     display: block;
     margin-top: 100px;
@@ -44,6 +56,7 @@
   }
 
   .sprintsList {
+    display: block;
     padding: 0;
     margin: 0;
   }

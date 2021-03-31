@@ -44,7 +44,7 @@ const SprintList = () => {
           ))}
         </ul>
       </div>
-      <div className={styles.sprintsButtonBackContainer}>
+      <div className={styles.sprintsButtonCreateContainer}>
         <button>Button + </button>
 
         <p>create sprint</p>

@@ -5,12 +5,12 @@ import { useSelector } from 'react-redux';
 
 const PublicRoute = ({ component: Component, ...routeProps }) => {
   // const isAuthenticated = useSelector(authSelectors.getIsAuthenticated);
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return !isAuthenticated && routeProps.restricted ? (
     <Route {...routeProps} render={props => <Component {...props} />} />
   ) : (
-    <Redirect to="/projects" />
+    <Redirect to='/projects' />
   );
 };
 

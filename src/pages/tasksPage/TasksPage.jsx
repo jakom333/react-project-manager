@@ -4,7 +4,7 @@ import TasktHeader from '../../components/taskPageContent/taskHeader/TaskHeader'
 import MainPageContainer from '../../components/taskPageContainer/mainPageContainer/MainPageContainer';
 import LeftBar from '../../components/taskPageContainer/leftBar/LeftBar';
 import RightBar from '../../components/taskPageContainer/rightBar/RightBar';
-import RightTaskBar from '../../components/taskPageContainer/rightTaskBar/RightTaskBar';
+import RightItemBar from '../../components/taskPageContainer/rightItemBar/RightItemBar';
 import SprintList from '../../components/taskPageContent/sprintList/SprintList';
 
 const SprintPage = () => {
@@ -15,9 +15,9 @@ const SprintPage = () => {
       </LeftBar>
       <RightBar>
         <TasktHeader />
-        <RightTaskBar>
+        <RightItemBar>
           <TaskList />
-        </RightTaskBar>
+        </RightItemBar>
       </RightBar>
     </MainPageContainer>
   );
