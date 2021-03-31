@@ -4,6 +4,7 @@ line-height: 17px;
 color: rgba(24, 28, 39, 0.6);
 text-align: left;
 margin-bottom: 20px;
+background-color: white;
 }
 
 .message{
@@ -13,11 +14,13 @@ letter-spacing: 0.04em;
 color: #181C27;
 text-align: left;
 margin-bottom: 60px;
+background-color: white;
 }
 
 .membersList{
   margin-bottom: 60px;
   text-align: left;
+  background-color: white;
 }
 .membersListItem{
 display: flex;

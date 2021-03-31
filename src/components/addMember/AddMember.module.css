@@ -9,18 +9,23 @@
 @media screen and (min-width: 320px) {
 
 .formContainer{
-
+background-color: white;
     max-width: 320px ;
-    padding-top: 63px;
+    padding-top: 67px;
     padding-left: 20px;
     padding-right: 20px;
     /* padding-bottom: 75px; */
   /* text-align: center; */
     margin: 0 auto;
+    max-width: 480px;
  }
 
+ .memberForm{
+   background-color: white;
+ }
  
   .titleForm {
+    background-color: white;
 font-weight: 500;
 font-size: 26px;
 line-height: 32px;
@@ -30,7 +35,10 @@ text-align: center;
 margin-bottom: 30px;
 }
   
-.formGroup{
+/* .formGroup{
+  background-color: white;
+  margin: 0;
+  padding: 0;
   transition: all .3s;
 }
 
@@ -43,7 +51,7 @@ margin-bottom: 30px;
 font-size: 16px;
 line-height: 20px;
    transition: all .3s;
-}
+} */
 
 
 
@@ -55,20 +63,19 @@ line-height: 20px;
     width: 100%;
     height: 30px;
     outline: none;
-    border-color:greyColor;
-    border-style: none none solid none;
+    border-color: greyColor;
+    border: none;
+    border-bottom: solid .8px greyColor;
     font-size: 16px;
     margin-bottom:30px ;
-    max-width: 280px;
     transition: all .5s;
     
   }
-  
-
+/*    
   .input::placeholder{
     color:transparent;
     pointer-events: none;
-  }
+  } */
 
  
 .input:focus{
@@ -76,7 +83,7 @@ line-height: 20px;
   outline: none;
   border-color:accentColor ;
 }
-
+/* 
 .input:focus + .formLabel,
 .input:not(:placeholder-shown)+ .formLabel{
   transform: translate(15px,-80px) scale(.8);
@@ -84,12 +91,48 @@ line-height: 20px;
 
 .formGroup:focus-within{
   transform:scale(1.08,1.08);
-}
+} */
 
 .error{
+  background-color: white;
   color: accentColor;
   margin-top: -85px;
+} 
+
+
+.input::-webkit-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
 }
+.input::-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.input:-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.input:-ms-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.input:focus::-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.input:focus:-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.input:focus:-ms-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+
 
 }
 
@@ -100,11 +143,12 @@ line-height: 20px;
 
 .formContainer{
     max-width: 512px ;
-    padding-top: 63px;
+    padding-top: 121px;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 62px;
     padding-bottom: 75px;
   /* text-align: center; */
+    max-width: 480px;
  }
 
  
@@ -113,11 +157,11 @@ font-weight: 500;
 font-size: 36px;
 line-height: 44px;
 display: block;
-margin-bottom: 30px;
+margin-bottom: 49px;
 }
   
 
-.formLabel{
+/* .formLabel{
   margin-bottom:30px ;
   max-width: 280px;
   color:greyColor;
@@ -125,7 +169,7 @@ margin-bottom: 30px;
 font-size: 18px;
 line-height: 22px;
 
-}
+} */
 
 
   .input {
@@ -133,7 +177,7 @@ line-height: 22px;
      font-size: 18px;
     line-height: 22px;
     margin-bottom:39px ;
-    max-width: 430px;  
+    width: 100%; 
   }
  
 }
@@ -144,13 +188,10 @@ line-height: 22px;
 
 .formContainer{
     max-width: 530px ;
-    outline: 1px solid accentColor;
-    padding-top: 120px;
+     padding-top: 121px;
     padding-left: 50px;
     padding-right: 50px;
-    /* padding-bottom: 202px; */
-  /* text-align: center; */
-    margin: 0 auto;
+
  }
 
  
@@ -161,19 +202,19 @@ line-height: 44px;
 margin-bottom: 50px;
 }
   
-
+/* 
 .formLabel{
   line-height: 22px;
    font-size: 18px;
   margin-bottom:30px ;
   
-}
+} */
 
   .input {
     font-size: 18px;
      line-height: 22px;
     margin-bottom:30px ;
-      max-width: 429px;
+     width: 100%;
     }
  
 }  

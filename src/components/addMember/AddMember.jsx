@@ -1,7 +1,4 @@
 import { useState } from 'react';
-import Button from '../../shared/button';
-import CancelButton from '../../shared/cancelButton/CancelButton';
-import MainModal from '../../shared/mainModal/MainModal';
 import MembersList from '../membersList/MembersList';
 import styles from './AddMember.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -28,25 +25,26 @@ const AddMember = () => {
         }}
       >
         <Form className={styles.memberForm}>
-          <div className={styles.formGroup}>
-            <Field
-              className={styles.input}
-              name="email"
-              type="text"
-              placeholder="E-mail"
-            />
+          {/* <div className={styles.formGroup}> */}
+          <Field
+            className={styles.input}
+            name="email"
+            type="text"
+            placeholder="E-mail"
+          />
 
-            <ErrorMessage
-              className={styles.error}
-              component="span"
-              name="email"
-            />
-            <label htmlFor="email" className={styles.formLabel}>
-              E-mail
-            </label>
-          </div>
+          <ErrorMessage
+            className={styles.error}
+            component="span"
+            name="email"
+          />
+          {/* <label htmlFor="email" className={styles.formLabel}>
+            E-mail
+          </label> */}
+          {/* </div> */}
         </Form>
       </Formik>
+      <MembersList />
     </div>
   );
 };
