@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './SprintsList.module.css';
 import SprintsListItem from './sprintsListItem/SprintsListItem';
 
@@ -22,6 +22,7 @@ const sprintsList = [
 ];
 
 const SprintsList = () => {
+
   return (
     <div>
       <div>
