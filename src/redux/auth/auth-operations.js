@@ -42,8 +42,9 @@ const register = user => async dispatch => {
 
     dispatch(
       registerSuccess({
-        token: token.get(),
+        accessToken: token.get(),
         refreshToken: `Bearer ${response.data.refreshToken}`,
+        sid: response.data.sid,
       }),
     );
   } catch (error) {
@@ -55,14 +56,15 @@ const logIn = user => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await axios.post('/auth/login', user);
-    // console.log(response);
+    console.log(response);
 
     token.set(response.data.accessToken);
 
     dispatch(
       loginSuccess({
-        token: token.get(),
+        accessToken: token.get(),
         refreshToken: `Bearer ${response.data.refreshToken}`,
+        sid: response.data.sid,
       }),
     );
   } catch (error) {
