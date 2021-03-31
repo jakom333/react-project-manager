@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './SprintsList.module.css';
 
 const sprintsList = [
@@ -18,29 +18,29 @@ const sprintsList = [
     title: 'Sprint 4',
     id: '4',
   },
-
 ];
 
 const SprintsList = () => {
+  useEffect(() => {}, []);
 
   return (
     <div className={styles.box}>
-         <div className={styles.projectDetails}>
-            <ul className={styles.sprintList}>
-              {sprintsList.map(({ title, id }) => (
-                <li key={id} className={styles.sprintListItem}>
-                  <div className={styles.listItemBox}>
-                    <h3 className={styles.sideItemName}>{title}</h3>
-                    <p>Дата начала</p>
-                    <p>Дата конца</p>
-                    <p>Дата длительность</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-     </div>);
-
+      <div className={styles.projectDetails}>
+        <ul className={styles.sprintList}>
+          {sprintsList.map(({ title, id }) => (
+            <li key={id} className={styles.sprintListItem}>
+              <div className={styles.listItemBox}>
+                <h3 className={styles.sideItemName}>{title}</h3>
+                <p>Дата начала</p>
+                <p>Дата конца</p>
+                <p>Дата длительность</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default SprintsList;

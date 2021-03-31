@@ -8,8 +8,8 @@ import Background from '../background/Background.jsx';
 import { Link } from 'react-router-dom';
 
 const initialState = {
-  email: '',
-  password: '',
+  email: 'test123@mail.com',
+  password: 'test123',
 };
 export default function LoginForm() {
   const [user, setUser] = useState(initialState);
