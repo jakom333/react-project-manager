@@ -1,0 +1,10 @@
+ 
+ /*main colors*/ 
+ @value accentColor: #FF6B08;
+ @value greyColor:  rgba(24, 28, 39, 0.6);
+
+ /* break media points */
+@value mobile: (max-width: 480px);
+@value tablet: (min-width: 768px);
+@value desktop: (min-width: 1280px);
+
