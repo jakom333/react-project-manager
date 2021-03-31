@@ -8,6 +8,7 @@ import {
   //   logoutSuccess,
   //   logoutError,
 } from './auth-actions';
+import { projectsSuccess } from '../projects/projects-actions';
 
 const initialUserState = { email: null, password: null };
 
@@ -29,7 +30,7 @@ const error = createReducer(null, {
 });
 
 const isAuthenticated = createReducer(false, {
-  // [projectsSuccess]: () => true,
+  [projectsSuccess]: () => true,
   [registerSuccess]: () => true,
   [loginSuccess]: () => true,
 

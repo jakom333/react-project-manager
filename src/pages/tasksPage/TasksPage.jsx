@@ -5,13 +5,13 @@ import MainPageContainer from '../../components/taskPageContainer/mainPageContai
 import LeftBar from '../../components/taskPageContainer/leftBar/LeftBar';
 import RightBar from '../../components/taskPageContainer/rightBar/RightBar';
 import RightItemBar from '../../components/taskPageContainer/rightItemBar/RightItemBar';
-import SprintList from '../../components/taskPageContent/sprintList/SprintList';
+import SprintListSideBar from '../../components/taskPageContent/sprintListSideBar/SprintListSideBar';
 
 const TasksPage = () => {
   return (
     <MainPageContainer>
       <LeftBar>
-        <SprintList />
+        <SprintListSideBar />
       </LeftBar>
       <RightBar>
         <TasktHeader />

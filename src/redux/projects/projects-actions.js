@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const projectsSuccess = createAction('auth/registerSuccess');
-const projectsError = createAction('auth/registerError');
+const projectsRequest = createAction('projects/projectsRequest');
+const projectsSuccess = createAction('projects/projectsSuccess');
+const projectsError = createAction('projects/projectsError');
 
-export { projectsSuccess, projectsError };
+export { projectsRequest, projectsSuccess, projectsError };
