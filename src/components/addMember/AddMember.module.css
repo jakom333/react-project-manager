@@ -9,8 +9,8 @@
 @media screen and (min-width: 320px) {
 
 .formContainer{
+
     max-width: 320px ;
-    outline: 1px solid accentColor;
     padding-top: 63px;
     padding-left: 20px;
     padding-right: 20px;

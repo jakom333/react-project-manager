@@ -45,7 +45,6 @@ const AddMember = () => {
               E-mail
             </label>
           </div>
-          <Button>Done</Button>
         </Form>
       </Formik>
     </div>

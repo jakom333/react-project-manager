@@ -5,15 +5,17 @@
   background: rgba(0,0,0,0.8);
   width: 100vw;
   height: 100vh;
+  z-index:50;
 }
 
 .container {
   position: absolute;
-  top: 60px;
+    top: 60px;
   right: 0;
-  padding: 63px 20px 0;
+   /* padding: 63px 20px 0; */
   height: 100vh;
   background: #fff;
+  max-width: 480px;
 }
 
 .closeBtn {
@@ -29,4 +31,9 @@
   border: none;
   cursor: pointer;
   
+}
+
+.icon{
+  height: 24px;
+  width: 24px;
 }
