@@ -5,6 +5,7 @@ body {
 }
 
 .sprintsPageContainer {
+  display: block;
   width: 320px;
   margin: 0 auto;
 }

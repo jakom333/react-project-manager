@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './RightTaskBar.module.css';
+import styles from './RightItemBar.module.css';
 
 const RightBar = ({ children }) => {
   return <div className={styles.rightBarContainer}>{children}</div>;

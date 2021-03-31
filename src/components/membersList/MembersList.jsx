@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './MembersList.module.css';
+import sprite from '../../icons/symbol-defs.svg';
+import MembersListItem from '../membersListItem/MembersListItem';
 
 const MembersList = ({ members }) => {
   // if (!members.length) {
@@ -12,21 +14,16 @@ const MembersList = ({ members }) => {
       <p className={styles.message}>You have not added any users yet</p>
       <ul className={styles.membersList}>
         <li className={styles.membersListItem}>
-          <p>username@gmail.com</p>
+          <p className={styles.membersListItem}>username@gmail.com</p>
           <button type="button" className={styles.deleteBtn}>
-            .
+            <svg className={styles.deleteIcon}>
+              <use href={sprite + '#icon-delete-bin'}></use>
+            </svg>
           </button>
         </li>
-        <li className={styles.membersListItem}>
-          <p>username@gmail.com</p>
-          <button type="button" className={styles.deleteBtn}>
-            .
-          </button>
-        </li>
-
-        {/* {members.map(({ email, id }) => (
-        <MemberListItem key={id} id={id}  email={email} />
-      ))} */}
+        {/* {members.map(({ id, email }) => (
+          <MembersListItem key={id} id={id} email={email} />
+        ))} */}
       </ul>
     </div>
   );

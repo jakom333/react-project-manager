@@ -1,7 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import styles from './CreateSprintForm.module.css';
 
-const createSprintForm = () => {
+const СreateSprintForm = () => {
+  const [startDate, setStartDate] = useState(new Date());
+
   return (
     <div>
       <form className={styles.form}>
@@ -23,11 +29,13 @@ const createSprintForm = () => {
           <span>Duration</span>
           <input className={styles.input} type='number' />
         </label>
-        <button>Create</button>
-        <button>Cancel</button>
+        <DatePicker
+          selected={startDate}
+          onChange={date => setStartDate(date)}
+        />
       </form>
     </div>
   );
 };
 
-export default createSprintForm;
+export default СreateSprintForm;

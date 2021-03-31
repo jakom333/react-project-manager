@@ -4,23 +4,23 @@ import TasktHeader from '../../components/taskPageContent/taskHeader/TaskHeader'
 import MainPageContainer from '../../components/taskPageContainer/mainPageContainer/MainPageContainer';
 import LeftBar from '../../components/taskPageContainer/leftBar/LeftBar';
 import RightBar from '../../components/taskPageContainer/rightBar/RightBar';
-import RightTaskBar from '../../components/taskPageContainer/rightTaskBar/RightTaskBar';
-import SprintList from '../../components/taskPageContent/sprintList/SprintList';
+import RightItemBar from '../../components/taskPageContainer/rightItemBar/RightItemBar';
+import SprintListSideBar from '../../components/taskPageContent/sprintListSideBar/SprintListSideBar';
 
-const SprintPage = () => {
+const TasksPage = () => {
   return (
     <MainPageContainer>
       <LeftBar>
-        <SprintList />
+        <SprintListSideBar />
       </LeftBar>
       <RightBar>
         <TasktHeader />
-        <RightTaskBar>
+        <RightItemBar>
           <TaskList />
-        </RightTaskBar>
+        </RightItemBar>
       </RightBar>
     </MainPageContainer>
   );
 };
 
-export default SprintPage;
+export default TasksPage;
