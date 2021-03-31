@@ -13,19 +13,21 @@ const SprintsHeader = () => {
       </div>
       <div className={styles.head}>
         <div className={styles.titleBox}>
-          <h2 className={styles.pageTitle}>PROJECT NAME</h2>
-          <button type='button' className={styles.buttonFix}>
-            <svg className={styles.iconPencil}>
-              <use href={sprite + '#icon-pencil'}></use>
-            </svg>
-          </button>
-        </div>
-        <div className={styles.buttonBox}>
-          <RoundButton />
-          <p className={styles.pageText}>Create sprint</p>
+          <div className={styles.title}>
+            <h2 className={styles.pageTitle}>PROJECT NAME</h2>
+            <button type='button' className={styles.buttonFix}>
+              <svg className={styles.iconPencil}>
+                <use href={sprite + '#icon-pencil'}></use>
+              </svg>
+            </button>
+          </div>
+          <div className={styles.buttonBox}>
+            <RoundButton />
+            <p className={styles.pageText}>Create sprint</p>
+          </div>
         </div>
       </div>
-      <p className={styles.description}>Короткий опис проекту, якщо він є, розміщуєтсья тут. Ширина тектового блоку</p>
+      <p className={styles.description}>Короткий опис проекту</p>
       <div className={styles.addPeopleBox}>
         <button type='button' className={styles.buttonAddPeople}>
           <svg className={styles.iconAddPeople}>

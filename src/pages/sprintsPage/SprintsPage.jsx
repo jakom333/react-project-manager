@@ -6,13 +6,14 @@ import SprintsListSide from '../../components/sprintsPageContent/sprintsListSide
 
 import RightItemBar from '../../components/taskPageContainer/rightItemBar/RightItemBar';
 import ProjectSideBar from '../../components/sprintsPageContent/projectSideBar/ProjectSideBar';
-import SprintsList from '../../components/sprintsPageContent/sprintsList/SprintsList';
+
+import { container } from '../../container.module.css';
 
 
 const SprintsPage = () => {
 
     return (
-       <div>
+       <div className={container}>
          <MainPageContainer>
            <LeftBar>
              <ProjectSideBar/>
