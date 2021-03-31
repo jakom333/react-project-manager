@@ -8,11 +8,15 @@
   overflow: hidden;
   display: block;
   margin: 0 auto;
+  font-weight: 500;
+font-size: 18px;
+line-height: 22px;
 }
 
 .button:hover {
-  background: rgba(33, 17, 177, 0.658);
+  background:white;
   transition: 0.5s ease-in-out;
-  color: #fff;
+  color:  #ff6b08;
+box-shadow: 1px 1px 5px 1px  #ff6b08;
 }
 
