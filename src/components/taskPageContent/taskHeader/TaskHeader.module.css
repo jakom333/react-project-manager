@@ -55,7 +55,7 @@
 .searchBtn {
   position: absolute;
   right: 0px;
-  top: 25px;
+  top: 10px;
   display: block;
   border: none;
   background-color: transparent;
@@ -174,8 +174,33 @@
   }
 
   .buttonBox {
-    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 5;
+    margin-right: 0;
   }
+
+  /* .searchBtn {
+    position: absolute;
+    top: -5px;
+    right: 18px;
+  }
+
+  .searchInputActive {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    width: 185px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    background-color: #f1f2f7;
+    outline: none;
+    padding-left: 10px;
+    height: 40px;
+    border: 1px solid black;
+  } */
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -224,12 +249,6 @@
     margin-right: 60px;
   }
 
-  .searchBtn {
-    position: absolute;
-    top: -120px;
-    right: 12px;
-  }
-
   .switch {
     margin-right: 40px;
   }
@@ -247,12 +266,17 @@
     margin-left: 15px;
   }
 
+  .searchBtn {
+    position: absolute;
+    top: -125px;
+    right: 18px;
+  }
+
   .searchInputActive {
     position: absolute;
-    bottom: 142px;
-    left: 290px;
-
-    width: 130px;
+    bottom: 145px;
+    left: 260px;
+    width: 185px;
     display: block;
     border: none;
     border-bottom: 1px solid rgba(24, 28, 39, 0.1);
@@ -320,7 +344,7 @@
     position: relative;
     display: flex;
     max-width: 870px;
-    height: 50px;
+    height: 30px;
     font-weight: normal;
     font-style: normal;
     margin-top: 40px;
@@ -329,7 +353,7 @@
     font-size: 14px;
     line-height: 17px;
     color: #181c27;
-    padding-left: 30px;
+    padding-left: 25px;
   }
   .tasksHeaderText {
     font-family: 'Montserrat';
@@ -339,9 +363,22 @@
     max-width: 100px;
     cursor: default;
   }
-  .tasksHeaderText:not(:last-child) {
-    margin-right: 100px;
+
+  .tasksHeaderText:nth-child(1) {
+    margin-right: 170px;
   }
+
+  .tasksHeaderText:nth-child(2) {
+    margin-right: 90px;
+  }
+
+  .tasksHeaderText:nth-child(3) {
+    margin-right: 85px;
+  }
+
+  /* .tasksHeaderText:not(:last-child) {
+    margin-right: 100px;
+  } */
 
   .controlPanel {
     justify-content: start;
@@ -365,7 +402,7 @@
 
   .searchInputActive {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 7px;
     width: 130px;
 
