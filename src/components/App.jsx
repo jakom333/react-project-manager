@@ -22,6 +22,7 @@ const App = () => {
           headers: { Authorization: token },
         },
       );
+      console.log(response.data);
 
       // {dispatch(setProjects(response.data))}
     } catch (error) {
