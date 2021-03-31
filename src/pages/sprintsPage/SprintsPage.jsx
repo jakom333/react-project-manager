@@ -1,30 +1,33 @@
-import React, { useState } from 'react';
-import SprintsList from '../../components/sprintsList/SprintsList';
-import MainModal from '../../shared/mainModal/MainModal';
-import CreateSprintForm from '../../components/createSprintForm/CreateSprintForm';
+import React from 'react';
+import MainPageContainer from '../../components/taskPageContainer/mainPageContainer/MainPageContainer';
+import LeftBar from '../../components/taskPageContainer/leftBar/LeftBar';
+import RightBar from '../../components/taskPageContainer/rightBar/RightBar';
+import SprintsListSide from '../../components/sprintsPageContent/sprintsListSide/SprintsListSide';
+
+import RightItemBar from '../../components/taskPageContainer/rightItemBar/RightItemBar';
+import ProjectSideBar from '../../components/sprintsPageContent/projectSideBar/ProjectSideBar';
+
+import { container } from '../../container.module.css';
+
 
 const SprintsPage = () => {
-  const [showModal, setShowModal] = useState(false);
 
-  const createSprint = data => {
-    // fetchSproint(data);
-  };
-  return (
-    <div>
-      <SprintsList />
-      <button type="button" onClick={() => setShowModal(true)}>
-        Open modal
-      </button>
-      <MainModal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        onClose={() => setShowModal(false)}
-        // callback={}
-      >
-        <CreateSprintForm createSprint={createSprint} />
-      </MainModal>
-    </div>
-  );
-};
+    return (
+       <div className={container}>
+         <MainPageContainer>
+           <LeftBar>
+             <ProjectSideBar/>
+           </LeftBar>
+           <RightBar>
+             <RightItemBar>
+              <SprintsListSide/>
+             </RightItemBar>
+           </RightBar>
+         </MainPageContainer>
+       </div>
+    );
+
+}
 
 export default SprintsPage;
+
