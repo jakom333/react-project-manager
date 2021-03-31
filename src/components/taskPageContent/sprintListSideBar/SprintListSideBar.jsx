@@ -1,7 +1,7 @@
 import React from 'react';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import sprite from '../../../icons/symbol-defs.svg';
-import styles from './SprintList.module.css';
+import styles from './SprintListSideBar.module.css';
 
 const sprintsList = [
   {
