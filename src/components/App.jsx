@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 // import AddMember from './addMember/AddMember';
 // import MainModal from '../shared/mainModal/MainModal';
 import Main from './main/Main';
-import SprintsPage from '../pages/sprintsPage/SprintsPage';
+// import SprintsPage from '../pages/sprintsPage/SprintsPage';
 
 const App = () => {
   const history = useHistory();
@@ -15,8 +15,8 @@ const App = () => {
 
   return (
     <div>
-      {/*<Main />*/}
-      <SprintsPage/>
+      <Main />
+      {/* <SprintsPage/> */}
       {/* <AddMember /> */}
 
       {/* <h1>Hello world</h1>
