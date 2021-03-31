@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './MembersList.module.css';
+import sprite from '../../icons/symbol-defs.svg';
 
 const MembersList = ({ members }) => {
   // if (!members.length) {
@@ -14,13 +15,9 @@ const MembersList = ({ members }) => {
         <li className={styles.membersListItem}>
           <p>username@gmail.com</p>
           <button type="button" className={styles.deleteBtn}>
-            .
-          </button>
-        </li>
-        <li className={styles.membersListItem}>
-          <p>username@gmail.com</p>
-          <button type="button" className={styles.deleteBtn}>
-            .
+            <svg className={styles.deleteIcon}>
+              <use href={sprite + '#icon-delete-bin'}></use>
+            </svg>
           </button>
         </li>
 
