@@ -9,25 +9,21 @@ import ProjectSideBar from '../../components/sprintsPageContent/projectSideBar/P
 
 import { container } from '../../container.module.css';
 
-
 const SprintsPage = () => {
-
-    return (
-       <div className={container}>
-         <MainPageContainer>
-           <LeftBar>
-             <ProjectSideBar/>
-           </LeftBar>
-           <RightBar>
-             <RightItemBar>
-              <SprintsListSide/>
-             </RightItemBar>
-           </RightBar>
-         </MainPageContainer>
-       </div>
-    );
-
-}
+  return (
+    <div className={container}>
+      <MainPageContainer>
+        <LeftBar>
+          <ProjectSideBar />
+        </LeftBar>
+        <RightBar>
+          <RightItemBar>
+            <SprintsListSide />
+          </RightItemBar>
+        </RightBar>
+      </MainPageContainer>
+    </div>
+  );
+};
 
 export default SprintsPage;
-
