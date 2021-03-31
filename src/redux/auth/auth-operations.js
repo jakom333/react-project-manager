@@ -35,7 +35,7 @@ const register = user => async dispatch => {
   dispatch(registerRequest());
   try {
     // await axios.post('/auth/register', user);
-    const response = await axios.post('/auth/login', user);
+    const response = await axios.post('/auth/register', user);
     // console.log(response);
 
     token.set(response.data.accessToken);
