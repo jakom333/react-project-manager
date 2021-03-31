@@ -4,13 +4,14 @@ import { logIn } from '../../redux/auth/auth-operations.js';
 import Button from '../../shared/button/Button.jsx';
 import styles from './LoginForm.module.css';
 
-import Background from '../../components/background/Background.jsx';
+import Background from '../background/Background.jsx';
+import { Link } from 'react-router-dom';
 
 const initialState = {
   email: '',
   password: '',
 };
-export default function RegistrationPage() {
+export default function LoginForm() {
   const [user, setUser] = useState(initialState);
   const dispatch = useDispatch();
 
@@ -55,7 +56,9 @@ export default function RegistrationPage() {
         <Button>Sign in</Button>
         <p className={styles.textUnderbutton}>
           Don't yet have an account?
-          <a className={styles.underlined}> Sign up</a>
+          <Link to="/registration" className={styles.underlined}>
+            Sign up
+          </Link>
         </p>
       </form>
     </div>

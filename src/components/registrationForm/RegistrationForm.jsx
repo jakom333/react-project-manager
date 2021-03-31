@@ -4,15 +4,16 @@ import { register } from '../../redux/auth/auth-operations.js';
 import Button from '../../shared/button/Button.jsx';
 import styles from './RegistrationForm.module.css';
 
-import Background from '../../components/background/Background.jsx';
+import Background from '../background/Background.jsx';
+import { Link } from 'react-router-dom';
 
 const initialState = {
-  email: '',
-  password: '',
-  confirm_password: '',
+  email: 'test@mail.com',
+  password: 'qwerty',
+  confirm_password: 'qwerty',
 };
 
-export default function RegistrationPage() {
+export default function RegistrationForm() {
   const [user, setUser] = useState(initialState);
   const [formErrors, setFormErrors] = useState({});
   const dispatch = useDispatch();
@@ -60,7 +61,7 @@ export default function RegistrationPage() {
     if (Object.keys(formErrors).length === 0 && isSubmitting) {
       submitForm();
     }
-  }, [formErrors]);
+  }, [formErrors, isSubmitting]);
 
   return (
     <div className={styles.wrapper}>
@@ -106,7 +107,10 @@ export default function RegistrationPage() {
 
         <Button>Sign up</Button>
         <p className={styles.textUnderbutton}>
-          Already have an account?<a className={styles.underlined}> Sign in</a>
+          Already have an account?
+          <Link to="/login" className={styles.underlined}>
+            Sign in
+          </Link>
         </p>
       </form>
     </div>

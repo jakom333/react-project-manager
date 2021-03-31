@@ -15,22 +15,36 @@ import {
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
 const token = {
+  token: '',
+
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    this.token = `Bearer ${token}`;
+  },
+  get() {
+    return this.token;
   },
   unset() {
     axios.defaults.headers.common.Authorization = '';
+    this.token = '';
   },
 };
 
 const register = user => async dispatch => {
   dispatch(registerRequest());
   try {
-    const response = await axios.post('/auth/register', user);
+    await axios.post('/auth/register', user);
+    const response = await axios.post('/auth/login', user);
+    console.log(response);
 
-    token.set(response.data.token);
+    token.set(response.data.accessToken);
 
-    dispatch(registerSuccess(response.data));
+    dispatch(
+      registerSuccess({
+        token: token.get(),
+        refreshToken: `Bearer ${response.data.refreshToken}`,
+      }),
+    );
   } catch (error) {
     dispatch(registerError(error.message));
   }
@@ -40,10 +54,16 @@ const logIn = user => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await axios.post('/auth/login', user);
+    console.log(response);
 
-    token.set(response.data.token);
+    token.set(response.data.accessToken);
 
-    dispatch(loginSuccess(response.data));
+    dispatch(
+      loginSuccess({
+        token: token.get(),
+        refreshToken: `Bearer ${response.data.refreshToken}`,
+      }),
+    );
   } catch (error) {
     dispatch(loginError(error.message));
   }
