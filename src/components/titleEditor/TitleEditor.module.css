@@ -47,7 +47,11 @@
 } */
 
 .sprint-change-title-btn {
-  composes: btn;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
   margin-left: 5px;
   padding-top: 2px;
 
