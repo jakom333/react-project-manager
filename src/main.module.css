@@ -1,3 +1,12 @@
+
+ @value accentColor: #FF6B08;
+ @value greyColor:  rgba(24, 28, 39, 0.6);
+ @value blackColor: #181C27;
+
+/*@value greyColor from '../../main.module.css';*/
+
+
+
 *,
 *::before,
 *::after {
@@ -37,9 +46,7 @@ body {
 }
   
 
- @value accentColor: #FF6B08;
- @value greyColor:  rgba(24, 28, 39, 0.6);
- @value blackColor: #181C27;
+
 
 
 
