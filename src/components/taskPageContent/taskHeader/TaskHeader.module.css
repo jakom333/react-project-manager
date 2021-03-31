@@ -129,6 +129,10 @@
     line-height: 22px;
   }
 
+  .control {
+    margin-bottom: 30px;
+  }
+
   .tasksHeader {
     display: none;
   }
@@ -168,24 +172,12 @@
     font-size: 26px;
     line-height: 32px;
   }
+
+  .buttonBox {
+    display: none;
+  }
 }
 
-@media screen and (min-width: 768px) {
-  .titleBlock {
-    justify-content: start;
-  }
-  .title {
-    font-size: 36px;
-    line-height: 44px;
-  }
-  .focused {
-    font-size: 36px;
-    line-height: 44px;
-  }
-  .input {
-    height: 40px;
-  }
-}
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .sprintHeader {
     margin-right: auto;
