@@ -1,0 +1,52 @@
+.box{
+    margin-top: 100px;
+
+}
+
+@media screen and  (min-width: 768px) and (max-width: 1279px){
+
+    .sideLeftList{
+        padding-inline-start:0;
+        list-style: none;
+        margin-left: 44px;
+
+    }
+    .sideItem{
+
+        display: flex;
+        align-items: center;
+    }
+
+    .sideItemBox{
+        margin-right: 15px;
+        width: 36px;
+        height: 36px;
+        background-color: #8c72df;
+    }
+
+}
+
+@media screen and (min-width: 1280px){
+
+
+    .sideLeftList{
+        padding-inline-start:0;
+        list-style: none;
+        margin-left: 44px;
+
+    }
+    .sideItem{
+
+        display: flex;
+        align-items: center;
+    }
+
+    .sideItemBox{
+        margin-right: 15px;
+        width: 36px;
+        height: 36px;
+        background-color: #8c72df;
+    }
+
+}
+

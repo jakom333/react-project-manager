@@ -7,6 +7,7 @@ import Header from './header/Header';
 // import AddMember from './addMember/AddMember';
 // import MainModal from '../shared/mainModal/MainModal';
 import Main from './main/Main';
+// import SprintsPage from '../pages/sprintsPage/SprintsPage';
 
 const App = () => {
   // const [showModal, setShowModal] = useState(false);
@@ -43,6 +44,7 @@ const App = () => {
       <Header />
 
       <Main />
+      {/* <SprintsPage/> */}
       {/* <AddMember /> */}
 
       {/* <h1>Hello world</h1>
