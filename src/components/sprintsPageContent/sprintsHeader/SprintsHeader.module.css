@@ -44,6 +44,19 @@
     margin-bottom: 0;
     margin-right: 0;
 }
+.showProject{
+    width: 100%;
+}
+
+.buttonAddPeople{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.titleBox{
+    margin-bottom: 30px;
+}
+
 
 
 @media screen and (min-width: 768px){
@@ -121,10 +134,6 @@
 
     }
 
-    .showProject{
-        margin: 0;
-        width: 100%;
-    }
 
 }
 
@@ -132,9 +141,6 @@
 @media screen and  (min-width: 768px) and (max-width: 1279px){
 
     .boxBack{
-        position: absolute;
-        left: 44px;
-        top: 20px;
         width: 130px;
         margin-bottom: 165px;
     }
@@ -150,11 +156,16 @@
 
     }
     .pageTitle{
+        max-width: 300px;
         display: flex;
         align-items: center;
         margin-right: 20px;
-        margin-top: 0;
-        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 44px;
+        letter-spacing: 0.04em;
+        color: #181C27;
+
     }
 
     .description{
@@ -173,29 +184,34 @@
         color: #181C27;
     }
 
+    .titleBox {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
 
 @media screen and (min-width: 1280px){
+    .boxHead{
+        padding-left: 55px;
+    }
 
     .boxBack{
-        position: absolute;
-        left: 44px;
-        top: 20px;
         width: 130px;
         margin-bottom: 165px;
     }
 
     .head{
-
         margin-top: 40px;
         margin-bottom: 20px;
-
     }
+
     .buttonBox{
         display: flex;
         align-items: center;
         margin-right: 86px;
     }
+
     .pageText{
         margin-left: 20px;
         font-style: normal;
@@ -206,26 +222,24 @@
         color: #181C27;
 
     }
+
     .pageTitle{
+        max-width: 400px;
         display: flex;
-        align-items: center;
         margin-right: 20px;
         font-style: normal;
         font-weight: 500;
-        font-size: 36px;
+        font-size: 30px;
         line-height: 44px;
         text-align: center;
         letter-spacing: 0.04em;
         color: #181C27;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
     .description{
         width: 400px;
         margin-top: 0;
     }
-
 
     .addPeopleText{
         font-style: normal;
@@ -237,5 +251,20 @@
         color: #181C27;
     }
 
+    .titleBox {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .showProject{
+        margin-left: 20px;
+        width: 100%;
+    }
+
+    .title{
+        display: flex;
+        justify-content: space-between;
+
+    }
 
 }

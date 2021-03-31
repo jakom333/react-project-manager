@@ -17,7 +17,7 @@ const SprintsHeader = () => {
       <div className={styles.head}>
         <div className={styles.titleBox}>
           <div className={styles.title}>
-            <h2 className={styles.pageTitle}>PROJECT NAME</h2>
+            <h2 className={styles.pageTitle}>PROJECT 1</h2>
             <button type="button" className={styles.buttonFix}>
               <svg className={styles.iconPencil}>
                 <use href={sprite + '#icon-pencil'}></use>
