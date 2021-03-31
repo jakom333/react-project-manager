@@ -8,7 +8,8 @@
   font-weight: normal;
   font-size: 14px;
   letter-spacing: 0.04em;
-  color: #181c27;
+
+  background-color: #ffffff;
   padding: 6px 5px;
   outline: none;
 }
@@ -53,7 +54,6 @@
   cursor: pointer;
   outline: none;
   margin-left: 5px;
-  padding-top: 2px;
 
   /* position: absolute;
   right: 0;
@@ -88,6 +88,13 @@
   margin-right: 20px;
   word-wrap: break-word;
   max-width: 300px;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 @media screen and (max-width: 1279px) {

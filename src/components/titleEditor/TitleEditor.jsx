@@ -13,7 +13,7 @@ export default function ChangeTitle({ titleValue }) {
 
   return (
     <>
-      {/* <label className={styles.wrapper}>
+      <label className={styles.wrapper}>
         <input
           type="text"
           className={styles['title-change-input']}
@@ -33,8 +33,8 @@ export default function ChangeTitle({ titleValue }) {
             <use href={sprite + '#icon-save'}></use>
           </svg>
         </button>
-      </label> */}
-      <div className={styles.wrapper}>
+      </label>
+      {/* <div className={styles.wrapper}>
         <h1 className={styles['sprint-title']}>Sprint title</h1>
         <button
           onClick={() => setUpdate(!isUpdate)}
@@ -44,7 +44,7 @@ export default function ChangeTitle({ titleValue }) {
             <use href={sprite + '#icon-pencil'}></use>
           </svg>
         </button>
-      </div>
+      </div> */}
     </>
   );
 }

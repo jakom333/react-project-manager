@@ -46,13 +46,12 @@ export default function SprintHeader({ handleInput }) {
               onChange={handleInput}
               className={styles.searchInputActive}
             ></input>
-
-            <button className={styles.searchBtn}>
-              <svg className={styles.iconSearch}>
-                <use href={sprite + '#icon-search'}></use>
-              </svg>
-            </button>
           </label>
+          <button className={styles.searchBtn}>
+            <svg className={styles.iconSearch}>
+              <use href={sprite + '#icon-search'}></use>
+            </svg>
+          </button>
         </div>
       </section>
     </div>

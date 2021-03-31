@@ -130,10 +130,14 @@
   }
 
   .control {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
-  .tasksHeader {
+  /* .tasksHeader {
+    display: none;
+  } */
+
+  .tasksHeaderText {
     display: none;
   }
 
@@ -181,26 +185,26 @@
     margin-right: 0;
   }
 
-  /* .searchBtn {
+  .searchBtn {
     position: absolute;
-    top: -5px;
-    right: 18px;
+    top: 222px;
+    right: 382px;
   }
 
   .searchInputActive {
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
-    width: 185px;
+    /* position: absolute; */
+    width: 280px;
     display: block;
     border: none;
     border-bottom: 1px solid rgba(24, 28, 39, 0.1);
     background-color: #f1f2f7;
     outline: none;
-    padding-left: 10px;
-    height: 40px;
-    border: 1px solid black;
-  } */
+    padding-left: 35px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 35px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -404,14 +408,22 @@
     position: absolute;
     top: 0;
     right: 7px;
-    width: 130px;
-
+    width: 150px;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #271818;
     display: block;
     border: none;
-    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    border-bottom: 1px solid rgba(24, 28, 39, 0);
     background-color: #f1f2f7;
     outline: none;
     padding-left: 10px;
-    height: 40px;
+    height: 35px;
+  }
+
+  .searchInputActive:hover {
+    border-bottom: 1px solid rgba(16, 16, 17, 0.212);
   }
 }
