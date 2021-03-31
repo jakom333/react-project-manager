@@ -1,0 +1,90 @@
+.title-change-input {
+  width: 87%;
+  position: absolute;
+  left: 0;
+  border: none;
+  box-shadow: 2px 4px 8px rgba(0, 5, 97, 0.1);
+  border-radius: 5px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: #181c27;
+  padding: 6px 5px;
+  outline: none;
+}
+
+.wrapper {
+  position: absolute;
+  width: 370px;
+  top: 50%;
+  height: 30px;
+  left: 70px;
+  transform: translateY(-50%);
+}
+
+.btn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.iconPencil {
+  fill: black;
+  width: 20px;
+  height: 20px;
+}
+
+.sprint-change-title-btn {
+  composes: btn;
+  background-image: url('../../icons/symbol-defs.svg#icon-pencil');
+}
+
+.sprint-change-title-btn--active {
+  composes: btn;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sprint-change-title-btn:hover {
+  background-image: url('../../icons/symbol-defs.svg#icon-pencil');
+}
+
+.sprint-change-title-btn--active:hover {
+  background-image: url('../../icons/symbol-defs.svg#icon-save');
+}
+
+.sprint-title {
+  margin-right: 40px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  color: #181c27;
+  max-width: 340px;
+  word-wrap: break-word;
+}
+
+.project-header {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  color: #181c27;
+  display: inline-block;
+  margin-right: 20px;
+  word-wrap: break-word;
+  max-width: 300px;
+}
