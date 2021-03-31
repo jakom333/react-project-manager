@@ -15,7 +15,6 @@ const App = () => {
   return (
     <div>
       <Main />
-
       {/* <h1>Hello world</h1>
       <button type="button" onClick={() => setShowModal(true)}>
         Open modal
