@@ -12,9 +12,11 @@ import Main from './main/Main';
 const App = () => {
   // const [showModal, setShowModal] = useState(false);
   const token = useSelector(state => state.auth.token?.accessToken);
+  const sid = useSelector(state => state.auth.token?.sid);
   const refreshToken = useSelector(state => state.auth.token?.refreshToken);
   const history = useHistory();
-  useEffect(async () => {
+
+  const getResult = async () => {
     try {
       const response = await axios.get(
         'https://sbc-backend.goit.global/project',
@@ -22,17 +24,22 @@ const App = () => {
           headers: { Authorization: token },
         },
       );
-      console.log(response.data);
+      // console.log(response.data);
 
-      // {dispatch(setProjects(response.data))}
+      // {dispatch(projectsSuccess(response.data))}
     } catch (error) {
-      const response = await axios.get(
+      const response = await axios.post(
         'https://sbc-backend.goit.global/auth/refresh',
         {
           headers: { Authorization: refreshToken },
+          data: sid,
         },
       );
+      console.log(response);
     }
+  };
+  useEffect(async () => {
+    await getResult();
 
     if (getIsAuthenticated) return;
     if (history.location.pathname === '/') {
