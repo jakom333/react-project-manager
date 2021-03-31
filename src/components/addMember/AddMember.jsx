@@ -55,58 +55,6 @@ const AddMember = () => {
 export default AddMember;
 
 // const AddMember = () => {
-//   return (
-//     <div>
-//       <Formik
-//         initialValues={{
-//           email: ``,
-//         }}
-//         validationSchema={formSchema}
-//         onSubmit={data => console.log(data)}
-//       >
-//         {({
-//           handleSubmit,
-//           handleChange,
-//           handleBlur,
-//           values,
-//           errors,
-//           touched,
-//         }) => {
-//           // console.log(errors);
-//           return (
-//             <div className={styles.formContainer}>
-//               <h2 className={styles.titleForm}>Add new project member</h2>
-//               <Form onSubmit={handleSubmit}>
-//                 <div className={styles.formGroup}>
-//                   <input
-//                     className={styles.input}
-//                     name="email"
-//                     type="text"
-//                     placeholder="E-mail"
-//                     onChange={handleChange}
-//                     onBlur={handleBlur}
-//                     value={values.email}
-//                   />
-//                   <label htmlFor="email" className={styles.formLabel}>
-//                     E-mail
-//                   </label>
-//                   {errors.email && touched.email && (
-//                     <p className={styles.error}>{`* ${errors.email}`}</p>
-//                   )}
-//                 </div>
-//                 <Button>Done</Button>
-//               </Form>
-//             </div>
-//           );
-//         }}
-//       </Formik>
-//     </div>
-//   );
-// };
-
-// export default AddMember;
-
-// const AddMember = () => {
 //   const [member, setMember] = useState(initialState);
 
 //   const handleChange = event => {
