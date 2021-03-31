@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 320px;
+
+  flex-direction: column;
+  padding: 28px 20px;
+}
+
+.title {
+  display: block;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(24, 28, 39, 0.2);
+  margin-bottom: 40px;
+}
+
+.checkbox {
+  margin-bottom: 40px;
+}

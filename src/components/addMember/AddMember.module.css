@@ -1,15 +1,17 @@
 
 @value accentColor from '../../main.module.css';
+@value greyColor from '../../main.module.css';
+
 
 
 .formContainer{
     max-width: 320px ;
-    outline: 1px solid tomato;
+    outline: 1px solid accentColor;
     padding-top: 63px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 80px;
-    text-align: center;
+    /* text-align: center; */
     margin: 0 auto;
  }
 
@@ -21,49 +23,67 @@ line-height: 32px;
 display: block;
 align-items: center;
 text-align: center;
-color:  #181C27;
+color: accentColor;
 margin-bottom: 30px;
 }
   
+.formGroup{
+  transition: all .3s;
+}
+
+.formLabel{
+  display: inline-block;
+    margin-bottom:30px ;
+    max-width: 280px;
+    color:greyColor;
+  
+    transform: translate(20px,-60px) ;
+    font-size: 18px;
+    transform-origin: 0 0;
+  transition: all .3s;
+}
+
+
 
   .input {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+    width: 100%;
     outline: none;
-    border: none;
-    border-bottom: 1px solid #181C27;
-    /* cursor: pointer; */
+    border-color:greyColor;
+    border-style: none none solid none;
     font-size: 16px;
     margin-bottom:30px ;
     max-width: 280px;
-    color: #181C27;
     opacity: 60%;
+    transition: all .5s;
+    
   }
   
-  .input:focus {
-    outline-color: #FF6B08;
+
+  .input::placeholder{
+    color:transparent;
+    pointer-events: none;
   }
 
+ 
+.input:focus{
+  box-shadow: none;
+  outline: none;
+  border-color:accentColor ;
+}
 
-.message{
-font-size: 20px;
-line-height: 20px;
-letter-spacing: 0.04em;
-color: #181C27;
-text-align: left;
-margin-bottom: 60px;
+.input:focus + .formLabel,
+.input:not(:placeholder-shown)+ .formLabel{
+  transform: translate(15px,-80px) scale(.8);
 }
 
 
-/*==================TABLET=========================*/
-
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 480px;
-    padding: 0 20px;
-    width: 100%;
-    margin: 0 auto;
-  }
+.formGroup:focus-within{
+  transform:scale(1.08,1.08);
 }
+
+
+

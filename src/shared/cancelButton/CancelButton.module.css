@@ -1,5 +1,5 @@
 .cancelBtn{
-     display: inline-block;
+   display: block;
     margin-top: 20px;
     background-color:transparent;
     border: none;
@@ -10,11 +10,16 @@
     text-align: center;
     text-decoration-line: underline;
     color: rgba(24, 28, 39, 0.6);
-     height: 44px;
-     cursor: pointer;
+     transition: 0.2s ease-in-out;
+      cursor: pointer;
+    border-radius: 25px;
+     padding: 11px 35px 11px 35px;
+      margin: 0 auto;
+      margin-top: 20px;
 }
 
 .cancelBtn:hover{
-transform: scale(1.1);
+transform: scale(1.05);
+transition: 0.5s ease-in-out;
 }
 
