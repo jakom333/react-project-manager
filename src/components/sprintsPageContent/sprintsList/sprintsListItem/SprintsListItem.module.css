@@ -1,0 +1,22 @@
+.sprintListItem {
+  width: 280px;
+  background-color: #ffffff;
+  padding: 20px;
+  min-height: 170px;
+  box-shadow: 0px 6px 26px rgba(0, 5, 97, 0.1);
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .sprintListItem {
+    width: 216px;
+    min-height: 255px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sprintListItem {
+    width: 270px;
+    min-height: 224px;
+  }
+}

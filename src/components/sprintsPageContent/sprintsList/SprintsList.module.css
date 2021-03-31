@@ -1,0 +1,21 @@
+.sprintList {
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 280px;
+}
+
+@media (min-width: 768px) {
+  .sprintList {
+    gap: 20px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sprintList {
+    gap: 30px;
+    margin-left: 56px;
+  }
+}

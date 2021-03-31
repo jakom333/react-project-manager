@@ -1,20 +1,42 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { getIsAuthenticated } from '../redux/auth/auth-selectors';
+import { getProjects } from '../redux/projects/projects-operations';
+import Header from './header/Header';
+// import AddMember from './addMember/AddMember';
 // import MainModal from '../shared/mainModal/MainModal';
 import Main from './main/Main';
+// import SprintsPage from '../pages/sprintsPage/SprintsPage';
 
 const App = () => {
   // const [showModal, setShowModal] = useState(false);
+  const token = useSelector(state => state.auth.token?.accessToken);
+  const isAuthenticated = useSelector(getIsAuthenticated);
   const history = useHistory();
-  useEffect(() => {
-    if (history.location.pathname === '/') {
+  const dispatch = useDispatch();
+
+  useEffect(async () => {
+    if (token) {
+      await dispatch(getProjects());
+      return;
+    }
+    // console.log(response);
+    if (token) return;
+
+    if (!token) {
       history.push('/registration');
     }
   }, [history]);
 
   return (
     <div>
+      <Header />
+
       <Main />
+      {/* <SprintsPage/> */}
+      {/* <AddMember /> */}
 
       {/* <h1>Hello world</h1>
       <button type="button" onClick={() => setShowModal(true)}>
