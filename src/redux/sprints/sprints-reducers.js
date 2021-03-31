@@ -10,7 +10,7 @@ import {
   fetchSprintsRequest,
   fetchSprintsSucces,
   fetchSprintsError,
-} from './phonebook-actions';
+} from './sprints-actions';
 
 const sprints = createReducer([], {
   [fetchSprintsSucces]: (_, action) => action.payload,

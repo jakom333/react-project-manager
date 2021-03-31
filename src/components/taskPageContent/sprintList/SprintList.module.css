@@ -1,8 +1,36 @@
 .sprintsButtonBackContainer {
+  padding: 0 20px;
+  display: block;
+  height: 37px;
   display: flex;
   align-items: center;
-  min-height: 37px;
-  border-bottom: 1px solid rgb(221, 226, 226);
+  border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+}
+
+.buttonBack {
+  padding: 0;
+  width: 280px;
+  height: 17px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+}
+.iconBack {
+  margin-right: 20px;
+  width: 30px;
+  height: 10px;
+}
+
+.showProject {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.66;
+  letter-spacing: 0.04em;
+  color: blackColor;
 }
 
 .sprintsButtonCreateContainer {
@@ -34,11 +62,6 @@
 }
 
 @media (min-width: 768px) {
-  .sprintsContainer {
-    padding-left: 40px;
-    padding-right: 5px;
-  }
-
   .sprintsButtonBackContainer {
     border-bottom: none;
   }

@@ -9,8 +9,9 @@ import {
   fetchSprintsRequest,
   fetchSprintsSucces,
   fetchSprintsError,
-} from './phonebook-actions';
+} from './sprints-actions';
 
+// process.env.REACT_APP_BASE_URL;
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
 const fetchSprints = projectId => async dispatch => {
