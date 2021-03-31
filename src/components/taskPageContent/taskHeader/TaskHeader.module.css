@@ -27,6 +27,10 @@
   padding-left: 10px;
 }
 
+.buttonDescription {
+  display: none;
+}
+
 .control {
   display: flex;
   align-items: center;
@@ -41,6 +45,19 @@
   font-weight: 500;
 
   color: #181c27;
+}
+
+.iconSearch {
+  width: 20px;
+  height: 20px;
+}
+
+.searchBtn {
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
 }
 
 .totalDays,
@@ -109,6 +126,10 @@
     line-height: 22px;
   }
 
+  .tasksHeader {
+    display: none;
+  }
+
   .input {
     width: 250px;
 
@@ -147,10 +168,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .headerWrapper {
-    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
-  }
-
   .titleBlock {
     justify-content: start;
   }
@@ -168,11 +185,8 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .sprintHeader {
-    display: flex;
-
     margin-right: auto;
     margin-left: auto;
-    padding-bottom: 20px;
     padding-right: 40px;
     padding-left: 20px;
   }
@@ -181,6 +195,46 @@
     justify-content: space-between;
     width: 100%;
   }
+
+  .tasksHeader {
+    position: relative;
+    display: flex;
+    /* max-width: 870px; */
+    height: 50px;
+    font-weight: normal;
+    font-style: normal;
+    margin-top: 40px;
+    margin-bottom: 9px;
+
+    font-size: 14px;
+    line-height: 17px;
+    color: #181c27;
+    padding-left: 20px;
+  }
+
+  .tasksHeaderText {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    max-width: 100px;
+    cursor: default;
+  }
+
+  .tasksHeaderText:first-child {
+    display: none;
+  }
+
+  .tasksHeaderText:not(:last-child) {
+    margin-right: 60px;
+  }
+
+  .searchBtn {
+    position: absolute;
+    left: 410px;
+    bottom: 150px;
+  }
+
   .switch {
     margin-right: 40px;
   }
@@ -216,9 +270,6 @@
 }
 
 @media screen and (max-width: 1279px) {
-  .tasksHeader {
-    display: none;
-  }
   /* .input1280Wrapper {
     display: none;
   } */
@@ -243,14 +294,16 @@
     /* margin-right: 86px; */
   }
 
-  .buttonDescription{
-    margin-left: 20px;
-    font-style: normal;
-    font-weight: 500;
+  .buttonDescription {
+    display: inline-block;
+    font-family: 'Montserrat';
     font-size: 18px;
+    line-height: 17px;
+    font-weight: 500;
+    font-style: normal;
+    margin-left: 20px;
     line-height: 22px;
-    letter-spacing: 0.04em;
-    color: #181C27;
+    color: #181c27;
   }
 
   .tasksHeader {
@@ -261,6 +314,7 @@
     font-weight: normal;
     font-style: normal;
     margin-top: 40px;
+    margin-bottom: 9px;
 
     font-size: 14px;
     line-height: 17px;
@@ -268,6 +322,10 @@
     padding-left: 30px;
   }
   .tasksHeaderText {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
     max-width: 100px;
     cursor: default;
   }
@@ -285,16 +343,25 @@
     position: relative;
   }
 
-  .searchBtn {
-    display: block;
+  .searchInput {
+    display: none;
     border: none;
-    background-color: transparent;
-    cursor: pointer;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    background-color: #f1f2f7;
     outline: none;
+    padding-left: 10px;
+    height: 40px;
   }
 
-  .iconSearch {
-    width: 20px;
-    height: 20px;
+  .searchInputActive {
+    width: 130px;
+
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    background-color: #f1f2f7;
+    outline: none;
+    padding-left: 10px;
+    height: 40px;
   }
 }

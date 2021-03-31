@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import styles from './TaskHeader.module.css';
 
 import ChangeTitle from '../../titleEditor/TitleEditor';
@@ -7,7 +7,7 @@ import RoundButton from '../../../shared/roundButton/RoundButton';
 import sprite from '../../../icons/symbol-defs.svg';
 // import moment from 'moment';
 
-export default function SprintHeader() {
+export default function SprintHeader({ handleInput }) {
   return (
     <div className={styles.headerWrapper}>
       <section className={styles.sprintHeader}>
@@ -27,7 +27,7 @@ export default function SprintHeader() {
           <ChangeTitle />
           <div className={styles.buttonBox}>
             <RoundButton />
-            <p className={styles.buttonDescription}>Create sprint</p>
+            <p className={styles.buttonDescription}>Create task</p>
           </div>
         </div>
 
@@ -37,10 +37,18 @@ export default function SprintHeader() {
             Scheduled <br />
             hours
           </p>
-          <p className={styles.tasksHeaderText}>
-            Hours spent / <br /> per day{' '}
-          </p>
+          <p className={styles.tasksHeaderText}>Hours spent / per day </p>
           <p className={styles.tasksHeaderText}>Hours spent</p>
+
+          <div>
+            <input
+              type="text"
+              name="filter"
+              onChange={handleInput}
+              className={styles.searchInputActive}
+            ></input>
+          </div>
+
           <button className={styles.searchBtn}>
             <svg className={styles.iconSearch}>
               <use href={sprite + '#icon-search'}></use>
