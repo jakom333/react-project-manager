@@ -11,6 +11,10 @@
   font-weight: 500;
 font-size: 18px;
 line-height: 22px;
+border:none;
+outline: none;
+ cursor: pointer;
+
 }
 
 .button:hover {

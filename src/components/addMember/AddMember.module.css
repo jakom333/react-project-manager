@@ -85,5 +85,9 @@ margin-bottom: 30px;
   transform:scale(1.08,1.08);
 }
 
+.error{
+  color: accentColor;
+  margin-top: -85px;
+}
 
 

@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
       <Main />
-      {/* <AddMember /> */}
+      <AddMember />
 
       {/* <h1>Hello world</h1>
       <button type="button" onClick={() => setShowModal(true)}>
