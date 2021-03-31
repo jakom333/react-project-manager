@@ -40,20 +40,20 @@ export default function SprintHeader({ handleInput }) {
           <p className={styles.tasksHeaderText}>Hours spent / per day </p>
           <p className={styles.tasksHeaderText}>Hours spent</p>
 
-          <div>
+          <label>
             <input
               type="text"
               name="filter"
               onChange={handleInput}
               className={styles.searchInputActive}
             ></input>
-          </div>
 
-          <button className={styles.searchBtn}>
-            <svg className={styles.iconSearch}>
-              <use href={sprite + '#icon-search'}></use>
-            </svg>
-          </button>
+            <button className={styles.searchBtn}>
+              <svg className={styles.iconSearch}>
+                <use href={sprite + '#icon-search'}></use>
+              </svg>
+            </button>
+          </label>
         </div>
       </section>
     </div>
