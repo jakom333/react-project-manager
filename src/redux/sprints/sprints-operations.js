@@ -14,11 +14,12 @@ import {
 // process.env.REACT_APP_BASE_URL;
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
-const fetchSprints = projectId => async dispatch => {
+const fetchSprints = projectId => async (dispatch, getState) => {
   dispatch(fetchSprintsRequest());
 
   try {
-    const { data } = await axios.get(`/sprint/${projectId}`);
+    const { data } = await axios.get(`/sprint/${getState().projects[0]._Id}`);
+    console.log(data);
     dispatch(fetchSprintsSucces(data));
   } catch (error) {
     dispatch(fetchSprintsError(error.message));
