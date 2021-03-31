@@ -1,8 +1,5 @@
 .card {
   width: 280px;
-  height: 214px;
-  box-shadow: 0px 6px 26px rgba(0, 5, 97, 0.1);
-  border-radius: 5px;
   padding: 20px 20px 10px 20px;
 }
 .title {
@@ -15,17 +12,14 @@
   border-bottom: 1px solid rgba(24, 28, 39, 0.2);
   margin-bottom: 20px;
 }
-.list {
-  list-style: none;
-}
 .item {
+  display: flex;
+  justify-content: space-between;
   font-family: Montserrat;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
   letter-spacing: 0.04em;
-
-  /* margin-bottom: 20px; */
 }
 .item:not(:last-child) {
   margin-bottom: 20px;
@@ -35,6 +29,7 @@
   border: none;
   outline: none;
   border-bottom: 1px solid rgba(24, 28, 39, 0.2);
+  text-align: right;
 }
 .button {
   width: 20px;
@@ -45,7 +40,49 @@
   border-radius: 50%;
 }
 .icon {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 16px;
   fill: white;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 216px;
+  }
+  .title {
+    width: 176px;
+  }
+  .item {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .input {
+    width: 77px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .card {
+    width: 868px;
+    display: flex;
+  }
+  .title {
+    width: 170px;
+  }
+  .input {
+    width: 105px;
+    text-align: center;
+  }
+  .list {
+    width: 698px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .itemName {
+    display: none;
+  }
+  .item:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
