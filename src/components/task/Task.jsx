@@ -8,19 +8,19 @@ const Task = () => {
       <h2 className={styles.title}>KN-1 Configure project</h2>
       <ul className={styles.list}>
         <li className={styles.item}>
-          <span>Заплановано годин </span>
+          <span className={styles.itemName}>Scheduled hours</span>
           <span>0</span>
         </li>
         <li className={styles.item}>
-          <span>Витрачено год / день </span>
+          <span className={styles.itemName}>Spent hours / day</span>
           <input className={styles.input} type="text" />
         </li>
         <li className={styles.item}>
-          <span>Витрачено годин </span>
+          <span className={styles.itemName}>Spent hours</span>
           <span>0</span>
         </li>
-
         <li className={styles.item}>
+          <span></span>
           <button className={styles.button} type="button">
             <svg className={styles.icon}>
               <use href={sprite + '#icon-delete-bin'} />
@@ -29,11 +29,26 @@ const Task = () => {
         </li>
       </ul>
 
-      {/* <button className={styles.button} type="button">
-        <svg className={styles.icon}>
-          <use href={sprite + '#icon-delete-bin'} />
-        </svg>
-      </button> */}
+      {/* ============================================== */}
+      {/* <ul>
+        <li className={styles.item}>
+          <span>0</span>
+        </li>
+        <li className={styles.item}>
+          <input className={styles.input} type="text" />
+        </li>
+        <li className={styles.item}>
+          <span>0</span>
+        </li>
+        <li className={styles.item}>
+          <span></span>
+          <button className={styles.button} type="button">
+            <svg className={styles.icon}>
+              <use href={sprite + '#icon-delete-bin'} />
+            </svg>
+          </button>
+        </li>
+      </ul> */}
     </div>
   );
 };
