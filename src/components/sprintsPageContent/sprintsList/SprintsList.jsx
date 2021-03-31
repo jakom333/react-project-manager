@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './SprintsList.module.css';
+import SprintsListItem from './sprintsListItem/SprintsListItem';
 
 const sprintsList = [
   {
@@ -21,21 +22,13 @@ const sprintsList = [
 ];
 
 const SprintsList = () => {
-  useEffect(() => {}, []);
 
   return (
-    <div className={styles.box}>
-      <div className={styles.projectDetails}>
+    <div>
+      <div>
         <ul className={styles.sprintList}>
           {sprintsList.map(({ title, id }) => (
-            <li key={id} className={styles.sprintListItem}>
-              <div className={styles.listItemBox}>
-                <h3 className={styles.sideItemName}>{title}</h3>
-                <p>Дата начала</p>
-                <p>Дата конца</p>
-                <p>Дата длительность</p>
-              </div>
-            </li>
+            <SprintsListItem key={id} title={title} />
           ))}
         </ul>
       </div>
