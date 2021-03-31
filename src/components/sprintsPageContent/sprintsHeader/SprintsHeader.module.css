@@ -1,112 +1,25 @@
 
-.iconPencil{
-    fill: black;
-    width: 20px;
-    height: 20px;
+.titleBox{
+    display: flex;
 }
-.iconAddPeople{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+.addPeopleBox{
+    margin: 0;
+
 }
 
 .buttonFix{
-    background-color: #FFFFFF;
+    background-color: transparent;
     outline: none;
     border: none;
 }
 
-@media screen and (max-width: 767px){
-
-    .addPeopleBox{
-        margin-top: 30px;
-    }
-
-    .head{
-        margin: 0;
-        display: flex;
-
-    }
-
-    .buttonBox{
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        z-index: 5;
-        margin-right: 0;
-    }
-
-
-    .description{
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 17px;
-        letter-spacing: 0.04em;
-        color: #181C27;
-        width: 280px;
-    }
-
-    .pageTitle{
-        margin: 0;
-        display: flex;
-        align-items: center;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 26px;
-        line-height: 32px;
-        letter-spacing: 0.04em;
-        color: #181C27;
-
-    }
-
-    .description{
-        margin: 0;
-    }
-
-
-    .pageText{
-        display: none;
-    }
-
-    .boxBack{
-        display: inline-block;
-        width: 130px;
-        position: absolute;
-        left: 44px;
-        top: 0px;
-    }
-
-
-    .titleBox{
-        margin: 0;
-        display: flex;
-        /*align-items: center;*/
-    }
-
-    .pageTitle{
-        margin: 0;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 26px;
-        line-height: 32px;
-
-        letter-spacing: 0.04em;
-
-        color: #181C27;
-    }
-}
-.titleBox{
-    margin-top: 67px;
-    margin-bottom: 30px;
-    display: flex;
-}
 .buttonAddPeople{
+    margin: 0;
     display: flex;
     align-items: center;
     outline: none;
     border: none;
-    background-color: #FFFFFF;
+    background-color: transparent;
 }
 .addPeopleText{
     font-style: normal;
@@ -119,16 +32,102 @@
     text-decoration-line: underline;
     color: #181C27;
 }
+.description{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+
+@media screen and (min-width: 768px){
+    .boxBack{
+display: none;
+    }
+}
+
+.iconPencil{
+    fill: black;
+    width: 20px;
+    height: 20px;
+}
+.iconAddPeople{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 767px){
+
+    .head{
+        margin: 0;
+        display: flex;
+    }
+
+    .buttonBox{
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 5;
+        margin-right: 0;
+    }
+
+    .description{
+
+        padding-right: 20px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.04em;
+        color: #181C27;
+    }
+
+    .pageTitle{
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        color: #181C27;
+
+    }
+
+    .pageText{
+        display: none;
+    }
+
+    .titleBox{
+        display: flex;
+    }
+
+    .boxBack{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+    }
+
+    .showProject{
+        margin: 0;
+        width: 100%;
+    }
+
+}
+
+
 
 @media screen and  (min-width: 768px) and (max-width: 1279px){
-
-
-
     .box{
         position: relative;
         display: flex;
     }
-
 
     .boxBack{
         position: absolute;
@@ -246,7 +245,6 @@
     .description{
         width: 400px;
         margin-top: 0;
-        margin-bottom: 30px;
     }
 
 
@@ -263,8 +261,5 @@
         display: flex;
     }
 
-
-
 }
-
 

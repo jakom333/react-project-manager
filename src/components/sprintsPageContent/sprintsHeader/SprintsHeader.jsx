@@ -2,10 +2,15 @@ import React from 'react';
 import styles from './SprintsHeader.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
 import RoundButton from '../../../shared/roundButton/RoundButton';
+import ButtonShow from '../../../shared/buttonShow/ButtonShow';
 
 const SprintsHeader = () => {
 
-    return (<div>
+    return (<div  className={styles.boxHead}>
+      <div className={styles.boxBack}>
+        <ButtonShow/>
+        <p className={styles.showProject}>Show projects</p>
+      </div>
       <div className={styles.head}>
         <div className={styles.titleBox}>
           <h2 className={styles.pageTitle}>PROJECT NAME</h2>

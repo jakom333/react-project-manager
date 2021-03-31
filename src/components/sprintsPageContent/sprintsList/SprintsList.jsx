@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './SprintsList.module.css';
-import SprintsHeader from '../sprintsHeader/SprintsHeader';
-
 
 const sprintsList = [
   {
@@ -23,13 +21,11 @@ const sprintsList = [
 
 ];
 
-
 const SprintsList = () => {
 
   return (
     <div className={styles.box}>
-      <SprintsHeader/>
-          <div className={styles.projectDetails}>
+         <div className={styles.projectDetails}>
             <ul className={styles.sprintList}>
               {sprintsList.map(({ title, id }) => (
                 <li key={id} className={styles.sprintListItem}>
