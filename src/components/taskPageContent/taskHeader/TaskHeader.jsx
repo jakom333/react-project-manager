@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './TaskHeader.module.css';
 
 import ChangeTitle from '../../titleEditor/TitleEditor';
-import style from '../sprintList/SprintList.module.css';
+// import style from '../sprintList/SprintList.module.css';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import sprite from '../../../icons/symbol-defs.svg';
 // import moment from 'moment';
@@ -25,9 +25,9 @@ export default function SprintHeader() {
         </div>
         <div className={styles.control}>
           <ChangeTitle />
-          <div className={style.buttonBox}>
+          <div className={styles.buttonBox}>
             <RoundButton />
-            <p className={style.pageText}>Create sprint</p>
+            <p className={styles.buttonDescription}>Create sprint</p>
           </div>
         </div>
 
@@ -41,7 +41,7 @@ export default function SprintHeader() {
             Hours spent / <br /> per day{' '}
           </p>
           <p className={styles.tasksHeaderText}>Hours spent</p>
-          <button>
+          <button className={styles.searchBtn}>
             <svg className={styles.iconSearch}>
               <use href={sprite + '#icon-search'}></use>
             </svg>

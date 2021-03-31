@@ -43,11 +43,6 @@
   color: #181c27;
 }
 
-.iconSearch {
-  width: 20px;
-  height: 20px;
-}
-
 .totalDays,
 .separator,
 .date {
@@ -178,6 +173,8 @@
     margin-right: auto;
     margin-left: auto;
     padding-bottom: 20px;
+    padding-right: 40px;
+    padding-left: 20px;
   }
   .controlAndSearchBlock {
     display: flex;
@@ -230,6 +227,7 @@
 @media screen and (min-width: 1280px) {
   .sprintHeader {
     padding-left: 70px;
+    padding-right: 86px;
     padding-top: 20px;
   }
 
@@ -237,6 +235,22 @@
     margin-right: 25px;
     max-width: 500px;
     padding-bottom: 30px;
+  }
+
+  .buttonBox {
+    display: flex;
+    align-items: center;
+    /* margin-right: 86px; */
+  }
+
+  .buttonDescription{
+    margin-left: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.04em;
+    color: #181C27;
   }
 
   .tasksHeader {
@@ -269,5 +283,18 @@
   }
   .sprintHeader {
     position: relative;
+  }
+
+  .searchBtn {
+    display: block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .iconSearch {
+    width: 20px;
+    height: 20px;
   }
 }
