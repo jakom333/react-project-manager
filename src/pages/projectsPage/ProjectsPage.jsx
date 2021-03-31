@@ -14,7 +14,7 @@ const ProjectsPage = () => {
              <RoundButton />
              <p className={styles.pageText}>Create project</p>
            </div>
-        </div>
+           </div>
         <ProjectsList />
       </div>
    );

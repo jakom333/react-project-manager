@@ -1,0 +1,241 @@
+.title{
+    display: flex;
+    align-items: center;
+}
+
+.titleBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.addPeopleBox{
+    margin: 0;
+}
+
+.buttonFix{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.buttonAddPeople{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.addPeopleText{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    text-decoration-line: underline;
+    color: #181C27;
+}
+.description{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+
+@media screen and (min-width: 768px){
+    .boxBack{
+    display: none;
+    }
+}
+
+.iconPencil{
+    fill: black;
+    width: 20px;
+    height: 20px;
+}
+.iconAddPeople{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 767px){
+
+    .head{
+        margin-top: 40px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .buttonBox{
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 5;
+        margin-right: 0;
+    }
+
+    .description{
+
+        padding-right: 20px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.04em;
+        color: #181C27;
+    }
+
+    .pageTitle{
+        margin-bottom: 0px;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+        color: #181C27;
+        margin-top: 0;
+
+    }
+
+    .pageText{
+        display: none;
+    }
+
+    .boxBack{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+    }
+
+    .showProject{
+        margin: 0;
+        width: 100%;
+    }
+
+}
+
+
+@media screen and  (min-width: 768px) and (max-width: 1279px){
+
+    .boxBack{
+        position: absolute;
+        left: 44px;
+        top: 20px;
+        width: 130px;
+        margin-bottom: 165px;
+    }
+
+
+    .head{
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .pageText{
+        display: none;
+
+    }
+    .pageTitle{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .description{
+        width: 400px;
+        margin-top: 0;
+    }
+
+
+    .addPeopleText{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
+        text-decoration-line: underline;
+        color: #181C27;
+    }
+
+}
+
+@media screen and (min-width: 1280px){
+
+    .boxBack{
+        position: absolute;
+        left: 44px;
+        top: 20px;
+        width: 130px;
+        margin-bottom: 165px;
+    }
+
+    .head{
+
+        margin-top: 40px;
+        margin-bottom: 20px;
+
+    }
+    .buttonBox{
+        display: flex;
+        align-items: center;
+        margin-right: 86px;
+    }
+    .pageText{
+        margin-left: 20px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
+        color: #181C27;
+
+    }
+    .pageTitle{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 44px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #181C27;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .description{
+        width: 400px;
+        margin-top: 0;
+    }
+
+
+    .addPeopleText{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.04em;
+        text-decoration-line: underline;
+        color: #181C27;
+    }
+
+
+}
