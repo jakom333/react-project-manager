@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div>
-      <Main />
+      {/* <Main /> */}
       {/* <SprintsPage/> */}
       {/* <AddMember /> */}
 

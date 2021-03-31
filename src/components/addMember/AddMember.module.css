@@ -4,14 +4,18 @@
 
 
 
+/*==================MOBILE=========================*/
+
+@media screen and (min-width: 320px) {
+
 .formContainer{
     max-width: 320px ;
     outline: 1px solid accentColor;
     padding-top: 63px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 80px;
-    /* text-align: center; */
+    /* padding-bottom: 75px; */
+  /* text-align: center; */
     margin: 0 auto;
  }
 
@@ -23,7 +27,6 @@ line-height: 32px;
 display: block;
 align-items: center;
 text-align: center;
-color: accentColor;
 margin-bottom: 30px;
 }
   
@@ -37,7 +40,8 @@ margin-bottom: 30px;
     max-width: 280px;
     color:greyColor;
     transform: translate(20px,-60px) ;
-  font-size: 18px;
+font-size: 16px;
+line-height: 20px;
    transition: all .3s;
 }
 
@@ -49,13 +53,13 @@ margin-bottom: 30px;
     margin-right: auto;
     padding: 10px;
     width: 100%;
+    height: 30px;
     outline: none;
     border-color:greyColor;
     border-style: none none solid none;
     font-size: 16px;
     margin-bottom:30px ;
     max-width: 280px;
-    opacity: 60%;
     transition: all .5s;
     
   }
@@ -87,4 +91,89 @@ margin-bottom: 30px;
   margin-top: -85px;
 }
 
+}
 
+
+/*==================TABLET=========================*/
+
+@media screen and (min-width: 768px) {
+
+.formContainer{
+    max-width: 512px ;
+    padding-top: 63px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 75px;
+  /* text-align: center; */
+ }
+
+ 
+  .titleForm {
+font-weight: 500;
+font-size: 36px;
+line-height: 44px;
+display: block;
+margin-bottom: 30px;
+}
+  
+
+.formLabel{
+  margin-bottom:30px ;
+  max-width: 280px;
+  color:greyColor;
+  transform: translate(20px,-60px) ;
+font-size: 18px;
+line-height: 22px;
+
+}
+
+
+  .input {
+    padding: 10px;
+     font-size: 18px;
+    line-height: 22px;
+    margin-bottom:39px ;
+    max-width: 430px;  
+  }
+ 
+}
+
+/*==================DESKTOP=========================*/
+
+@media screen and (min-width: 1280px) {
+
+.formContainer{
+    max-width: 530px ;
+    outline: 1px solid accentColor;
+    padding-top: 120px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* padding-bottom: 202px; */
+  /* text-align: center; */
+    margin: 0 auto;
+ }
+
+ 
+  .titleForm {
+font-weight: 500;
+font-size: 36px;
+line-height: 44px;
+margin-bottom: 50px;
+}
+  
+
+.formLabel{
+  line-height: 22px;
+   font-size: 18px;
+  margin-bottom:30px ;
+  
+}
+
+  .input {
+    font-size: 18px;
+     line-height: 22px;
+    margin-bottom:30px ;
+      max-width: 429px;
+    }
+ 
+}  
