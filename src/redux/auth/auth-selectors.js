@@ -1,3 +1,3 @@
-const getIsAuthenticated = state => state.auth.isLoggedIn;
+const getIsAuthenticated = state => state.auth.isAuthenticated;
 
 export { getIsAuthenticated };
