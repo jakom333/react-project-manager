@@ -4,7 +4,7 @@ import sprite from '../../../icons/symbol-defs.svg';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import ButtonShow from '../../../shared/buttonShow/ButtonShow';
 import MainModal from '../../../shared/mainModal/MainModal';
-import СreateSprintForm from '../../createSprintForm/CreateSprintForm';
+import AddMember from '../../addMember/AddMember';
 
 const SprintsHeader = () => {
   const [showModal, setShowModal] = useState(false);
@@ -32,7 +32,11 @@ const SprintsHeader = () => {
       </div>
       <p className={styles.description}>Короткий опис проекту</p>
       <div className={styles.addPeopleBox}>
-        <button type="button" className={styles.buttonAddPeople}>
+        <button
+          onClick={() => setShowModal(true)}
+          type="button"
+          className={styles.buttonAddPeople}
+        >
           <svg className={styles.iconAddPeople}>
             <use href={sprite + '#icon-add-group'}></use>
           </svg>
@@ -43,7 +47,7 @@ const SprintsHeader = () => {
           setShowModal={setShowModal}
           onClose={() => setShowModal(false)}
         >
-          <СreateSprintForm />
+          <AddMember />
         </MainModal>
       </div>
     </div>
