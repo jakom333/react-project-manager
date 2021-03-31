@@ -30,7 +30,7 @@ const AddMember = () => {
 
   return (
     // <MainModal>
-    <div className={container}>
+    <div className={styles.formContainer}>
       <h2 className={styles.titleForm}>Add new project member</h2>
       <form onSubmit={handleSubmit} className={styles.memberForm}>
         <div className={styles.formGroup}>
