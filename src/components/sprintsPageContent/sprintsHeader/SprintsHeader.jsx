@@ -25,7 +25,7 @@ const SprintsHeader = () => {
             </button>
           </div>
           <div className={styles.buttonBox}>
-            <RoundButton />
+            <RoundButton onClick={() => setShowModal(true)} />
             <p className={styles.pageText}>Create sprint</p>
           </div>
         </div>

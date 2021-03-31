@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import sprite from '../../../icons/symbol-defs.svg';
 import styles from './SprintListSideBar.module.css';
+import MainModal from '../../../shared/mainModal/MainModal';
+import СreateSprintForm from '../../createSprintForm/CreateSprintForm';
 
 const sprintsList = [
   {
@@ -31,10 +33,12 @@ const sprintsList = [
 ];
 
 const SprintList = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className={styles.sprintsContainer}>
       <div className={styles.sprintsButtonBackContainer}>
-        <button type='button' className={styles.buttonBack}>
+        <button type="button" className={styles.buttonBack}>
           <svg className={styles.iconBack}>
             <use href={sprite + '#icon-Arrow-1'}></use>
           </svg>
@@ -52,9 +56,16 @@ const SprintList = () => {
         </ul>
       </div>
       <div className={styles.sprintsButtonCreateContainer}>
-        <RoundButton>Button + </RoundButton>
+        <RoundButton onClick={() => setShowModal(true)} />
 
         <p>create sprint</p>
+        <MainModal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          onClose={() => setShowModal(false)}
+        >
+          <СreateSprintForm />
+        </MainModal>
       </div>
     </div>
   );
