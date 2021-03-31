@@ -4,8 +4,6 @@ import sprite from '../../../icons/symbol-defs.svg';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 const ProjectItem = ({ item }) => {
-  console.log(item);
-
   const match = useRouteMatch();
   const history = useHistory();
 
