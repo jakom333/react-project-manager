@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import styles from './MainModal.module.css';
 import sprite from '../../icons/symbol-defs.svg';
+import Button from '../button';
+import CancelButton from '../cancelButton/CancelButton';
 
 const MainModal = ({
   children,
@@ -26,21 +28,14 @@ const MainModal = ({
             className={styles.closeBtn}
             onClick={() => onClose()}
           >
-            <svg>
+            <svg className={styles.icon}>
               <use href={sprite + '#icon-cross'} />
             </svg>
           </button>
           {children}
-          <button type="button" className={styles.closeBtn} onClick={callback}>
-            Готово
-          </button>
-          <button
-            type="button"
-            className={styles.closeBtn}
-            onClick={() => onClose()}
-          >
-            Отмена
-          </button>
+
+          <Button onClick={callback}>Done</Button>
+          <CancelButton onClose={onClose} />
         </div>
       </div>
     )
