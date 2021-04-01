@@ -4,7 +4,6 @@ import elipse2 from '../../images/background/Ellipse2.svg';
 import elipse3 from '../../images/background/Ellipse3.svg';
 import elipse4 from '../../images/background/Ellipse4.svg';
 import elipse5 from '../../images/background/Ellipse5.svg';
-import elipse65 from '../../images/background/Rectangle65.svg';
 import union_white from '../../images/background/Union.white.svg';
 import union from '../../images/background/Union.svg';
 

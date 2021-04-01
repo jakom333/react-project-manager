@@ -13,7 +13,7 @@ const SprintsList = () => {
 
   useEffect(() => {
     dispatch(fetchSprints(params.projectId));
-  }, [dispatch]);
+  }, [dispatch, params.projectId]);
   return (
     <div>
       <div>

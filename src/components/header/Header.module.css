@@ -29,6 +29,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.underlined:hover {
+  color: #ff6b08;
+  transition: all 0.3s linear;
 }
 
 @media screen and (min-width: 768px) {

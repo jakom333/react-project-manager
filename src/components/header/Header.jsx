@@ -27,13 +27,13 @@ const Header = () => {
       <span>{name} </span>
 
       {isAuthenticated && (
-        <a onClick={onLogOut} className={styles.logOutBtn}>
+        <button type="button" onClick={onLogOut} className={styles.logOutBtn}>
           <svg className={styles.iconSearch}>
             <use href={sprite + '#icon-logout'}></use>
           </svg>
 
           <span className={styles.underlined}>Log out</span>
-        </a>
+        </button>
       )}
     </div>
   );

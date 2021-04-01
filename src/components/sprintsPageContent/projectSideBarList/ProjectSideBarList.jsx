@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './ProjectSideBarList.module.css';
 
-
 const projectList = [
   {
     title: 'Project 1',
@@ -19,23 +18,21 @@ const projectList = [
     title: 'Project 4',
     id: '4',
   },
-
 ];
 
-const ProjectSideBarList  = () => {
-
-    return (
-      <div className={styles.box}>
-        <ul className={styles.sideLeftList}>
-          {projectList .map(({ title, id }) => (
-            <li key={id} className={styles.sideItem}>
-              <div className={styles.sideItemBox}></div>
-              <p className={styles.sideItemName}>{title}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-}
+const ProjectSideBarList = () => {
+  return (
+    <div className={styles.box}>
+      <ul className={styles.sideLeftList}>
+        {projectList.map(({ title, id }) => (
+          <li key={id} className={styles.sideItem}>
+            <div className={styles.sideItemBox}></div>
+            <p className={styles.sideItemName}>{title}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default ProjectSideBarList;

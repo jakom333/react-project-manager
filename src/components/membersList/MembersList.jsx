@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './MembersList.module.css';
-import sprite from '../../icons/symbol-defs.svg';
-import MembersListItem from '../membersListItem/MembersListItem';
+// import sprite from '../../icons/symbol-defs.svg';
+// import MembersListItem from '../membersListItem/MembersListItem';
 import DeleteButton from '../../shared/deleteButton/DeleteButton';
 
 const MembersList = ({ members }) => {

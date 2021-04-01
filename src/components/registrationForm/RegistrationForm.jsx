@@ -19,16 +19,6 @@ export default function RegistrationForm() {
   const dispatch = useDispatch();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submitForm = () => {
-    dispatch(
-      register({
-        email: user.email,
-        password: user.password,
-      }),
-    );
-    setUser(initialState);
-  };
-
   const handleChange = ({ target: { name, value } }) => {
     setUser(prevState => ({ ...prevState, [name]: value }));
   };
@@ -59,9 +49,18 @@ export default function RegistrationForm() {
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmitting) {
+      const submitForm = () => {
+        dispatch(
+          register({
+            email: user.email,
+            password: user.password,
+          }),
+        );
+        setUser(initialState);
+      };
       submitForm();
     }
-  }, [formErrors, isSubmitting]);
+  }, [formErrors, isSubmitting, user.email, user.password, dispatch]);
 
   return (
     <div className={styles.wrapper}>

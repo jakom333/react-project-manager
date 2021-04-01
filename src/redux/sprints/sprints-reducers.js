@@ -1,15 +1,15 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 import {
-  addSprintRequest,
+  // addSprintRequest,
   addSprintSucces,
-  addSprintError,
-  deleteSprintRequest,
+  // addSprintError,
+  // deleteSprintRequest,
   deleteSprintSucces,
-  deleteSprintError,
-  fetchSprintsRequest,
+  // deleteSprintError,
+  // fetchSprintsRequest,
   fetchSprintsSucces,
-  fetchSprintsError,
+  // fetchSprintsError,
 } from './sprints-actions';
 
 const sprints = createReducer([], {
