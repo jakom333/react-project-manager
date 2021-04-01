@@ -4,10 +4,10 @@ import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { createProject } from '../../redux/projects/projects-operations';
-//import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
+
 
 const formSchema = Yup.object().shape({
-  name: Yup.string().required('* Project Name is a required field'),
+  title: Yup.string().required('* Project Name is a required field'),
   description: Yup.string().required('* Description is a required field'),
 });
 
@@ -18,10 +18,7 @@ const initialState = {
 };
 
 const ProjectForm = () => {
-  const [project, setProject] = useState(initialState);
   const dispatch = useDispatch();
-
-//  const { title, description } = projectItem;////  const [errors, setErrors] = useState({});
 
   return (
     <div className={styles.formContainer}>
@@ -33,15 +30,9 @@ const ProjectForm = () => {
         }}
         validationSchema={formSchema}
         onSubmit={values => {
-          alert(JSON.stringify(values, null, 2));
-          // resetForm({ email: '' });
           createProject(values)
-//          setProject(setProject => ({
-//            ...setProject,
-//            [values.title]: values.value,
-//          }));
-          dispatch(createProject(project));
-          setProject(initialState);
+          dispatch(createProject(values));
+
         }}
       >
         <Form className={styles.form}>
