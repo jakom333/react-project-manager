@@ -20,10 +20,6 @@
   position: fixed;
 }
 
-.label {
-  margin-bottom: 30px;
-}
-
 .title {
   margin-bottom: 6px;
   font-family: 'Montserrat', sans-serif;
@@ -38,6 +34,11 @@
 .label {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
+}
+
+.button_wrapper {
+  margin-top: 35px;
 }
 
 .input {
@@ -63,6 +64,10 @@
 .input::placeholder {
   font-family: inherit;
   color: rgba(24, 28, 39, 0.2);
+}
+
+.warning {
+  color: rgba(204, 32, 41, 0.6);
 }
 
 .textUnderbutton {
