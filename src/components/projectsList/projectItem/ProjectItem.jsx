@@ -3,7 +3,9 @@ import styles from './ProjectItem.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
 import { Link, useRouteMatch } from 'react-router-dom';
 
+
 const ProjectItem = ({ item }) => {
+
   const match = useRouteMatch();
   // const history = useHistory();
 
@@ -13,6 +15,7 @@ const ProjectItem = ({ item }) => {
   // };
 
   return (
+
     <li className={styles.projectItem}>
       <Link
         className={styles.projectLink}
@@ -33,3 +36,5 @@ const ProjectItem = ({ item }) => {
 };
 
 export default ProjectItem;
+
+

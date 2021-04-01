@@ -4,7 +4,6 @@ import { Link, useRouteMatch } from 'react-router-dom';
 
 const SprintListItem = ({ item }) => {
   const match = useRouteMatch();
-  console.log(match);
   return (
     <div>
       <li className={styles.sprintListItem}>
