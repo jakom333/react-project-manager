@@ -41,13 +41,15 @@
   top: 129px;
   right: 225px;
 }
-.union_white {
+.orange_ball_small {
   position: absolute;
   right: 0;
   bottom: 0;
 }
-.union_orange {
+.orange_ball_big {
   position: absolute;
-  right: 0;
-  bottom: 33px;
+  width: 542px;
+  height: 502px;
+  left: 770px;
+  top: 233px;
 }
