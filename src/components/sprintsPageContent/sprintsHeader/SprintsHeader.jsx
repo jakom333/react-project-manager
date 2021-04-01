@@ -5,6 +5,7 @@ import RoundButton from '../../../shared/roundButton/RoundButton';
 import ButtonShow from '../../../shared/buttonShow/ButtonShow';
 import MainModal from '../../../shared/mainModal/MainModal';
 import AddMember from '../../addMember/AddMember';
+// import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
 
 const SprintsHeader = () => {
   const [showModal, setShowModal] = useState(false);
@@ -27,6 +28,13 @@ const SprintsHeader = () => {
           <div className={styles.buttonBox}>
             <RoundButton onClick={() => setShowModal(true)} />
             <p className={styles.pageText}>Create sprint</p>
+            {/* <MainModal
+              showModal={showModal}
+              setShowModal={setShowModal}
+              onClose={() => setShowModal(false)}
+            >
+              <CreateSprintForm />
+            </MainModal> */}
           </div>
         </div>
       </div>

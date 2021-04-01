@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import authReducer from './auth/auth-reducers';
 import projects from './projects/projects-reducers';
+import sprints from './sprints/sprints-reducers';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -32,6 +33,8 @@ const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     projects: projects,
+    sprints: sprints,
+
     // projects: () => [
     //   {
     //     members: ['ivan12345@example.com'],
