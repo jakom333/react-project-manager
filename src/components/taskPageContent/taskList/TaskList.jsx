@@ -19,15 +19,13 @@ const TaskList = () => {
   }, [dispatch, params.sprintId]);
 
   return (
-    <div>
       <ul className={styles.taskList}>
         {tasks.map(item => (
-          <li key={item._id}>
+          <li key={item._id} className={styles.taskCard}>
             <TaskListItem item={item}/>
           </li>
         ))}
-      </ul>
-    </div>
+      </ul>   
   );
 };
 

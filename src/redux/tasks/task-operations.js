@@ -26,11 +26,7 @@ const fetchTasks = sprintId => async dispatch => {
   }
 };
 
-const createTask = (title, hoursPlanned, sprintId) => async dispatch => {
-  const task = {
-    title,
-    hoursPlanned,
-  };
+const createTask = (task, sprintId) => async dispatch => {
   dispatch(createTaskRequest());
   try {
     const { data } = await axios.post(`/task/${sprintId}`, task);

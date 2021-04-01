@@ -2,21 +2,21 @@ import React from 'react';
 import styles from './TaskListItem.module.css';
 import sprite from '../../icons/symbol-defs.svg';
 
-const TaskListItem = ({item}) => {
+const TaskListItem = ({ item }) => {
   return (
     <div className={styles.card}>
       <h2 className={styles.title}>{item.title}</h2>
       <ul className={styles.list}>
         <li className={styles.item}>
           <span className={styles.itemName}>Scheduled hours</span>
-          <span>0</span>
+          <span>{item.hoursPlanned}</span>
         </li>
         <li className={styles.item}>
-          <span className={styles.itemName}>Spent hours / day</span>
+          <span className={styles.itemName}>Hours spent / per day</span>
           <input className={styles.input} type="text" />
         </li>
         <li className={styles.item}>
-          <span className={styles.itemName}>Spent hours</span>
+          <span className={styles.itemName}>Hours spent</span>
           <span>0</span>
         </li>
         <li className={styles.item}>
