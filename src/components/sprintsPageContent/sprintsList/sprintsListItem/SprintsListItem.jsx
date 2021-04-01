@@ -1,29 +1,21 @@
 import React from 'react';
 import styles from './SprintsListItem.module.css';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
-const SprintListItem = ({ title, id }) => {
+const SprintListItem = ({ item }) => {
   const match = useRouteMatch();
-  const history = useHistory();
-
-  const onHandleClick = evt => {
-    const { id } = evt.target;
-    console.log('object');
-    history.push({
-      pathname: `${match.url}/sprints/${id}`,
-      state: { sprintId: id },
-    });
-  };
-
+  console.log(match);
   return (
     <div>
-      <li className={styles.sprintListItem} id={id} onClick={onHandleClick}>
-        <div>
-          <h3>{title}</h3>
-          <p>Дата a начала</p>
-          <p>Дата конца</p>
-          <p>Дата длительность</p>
-        </div>
+      <li className={styles.sprintListItem}>
+        <Link to={`${match.url}/sprints/${item._id}`} id={item._id}>
+          <div>
+            <h3>title</h3>
+            <p>Дата a начала</p>
+            <p>Дата конца</p>
+            <p>Дата длительность</p>
+          </div>
+        </Link>
       </li>
     </div>
   );

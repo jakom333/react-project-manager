@@ -28,7 +28,7 @@ const mainRoutes = [
   {
     path: '/projects/:projectId',
     label: 'Sprints',
-    exact: false,
+    exact: true,
     component: lazy(() => import('../pages/sprintsPage/SprintsPage')),
     private: true,
     restricted: false,
@@ -36,7 +36,7 @@ const mainRoutes = [
   {
     path: '/projects/:projectId/sprints/:sprintId',
     label: 'Tasks',
-    exact: false,
+    exact: true,
     component: lazy(() => import('../pages/tasksPage/TasksPage')),
     private: true,
     restricted: false,
