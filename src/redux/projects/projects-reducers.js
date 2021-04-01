@@ -7,7 +7,7 @@ const projects = createReducer(initialProjectsState, {
   [projectsSuccess]: (_, { payload }) => payload,
   [createProjectSuccess]: (state, { payload }) => [...state, payload],
   [deleteProjectSuccess]: (state, { payload }) => {
-    const id = state.findIndex(sprint => sprint.id === payload);
+    const id = state.findIndex(project => project.id === payload);
 
     return [...state.slice(0, id), ...state.slice(id + 1)];
   },
