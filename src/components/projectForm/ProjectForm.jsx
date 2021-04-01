@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -22,7 +22,10 @@ const ProjectForm = ({ onClose }) => {
     <div className={styles.formContainer}>
       <h2 className={styles.titleForm}>Create new project</h2>
       <Formik
-        initialValues={initialState}
+        initialValues={{
+          title: '',
+          description: '',
+        }}
         validationSchema={formSchema}
         onSubmit={values => {
           createProject(values);
@@ -45,15 +48,15 @@ const ProjectForm = ({ onClose }) => {
 
           <Field
             className={styles.inputDescription}
-            name='description'
-            type='text'
-            placeholder='Project description'
+            name="description"
+            type="text"
+            placeholder="Project description"
           />
 
           <ErrorMessage
             className={styles.errorDescription}
-            component='span'
-            name='description'
+            component="span"
+            name="description"
           />
           <Button type="submit">Done</Button>
         </Form>
@@ -61,7 +64,6 @@ const ProjectForm = ({ onClose }) => {
     </div>
   );
 };
-
 
 export default ProjectForm;
 

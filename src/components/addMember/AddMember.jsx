@@ -36,7 +36,7 @@ const AddMember = () => {
         onSubmit={async (values, { resetForm }) => {
           // alert(JSON.stringify(values, null, 2));
           console.log(values);
-
+          addMember(values);
           dispatch(addMember(values, projectId));
           resetForm({});
         }}
