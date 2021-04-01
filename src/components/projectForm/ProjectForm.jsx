@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { createProject } from '../../redux/projects/projects-operations';
+import projects from '../../redux/projects/projects-reducers';
 
 const formSchema = Yup.object().shape({
   name: Yup.string().required('* Project Name is a required field'),
@@ -22,6 +24,7 @@ const ProjectForm = () => {
           // alert(JSON.stringify(values, null, 2));
           console.log(values);
           resetForm({});
+          createProject(projects());
         }}
       >
         <Form className={styles.form}>
@@ -49,7 +52,8 @@ const ProjectForm = () => {
             component="span"
             name="description"
           />
-          <button type="submit"> done </button>
+
+          <button type="submit">Submit</button>
         </Form>
       </Formik>
     </div>

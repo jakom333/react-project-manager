@@ -6,10 +6,35 @@
 }
 
 
-.projectItem{
-    box-sizing: border-box;
-  }
+.projectItem {
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
 
+}
+
+.projectLink {
+    position: absolute;
+    padding: 28px 30px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.projectItem:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.buttonDelete{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1;
+
+}
 @media screen and (max-width: 767px){
     .projectItem{
         padding: 10px;
@@ -19,6 +44,11 @@
         list-style: none;
         overflow: hidden;
         background-color:  #8c72df;
+        width: 136px;
+        height: 136px;
+    }
+
+    .projectLink{
         width: 136px;
         height: 136px;
     }
@@ -46,9 +76,6 @@
     .buttonDelete{
         outline: none;
         border: none;
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
         border-radius: 50%;
         width: 30px;
         height: 30px;
@@ -72,6 +99,11 @@
         background-color: #8C72DF;
         margin: 10px;
         padding: 20px;
+        width: 216px;
+        height: 216px;
+    }
+
+    .projectLink{
         width: 216px;
         height: 216px;
     }
@@ -105,9 +137,6 @@
         height: 34px;
         outline: none;
         border: none;
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
         border-radius: 50%;
         background-color: #FFFFFF;
 
@@ -130,6 +159,12 @@
         height: 270px;
         margin: 15px;
     }
+
+    .projectLink{
+        width: 270px;
+        height: 270px;
+    }
+
 
 
     .title{
