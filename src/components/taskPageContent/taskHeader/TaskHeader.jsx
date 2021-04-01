@@ -1,4 +1,7 @@
+import React, { useState } from 'react';
 import styles from './TaskHeader.module.css';
+import MainModal from '../../../shared/mainModal/MainModal';
+import TaskCreator from '../../taskСreator/TaskCreator';
 
 import ChangeTitle from '../../titleEditor/TitleEditor';
 // import style from '../sprintList/SprintList.module.css';
@@ -7,6 +10,7 @@ import sprite from '../../../icons/symbol-defs.svg';
 // import moment from 'moment';
 
 export default function SprintHeader({ handleInput }) {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.headerWrapper}>
       <section className={styles.sprintHeader}>
@@ -25,7 +29,7 @@ export default function SprintHeader({ handleInput }) {
         <div className={styles.control}>
           <ChangeTitle />
           <div className={styles.buttonBox}>
-            <RoundButton />
+            <RoundButton onClick={() => setShowModal(true)} />
             <p className={styles.buttonDescription}>Create task</p>
           </div>
         </div>
@@ -54,6 +58,13 @@ export default function SprintHeader({ handleInput }) {
           </label>
         </div>
       </section>
+      <MainModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        onClose={() => setShowModal(false)}
+      >
+        <TaskCreator />
+      </MainModal>
     </div>
   );
 }
