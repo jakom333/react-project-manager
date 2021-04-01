@@ -46,12 +46,13 @@ const createProject = project => async dispatch => {
 };
 
 const deleteProject = (projectId) => async dispatch => {
+  const newID = projectId;
   dispatch(deleteProjectRequest());
 
   try {
-    axios.delete(`/project`);
+    axios.delete(`/project/${newID}`);
 
-    dispatch(deleteProjectSuccess(projectId));
+    dispatch(deleteProjectSuccess(newID));
   } catch (error) {
     dispatch(deleteProjectError(error.message));
   }

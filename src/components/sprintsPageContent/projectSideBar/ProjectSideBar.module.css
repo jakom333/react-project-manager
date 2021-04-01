@@ -4,6 +4,13 @@
     justify-content: space-between;
 }
 
+.sideButtonBox{
+    display: flex;
+   margin-right: 50px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 173px;
+}
 
 @media screen and  (max-width: 767px){
     .projectSideBar{
@@ -12,7 +19,7 @@ display: none;
 }
 
 .boxBack{
-    margin-left: 44px;
+    margin-left: 20px;
     display: flex;
     margin-top: 20px;
 }
@@ -21,12 +28,12 @@ display: none;
     width: 50px;
 }
 
-.sideButtonBox{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 173px;
-}
+/*.sideButtonBox{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    margin-top: 173px;*/
+/*}*/
 
 
 .sidePlusText{
