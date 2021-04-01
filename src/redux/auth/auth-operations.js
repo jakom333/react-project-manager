@@ -7,10 +7,9 @@ import {
   loginRequest,
   loginSuccess,
   loginError,
-
-  //   logoutRequest,
-  //   logoutSuccess,
-  //   logoutError,
+  logoutRequest,
+  logoutSuccess,
+  logoutError,
 } from './auth-actions';
 
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
@@ -72,7 +71,6 @@ const logIn = user => async dispatch => {
     const responseProjects = await axios.get('/project', {
       headers: { Authorization: token.get() },
     });
-    // console.log(response.data);
 
     dispatch(projectsSuccess(responseProjects.data));
   } catch (error) {
@@ -80,4 +78,16 @@ const logIn = user => async dispatch => {
   }
 };
 
-export { register, logIn };
+const logOut = () => async dispatch => {
+  dispatch(logoutRequest());
+  try {
+    await axios.post('/auth/logout');
+    token.unset();
+    dispatch(logoutSuccess());
+    window.location.reload();
+  } catch (error) {
+    dispatch(logoutError(error.message));
+  }
+};
+
+export { register, logIn, logOut };

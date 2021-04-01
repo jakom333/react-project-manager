@@ -5,21 +5,23 @@ import {
   registerError,
   loginSuccess,
   loginError,
-  //   logoutSuccess,
-  //   logoutError,
+  logoutSuccess,
+  logoutError,
 } from './auth-actions';
-import { projectsSuccess } from '../projects/projects-actions';
+// import { projectsSuccess } from '../projects/projects-actions';
 
 const initialUserState = { email: null, password: null };
 
 const user = createReducer(initialUserState, {
   [registerSuccess]: (_, { payload }) => payload.user,
   [loginSuccess]: (_, { payload }) => payload.user,
+  [logoutSuccess]: () => '',
 });
 
 const token = createReducer(null, {
   [registerSuccess]: (_, { payload }) => payload,
   [loginSuccess]: (_, { payload }) => payload,
+  [logoutSuccess]: () => null,
 });
 
 const setError = (_, { payload }) => payload;
@@ -27,6 +29,7 @@ const setError = (_, { payload }) => payload;
 const error = createReducer(null, {
   [registerError]: setError,
   [loginError]: setError,
+  [logoutError]: setError,
 });
 
 // const isAuthenticated = createReducer(false, {

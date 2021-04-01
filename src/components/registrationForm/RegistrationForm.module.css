@@ -1,16 +1,6 @@
-/* *,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: rgba(250, 250, 250, 1);
-} */
-
 .container {
   padding: 0 20px;
   max-width: 320px;
-  
 }
 
 .wrapper {
@@ -18,16 +8,16 @@
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(250, 250, 250, 1);
+  /* background: rgba(241, 242, 247, 1); */
+  background-color: #fafafa;
 }
 
 .form {
-  max-width: 320px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -70%);
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
 
-  position: fixed;
+  box-shadow: 0px 6px 26px 0px rgba(0, 5, 97, 0.1);
 }
 
 .label {
@@ -68,6 +58,7 @@
   letter-spacing: 0.04em;
 
   color: rgba(24, 28, 39, 0.6);
+  margin: 0 auto;
 }
 
 .textUnderbutton {
@@ -77,16 +68,21 @@
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0.04em;
-  text-align: left;
+
   color: rgba(24, 28, 39, 0.6);
   text-align: center;
   margin-top: 4px;
 }
+
 .underlined {
+  color: rgba(24, 28, 39, 0.6);
   text-decoration: underline;
 }
 
 @media screen and (min-width: 768px) {
+  .wrapper {
+    background: rgba(241, 242, 247, 1);
+  }
   .form {
     outline: 1px solid rgba(24, 28, 39, 0.2);
     position: absolute;
@@ -96,6 +92,8 @@
     transform: translate(-50%, -50%);
     max-width: 570px;
     max-height: 538px;
+    z-index: 10;
+    background-color: #fafafa;
   }
 
   .input {

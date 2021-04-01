@@ -1,10 +1,8 @@
-
- @value accentColor: #FF6B08;
- @value greyColor:  rgba(24, 28, 39, 0.6);
- @value blackColor: #181C27;
+@value accentColor: #FF6B08;
+@value greyColor:  rgba(24, 28, 39, 0.6);
+@value blackColor: #181C27;
 
 /*@value greyColor from '../../main.module.css';*/
-
 
 *,
 *::before,
@@ -14,26 +12,18 @@
   box-sizing: border-box;
 }
 
-/* img {
-  display: block;
-  width: 100%;
-  height: auto;
-} */
-
 ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
- a {
+a {
   text-decoration: none;
 }
 
-
-input{
-background-color:transparent;
-
+input {
+  background-color: transparent;
 }
 
 body {
@@ -44,12 +34,5 @@ body {
   line-height: 1.66;
   letter-spacing: 0.04em;
   color: blackColor;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
-  
-
-
-
-
-
-
