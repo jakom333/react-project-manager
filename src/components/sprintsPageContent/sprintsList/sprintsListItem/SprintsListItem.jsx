@@ -6,16 +6,16 @@ const SprintListItem = ({ item }) => {
   const match = useRouteMatch();
   return (
     <div>
-      <li className={styles.sprintListItem}>
-        <Link to={`${match.url}/sprints/${item._id}`} id={item._id}>
+      <Link to={`${match.url}/sprints/${item._id}`} id={item._id}>
+        <li className={styles.sprintListItem}>
           <div>
-            <h3>title</h3>
-            <p>Дата a начала</p>
-            <p>Дата конца</p>
-            <p>Дата длительность</p>
+            <h3>{item.title}</h3>
+            <p>Start date{item.startDate}</p>
+            <p>End date{item.endDate}</p>
+            <p>Duration{item.duration}</p>
           </div>
-        </Link>
-      </li>
+        </li>
+      </Link>
     </div>
   );
 };

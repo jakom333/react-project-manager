@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from '../../redux/auth/auth-operations.js';
 import Button from '../../shared/button/Button.jsx';
 import styles from './LoginForm.module.css';
 
 import Background from '../background/Background.jsx';
 import { Link } from 'react-router-dom';
+import { getAuthError } from '../../redux/auth/auth-selectors.js';
 
 const initialState = {
   email: 'test123@mail.com',
@@ -14,6 +15,7 @@ const initialState = {
 export default function LoginForm() {
   const [user, setUser] = useState(initialState);
   const dispatch = useDispatch();
+  const error = useSelector(getAuthError);
 
   const handleChange = ({ target: { name, value } }) => {
     setUser(prevState => ({ ...prevState, [name]: value }));
@@ -21,7 +23,9 @@ export default function LoginForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     dispatch(logIn(user));
+
     setUser(initialState);
   };
 
@@ -52,8 +56,11 @@ export default function LoginForm() {
             placeholder="Password"
           />
         </label>
+        {error ? <span className={styles.warning}>Wrong input</span> : ''}
 
-        <Button>Sign in</Button>
+        <div className={styles.button_wrapper}>
+          <Button>Sign in</Button>
+        </div>
         <p className={styles.textUnderbutton}>
           Don't yet have an account?
           <Link to="/registration" className={styles.underlined}>
