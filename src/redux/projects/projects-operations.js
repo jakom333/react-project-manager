@@ -1,17 +1,10 @@
 import axios from 'axios';
 import {
-  projectsRequest,
+  createProjectError,
+  createProjectRequest,
+  createProjectSuccess,
   projectsSuccess,
-  projectsError,
-  addProjectError,
-  addProjectRequest,
-  addProjectSuccess,
-  deleteProjectError,
-  deleteProjectRequest,
-  deleteProjectSuccess,
 } from './projects-actions';
-
-axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
 const getProjects = () => async (dispatch, getState) => {
   try {
@@ -34,33 +27,18 @@ const getProjects = () => async (dispatch, getState) => {
   }
 };
 
-
-const addProject = (title, description) => async dispatch => {
-  const items = {
-    title,
-    description,
-  };
-
-  dispatch(addProjectRequest());
+const createProject = project => async dispatch => {
+  dispatch(createProjectRequest());
 
   try {
-    const { data } = await axios.post(`/project`, items);
-    dispatch(addProjectSuccess(data));
+    const { data } = await axios.post(
+      'https://sbc-backend.goit.global/project',
+      project,
+    );
+    dispatch(createProjectSuccess(data));
   } catch (error) {
-    dispatch(addProjectError(error.message));
+    dispatch(createProjectError(error));
   }
 };
 
-const deleteProject = (projectId) => async dispatch => {
-  dispatch(deleteProjectRequest());
-
-  try {
-    axios.delete(`/project`);
-
-    dispatch(deleteProjectSuccess(projectId));
-  } catch (error) {
-    dispatch(deleteProjectError(error.message));
-  }
-};
-
-export { addProject, getProjects, deleteProject };
+export { getProjects, createProject };

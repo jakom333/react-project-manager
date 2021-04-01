@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './MembersList.module.css';
 import sprite from '../../icons/symbol-defs.svg';
 import MembersListItem from '../membersListItem/MembersListItem';
+import DeleteButton from '../../shared/deleteButton/DeleteButton';
 
 const MembersList = ({ members }) => {
   // if (!members.length) {
@@ -15,11 +16,7 @@ const MembersList = ({ members }) => {
       <ul className={styles.membersList}>
         <li className={styles.membersListItem}>
           <p className={styles.membersListItem}>username@gmail.com</p>
-          <button type="button" className={styles.deleteBtn}>
-            <svg className={styles.deleteIcon}>
-              <use href={sprite + '#icon-delete-bin'}></use>
-            </svg>
-          </button>
+          <DeleteButton />
         </li>
         {/* {members.map(({ id, email }) => (
           <MembersListItem key={id} id={id} email={email} />
