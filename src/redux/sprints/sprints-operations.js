@@ -19,8 +19,7 @@ const fetchSprints = projectId => async dispatch => {
 
   try {
     const { data } = await axios.get(`/sprint/${projectId}`);
-    console.log(data);
-    dispatch(fetchSprintsSucces(data));
+    dispatch(fetchSprintsSucces(data.sprints));
   } catch (error) {
     dispatch(fetchSprintsError(error.message));
   }

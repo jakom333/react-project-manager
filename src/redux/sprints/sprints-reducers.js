@@ -13,7 +13,7 @@ import {
 } from './sprints-actions';
 
 const sprints = createReducer([], {
-  [fetchSprintsSucces]: (_, action) => action.payload,
+  [fetchSprintsSucces]: (_, { payload }) => payload,
   [addSprintSucces]: (state, { payload }) => [...state, payload],
   [deleteSprintSucces]: (state, { payload }) => {
     const id = state.findIndex(sprint => sprint.id === payload);

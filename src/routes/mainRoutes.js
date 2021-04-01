@@ -4,7 +4,7 @@ const mainRoutes = [
   {
     path: '/registration',
     label: 'Registration',
-    exact: false,
+    exact: true,
     component: lazy(() => import('../pages/registerPage/RegistrationPage')),
     private: false,
     restricted: true,
@@ -12,7 +12,7 @@ const mainRoutes = [
   {
     path: '/login',
     label: 'Login',
-    exact: false,
+    exact: true,
     component: lazy(() => import('../pages/registerPage/RegistrationPage')),
     private: false,
     restricted: true,
@@ -28,7 +28,7 @@ const mainRoutes = [
   {
     path: '/projects/:projectId',
     label: 'Sprints',
-    exact: true,
+    exact: false,
     component: lazy(() => import('../pages/sprintsPage/SprintsPage')),
     private: true,
     restricted: false,
