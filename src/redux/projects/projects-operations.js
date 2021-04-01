@@ -1,20 +1,26 @@
 import axios from 'axios';
-import { projectsSuccess } from './projects-actions';
+import {
+  createProjectError,
+  createProjectRequest,
+  createProjectSuccess,
+  projectsSuccess,
+  deleteProjectRequest,
+  deleteProjectSuccess,
+  deleteProjectError,
+  } from './projects-actions';
 
 const getProjects = () => async (dispatch, getState) => {
   try {
     const response = await axios.get(
       'https://sbc-backend.goit.global/project',
-      {
-        headers: { Authorization: getState().auth.token?.accessToken },
-      },
+      // {
+      //   headers: { Authorization: getState().auth.token?.accessToken },
+      // },
     );
-    // console.log(response.data);
 
     dispatch(projectsSuccess(response.data));
   } catch (error) {
-    const response = await axios.post(
-      'https://sbc-backend.goit.global/auth/refresh',
+    const response = await axios.post('/auth/refresh',
       {
         headers: { Authorization: getState().auth.token?.refreshToken },
         data: getState().auth.token?.sid,
@@ -24,4 +30,30 @@ const getProjects = () => async (dispatch, getState) => {
   }
 };
 
-export { getProjects };
+const createProject = project => async dispatch => {
+  dispatch(createProjectRequest());
+
+  try {
+    const { data } = await axios.post(
+      'https://sbc-backend.goit.global/project',
+      project,
+    );
+    dispatch(createProjectSuccess(data));
+  } catch (error) {
+    dispatch(createProjectError(error));
+  }
+};
+
+const deleteProject = (projectId) => async dispatch => {
+  dispatch(deleteProjectRequest());
+
+  try {
+    axios.delete(`/project`);
+
+    dispatch(deleteProjectSuccess(projectId));
+  } catch (error) {
+    dispatch(deleteProjectError(error.message));
+  }
+};
+
+export { getProjects, createProject, deleteProject };

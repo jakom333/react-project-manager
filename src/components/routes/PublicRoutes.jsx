@@ -5,7 +5,6 @@ import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
 
 const PublicRoute = ({ component: Component, path, exact, restricted }) => {
   const isAuthenticated = useSelector(getIsAuthenticated);
-  // const isAuthenticated = true;
 
   return !isAuthenticated && restricted ? (
     <Route
@@ -14,7 +13,7 @@ const PublicRoute = ({ component: Component, path, exact, restricted }) => {
       render={props => <Component {...props} />}
     />
   ) : (
-    <Redirect to='/projects' />
+    <Redirect to="/projects" />
   );
 };
 

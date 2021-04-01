@@ -41,6 +41,8 @@ const AddMember = () => {
             E-mail
           </label> */}
           {/* </div> */}
+
+          <button type="submit"> done </button>
         </Form>
       </Formik>
       <MembersList />

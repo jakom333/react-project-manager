@@ -13,7 +13,7 @@ import {
 } from './sprints-actions';
 
 const sprints = createReducer([], {
-  [fetchSprintsSucces]: (_, action) => action.payload,
+  [fetchSprintsSucces]: (_, { payload }) => payload,
   [addSprintSucces]: (state, { payload }) => [...state, payload],
   [deleteSprintSucces]: (state, { payload }) => {
     const id = state.findIndex(sprint => sprint.id === payload);
@@ -22,21 +22,23 @@ const sprints = createReducer([], {
   },
 });
 
-const loading = createReducer(false, {
-  [addSprintRequest]: () => true,
-  [addSprintSucces]: () => false,
-  [addSprintError]: () => false,
-  [deleteSprintRequest]: () => true,
-  [deleteSprintSucces]: () => false,
-  [deleteSprintError]: () => false,
-  [fetchSprintsRequest]: () => true,
-  [fetchSprintsSucces]: () => false,
-  [fetchSprintsError]: () => false,
-});
+// const loading = createReducer(false, {
+//   [addSprintRequest]: () => true,
+//   [addSprintSucces]: () => false,
+//   [addSprintError]: () => false,
+//   [deleteSprintRequest]: () => true,
+//   [deleteSprintSucces]: () => false,
+//   [deleteSprintError]: () => false,
+//   [fetchSprintsRequest]: () => true,
+//   [fetchSprintsSucces]: () => false,
+//   [fetchSprintsError]: () => false,
+// });
 
 // const error = createReducer(null, {  });
 
-export default combineReducers({
-  sprints,
-  loading,
-});
+// export default combineReducers({
+//   sprints,
+//   loading,
+// });
+
+export default sprints;

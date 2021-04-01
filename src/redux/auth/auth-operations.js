@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { projectsSuccess } from '../projects/projects-actions';
 import {
   registerRequest,
   registerSuccess,
@@ -14,7 +15,7 @@ import {
 
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
-const token = {
+export const token = {
   token: '',
 
   set(token) {
@@ -24,6 +25,10 @@ const token = {
   },
   get() {
     return this.token;
+  },
+  refresh(token) {
+    this.token = token;
+    axios.defaults.headers.common.Authorization = token;
   },
   unset() {
     axios.defaults.headers.common.Authorization = '';
@@ -56,10 +61,7 @@ const logIn = user => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await axios.post('/auth/login', user);
-    console.log(response);
-
     token.set(response.data.accessToken);
-
     dispatch(
       loginSuccess({
         accessToken: token.get(),
@@ -67,6 +69,12 @@ const logIn = user => async dispatch => {
         sid: response.data.sid,
       }),
     );
+    const responseProjects = await axios.get('/project', {
+      headers: { Authorization: token.get() },
+    });
+    // console.log(response.data);
+
+    dispatch(projectsSuccess(responseProjects.data));
   } catch (error) {
     dispatch(loginError(error.message));
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SprintsListItem.module.css';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
-const SprintListItem = ({ title }) => {
+const SprintListItem = ({ title, id }) => {
   const match = useRouteMatch();
   const history = useHistory();
 
@@ -10,18 +10,14 @@ const SprintListItem = ({ title }) => {
     const { id } = evt.target;
     console.log('object');
     history.push({
-      pathname: `${match.url}/sprints/123`,
-      state: { projectId: id },
+      pathname: `${match.url}/sprints/${id}`,
+      state: { sprintId: id },
     });
   };
 
   return (
     <div>
-      <li
-        className={styles.sprintListItem}
-        id='12312423534543'
-        onClick={onHandleClick}
-      >
+      <li className={styles.sprintListItem} id={id} onClick={onHandleClick}>
         <div>
           <h3>{title}</h3>
           <p>Дата a начала</p>
