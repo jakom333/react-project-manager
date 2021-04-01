@@ -71,7 +71,6 @@ const logIn = user => async dispatch => {
     const responseProjects = await axios.get('/project', {
       headers: { Authorization: token.get() },
     });
-    // console.log(response.data);
 
     dispatch(projectsSuccess(responseProjects.data));
   } catch (error) {
@@ -85,6 +84,7 @@ const logOut = () => async dispatch => {
     await axios.post('/auth/logout');
     token.unset();
     dispatch(logoutSuccess());
+    window.location.reload();
   } catch (error) {
     dispatch(logoutError(error.message));
   }
