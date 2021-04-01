@@ -1,3 +1,10 @@
+.projectSideBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
 @media screen and  (max-width: 767px){
     .projectSideBar{
 display: none;
@@ -5,7 +12,7 @@ display: none;
 }
 
 .boxBack{
-    margin-left: 55px;
+    margin-left: 44px;
     display: flex;
     margin-top: 20px;
 }
@@ -14,52 +21,27 @@ display: none;
     width: 50px;
 }
 
+.sideButtonBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 173px;
+}
+
+
+.sidePlusText{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #181C27;
+}
+
 @media screen and  (min-width: 768px) and (max-width: 1279px){
-
-    .sideButtonBox{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        left: 44px;
-        bottom: 50px;
-        margin-top: 173px;
-    }
-
-
-    .sidePlusText{
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 17px;
-        letter-spacing: 0.04em;
-        color: #181C27;
-    }
 
 }
 
 @media screen and (min-width: 1280px){
-
-    .sideButtonBox{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        left: 44px;
-        bottom: 50px;
-        margin-top: 173px;
-    }
-
-
-    .sidePlusText{
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 17px;
-        letter-spacing: 0.04em;
-        color: #181C27;
-    }
-
 
 }
 

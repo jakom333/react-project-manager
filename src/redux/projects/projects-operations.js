@@ -4,7 +4,10 @@ import {
   createProjectRequest,
   createProjectSuccess,
   projectsSuccess,
-} from './projects-actions';
+  deleteProjectRequest,
+  deleteProjectSuccess,
+  deleteProjectError,
+  } from './projects-actions';
 
 const getProjects = () => async (dispatch, getState) => {
   try {
@@ -17,8 +20,7 @@ const getProjects = () => async (dispatch, getState) => {
 
     dispatch(projectsSuccess(response.data));
   } catch (error) {
-    const response = await axios.post(
-      'https://sbc-backend.goit.global/auth/refresh',
+    const response = await axios.post('/auth/refresh',
       {
         headers: { Authorization: getState().auth.token?.refreshToken },
         data: getState().auth.token?.sid,
@@ -42,4 +44,16 @@ const createProject = project => async dispatch => {
   }
 };
 
-export { getProjects, createProject };
+const deleteProject = (projectId) => async dispatch => {
+  dispatch(deleteProjectRequest());
+
+  try {
+    axios.delete(`/project`);
+
+    dispatch(deleteProjectSuccess(projectId));
+  } catch (error) {
+    dispatch(deleteProjectError(error.message));
+  }
+};
+
+export { getProjects, createProject, deleteProject };
