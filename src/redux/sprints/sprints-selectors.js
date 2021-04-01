@@ -1,1 +1,1 @@
-export const getSprintsSelector = state => state.projects[0].sprints;
+export const getSprintsSelector = state => state.sprints;
