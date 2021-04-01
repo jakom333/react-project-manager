@@ -75,11 +75,6 @@ margin-bottom: 30px;
   border-color:accentColor ;
 }
 
-/* .inputName:focus{
-  box-shadow: none;
-  outline: none;
-  border-color:accentColor ;
-} */
 
 .errorName{
   display:block;
