@@ -33,16 +33,24 @@ export default function RegistrationForm() {
     let errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!user.email) {
-      errors.email = 'Cannot be blank';
+      errors.email = <span className={styles.warning}>Cannot be blank</span>;
     } else if (!regex.test(user.email)) {
-      errors.email = 'Invalid email format';
+      errors.email = (
+        <span className={styles.warning}>Invalid email format</span>
+      );
     }
     if (!user.password) {
-      errors.password = 'Cannot be blank';
-    } else if (user.password.length < 4) {
-      errors.password = 'Password must be more than 4 characters';
+      errors.password = <span className={styles.warning}>Cannot be blank</span>;
+    } else if (user.password.length < 6) {
+      errors.password = (
+        <span className={styles.warning}>
+          Password must be more than 6 characters
+        </span>
+      );
     } else if (user.password !== user.confirm_password) {
-      errors.confirm_password = 'Passwords should match';
+      errors.confirm_password = (
+        <span className={styles.warning}>Passwords don't match</span>
+      );
     }
     return errors;
   };
@@ -70,6 +78,14 @@ export default function RegistrationForm() {
         <h1 className={styles.title}>Sign up</h1>
         <label className={styles.label}>
           <input
+            style={{
+              color: formErrors.email
+                ? 'rgba(204, 32, 41, 0.6)'
+                : 'rgba(24, 28, 39, 0.6)',
+              borderBottom: formErrors.email
+                ? '1px solid rgba(204, 32, 41, 0.6)'
+                : '1px solid rgba(24, 28, 39, 0.2);',
+            }}
             type="email"
             name="email"
             value={user.email}
@@ -78,10 +94,18 @@ export default function RegistrationForm() {
             placeholder="E-mail"
           />
         </label>
-        <span>{formErrors.email}</span>
+        {formErrors.email}
 
         <label className={styles.label}>
           <input
+            style={{
+              color: formErrors.password
+                ? 'rgba(204, 32, 41, 0.6)'
+                : 'rgba(24, 28, 39, 0.6)',
+              borderBottom: formErrors.password
+                ? '1px solid rgba(204, 32, 41, 0.6)'
+                : '1px solid rgba(24, 28, 39, 0.2);',
+            }}
             type="password"
             name="password"
             value={user.password}
@@ -90,10 +114,18 @@ export default function RegistrationForm() {
             placeholder="Password"
           />
         </label>
-        {formErrors.password && <span>{formErrors.password}</span>}
+        {formErrors.password}
 
         <label className={styles.label}>
           <input
+            style={{
+              color: formErrors.confirm_password
+                ? 'rgba(204, 32, 41, 0.6)'
+                : 'rgba(24, 28, 39, 0.6)',
+              borderBottom: formErrors.confirm_password
+                ? '1px solid rgba(204, 32, 41, 0.6)'
+                : '1px solid rgba(24, 28, 39, 0.2)',
+            }}
             type="password"
             name="confirm_password"
             value={user.confirm_password}
@@ -102,9 +134,11 @@ export default function RegistrationForm() {
             placeholder="Confirm password"
           />
         </label>
-        <span>{formErrors.confirm_password}</span>
+        {formErrors.confirm_password}
 
-        <Button>Sign up</Button>
+        <div className={styles.button_wrapper}>
+          <Button>Sign up</Button>
+        </div>
         <p className={styles.textUnderbutton}>
           Already have an account?
           <Link to="/login" className={styles.underlined}>
