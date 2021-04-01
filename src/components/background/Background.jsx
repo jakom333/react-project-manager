@@ -1,10 +1,9 @@
 import React from 'react';
-import elipse1 from '../../images/background/Ellipse 1.svg';
-import elipse2 from '../../images/background/Ellipse 2.svg';
-import elipse3 from '../../images/background/Ellipse 3.svg';
-import elipse4 from '../../images/background/Ellipse 4.svg';
-import elipse5 from '../../images/background/Ellipse 5.svg';
-
+import elipse1 from '../../images/background/Ellipse1.svg';
+import elipse2 from '../../images/background/Ellipse2.svg';
+import elipse3 from '../../images/background/Ellipse3.svg';
+import elipse4 from '../../images/background/Ellipse4.svg';
+import elipse5 from '../../images/background/Ellipse5.svg';
 import elipse65 from '../../images/background/Rectangle65.svg';
 import union_white from '../../images/background/Union.white.svg';
 
@@ -24,12 +23,17 @@ const Background = () => {
         <img
           src={elipse65}
           alt="orange-ball"
-          className={styles.orange_ball_big}
+          className={styles.orange_ball_small2}
         />
         <img
           src={elipse65}
           alt="orange-ball"
           className={styles.orange_ball_small}
+        />
+        <img
+          src={union_white}
+          alt="orange-ball"
+          className={styles.union_white}
         />
       </>
     );

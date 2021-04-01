@@ -1,21 +1,27 @@
 .header {
   display: flex;
-  padding: 0 20px;
-  margin-top: 5px;
+  padding: 5px 20px;
   height: 60px;
+  background: rgba(241, 242, 247, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .headerLogo {
-  display: flex;
-
   margin-top: 5px;
   height: 60px;
-  align-items: baseline;
+
   width: 100px;
   height: 30px;
 }
 
 @media screen and (min-width: 768px) {
+  .header {
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    height: 80px;
+  }
+
   .headerLogo {
     width: 140px;
     height: 42px;
