@@ -191,7 +191,7 @@
     background-color: #FFFFFF;
 }
 
-.projectItem:nth-child(8n + ){
+.projectItem:nth-child(8n + 3){
     background-color: var( --violet);
 }
 .projectItem:nth-child(8n + 1){
