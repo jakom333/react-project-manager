@@ -6,6 +6,7 @@ import elipse4 from '../../images/background/Ellipse4.svg';
 import elipse5 from '../../images/background/Ellipse5.svg';
 import elipse65 from '../../images/background/Rectangle65.svg';
 import union_white from '../../images/background/Union.white.svg';
+import union from '../../images/background/Union.svg';
 
 import { useDevice } from '../../hooks/useDevice.js';
 import styles from './Background.module.css';
@@ -20,16 +21,8 @@ const Background = () => {
         <img src={elipse3} alt="white-ball" className={styles.elipse3} />
         <img src={elipse4} alt="white-ball" className={styles.elipse4} />
         <img src={elipse5} alt="orange-ball" className={styles.elipse5} />
-        <img
-          src={elipse65}
-          alt="orange-ball"
-          className={styles.orange_ball_small2}
-        />
-        <img
-          src={elipse65}
-          alt="orange-ball"
-          className={styles.orange_ball_small}
-        />
+        <img src={union} alt="orange-ball" className={styles.union} />
+
         <img
           src={union_white}
           alt="orange-ball"

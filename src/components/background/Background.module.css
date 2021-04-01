@@ -7,15 +7,15 @@
   width: 298px;
   height: 298px;
   left: -8px;
-  top: 465px;
+  bottom: -87px;
   z-index: 0;
 }
 .elipse2 {
   position: absolute;
   width: 252px;
   height: 252px;
-  left: 19px;
-  top: 481px;
+  left: 24px;
+  bottom: -63px;
   opacity: 0.85;
   z-index: 34;
 }
@@ -50,21 +50,13 @@
   right: 225px;
   z-index: 0;
 }
-.orange_ball_small {
-  position: absolute;
-  left: 739px;
-  bottom: 160px;
-  width: 270px;
-  height: 282px;
-  z-index: 1;
-}
 
-.orange_ball_small2 {
+.union {
   position: absolute;
-  right: -64px;
-  bottom: 151px;
-  width: 393px;
-  height: 393px;
+  bottom: 28px;
+  right: 0;
+  width: 342px;
+  height: 302px;
   z-index: 1;
 }
 
@@ -73,6 +65,8 @@
 
   right: 0;
   bottom: 0;
+  width: 403px;
+  height: 368px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -96,28 +90,5 @@
   .elipse5 {
     right: 311px;
     top: 120px;
-  }
-  .orange_ball_big {
-    width: 387px;
-    height: 387px;
-    right: -52px;
-    top: 347px;
-    z-index: 1;
-  }
-
-  .orange_ball_small {
-    left: 735px;
-    bottom: 20px;
-    width: 270px;
-    height: 282px;
-    z-index: 1;
-  }
-
-  .orange_ball_small2 {
-    right: -25px;
-    bottom: 127px;
-    width: 393px;
-    height: 393px;
-    z-index: 1;
   }
 }
