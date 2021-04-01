@@ -1,0 +1,19 @@
+body {
+  background-color: #f1f2f7;
+  margin: 0;
+  padding: 0;
+}
+
+.sprintsPageContainer {
+  width: 320px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .rightBarContainer {
+    display: block;
+
+    padding: 24px;
+    border-top: 1px solid rgba(24, 28, 39, 0.1);
+  }
+}

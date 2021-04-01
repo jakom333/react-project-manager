@@ -1,4 +1,5 @@
 .button {
+  font-family: inherit;
   border-radius: 25px;
   padding: 11px 44px 11px 44px;
   background-color: #ff6b08;
@@ -9,19 +10,16 @@
   display: block;
   margin: 0 auto;
   font-weight: 500;
-font-size: 18px;
-line-height: 22px;
-border:none;
-outline: none;
- cursor: pointer;
- margin-bottom: 20px;
-
+  font-size: 18px;
+  line-height: 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .button:hover {
-  background:white;
+  background: white;
   transition: 0.5s ease-in-out;
-  color:  #ff6b08;
-box-shadow: 1px 1px 5px 1px  #ff6b08;
+  color: #ff6b08;
+  box-shadow: 1px 1px 5px 1px #ff6b08;
 }
-
