@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { projectsSuccess } from './projects-actions';
+import {
+  createProjectError,
+  createProjectRequest,
+  createProjectSuccess,
+  projectsSuccess,
+} from './projects-actions';
 
 const getProjects = () => async (dispatch, getState) => {
   try {
@@ -24,4 +29,18 @@ const getProjects = () => async (dispatch, getState) => {
   }
 };
 
-export { getProjects };
+const createProject = project => async dispatch => {
+  dispatch(createProjectRequest());
+
+  try {
+    const { data } = await axios.post(
+      'https://sbc-backend.goit.global/project',
+      project,
+    );
+    dispatch(createProjectSuccess(data));
+  } catch (error) {
+    dispatch(createProjectError(error));
+  }
+};
+
+export { getProjects, createProject };
