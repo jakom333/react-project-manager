@@ -1,12 +1,7 @@
 import React from 'react';
 import styles from './ProjectForm.module.css';
-import { Formik, Form, Field, ErrorMessage, useField } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
-// const TextInput = ({ className, ...props }) => {
-//   const [field, meta] = useField(props);
-//   return <input {...props} {...field} />;
-// };
 
 const formSchema = Yup.object().shape({
   name: Yup.string().required('* Project Name is a required field'),
@@ -27,7 +22,6 @@ const ProjectForm = () => {
           // alert(JSON.stringify(values, null, 2));
           console.log(values);
           resetForm({});
-          //addProject//
         }}
       >
         <Form className={styles.form}>
