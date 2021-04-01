@@ -2,6 +2,10 @@ import MembersList from '../membersList/MembersList';
 import styles from './AddMember.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { addMember } from '../../redux/projectMembers/projectMembers-operations';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProjectsSelector } from '../../redux/projects/projects-selectors';
 
 const formSchema = Yup.object().shape({
   email: Yup.string()
@@ -9,18 +13,32 @@ const formSchema = Yup.object().shape({
     .email('* Email must be valid'),
 });
 
+const initialState = {
+  email: '',
+};
+
 const AddMember = () => {
+  const { projectId } = useParams();
+  const dispatch = useDispatch();
+  console.log(projectId);
+
+  const projects = useSelector(getProjectsSelector);
+  const members = projects.find(item => item._id === projectId).members;
+
+  console.log(members);
+
   return (
     <div className={styles.formContainer}>
       <h2 className={styles.titleForm}>Add new project member</h2>
       <Formik
-        initialValues={{ email: '' }}
+        initialValues={initialState}
         validationSchema={formSchema}
         onSubmit={async (values, { resetForm }) => {
-          //setError
           // alert(JSON.stringify(values, null, 2));
-          resetForm({ email: '' });
-          //addMember//
+          console.log(values);
+
+          dispatch(addMember(values, projectId));
+          resetForm({});
         }}
       >
         <Form className={styles.memberForm}>
@@ -45,7 +63,7 @@ const AddMember = () => {
           <button type="submit"> done </button>
         </Form>
       </Formik>
-      <MembersList />
+      <MembersList members={members} />
     </div>
   );
 };

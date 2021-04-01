@@ -27,10 +27,7 @@ const ProjectForm = ({ onClose }) => {
     <div className={styles.formContainer}>
       <h2 className={styles.titleForm}>Create new project</h2>
       <Formik
-        initialValues={{
-          title: '',
-          description: '',
-        }}
+        initialValues={initialState}
         validationSchema={formSchema}
         onSubmit={values => {
           createProject(values);

@@ -1,31 +1,15 @@
 import axios from 'axios';
 import {
-  fecthMembersError,
-  fecthMembersSuccess,
-  fecthMembersRequest,
   addMemberError,
   addMemberRequest,
   addMemberSuccess,
-  deleteMemberError,
-  deleteMemberSuccess,
-  deleteMemberRequest,
-  deleteMember,
 } from './projectMembers-actions';
 
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
-const fecthMembers = () => async dispatch => {
-  dispatch(fecthMembersRequest());
-  try {
-    const { data } = await axios.get('');
-    console.log(data);
-    dispatch(fecthMembersSuccess(data));
-  } catch (error) {
-    dispatch(fecthMembersError(error.message));
-  }
-};
-
 const addMember = ({ email }) => async dispatch => {
+  const projectId = '60648ec4c94bd96215a20430';
+  console.log(email, projectId);
   dispatch(addMemberRequest());
   try {
     const { data } = await axios.post(
@@ -39,14 +23,4 @@ const addMember = ({ email }) => async dispatch => {
   }
 };
 
-const deleteMember = id => async dispatch => {
-  dispatch(deleteMemberRequest());
-  try {
-    await axios.delete(``);
-    dispatch(deleteMemberSuccess(id));
-  } catch (error) {
-    dispatch(deleteMemberError(error.message));
-  }
-};
-
-export { fecthMembers, deleteMember, addMember };
+export { addMember };
