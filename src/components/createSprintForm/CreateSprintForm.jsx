@@ -2,8 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 import styles from './CreateSprintForm.module.css';
+
+const formSchema = Yup.object().shape({
+  name: Yup.string().required('* Task name is a required field'),
+  time: Yup.number('* Scheduled time has to be an appropriate number')
+    .required('* Description is a required field')
+    .positive()
+    .integer(),
+});
 
 const СreateSprintForm = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -14,21 +24,22 @@ const СreateSprintForm = () => {
         <h2 className={styles.title}>Create sprint</h2>
         <label>
           <span>Sprint name</span>
-          <input className={styles.input} type='text'></input>
+          <input className={styles.input} type="text"></input>
         </label>
 
         <label>
-          <input className={styles.checkbox} type='checkbox' />
+          <input className={styles.checkbox} type="checkbox" />
           <span>Previous days</span>
         </label>
         <label>
           <span>Finish date</span>
-          <input className={styles.input} type='date' />
+          <input className={styles.input} type="date" />
         </label>
         <label>
           <span>Duration</span>
-          <input className={styles.input} type='number' />
+          <input className={styles.input} type="number" />
         </label>
+
         <DatePicker
           selected={startDate}
           onChange={date => setStartDate(date)}
@@ -39,3 +50,55 @@ const СreateSprintForm = () => {
 };
 
 export default СreateSprintForm;
+
+// const CreateSprintForm = () => {
+//   return (
+//     <div className={styles.formContainer}>
+//       <h2 className={styles.titleForm}>Create a sprint</h2>
+//       <Formik
+//         initialValues={{
+//           name: '',
+//           time: '',
+//         }}
+//         validationSchema={formSchema}
+//         onSubmit={async (values, { resetForm }) => {
+//           alert(JSON.stringify(values, null, 2));
+//           // console.log(values);
+//           resetForm({});
+//           //createSprint//
+//         }}
+//       >
+//         <Form className={styles.form}>
+//           <Field
+//             className={styles.inputName}
+//             name="name"
+//             type="text"
+//             placeholder="The name of the sprint"
+//           />
+//           <ErrorMessage
+//             className={styles.errorName}
+//             component="span"
+//             name="name"
+//           />
+//         <div className={styles.form}>
+//           <Field
+//             className={styles.inputTime}
+//             name="time"
+//             type="text"
+//             placeholder="Duration (days)"
+//           />
+
+//           <ErrorMessage
+//             className={styles.errorTime}
+//             component="span"
+//             name="time"
+//           />
+//           </div>
+//           <button type="submit"> done </button>
+//         </Form>
+//       </Formik>
+//     </div>
+//   );
+// };
+
+// export default CreateSprintForm;

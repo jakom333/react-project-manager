@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import styles from './ProjectForm.module.css';
-import { Formik, Form, Field, ErrorMessage, useField } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { createProject } from '../../redux/projects/projects-operations';
 //import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
-
-// const TextInput = ({ className, ...props }) => {
-//   const [field, meta] = useField(props);
-//   return <input {...props} {...field} />;
-// };
 
 const formSchema = Yup.object().shape({
   name: Yup.string().required('* Project Name is a required field'),
