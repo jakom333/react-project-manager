@@ -86,7 +86,7 @@
     outline: 1px solid rgba(24, 28, 39, 0.2);
     position: absolute;
     padding: 47px 70px;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 570px;
