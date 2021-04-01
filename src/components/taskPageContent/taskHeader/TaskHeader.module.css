@@ -118,7 +118,6 @@
   border-bottom: 1px solid #000;
   font-style: italic;
   font-weight: 500;
-  /* font-weight: 900; */
 }
 
 @media screen and (max-width: 767px) {
@@ -191,7 +190,7 @@
     left: 0px;
   }
 
-  .searchInputActive {
+  .searchInput {
     position: absolute;
     min-width: 280px;
     top: -120px;
@@ -281,7 +280,7 @@
     right: 18px;
   }
 
-  .searchInputActive {
+  .searchInput {
     position: absolute;
     bottom: 145px;
     left: 260px;
@@ -312,12 +311,6 @@
   }
 }
 
-@media screen and (max-width: 1279px) {
-  /* .input1280Wrapper {
-    display: none;
-  } */
-}
-
 @media screen and (min-width: 1280px) {
   .sprintHeader {
     padding-left: 70px;
@@ -334,7 +327,6 @@
   .buttonBox {
     display: flex;
     align-items: center;
-    /* margin-right: 86px; */
   }
 
   .buttonDescription {
@@ -385,10 +377,6 @@
     margin-right: 85px;
   }
 
-  /* .tasksHeaderText:not(:last-child) {
-    margin-right: 100px;
-  } */
-
   .controlPanel {
     justify-content: start;
   }
@@ -400,16 +388,6 @@
   }
 
   .searchInput {
-    display: none;
-    border: none;
-    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
-    background-color: #f1f2f7;
-    outline: none;
-    padding-left: 10px;
-    height: 40px;
-  }
-
-  .searchInputActive {
     position: absolute;
     top: 0;
     right: 7px;
@@ -428,7 +406,7 @@
     height: 35px;
   }
 
-  .searchInputActive:hover {
+  .searchInput:hover {
     border-bottom: 1px solid rgba(16, 16, 17, 0.212);
   }
 }

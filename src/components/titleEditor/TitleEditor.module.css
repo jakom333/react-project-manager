@@ -1,4 +1,4 @@
-.title-change-input {
+.titleChangeInput {
   width: 87%;
   border: none;
   box-shadow: 2px 4px 8px rgba(0, 5, 97, 0.1);
@@ -43,29 +43,16 @@
   height: 20px;
 }
 
-/* .sprint-change-title-btn {
-  composes: btn;
-} */
-
-.sprint-change-title-btn {
+.changeTitleButton {
   width: 20px;
   height: 20px;
   border: none;
   cursor: pointer;
   outline: none;
   margin-left: 5px;
-
-  /* position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%); */
 }
 
-/* .sprint-change-title-btn:hover {
-  background-image: url('../../icons/symbol-defs.svg#icon-pencil');
-} */
-
-.sprint-title {
+.sprintTitle {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
@@ -77,7 +64,7 @@
   word-wrap: break-word;
 }
 
-.project-header {
+/* .project-header {
   font-family: 'Montserrat';
   font-weight: 500;
   font-size: 36px;
@@ -88,7 +75,7 @@
   margin-right: 20px;
   word-wrap: break-word;
   max-width: 300px;
-}
+} */
 
 /* @media screen and (max-width: 767px) {
   .wrapper {

@@ -4,10 +4,8 @@ import MainModal from '../../../shared/mainModal/MainModal';
 import TaskCreator from '../../taskСreator/TaskCreator';
 
 import ChangeTitle from '../../titleEditor/TitleEditor';
-// import style from '../sprintList/SprintList.module.css';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import sprite from '../../../icons/symbol-defs.svg';
-// import moment from 'moment';
 
 export default function SprintHeader({ handleInput }) {
   const [showModal, setShowModal] = useState(false);
@@ -48,7 +46,7 @@ export default function SprintHeader({ handleInput }) {
               type="text"
               name="filter"
               onChange={handleInput}
-              className={styles.searchInputActive}
+              className={styles.searchInput}
             ></input>
             <button className={styles.searchBtn}>
               <svg className={styles.iconSearch}>

@@ -16,31 +16,31 @@ export default function ChangeTitle({ titleValue }) {
       {/* <label className={styles.wrapper}>
         <input
           type="text"
-          className={styles['title-change-input']}
+          className={styles.titleChangeInput}
           value={title}
           onChange={e => setTitle(e.target.value)}
           maxLength="25"
         />
 
         <button
-          className={styles['sprint-change-title-btn']}
+          className={styles.changeTitleButton}
           type="button"
           onClick={() => {
             setUpdate(!isUpdate);
           }}
         >
-          <svg className={styles['sprint-change-title-btn']}>
+          <svg className={styles.changeTitleButton}>
             <use href={sprite + '#icon-save'}></use>
           </svg>
         </button>
       </label> */}
       <div className={styles.wrapper}>
-        <h1 className={styles['sprint-title']}>Sprint title</h1>
+        <h1 className={styles.sprintTitle}>Sprint title</h1>
         <button
           onClick={() => setUpdate(!isUpdate)}
-          className={styles['sprint-change-title-btn']}
+          className={styles.changeTitleButton}
         >
-          <svg className={styles['sprint-change-title-btn']}>
+          <svg className={styles.changeTitleButton}>
             <use href={sprite + '#icon-pencil'}></use>
           </svg>
         </button>
