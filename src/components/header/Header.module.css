@@ -16,6 +16,21 @@
   height: 30px;
 }
 
+.iconSearch {
+  fill: rgba(24, 28, 39, 0.6);
+  width: 20px;
+  height: 20px;
+}
+.underlined {
+  color: rgba(24, 28, 39, 0.6);
+  margin-left: 4px;
+}
+.logOutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     border-bottom: 1px solid rgba(24, 28, 39, 0.1);
