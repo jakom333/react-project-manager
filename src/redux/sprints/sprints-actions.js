@@ -1,16 +1,16 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const fetchSprintsRequest = createAction('contacts/fetchSprintsRequest');
-const fetchSprintsSucces = createAction('contacts/fetchSprintsSuccess');
-const fetchSprintsError = createAction('contacts/fetchContactsError');
+const fetchSprintsRequest = createAction('sprints/fetchSprintsRequest');
+const fetchSprintsSucces = createAction('sprints/fetchSprintsSuccess');
+const fetchSprintsError = createAction('sprints/fetchContactsError');
 
-const addSprintRequest = createAction('phonebook/addSprintRequest');
-const addSprintSucces = createAction('phonebook/addSprintSucces');
-const addSprintError = createAction('phonebook/addSprintError');
+const addSprintRequest = createAction('sprints/addSprintRequest');
+const addSprintSucces = createAction('sprints/addSprintSucces');
+const addSprintError = createAction('sprints/addSprintError');
 
-const deleteSprintRequest = createAction('phonebook/deleteSprintRequest');
-const deleteSprintSucces = createAction('phonebook/deleteSprintSucces');
-const deleteSprintError = createAction('phonebook/deleteSprintError');
+const deleteSprintRequest = createAction('sprints/deleteSprintRequest');
+const deleteSprintSucces = createAction('sprints/deleteSprintSucces');
+const deleteSprintError = createAction('sprints/deleteSprintError');
 
 export {
   addSprintRequest,
