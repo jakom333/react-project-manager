@@ -27,9 +27,6 @@
 /* 
 
 
-
-
-
 /*==================MOBILE=========================*/
 @value accentColor from '../../main.module.css';
 @value greyColor from '../../main.module.css';
@@ -269,7 +266,7 @@ margin-bottom: 50px;
 .formContainer{
     max-width: 530px ;
     padding-left: 50px;
-    padding-right: 51px;
+    padding-right: 80px;
     width: 530px;
 
  }

@@ -8,8 +8,11 @@ import * as Yup from 'yup';
 import styles from './CreateSprintForm.module.css';
 
 const formSchema = Yup.object().shape({
-  name: Yup.string().required('* Sprint name is a required field'),
-  time: Yup.number('* Duration has to be an appropriate number')
+  name: Yup.string()
+    .min(3, 'Too short!')
+    .required('* Sprint name is a required field'),
+  time: Yup.number()
+    .typeError('* Duration has to be an appropriate number')
     .required('* Duration is a required field')
     .positive()
     .integer(),
@@ -52,7 +55,7 @@ const CreateSprintForm = () => {
               placeholder="Includes past days"
             />
             <label className={styles.checkboxLabel}>
-              <span>Includes previous days</span>
+              <span>Include previous days</span>
               <Field
                 className={styles.inputTime}
                 name="time"

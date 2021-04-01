@@ -7,8 +7,12 @@ import { createProject } from '../../redux/projects/projects-operations';
 import Button from '../../shared/button/Button';
 
 const formSchema = Yup.object().shape({
-  title: Yup.string().required('* Project Name is a required field'),
-  description: Yup.string().required('* Description is a required field'),
+  title: Yup.string()
+    .min(3, 'Too short!')
+    .required('* Project Name is a required field'),
+  description: Yup.string()
+    .min(4, 'Too short!')
+    .required('* Description is a required field'),
 });
 
 const initialState = {
