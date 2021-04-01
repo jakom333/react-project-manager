@@ -130,7 +130,7 @@
   }
 
   .control {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   /* .tasksHeader {
@@ -187,23 +187,28 @@
 
   .searchBtn {
     position: absolute;
-    top: 222px;
-    right: 382px;
+    top: -112px;
+    left: 0px;
   }
 
   .searchInputActive {
-    /* position: absolute; */
-    width: 280px;
-    display: block;
+    position: absolute;
+    min-width: 280px;
+    top: -120px;
+    left: 0px;
     border: none;
     border-bottom: 1px solid rgba(24, 28, 39, 0.1);
-    background-color: #f1f2f7;
     outline: none;
-    padding-left: 35px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
     height: 35px;
+    padding-left: 30px;
+  }
+
+  label {
+    position: relative;
+  }
+
+  .controlPanel {
+    padding-bottom: 80px;
   }
 }
 

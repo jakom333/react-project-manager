@@ -90,12 +90,12 @@
   max-width: 300px;
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .wrapper {
     display: flex;
     justify-content: flex-end;
   }
-}
+} */
 
 @media screen and (max-width: 1279px) {
   .wrapper {
