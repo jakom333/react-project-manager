@@ -10,11 +10,10 @@ const getProjects = () => async (dispatch, getState) => {
   try {
     const response = await axios.get(
       'https://sbc-backend.goit.global/project',
-      {
-        headers: { Authorization: getState().auth.token?.accessToken },
-      },
+      // {
+      //   headers: { Authorization: getState().auth.token?.accessToken },
+      // },
     );
-    // console.log(response.data);
 
     dispatch(projectsSuccess(response.data));
   } catch (error) {

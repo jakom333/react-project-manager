@@ -15,7 +15,7 @@ import {
 
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
-const token = {
+export const token = {
   token: '',
 
   set(token) {
@@ -25,6 +25,10 @@ const token = {
   },
   get() {
     return this.token;
+  },
+  refresh(token) {
+    this.token = token;
+    axios.defaults.headers.common.Authorization = token;
   },
   unset() {
     axios.defaults.headers.common.Authorization = '';
