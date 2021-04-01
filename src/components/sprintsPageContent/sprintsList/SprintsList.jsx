@@ -1,40 +1,24 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './SprintsList.module.css';
 import SprintsListItem from './sprintsListItem/SprintsListItem';
 import { getSprintsSelector } from '../../../redux/sprints/sprints-selectors';
 import { fetchSprints } from '../../../redux/sprints/sprints-operations';
-
-const sprintsList = [
-  {
-    title: 'Sprint 1',
-    _id: '1',
-  },
-  {
-    title: 'Sprint 2',
-    _id: '2',
-  },
-  {
-    title: 'Sprint 3',
-    _id: '3',
-  },
-  {
-    title: 'Sprint 4',
-    _id: '4',
-  },
-];
+import { useParams } from 'react-router-dom';
 
 const SprintsList = () => {
-  // const sprintsList = useSelector(getSprintsSelector);
-  // useEffect(() => {
-  //   fetchSprints('60648ec4c94bd96215a20430');
-  // }, []);
-  // console.log(sprintsList);
+  const params = useParams();
+  const sprints = useSelector(getSprintsSelector);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchSprints(params.projectId));
+  }, [dispatch]);
   return (
     <div>
       <div>
         <ul className={styles.sprintList}>
-          {sprintsList.map(({ title, _id }) => (
+          {sprints.map(({ title, _id }) => (
             <SprintsListItem key={_id} title={title} id={_id} />
           ))}
         </ul>

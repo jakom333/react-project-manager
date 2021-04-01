@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { token } from '../redux/auth/auth-operations';
 import { getIsAuthenticated } from '../redux/auth/auth-selectors';
 import { getProjects } from '../redux/projects/projects-operations';
 import Header from './header/Header';
@@ -12,20 +13,18 @@ import Main from './main/Main';
 
 const App = () => {
   // const [showModal, setShowModal] = useState(false);
-  const token = useSelector(state => state.auth.token?.accessToken);
   const isAuthenticated = useSelector(getIsAuthenticated);
   const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(async () => {
-    if (token) {
+    if (isAuthenticated) {
+      token.refresh(isAuthenticated);
       await dispatch(getProjects());
       return;
     }
-    // console.log(response);
-    if (token) return;
 
-    if (!token) {
+    if (!isAuthenticated) {
       history.push('/registration');
     }
   }, [history]);

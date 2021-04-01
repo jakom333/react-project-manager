@@ -8,6 +8,10 @@ const createProjectRequest = createAction('projects/createProjectRequest');
 const createProjectSuccess = createAction('projects/createProjectSuccess');
 const createProjectError = createAction('projects/createProjectError');
 
+const deleteProjectRequest = createAction('projects/delete-project-request');
+const deleteProjectSuccess = createAction('projects/delete-project-success');
+const deleteProjectError = createAction('projects/delete-project-error');
+
 export {
   projectsRequest,
   projectsSuccess,
@@ -15,4 +19,7 @@ export {
   createProjectRequest,
   createProjectSuccess,
   createProjectError,
+  deleteProjectRequest,
+  deleteProjectSuccess,
+  deleteProjectError,
 };
