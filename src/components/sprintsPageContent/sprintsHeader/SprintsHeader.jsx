@@ -5,7 +5,7 @@ import RoundButton from '../../../shared/roundButton/RoundButton';
 import ButtonShow from '../../../shared/buttonShow/ButtonShow';
 import MainModal from '../../../shared/mainModal/MainModal';
 import AddMember from '../../addMember/AddMember';
-// import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
+import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
 
 const SprintsHeader = () => {
   const [showModal, setShowModal] = useState(false);
@@ -26,22 +26,15 @@ const SprintsHeader = () => {
             </button>
           </div>
           <div className={styles.buttonBox}>
-            <RoundButton onClick={() => setShowModal(true)} />
+            <RoundButton onClick={() => setShowModal('createSprint')} />
             <p className={styles.pageText}>Create sprint</p>
-            {/* <MainModal
-              showModal={showModal}
-              setShowModal={setShowModal}
-              onClose={() => setShowModal(false)}
-            >
-              <CreateSprintForm />
-            </MainModal> */}
           </div>
         </div>
       </div>
       <p className={styles.description}>Короткий опис проекту</p>
       <div className={styles.addPeopleBox}>
         <button
-          onClick={() => setShowModal(true)}
+          onClick={() => setShowModal('addPeople')}
           type="button"
           className={styles.buttonAddPeople}
         >
@@ -53,9 +46,14 @@ const SprintsHeader = () => {
         <MainModal
           showModal={showModal}
           setShowModal={setShowModal}
-          onClose={() => setShowModal(false)}
+          onClose={() => setShowModal('')}
         >
-          <AddMember />
+          {showModal === 'addPeople' && (
+            <AddMember onClose={() => setShowModal('')} />
+          )}
+          {showModal === 'createSprint' && (
+            <CreateSprintForm onClose={() => setShowModal('')} />
+          )}
         </MainModal>
       </div>
     </div>

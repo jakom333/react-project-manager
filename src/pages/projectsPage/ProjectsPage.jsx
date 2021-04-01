@@ -23,7 +23,7 @@ const ProjectsPage = () => {
         setShowModal={setShowModal}
         onClose={() => setShowModal(false)}
       >
-        <ProjectForm />
+        <ProjectForm onClose={() => setShowModal(false)} />
       </MainModal>
     </div>
   );
