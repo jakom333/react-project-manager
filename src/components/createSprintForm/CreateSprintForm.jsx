@@ -4,30 +4,45 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
+import Button from '../../shared/button/Button';
+import { addSprint } from '../../redux/sprints/sprints-operations';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import styles from './CreateSprintForm.module.css';
 
 const formSchema = Yup.object().shape({
-  name: Yup.string().required('* Sprint name is a required field'),
-  time: Yup.number('* Duration has to be an appropriate number')
+  title: Yup.string().required('* Sprint name is a required field'),
+  duration: Yup.number('* Duration has to be an appropriate number')
     .required('* Duration is a required field')
     .positive()
     .integer(),
 });
 
-const CreateSprintForm = () => {
+const CreateSprintForm = ({ onClose }) => {
+  const DatePickerField = () => {
+    return (
+      <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+    );
+  };
+
+  const dispatch = useDispatch();
+  const params = useParams();
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <div className={styles.formContainer}>
       <h2 className={styles.titleForm}>Create a sprint</h2>
       <Formik
         initialValues={{
-          name: '',
-          time: '',
+          title: '',
+          endDate: '',
+          duration: '',
         }}
         validationSchema={formSchema}
         onSubmit={async (values, { resetForm }) => {
-          alert(JSON.stringify(values, null, 2));
-          // console.log(values);
+          addSprint(values);
+          dispatch(addSprint(values, params.projectId));
+          onClose();
+
           resetForm({});
           // написать здесь свою операцию  createSprint//
         }}
@@ -35,39 +50,54 @@ const CreateSprintForm = () => {
         <Form className={styles.form}>
           <Field
             className={styles.inputName}
-            name="name"
-            type="text"
-            placeholder="The name of the sprint"
+            name='title'
+            type='text'
+            placeholder='The name of the sprint'
           />
           <ErrorMessage
             className={styles.errorName}
-            component="span"
-            name="name"
+            component='span'
+            name='title'
           />
           <div className={styles.form}>
             <Field
               className={styles.checkbox}
-              type="checkbox"
-              name="pastDays"
-              placeholder="Includes past days"
+              type='checkbox'
+              name='pastDays'
+              placeholder='Includes past days'
             />
             <label className={styles.checkboxLabel}>
               <span>Includes previous days</span>
               <Field
                 className={styles.inputTime}
-                name="time"
-                type="text"
-                placeholder="Duration (days)"
+                name='endDate'
+                type='text'
+                placeholder='yyyy-mm-dd'
               />
             </label>
 
             <ErrorMessage
               className={styles.errorTime}
-              component="span"
-              name="time"
+              component='span'
+              name='endDate'
+            />
+            <label className={styles.checkboxLabel}>
+              <span>Includes previous days</span>
+              <Field
+                className={styles.inputTime}
+                name='duration'
+                type='text'
+                placeholder='Duration (days)'
+              />
+            </label>
+
+            <ErrorMessage
+              className={styles.errorTime}
+              component='span'
+              name='duration'
             />
           </div>
-          <button type="submit"> done </button>
+          <Button type='submit'>Done</Button>;
         </Form>
       </Formik>
     </div>
