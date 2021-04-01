@@ -28,27 +28,6 @@ const Task = () => {
           </button>
         </li>
       </ul>
-
-      {/* ============================================== */}
-      {/* <ul>
-        <li className={styles.item}>
-          <span>0</span>
-        </li>
-        <li className={styles.item}>
-          <input className={styles.input} type="text" />
-        </li>
-        <li className={styles.item}>
-          <span>0</span>
-        </li>
-        <li className={styles.item}>
-          <span></span>
-          <button className={styles.button} type="button">
-            <svg className={styles.icon}>
-              <use href={sprite + '#icon-delete-bin'} />
-            </svg>
-          </button>
-        </li>
-      </ul> */}
     </div>
   );
 };
