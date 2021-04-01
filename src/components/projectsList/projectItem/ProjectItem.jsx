@@ -4,6 +4,7 @@ import sprite from '../../../icons/symbol-defs.svg';
 import { Link, useHistory, useRouteMatch } from 'react-router-dom';
 
 const ProjectItem = ({ item }) => {
+
   const match = useRouteMatch();
   // const history = useHistory();
 
@@ -13,6 +14,7 @@ const ProjectItem = ({ item }) => {
   // };
 
   return (
+
     <li className={styles.projectItem}>
       <Link
         className={styles.projectLink}
