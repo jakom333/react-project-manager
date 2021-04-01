@@ -48,7 +48,7 @@ margin-bottom: 30px;
   }
 
 
-   .inputDays {
+   .inputTime {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -68,7 +68,7 @@ margin-bottom: 30px;
 
  
 .inputName:focus,
- .inputDays:focus{
+ .inputTime:focus{
   box-shadow: none;
   outline: none;
   border-color:accentColor ;
@@ -81,7 +81,7 @@ margin-bottom: 30px;
   margin-top: -55px;
 } 
 
-.errorDays{
+.errorTime{
   display:block;
   color: accentColor;
   margin-top: -38px;
@@ -120,35 +120,35 @@ margin-bottom: 30px;
   transition: text-indent 0.3s ease;
 }
 
-.inputDays::-webkit-input-placeholder {
+.inputTime::-webkit-input-placeholder {
   text-indent: 0px;
   transition: text-indent 0.3s ease;
 }
-.inputDays::-moz-placeholder {
+.inputTime::-moz-placeholder {
   text-indent: 0px;
   transition: text-indent 0.3s ease;
 }
-.inputDays:-moz-placeholder {
+.inputTime:-moz-placeholder {
   text-indent: 0px;
   transition: text-indent 0.3s ease;
 }
-.inputDays:-ms-input-placeholder {
+.inputTime:-ms-input-placeholder {
   text-indent: 0px;
   transition: text-indent 0.3s ease;
 }
-.inputDays:focus::-webkit-input-placeholder {
+.inputTime:focus::-webkit-input-placeholder {
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
-.inputDays:focus::-moz-placeholder {
+.inputTime:focus::-moz-placeholder {
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
-.inputDays:focus:-moz-placeholder {
+.inputTime:focus:-moz-placeholder {
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
-.inputDays:focus:-ms-input-placeholder {
+.inputTime:focus:-ms-input-placeholder {
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
@@ -185,7 +185,7 @@ margin-bottom: 50px;
   }
 
   
-   .inputDays {
+   .inputTime {
     padding-left: 5px;
     padding-top: 0px;
     font-size: 18px;
@@ -233,13 +233,13 @@ margin-bottom: 50px;
     margin-bottom:50px ;
    }
 
-    .inputDays {
+    .inputTime {
      width: 220px;
      margin-bottom:40px ;
     margin-bottom: 60px;
 }  
 
-.errorDays{
+.errorTime{
   display:block;
   color: accentColor;
   margin-top: -60px;

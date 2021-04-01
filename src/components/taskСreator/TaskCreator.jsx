@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 
 const formSchema = Yup.object().shape({
   name: Yup.string().required('* Task name is a required field'),
-  days: Yup.number().required('* Description is a required field'),
+  time: Yup.number().required('* Description is a required field'),
 });
 
 const TaskCreator = () => {
@@ -15,7 +15,7 @@ const TaskCreator = () => {
       <Formik
         initialValues={{
           name: '',
-          days: '',
+          time: '',
         }}
         validationSchema={formSchema}
         onSubmit={async (values, { resetForm }) => {
@@ -39,16 +39,16 @@ const TaskCreator = () => {
           />
 
           <Field
-            className={styles.inputDays}
-            name="days"
+            className={styles.inputTime}
+            name="time"
             type="text"
-            placeholder="Project duration"
+            placeholder="Scheduled hours"
           />
 
           <ErrorMessage
-            className={styles.errorDays}
+            className={styles.errorTime}
             component="span"
-            name="days"
+            name="time"
           />
           <button type="submit"> done </button>
         </Form>
