@@ -6,6 +6,8 @@ import { addMember } from '../../redux/projectMembers/projectMembers-operations'
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProjectsSelector } from '../../redux/projects/projects-selectors';
+import Button from '../../shared/button/Button';
+import { useState } from 'react';
 
 const formSchema = Yup.object().shape({
   email: Yup.string()
@@ -20,50 +22,53 @@ const initialState = {
 const AddMember = () => {
   const { projectId } = useParams();
   const dispatch = useDispatch();
-  console.log(projectId);
-
   const projects = useSelector(getProjectsSelector);
   const members = projects.find(item => item._id === projectId).members;
-
-  console.log(members);
+  const [state, setState] = useState(initialState);
 
   return (
-    <div className={styles.formContainer}>
-      <h2 className={styles.titleForm}>Add new project member</h2>
-      <Formik
-        initialValues={initialState}
-        validationSchema={formSchema}
-        onSubmit={async (values, { resetForm }) => {
-          // alert(JSON.stringify(values, null, 2));
-          console.log(values);
-          addMember(values);
-          dispatch(addMember(values, projectId));
-          resetForm({});
-        }}
-      >
-        <Form className={styles.memberForm}>
-          {/* <div className={styles.formGroup}> */}
-          <Field
-            className={styles.input}
-            name="email"
-            type="text"
-            placeholder="E-mail"
-          />
+    <div>
+      <div className={styles.formContainer}>
+        <h2 className={styles.titleForm}>Add new project member</h2>
+        <Formik
+          initialValues={{ email: '' }}
+          validationSchema={formSchema}
+          onSubmit={async (values, { resetForm }) => {
+            // alert(JSON.stringify(values, null, 2));
+            // console.log(values);
 
-          <ErrorMessage
-            className={styles.error}
-            component="span"
-            name="email"
-          />
-          {/* <label htmlFor="email" className={styles.formLabel}>
-            E-mail
-          </label> */}
-          {/* </div> */}
+            // setState(prevState => ({
+            //   ...prevState,
+            //   email: values,
+            // }));
 
-          <button type="submit"> done </button>
-        </Form>
-      </Formik>
-      <MembersList members={members} />
+            // console.log(initialState);
+
+            addMember(values);
+            dispatch(addMember(values, projectId));
+            resetForm({});
+          }}
+        >
+          <Form className={styles.memberForm}>
+            <Field
+              className={styles.input}
+              name="email"
+              type="text"
+              placeholder="E-mail"
+            />
+
+            <ErrorMessage
+              className={styles.error}
+              component="span"
+              name="email"
+            />
+            <button type="submit"> done </button>
+          </Form>
+        </Formik>
+        <MembersList members={members} />
+      </div>
+
+      <Button id="form">Done</Button>
     </div>
   );
 };

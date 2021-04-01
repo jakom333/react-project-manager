@@ -7,9 +7,7 @@ import {
 
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
-const addMember = ({ email }) => async dispatch => {
-  const projectId = '60648ec4c94bd96215a20430';
-  console.log(email, projectId);
+const addMember = ({ email }, projectId) => async dispatch => {
   dispatch(addMemberRequest());
   try {
     const { data } = await axios.post(

@@ -1,26 +1,24 @@
 import { useDispatch } from 'react-redux';
-import { logIn } from '../../redux/auth/auth-operations.js';
-import Button from '../../shared/button/Button.jsx';
-import styles from './LoginForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
-
+import { logIn } from '../../redux/auth/auth-operations.js';
+import Button from '../../shared/button/Button.jsx';
 import Background from '../background/Background.jsx';
+import styles from './LoginForm.module.css';
 
 const formSchema = Yup.object().shape({
   email: Yup.string()
     .required('* Email is a required field')
     .email('* Email must be valid'),
   password: Yup.string()
-    .min(6, 'Too short!')
+    .min(6, 'Too weak password!')
     .required('* Password is a required field'),
 });
-
 const LoginFormik = () => {
   const dispatch = useDispatch();
   return (
-    <div className={styles.styles.wrapper}>
+    <div className={styles.wrapper}>
       <Background />
       <Formik
         initialValues={{ email: '', password: '' }}
@@ -31,35 +29,30 @@ const LoginFormik = () => {
           resetForm({});
         }}
       >
-        <Form className={styles.styles.form}>
+        <Form className={styles.form}>
           <h1 className={styles.title}>Sign in</h1>
-
           <Field
             type="text"
             name="email"
             className={styles.input}
             placeholder="E-mail"
           />
-
           <ErrorMessage
-            className={styles.error}
+            className={styles.warning}
             component="span"
             name="email"
           />
-
           <Field
             type="password"
             name="password"
             className={styles.input}
             placeholder="Password"
           />
-
           <ErrorMessage
-            className={styles.error}
+            className={styles.warning}
             component="span"
             name="password"
           />
-
           <Button>Sign in</Button>
           <p className={styles.textUnderbutton}>
             Don't yet have an account?
@@ -72,5 +65,4 @@ const LoginFormik = () => {
     </div>
   );
 };
-
 export default LoginFormik;

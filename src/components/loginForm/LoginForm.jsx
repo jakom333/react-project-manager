@@ -56,7 +56,6 @@ export default function LoginForm() {
           />
         </label>
         {error ? <span className={styles.warning}>Wrong input</span> : ''}
-
         <div className={styles.button_wrapper}>
           <Button>Sign in</Button>
         </div>

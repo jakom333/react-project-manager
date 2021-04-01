@@ -15,11 +15,26 @@ const formSchema = Yup.object().shape({
     .min(3, 'Too short!')
     .required('* Sprint name is a required field'),
   duration: Yup.number()
-    .typeError('* Duration has to be an appropriate number')
-    .required('* Duration is a required field')
-    .positive()
-    .integer(),
+    .typeError(' Duration has to be a number')
+    .required(' Duration is a required field')
+    .positive('Duration must be a positive number')
+    .integer('Duration must be an integer'),
+  date: Yup.string()
+    .matches(
+      /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/,
+      'Invalid date (yyyy-mm-dd)',
+    )
+    .required(' Date is a required field')
+    .typeError(' Pick a date'),
 });
+
+// const date = '2020-4-1';
+// const response = date
+//   .split('-')
+//   .map(item => (item.length < 2 ? (item = '0' + item) : item))
+//   .join('-');
+
+// console.log(response);
 
 const CreateSprintForm = ({ onClose }) => {
   const DatePickerField = () => {
@@ -42,12 +57,13 @@ const CreateSprintForm = ({ onClose }) => {
         }}
         validationSchema={formSchema}
         onSubmit={async (values, { resetForm }) => {
-          addSprint(values);
-          dispatch(addSprint(values, params.projectId));
+          const { title, date, duration } = values;
+          const endDate = date.replace(/\b0/g, '');
+          console.log(date);
+          addSprint(title, endDate, duration);
+          dispatch(addSprint({ title, endDate, duration }, params.projectId));
           onClose();
-
           resetForm({});
-          // написать здесь свою операцию  createSprint//
         }}
       >
         <Form className={styles.form}>
@@ -62,37 +78,35 @@ const CreateSprintForm = ({ onClose }) => {
             component="span"
             name="title"
           />
-          <div className={styles.form}>
+          <label>
+            <p className={styles.checkboxLabel}>Include previous days</p>
             <Field
               className={styles.checkbox}
               type="checkbox"
               name="pastDays"
               placeholder="Includes past days"
             />
-            <label className={styles.checkboxLabel}>
-              <span>Includes previous days</span>
-              <Field
-                className={styles.inputTime}
-                name="endDate"
-                type="text"
-                placeholder="yyyy-mm-dd"
-              />
-            </label>
+          </label>
+          <div className={styles.form}>
+            <Field
+              className={styles.inputTime}
+              name="date"
+              type="text"
+              placeholder="yyyy-mm-dd"
+            />
 
             <ErrorMessage
               className={styles.errorTime}
               component="span"
-              name="endDate"
+              name="date"
             />
-            <label className={styles.checkboxLabel}>
-              <span>Include previous days</span>
-              <Field
-                className={styles.inputTime}
-                name="duration"
-                type="text"
-                placeholder="Duration (days)"
-              />
-            </label>
+
+            <Field
+              className={styles.inputTime}
+              name="duration"
+              type="text"
+              placeholder="Duration (days)"
+            />
 
             <ErrorMessage
               className={styles.errorTime}
@@ -100,7 +114,7 @@ const CreateSprintForm = ({ onClose }) => {
               name="duration"
             />
           </div>
-          <Button type="submit">Done</Button>;
+          <Button type="submit">Done</Button>
         </Form>
       </Formik>
     </div>
