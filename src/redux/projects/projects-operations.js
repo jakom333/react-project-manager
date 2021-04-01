@@ -4,7 +4,10 @@ import {
   createProjectRequest,
   createProjectSuccess,
   projectsSuccess,
-} from './projects-actions';
+  deleteProjectRequest,
+  deleteProjectSuccess,
+  deleteProjectError,
+  } from './projects-actions';
 
 const getProjects = () => async (dispatch, getState) => {
   try {
@@ -41,4 +44,16 @@ const createProject = project => async dispatch => {
   }
 };
 
-export { getProjects, createProject };
+const deleteProject = (projectId) => async dispatch => {
+  dispatch(deleteProjectRequest());
+
+  try {
+    axios.delete(`/project`);
+
+    dispatch(deleteProjectSuccess(projectId));
+  } catch (error) {
+    dispatch(deleteProjectError(error.message));
+  }
+};
+
+export { getProjects, createProject, deleteProject };

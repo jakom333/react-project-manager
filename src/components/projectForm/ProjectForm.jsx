@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage, useField } from 'formik';
 import * as Yup from 'yup';
+import { createProject } from '../../redux/projects/projects-operations';
+import projects from '../../redux/projects/projects-reducers';
 
 // const TextInput = ({ className, ...props }) => {
 //   const [field, meta] = useField(props);
@@ -26,7 +28,7 @@ const ProjectForm = () => {
         onSubmit={values => {
           alert(JSON.stringify(values, null, 2));
           // resetForm({ email: '' });
-          //addProject//
+          createProject(projects())
         }}
       >
         <Form className={styles.memberForm}>
@@ -54,7 +56,10 @@ const ProjectForm = () => {
             component="small"
             name="description"
           />
+
+          <button  type="submit">Submit</button>
         </Form>
+
       </Formik>
     </div>
   );
