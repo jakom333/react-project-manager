@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import MainPageContainer from '../../components/taskPageContainer/mainPageContainer/MainPageContainer';
 import LeftBar from '../../components/taskPageContainer/leftBar/LeftBar';
 import RightBar from '../../components/taskPageContainer/rightBar/RightBar';
@@ -8,10 +8,10 @@ import RightItemBar from '../../components/taskPageContainer/rightItemBar/RightI
 import ProjectSideBar from '../../components/sprintsPageContent/projectSideBar/ProjectSideBar';
 
 import { container } from '../../container.module.css';
-import axios from 'axios';
-import { useRouteMatch } from 'react-router';
-import { useSelector } from 'react-redux';
-import { fetchSprints } from '../../redux/sprints/sprints-operations';
+// import axios from 'axios';
+// import { useRouteMatch } from 'react-router';
+// import { useSelector } from 'react-redux';
+// import { fetchSprints } from '../../redux/sprints/sprints-operations';
 
 const SprintsPage = () => {
   // const token = useSelector(state => state.auth.token.accessToken);

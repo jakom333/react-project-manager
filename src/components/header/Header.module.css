@@ -1,21 +1,52 @@
 .header {
   display: flex;
-  padding: 0 20px;
-  margin-top: 5px;
+  padding: 5px 20px;
   height: 60px;
+  background: rgba(241, 242, 247, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .headerLogo {
-  display: flex;
-
   margin-top: 5px;
   height: 60px;
-  align-items: baseline;
+
   width: 100px;
   height: 30px;
 }
 
+.iconSearch {
+  fill: rgba(24, 28, 39, 0.6);
+  width: 20px;
+  height: 20px;
+}
+
+.underlined {
+  color: rgba(24, 28, 39, 0.6);
+  margin-left: 4px;
+}
+.logOutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.underlined:hover {
+  color: #ff6b08;
+  transition: all 0.3s linear;
+}
+
 @media screen and (min-width: 768px) {
+  .header {
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    height: 80px;
+  }
+
   .headerLogo {
     width: 140px;
     height: 42px;

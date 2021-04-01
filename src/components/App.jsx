@@ -1,5 +1,4 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { token } from '../redux/auth/auth-operations';
@@ -17,17 +16,20 @@ const App = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  useEffect(async () => {
-    if (isAuthenticated) {
-      token.refresh(isAuthenticated);
-      await dispatch(getProjects());
-      return;
-    }
+  useEffect(() => {
+    const getResult = async () => {
+      if (isAuthenticated) {
+        token.refresh(isAuthenticated);
+        await dispatch(getProjects());
+        return;
+      }
 
-    if (!isAuthenticated) {
-      history.push('/registration');
-    }
-  }, [history]);
+      if (!isAuthenticated) {
+        history.push('/registration');
+      }
+    };
+    getResult();
+  }, [history, isAuthenticated, dispatch]);
 
   return (
     <div>

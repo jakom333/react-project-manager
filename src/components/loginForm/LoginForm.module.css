@@ -1,12 +1,3 @@
-/* *,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: rgba(250, 250, 250, 1);
-} */
-
 .container {
   padding: 0 20px;
   max-width: 320px;
@@ -17,6 +8,8 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  /* background: rgba(241, 242, 247, 1); */
+  background-color: #fafafa;
 }
 
 .form {
@@ -81,12 +74,14 @@
 }
 
 .underlined {
+  color: rgba(24, 28, 39, 0.6);
   text-decoration: underline;
 }
 
 @media screen and (min-width: 768px) {
-  
-
+  .wrapper {
+    background: rgba(241, 242, 247, 1);
+  }
   .form {
     outline: 1px solid rgba(24, 28, 39, 0.2);
     position: absolute;
@@ -96,6 +91,8 @@
     transform: translate(-50%, -50%);
     max-width: 570px;
     max-height: 538px;
+    z-index: 10;
+    background-color: #fafafa;
   }
 
   .input {
