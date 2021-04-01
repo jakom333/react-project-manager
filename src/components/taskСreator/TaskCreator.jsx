@@ -4,8 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const formSchema = Yup.object().shape({
-  name: Yup.string().required('* Project Name is a required field'),
-  days: Yup.string().required('* Description is a required field'),
+  name: Yup.string().required('* Task name is a required field'),
+  days: Yup.number().required('* Description is a required field'),
 });
 
 const TaskCreator = () => {
