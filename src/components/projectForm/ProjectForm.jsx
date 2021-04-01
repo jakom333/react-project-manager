@@ -23,37 +23,39 @@ const ProjectForm = () => {
           description: '',
         }}
         validationSchema={formSchema}
-        onSubmit={values => {
-          alert(JSON.stringify(values, null, 2));
-          // resetForm({ email: '' });
+        onSubmit={async (values, { resetForm }) => {
+          // alert(JSON.stringify(values, null, 2));
+          console.log(values);
+          resetForm({});
           //addProject//
         }}
       >
-        <Form className={styles.memberForm}>
+        <Form className={styles.form}>
           <Field
-            className={styles.input}
+            className={styles.inputName}
             name="name"
             type="text"
             placeholder="Project name"
           />
           <ErrorMessage
-            className={styles.error}
-            component="small"
+            className={styles.errorName}
+            component="span"
             name="name"
           />
 
           <Field
-            className={styles.input}
+            className={styles.inputDescription}
             name="description"
             type="text"
             placeholder="Project description"
           />
 
           <ErrorMessage
-            className={styles.error}
-            component="small"
+            className={styles.errorDescription}
+            component="span"
             name="description"
           />
+          <button type="submit"> done </button>
         </Form>
       </Formik>
     </div>

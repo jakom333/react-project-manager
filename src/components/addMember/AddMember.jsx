@@ -16,9 +16,9 @@ const AddMember = () => {
       <Formik
         initialValues={{ email: '' }}
         validationSchema={formSchema}
-        onSubmit={(values, { resetForm }) => {
+        onSubmit={async (values, { resetForm }) => {
           //setError
-          alert(JSON.stringify(values, null, 2));
+          // alert(JSON.stringify(values, null, 2));
           resetForm({ email: '' });
           //addMember//
         }}
@@ -41,6 +41,8 @@ const AddMember = () => {
             E-mail
           </label> */}
           {/* </div> */}
+
+          <button type="submit"> done </button>
         </Form>
       </Formik>
       <MembersList />
