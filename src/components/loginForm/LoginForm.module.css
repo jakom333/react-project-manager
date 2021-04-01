@@ -57,7 +57,12 @@
   align-items: center;
   letter-spacing: 0.04em;
 
-  color: rgba(24, 28, 39, 0.6);
+  color: rgb(24, 28, 39);
+}
+
+.input::placeholder {
+  font-family: inherit;
+  color: rgba(24, 28, 39, 0.2);
 }
 
 .textUnderbutton {
@@ -78,6 +83,11 @@
   text-decoration: underline;
 }
 
+.underlined:hover {
+  color: #ff6b08;
+  transition: all 0.3s linear;
+}
+
 @media screen and (min-width: 768px) {
   .wrapper {
     background: rgba(241, 242, 247, 1);
@@ -96,6 +106,7 @@
   }
 
   .input {
+    font-family: 'Montserrat', sans-serif;
     width: 430px;
     height: 55px;
   }

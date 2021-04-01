@@ -49,6 +49,7 @@
 }
 
 .input {
+  font-family: 'Montserrat', sans-serif;
   width: 280px;
   padding: 9px;
   border: none;
@@ -66,12 +67,13 @@
   letter-spacing: 0.04em;
 
   margin: 0 auto;
+  color: rgb(24, 28, 39);
 }
 
 .input::placeholder {
-  font-style: italic;
-
-  /* //rgba(24, 28, 39, 0.2) */
+  font-family: inherit;
+  color: rgba(24, 28, 39, 0.2);
+  
 }
 
 .textUnderbutton {
@@ -90,6 +92,11 @@
 .underlined {
   color: rgba(24, 28, 39, 0.6);
   text-decoration: underline;
+}
+
+.underlined:hover {
+  color: #ff6b08;
+  transition: all 0.3s linear;
 }
 
 @media screen and (min-width: 768px) {

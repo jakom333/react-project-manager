@@ -91,7 +91,7 @@ export default function RegistrationForm() {
             value={user.email}
             onChange={handleChange}
             className={styles.input}
-            placeholder="your_email@mail.com"
+            placeholder="E-mail"
           />
         </label>
         {formErrors.email}
@@ -111,7 +111,7 @@ export default function RegistrationForm() {
             value={user.password}
             onChange={handleChange}
             className={styles.input}
-            placeholder="******"
+            placeholder="Password"
           />
         </label>
         {formErrors.password}
