@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import React from 'react';
+import {useDispatch } from 'react-redux';
 import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -14,11 +14,6 @@ const formSchema = Yup.object().shape({
     .min(4, 'Too short!')
     .required('* Description is a required field'),
 });
-
-const initialState = {
-  title: '',
-  description: '',
-};
 
 const ProjectForm = ({ onClose }) => {
   const dispatch = useDispatch();
@@ -50,15 +45,15 @@ const ProjectForm = ({ onClose }) => {
 
           <Field
             className={styles.inputDescription}
-            name="description"
-            type="text"
-            placeholder="Project description"
+            name='description'
+            type='text'
+            placeholder='Project description'
           />
 
           <ErrorMessage
             className={styles.errorDescription}
-            component="span"
-            name="description"
+            component='span'
+            name='description'
           />
           <Button type="submit">Done</Button>
         </Form>
@@ -67,14 +62,6 @@ const ProjectForm = ({ onClose }) => {
   );
 };
 
-//
-//const mapStateToProps = (state) => ({
-//  email: getIsAuthenticated(state),
-//});
-//
-//const mapDispatchToProps = {
-//  createProject: createProject,
-//};
 
 export default ProjectForm;
 

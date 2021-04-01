@@ -1,33 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { NavLink} from 'react-router-dom';
 import styles from './ProjectSideBarList.module.css';
-
-const projectList = [
-  {
-    title: 'Project 1',
-    id: '1',
-  },
-  {
-    title: 'Project 2',
-    id: '2',
-  },
-  {
-    title: 'Project 3',
-    id: '3',
-  },
-  {
-    title: 'Project 4',
-    id: '4',
-  },
-];
+import { getProjectsSelector } from '../../../redux/projects/projects-selectors';
+import { useSelector } from 'react-redux';
 
 const ProjectSideBarList = () => {
+  const projects = useSelector(getProjectsSelector);
+
   return (
     <div className={styles.box}>
       <ul className={styles.sideLeftList}>
-        {projectList.map(({ title, id }) => (
-          <li key={id} className={styles.sideItem}>
-            <div className={styles.sideItemBox}></div>
-            <p className={styles.sideItemName}>{title}</p>
+        {projects.map(({ title, _id }) => (
+          <li key={_id} className={styles.sideItem}>
+            <NavLink  activeClassName={styles.avtive} className={styles.sideItemLink} to={`${_id}`} id={_id}>
+              <p className={styles.sideItemName}>{title}</p>
+            </NavLink>
           </li>
         ))}
       </ul>
