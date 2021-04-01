@@ -4,20 +4,19 @@ import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { createProject } from '../../redux/projects/projects-operations';
-
+import Button from '../../shared/button/Button';
 
 const formSchema = Yup.object().shape({
   title: Yup.string().required('* Project Name is a required field'),
   description: Yup.string().required('* Description is a required field'),
 });
 
-
 const initialState = {
-  title: "",
-  description: "",
+  title: '',
+  description: '',
 };
 
-const ProjectForm = () => {
+const ProjectForm = ({ onClose }) => {
   const dispatch = useDispatch();
 
   return (
@@ -30,9 +29,9 @@ const ProjectForm = () => {
         }}
         validationSchema={formSchema}
         onSubmit={values => {
-          createProject(values)
+          createProject(values);
           dispatch(createProject(values));
-
+          onClose();
         }}
       >
         <Form className={styles.form}>
@@ -60,7 +59,7 @@ const ProjectForm = () => {
             component="span"
             name="description"
           />
-          <button type="submit">Submit</button>
+          <Button type="submit">Done</Button>
         </Form>
       </Formik>
     </div>
