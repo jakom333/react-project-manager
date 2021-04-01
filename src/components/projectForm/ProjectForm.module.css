@@ -13,6 +13,8 @@
     padding-top: 67px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
+     margin-bottom: 20px;
     margin: 0 auto;
     max-width: 480px;
  }
@@ -75,11 +77,6 @@ margin-bottom: 30px;
   border-color:accentColor ;
 }
 
-/* .inputName:focus{
-  box-shadow: none;
-  outline: none;
-  border-color:accentColor ;
-} */
 
 .errorName{
   display:block;
@@ -170,6 +167,8 @@ margin-bottom: 30px;
     padding-top: 121px;
     padding-left: 32px;
     padding-right: 51px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
      width: 512px;
  }
 

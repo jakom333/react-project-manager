@@ -4,8 +4,11 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const formSchema = Yup.object().shape({
-  name: Yup.string().required('* Project Name is a required field'),
-  description: Yup.string().required('* Description is a required field'),
+  name: Yup.string().required('* Task name is a required field'),
+  time: Yup.number('* Scheduled time has to be an appropriate number')
+    .required('* Description is a required field')
+    .positive()
+    .integer(),
 });
 
 const TaskCreator = () => {
@@ -15,7 +18,7 @@ const TaskCreator = () => {
       <Formik
         initialValues={{
           name: '',
-          description: '',
+          time: '',
         }}
         validationSchema={formSchema}
         onSubmit={async (values, { resetForm }) => {
@@ -30,7 +33,7 @@ const TaskCreator = () => {
             className={styles.inputName}
             name="name"
             type="text"
-            placeholder="Project name"
+            placeholder="Task name"
           />
           <ErrorMessage
             className={styles.errorName}
@@ -39,16 +42,16 @@ const TaskCreator = () => {
           />
 
           <Field
-            className={styles.inputDescription}
-            name="description"
+            className={styles.inputTime}
+            name="time"
             type="text"
-            placeholder="Project description"
+            placeholder="Scheduled hours"
           />
 
           <ErrorMessage
-            className={styles.errorDescription}
+            className={styles.errorTime}
             component="span"
-            name="description"
+            name="time"
           />
           <button type="submit"> done </button>
         </Form>
