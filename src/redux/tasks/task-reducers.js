@@ -22,7 +22,9 @@ const tasks = createReducer([], {
     ...state.filter(item => item.id !== payload),
   ],
 
-  //   [changeTaskSuccess]: (state, { payload }) => [payload],
+    [changeTaskSuccess]: (state, { payload }) => [
+      ...state.map(item => item.id === payload.id ? payload : item),
+    ],
 });
 
 const loading = createReducer(false, {
@@ -56,8 +58,10 @@ const error = createReducer(null, {
 
 // const error = createReducer(null, {});
 
-export default combineReducers({
-  tasks,
-  loading,
-  error,
-});
+// export default combineReducers({
+//   tasks,
+//   loading,
+//   error,
+// });
+
+export default tasks;

@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './Task.module.css';
+import styles from './TaskListItem.module.css';
 import sprite from '../../icons/symbol-defs.svg';
 
-const Task = () => {
+const TaskListItem = ({item}) => {
   return (
     <div className={styles.card}>
-      <h2 className={styles.title}>KN-1 Configure project</h2>
+      <h2 className={styles.title}>{item.title}</h2>
       <ul className={styles.list}>
         <li className={styles.item}>
           <span className={styles.itemName}>Scheduled hours</span>
@@ -32,4 +32,4 @@ const Task = () => {
   );
 };
 
-export default Task;
+export default TaskListItem;
