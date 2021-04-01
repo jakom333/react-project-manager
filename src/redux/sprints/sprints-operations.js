@@ -19,7 +19,7 @@ const fetchSprints = projectId => async dispatch => {
 
   try {
     const { data } = await axios.get(`/sprint/${projectId}`);
-    dispatch(fetchSprintsSucces(data.sprints));
+    dispatch(fetchSprintsSucces(data.sprints ? data.sprints : []));
   } catch (error) {
     dispatch(fetchSprintsError(error.message));
   }

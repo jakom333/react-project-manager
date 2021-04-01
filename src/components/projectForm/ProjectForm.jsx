@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import {useDispatch } from 'react-redux';
 import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { createProject } from '../../redux/projects/projects-operations';
-
 import Button from '../../shared/button/Button';
 
 const formSchema = Yup.object().shape({
@@ -38,14 +37,14 @@ const ProjectForm = ({ onClose }) => {
         <Form className={styles.form}>
           <Field
             className={styles.inputName}
-            name='title'
-            type='text'
-            placeholder='Project name'
+            name="title"
+            type="text"
+            placeholder="Project name"
           />
           <ErrorMessage
             className={styles.errorName}
-            component='span'
-            name='title'
+            component="span"
+            name="title"
           />
 
           <Field
@@ -60,21 +59,13 @@ const ProjectForm = ({ onClose }) => {
             component='span'
             name='description'
           />
-          <Button type='submit'>Done</Button>
+          <Button type="submit">Done</Button>
         </Form>
       </Formik>
     </div>
   );
 };
 
-//
-//const mapStateToProps = (state) => ({
-//  email: getIsAuthenticated(state),
-//});
-//
-//const mapDispatchToProps = {
-//  createProject: createProject,
-//};
 
 export default ProjectForm;
 
