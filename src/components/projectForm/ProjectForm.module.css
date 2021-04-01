@@ -8,7 +8,7 @@
 @media screen and (min-width: 320px) {
 
 .formContainer{
-background-color: white;
+    background-color: white;
     max-width: 320px ;
     padding-top: 67px;
     padding-left: 20px;
@@ -16,16 +16,9 @@ background-color: white;
     margin: 0 auto;
     max-width: 480px;
  }
- .isInvalid{
-     background-color: red;
- }
 
- .memberForm{
-   background-color: white;
- }
- 
   .titleForm {
-    background-color: white;
+background-color: white;
 font-weight: 500;
 font-size: 26px;
 line-height: 32px;
@@ -37,71 +30,134 @@ margin-bottom: 30px;
   
 
 
-  .input {
+  .inputName {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     width: 100%;
-    height: 30px;
+    height: 53px;
     outline: none;
     border-color: greyColor;
     border: none;
     border-bottom: solid .8px greyColor;
     font-size: 16px;
-    margin-bottom:30px ;
+    line-height: 20px;
+    margin-bottom:58px ;
+    transition: all .5s;
+    
+  }
+
+
+   .inputDescription {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 100%;
+    height: 85px;
+    outline: none;
+    border-color: greyColor;
+    border: none;
+    border-bottom: solid .8px greyColor;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom:40px ;
     transition: all .5s;
     
   }
 
  
-.input:focus{
+.inputName:focus,
+ .inputDescription:focus{
   box-shadow: none;
   outline: none;
   border-color:accentColor ;
 }
 
-.error{
-  background-color: white;
+/* .inputName:focus{
+  box-shadow: none;
+  outline: none;
+  border-color:accentColor ;
+} */
+
+.errorName{
+  display:block;
   color: accentColor;
-  margin-top: -85px;
+  margin-top: -55px;
 } 
 
+.errorDescription{
+  display:block;
+  color: accentColor;
+  margin-top: -38px;
+} 
 
-.input::-webkit-input-placeholder {
+.inputName::-webkit-input-placeholder {
   text-indent: 0px;
   transition: text-indent 0.3s ease;
 }
-.input::-moz-placeholder {
+.inputName::-moz-placeholder {
   text-indent: 0px;
   transition: text-indent 0.3s ease;
 }
-.input:-moz-placeholder {
+.inputName:-moz-placeholder {
   text-indent: 0px;
   transition: text-indent 0.3s ease;
 }
-.input:-ms-input-placeholder {
+.inputName:-ms-input-placeholder {
   text-indent: 0px;
   transition: text-indent 0.3s ease;
 }
-.input:focus::-webkit-input-placeholder {
+.inputName:focus::-webkit-input-placeholder {
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
-.input:focus::-moz-placeholder {
+.inputName:focus::-moz-placeholder {
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
-.input:focus:-moz-placeholder {
+.inputName:focus:-moz-placeholder {
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
-.input:focus:-ms-input-placeholder {
+.inputName:focus:-ms-input-placeholder {
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
 
-
+.inputDescription::-webkit-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription::-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:-ms-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:focus::-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:focus:-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:focus:-ms-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
 }
 
 
@@ -112,9 +168,9 @@ margin-bottom: 30px;
 .formContainer{
     max-width: 512px ;
     padding-top: 121px;
-    padding-left: 20px;
-    padding-right: 62px;
-    padding-bottom: 75px;
+    padding-left: 32px;
+    padding-right: 51px;
+    padding-bottom: 481px;
   /* text-align: center; */
     width: 512px;
  }
@@ -125,19 +181,41 @@ font-weight: 500;
 font-size: 36px;
 line-height: 44px;
 display: block;
-margin-bottom: 49px;
+margin-bottom: 50px;
 }
   
 
 
 
-  .input {
-    padding: 10px;
+  .inputName {
+    padding-left: 5px;
      font-size: 18px;
     line-height: 22px;
-    margin-bottom:39px ;
+    margin-bottom:50px ;
     width: 100%; 
   }
+
+
+  
+   .inputDescription {
+    padding-left: 5px;
+    padding-top: 0px;
+    height: 100px;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom:40px ;
+
+    
+  }
+
+  .errorName{
+  display:block;
+  color: accentColor;
+  margin-top: -50px;
+} 
+
+
+
  
 }
 
@@ -149,7 +227,7 @@ margin-bottom: 49px;
     max-width: 530px ;
      padding-top: 121px;
     padding-left: 50px;
-    padding-right: 100px;
+    padding-right: 51px;
     width: 530px;
 
  }
@@ -163,12 +241,30 @@ margin-bottom: 50px;
 }
   
 
+  .inputName {
+    padding-left: 5px;
+     font-size: 18px;
+    line-height: 30px;
+    margin-bottom:50px ;
+    width: 100%; 
+  }
 
-  .input {
+
+  
+   .inputDescription {
+    padding-left: 5px;
+    padding-top: 0px;
     font-size: 18px;
-     line-height: 22px;
-    margin-bottom:30px ;
-     width: 100%;
-    }
- 
+    height: 130px;
+    line-height: 22px;
+    margin-bottom:40px ;
+    margin-bottom: 60px;
 }  
+
+.errorDescription{
+  display:block;
+  color: accentColor;
+  margin-top: -60px;
+} 
+
+}
