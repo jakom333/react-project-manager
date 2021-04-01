@@ -1,18 +1,9 @@
-.title{
+.title {
     display: flex;
     align-items: center;
 }
 
-.titleBox{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.addPeopleBox{
-    margin: 0;
-}
-
-.buttonFix{
+.buttonFix {
     width: 20px;
     height: 20px;
     background-color: transparent;
@@ -20,16 +11,15 @@
     border: none;
 }
 
-.buttonAddPeople{
-    margin: 0;
+.buttonAddPeople {
     display: flex;
     align-items: center;
     outline: none;
     border: none;
     background-color: transparent;
 }
-.addPeopleText{
-    font-style: normal;
+
+.addPeopleText {
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
@@ -39,40 +29,55 @@
     text-decoration-line: underline;
     color: #181C27;
 }
-.description{
+
+.description {
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 0;
 }
 
+.showProject {
+    width: 100%;
+}
 
-@media screen and (min-width: 768px){
-    .boxBack{
-    display: none;
+.buttonAddPeople {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.titleBox {
+    margin-bottom: 30px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .boxBack {
+        display: none;
     }
 }
 
-.iconPencil{
+.iconPencil {
     fill: black;
     width: 20px;
     height: 20px;
 }
-.iconAddPeople{
+
+.iconAddPeople {
     width: 20px;
     height: 20px;
     margin-right: 10px;
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
 
-    .head{
+    .head {
         margin-top: 40px;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
     }
 
-    .buttonBox{
+    .buttonBox {
         position: fixed;
         right: 20px;
         bottom: 20px;
@@ -80,8 +85,7 @@
         margin-right: 0;
     }
 
-    .description{
-
+    .description {
         padding-right: 20px;
         font-style: normal;
         font-weight: 500;
@@ -91,8 +95,8 @@
         color: #181C27;
     }
 
-    .pageTitle{
-        margin-bottom: 0px;
+    .pageTitle {
+
         margin-right: 15px;
         display: flex;
         align-items: center;
@@ -101,15 +105,15 @@
         line-height: 32px;
         letter-spacing: 0.04em;
         color: #181C27;
-        margin-top: 0;
+
 
     }
 
-    .pageText{
+    .pageText {
         display: none;
     }
 
-    .boxBack{
+    .boxBack {
         width: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -121,49 +125,48 @@
 
     }
 
-    .showProject{
-        margin: 0;
-        width: 100%;
-    }
 
 }
 
 
-@media screen and  (min-width: 768px) and (max-width: 1279px){
+@media screen and  (min-width: 768px) and (max-width: 1279px) {
 
-    .boxBack{
-        position: absolute;
-        left: 44px;
-        top: 20px;
+    .boxBack {
         width: 130px;
         margin-bottom: 165px;
     }
 
 
-    .head{
+    .head {
         margin-top: 40px;
         margin-bottom: 20px;
     }
 
-    .pageText{
+    .pageText {
         display: none;
 
     }
-    .pageTitle{
+
+    .pageTitle {
+        max-width: 300px;
         display: flex;
         align-items: center;
         margin-right: 20px;
-        margin-top: 0;
-        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 44px;
+        letter-spacing: 0.04em;
+        color: #181C27;
+
     }
 
-    .description{
+    .description {
         width: 400px;
         margin-top: 0;
     }
 
 
-    .addPeopleText{
+    .addPeopleText {
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
@@ -173,30 +176,35 @@
         color: #181C27;
     }
 
+    .titleBox {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
 
-@media screen and (min-width: 1280px){
+@media screen and (min-width: 1280px) {
+    .boxHead {
+        padding-left: 55px;
+    }
 
-    .boxBack{
-        position: absolute;
-        left: 44px;
-        top: 20px;
+    .boxBack {
         width: 130px;
         margin-bottom: 165px;
     }
 
-    .head{
-
+    .head {
         margin-top: 40px;
         margin-bottom: 20px;
-
     }
-    .buttonBox{
+
+    .buttonBox {
         display: flex;
         align-items: center;
         margin-right: 86px;
     }
-    .pageText{
+
+    .pageText {
         margin-left: 20px;
         font-style: normal;
         font-weight: 500;
@@ -206,28 +214,26 @@
         color: #181C27;
 
     }
-    .pageTitle{
+
+    .pageTitle {
+        max-width: 400px;
         display: flex;
-        align-items: center;
         margin-right: 20px;
         font-style: normal;
         font-weight: 500;
-        font-size: 36px;
+        font-size: 30px;
         line-height: 44px;
         text-align: center;
         letter-spacing: 0.04em;
         color: #181C27;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
-    .description{
+    .description {
         width: 400px;
         margin-top: 0;
     }
 
-
-    .addPeopleText{
+    .addPeopleText {
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
@@ -238,4 +244,25 @@
     }
 
 
+    .showProject {
+        margin-left: 20px;
+        width: 100%;
+    }
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .titleBox {
+        min-width: 900px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.buttonAddPeople {
+    margin: 30px 0px 0px 0px;
 }

@@ -15,7 +15,7 @@ const ProjectItem = ({ item }) => {
   return (
     <li className={styles.projectItem}>
       <Link
-        className={styles.projectItem}
+        className={styles.projectLink}
         to={`${match.url}/${item._id}`}
         id={item._id}
         onClick={onHandleClick}

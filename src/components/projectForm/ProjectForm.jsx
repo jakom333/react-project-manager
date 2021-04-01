@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage, useField } from 'formik';
 import * as Yup from 'yup';
+import { createProject } from '../../redux/projects/projects-operations';
+import projects from '../../redux/projects/projects-reducers';
 
 // const TextInput = ({ className, ...props }) => {
 //   const [field, meta] = useField(props);
@@ -23,11 +25,10 @@ const ProjectForm = () => {
           description: '',
         }}
         validationSchema={formSchema}
-        onSubmit={async (values, { resetForm }) => {
-          // alert(JSON.stringify(values, null, 2));
-          console.log(values);
-          resetForm({});
-          //addProject//
+        onSubmit={values => {
+          alert(JSON.stringify(values, null, 2));
+          // resetForm({ email: '' });
+          createProject(projects())
         }}
       >
         <Form className={styles.form}>
@@ -55,8 +56,10 @@ const ProjectForm = () => {
             component="span"
             name="description"
           />
-          <button type="submit"> done </button>
+
+          <button  type="submit">Submit</button>
         </Form>
+
       </Formik>
     </div>
   );
