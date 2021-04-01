@@ -8,9 +8,9 @@ import * as Yup from 'yup';
 import styles from './CreateSprintForm.module.css';
 
 const formSchema = Yup.object().shape({
-  name: Yup.string().required('* Task name is a required field'),
-  time: Yup.number('* Scheduled time has to be an appropriate number')
-    .required('* Description is a required field')
+  name: Yup.string().required('* Sprint name is a required field'),
+  time: Yup.number('* Duration has to be an appropriate number')
+    .required('* Duration is a required field')
     .positive()
     .integer(),
 });
