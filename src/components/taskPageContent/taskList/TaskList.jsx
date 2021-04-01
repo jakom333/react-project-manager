@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './TaskList.module.css';
-import Task from '../../../components/task/Task'
+import Task from '../../../components/task/Task';
 
 const TaskList = () => {
   const TaskCards = [
@@ -75,11 +75,11 @@ const TaskList = () => {
   return (
     <div>
       <ul className={styles.taskList}>
-        {/* <Task/> */}
+        {/* <Task /> */}
         {TaskCards.map(
           ({ _id, title, hoursPlanned, hoursWasted, hoursWastedPerDay }) => (
             <li key={_id} className={styles.taskCard}>
-              <Task/>
+              <Task />
             </li>
           ),
         )}
