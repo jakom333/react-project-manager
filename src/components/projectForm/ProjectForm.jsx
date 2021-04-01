@@ -29,7 +29,7 @@ const ProjectForm = () => {
           //addProject//
         }}
       >
-        <Form className={styles.memberForm}>
+        <Form className={styles.form}>
           <Field
             className={styles.input}
             name="name"
