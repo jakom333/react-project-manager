@@ -18,7 +18,6 @@ export const token = {
   token: '',
 
   set(token) {
-    // console.log(token);
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
     this.token = `Bearer ${token}`;
   },
@@ -38,9 +37,7 @@ export const token = {
 const register = user => async dispatch => {
   dispatch(registerRequest());
   try {
-    // await axios.post('/auth/register', user);
     const response = await axios.post('/auth/register', user);
-    // console.log(response);
 
     token.set(response.data.accessToken);
 
