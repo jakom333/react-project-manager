@@ -11,11 +11,6 @@ const formSchema = Yup.object().shape({
   description: Yup.string().required('* Description is a required field'),
 });
 
-const initialState = {
-  title: '',
-  description: '',
-};
-
 const ProjectForm = ({ onClose }) => {
   const dispatch = useDispatch();
 
