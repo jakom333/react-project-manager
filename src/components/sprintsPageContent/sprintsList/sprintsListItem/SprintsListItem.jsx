@@ -4,6 +4,7 @@ import { Link, useRouteMatch } from 'react-router-dom';
 
 const SprintListItem = ({ item }) => {
   const match = useRouteMatch();
+
   return (
     <div>
       <Link to={`${match.url}/sprints/${item._id}`} id={item._id}>
