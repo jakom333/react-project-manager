@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { refreshError } from '../auth/auth-actions';
+import { refreshOperation, token } from '../auth/auth-operations';
 import {
   createProjectError,
   createProjectRequest,
@@ -19,19 +21,11 @@ const getProjects = () => async (dispatch, getState) => {
     );
 
     dispatch(projectsSuccess(response.data));
-  } catch (error) {
-    const response = await axios.post(
-      '/auth/refresh',
-      { sid: getState().auth.token?.sid },
-      {
-        headers: { Authorization: getState().auth.token?.refreshToken },
-      },
-    );
-    console.log(response);
-  }
+  } catch (error) {}
 };
 
 const createProject = project => async dispatch => {
+  token.set('')
   dispatch(createProjectRequest());
 
   try {
@@ -39,10 +33,19 @@ const createProject = project => async dispatch => {
       'https://sbc-backend.goit.global/project',
       project,
     );
-    console.log(data)
+    console.log(data);
     dispatch(createProjectSuccess({ ...data, _id: data.id }));
   } catch (error) {
-    dispatch(createProjectError(error));
+    dispatch(createProjectError(error.message));
+    if (error.response.status === 401 || error.response.status === 404) {
+      try {
+        await dispatch(refreshOperation());
+        await dispatch(createProject(project));
+      } catch (error) {
+        token.unset();
+        // dispatch(refreshError(error.message))
+      }
+    }
   }
 };
 

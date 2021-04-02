@@ -10,6 +10,9 @@ import {
   logoutRequest,
   logoutSuccess,
   logoutError,
+  refreshRequest,
+  refreshSuccess,
+  refreshError,
 } from './auth-actions';
 
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
@@ -24,9 +27,9 @@ export const token = {
   get() {
     return this.token;
   },
-  refresh(token) {
-    this.token = token;
-    axios.defaults.headers.common.Authorization = token;
+  refresh(refreshToken) {
+    this.token = refreshToken;
+    axios.defaults.headers.common.Authorization = refreshToken;
   },
   unset() {
     axios.defaults.headers.common.Authorization = '';
@@ -52,14 +55,6 @@ const register = user => async dispatch => {
     dispatch(registerError(error.message));
   }
 };
-
-//if (status.code === "401") {
-  //axios.post("/auth/refresh", sid)
-//if(status.code="200"){
-//refreshToken
-//}
-//logout
-//}
 
 const logIn = user => async dispatch => {
   dispatch(loginRequest());
@@ -105,4 +100,25 @@ const logOut = () => async dispatch => {
   }
 };
 
-export { register, logIn, logOut };
+const refreshOperation = () => async (dispatch, getState) => {
+  const { refreshToken, sid } = getState().auth.token;
+  token.refresh(refreshToken);
+  dispatch(refreshRequest());
+
+  try {
+    const response = await axios.post('auth/refresh', { sid: sid });
+
+    dispatch(
+      refreshSuccess({
+        accessToken: `Bearer ${response.data.newAccessToken}`,
+        refreshToken: `Bearer ${response.data.newRefreshToken}`,
+        sid: response.data.newSid,
+      }),
+    );
+  } catch (error) {
+    dispatch(refreshError(error.message));
+
+    throw new Error(error.message);
+  }
+};
+export { register, logIn, logOut, refreshOperation };
