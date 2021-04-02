@@ -29,7 +29,8 @@ const addSprint = (sprint, projectId) => async dispatch => {
   dispatch(addSprintRequest());
   try {
     const { data } = await axios.post(`/sprint/${projectId}`, sprint);
-    dispatch(addSprintSucces(data));
+    console.log(data, ' data');
+    dispatch(addSprintSucces({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(addSprintError(error.message));
   }
