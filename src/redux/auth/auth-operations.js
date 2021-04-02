@@ -53,16 +53,26 @@ const register = user => async dispatch => {
   }
 };
 
+//if (status.code === "401") {
+  //axios.post("/auth/refresh", sid)
+//if(status.code="200"){
+//refreshToken
+//}
+//logout
+//}
+
 const logIn = user => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await axios.post('/auth/login', user);
+    // console.log(response)
     token.set(response.data.accessToken);
     dispatch(
       loginSuccess({
         accessToken: token.get(),
         refreshToken: `Bearer ${response.data.refreshToken}`,
         sid: response.data.sid,
+        email: response.data.data.email,
       }),
     );
     const responseProjects = await axios.get('/project', {
