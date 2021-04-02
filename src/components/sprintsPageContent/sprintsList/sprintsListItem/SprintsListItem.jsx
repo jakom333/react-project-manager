@@ -3,6 +3,14 @@ import styles from './SprintsListItem.module.css';
 import { Link, useRouteMatch } from 'react-router-dom';
 
 const SprintListItem = ({ item }) => {
+  // const date = '2020-4-1';
+  //   const response = date
+  //   .split('-')
+  //   .map(item => (item.length < 2 ? (item = '0' + item) : item))
+  //   .join('-');
+
+  // console.log(response);
+
   const match = useRouteMatch();
 
   return (

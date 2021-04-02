@@ -67,7 +67,7 @@ line-height: 20px;
     border: none;
     border-bottom: solid .8px greyColor;
     font-size: 16px;
-    margin-bottom:30px ;
+    margin-bottom:8px ;
     transition: all .5s;
     
   }
@@ -96,7 +96,7 @@ line-height: 20px;
 .error{
   background-color: white;
   color: accentColor;
-  margin-top: -85px;
+  margin-top: -125px;
 } 
 
 
@@ -132,6 +132,9 @@ line-height: 20px;
   text-indent: 500px;
   transition: text-indent 0.3s ease;
 }
+
+
+
 
 
 }
@@ -176,7 +179,7 @@ line-height: 22px;
     padding: 10px;
      font-size: 18px;
     line-height: 22px;
-    margin-bottom:39px ;
+    margin-bottom:10px ;
     width: 100%; 
   }
  
@@ -194,7 +197,6 @@ line-height: 22px;
     width: 530px;
 
  }
-
  
   .titleForm {
 font-weight: 500;
@@ -214,7 +216,6 @@ margin-bottom: 50px;
   .input {
     font-size: 18px;
      line-height: 22px;
-    margin-bottom:30px ;
      width: 100%;
     }
  
