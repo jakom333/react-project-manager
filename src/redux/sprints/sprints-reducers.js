@@ -15,11 +15,8 @@ import {
 const sprints = createReducer([], {
   [fetchSprintsSucces]: (_, { payload }) => payload,
   [addSprintSucces]: (state, { payload }) => [...state, payload],
-  [deleteSprintSucces]: (state, { payload }) => {
-    const id = state.findIndex(sprint => sprint.id === payload);
-
-    return [...state.slice(0, id), ...state.slice(id + 1)];
-  },
+  [deleteSprintSucces]: (state, { payload }) =>
+    state.filter(item => item._id !== payload),
 });
 
 // const loading = createReducer(false, {
