@@ -20,10 +20,13 @@ const getProjects = () => async (dispatch, getState) => {
 
     dispatch(projectsSuccess(response.data));
   } catch (error) {
-    const response = await axios.post('/auth/refresh', {
-      headers: { Authorization: getState().auth.token?.refreshToken },
-      data: getState().auth.token?.sid,
-    });
+    const response = await axios.post(
+      '/auth/refresh',
+      { sid: getState().auth.token?.sid },
+      {
+        headers: { Authorization: getState().auth.token?.refreshToken },
+      },
+    );
     console.log(response);
   }
 };

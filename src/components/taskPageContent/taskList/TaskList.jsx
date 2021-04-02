@@ -1,91 +1,65 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './TaskList.module.css';
-import Task from '../../../components/task/Task';
+import TaskListItem from '../../../components/taskListItem/TaskListItem';
+import { getTasks } from '../../../redux/tasks/task-selectors';
+import { fetchTasks } from '../../../redux/tasks/task-operations';
+import { useParams } from 'react-router-dom';
 
 const TaskList = () => {
-  const TaskCards = [
-    {
-      title: 'Task 1',
-      hoursPlanned: 1,
-      hoursWasted: 0,
-      hoursWastedPerDay: [
-        {
-          singleHoursWasted: 0,
-        },
-      ],
-      _id: '1',
-    },
-    {
-      title: 'Task 2',
-      hoursPlanned: 2,
-      hoursWasted: 3,
-      hoursWastedPerDay: [
-        {
-          singleHoursWasted: 3,
-        },
-      ],
-      _id: '2',
-    },
-    {
-      title: 'Task 3',
-      hoursPlanned: 2,
-      hoursWasted: 4,
-      hoursWastedPerDay: [
-        {
-          singleHoursWasted: 4,
-        },
-      ],
-      _id: '3',
-    },
-    {
-      title: 'Task 4',
-      hoursPlanned: 5,
-      hoursWasted: 6,
-      hoursWastedPerDay: [
-        {
-          singleHoursWasted: 6,
-        },
-      ],
-      _id: '4',
-    },
-    {
-      title: 'Task 5',
-      hoursPlanned: 5,
-      hoursWasted: 6,
-      hoursWastedPerDay: [
-        {
-          singleHoursWasted: 6,
-        },
-      ],
-      _id: '5',
-    },
-    {
-      title: 'Task 6',
-      hoursPlanned: 5,
-      hoursWasted: 6,
-      hoursWastedPerDay: [
-        {
-          singleHoursWasted: 6,
-        },
-      ],
-      _id: '6',
-    },
-  ];
+  const { sprintId } = useParams();
+  const tasks = useSelector(getTasks);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTasks(sprintId));
+  }, [dispatch, sprintId]);
 
   return (
-    <div>
-      <ul className={styles.taskList}>
-        {/* <Task /> */}
-        {TaskCards.map(
-          ({ _id, title, hoursPlanned, hoursWasted, hoursWastedPerDay }) => (
-            <li key={_id} className={styles.taskCard}>
-              <Task />
-            </li>
-          ),
-        )}
-      </ul>
-    </div>
+    <ul className={styles.taskList}>
+      {tasks.map(item => (
+        <li key={item._id} className={styles.taskCard}>
+          <TaskListItem item={item} />
+        </li>
+      ))}
+    </ul>
   );
 };
 
 export default TaskList;
+
+// ===============================================================
+
+// const TaskList = () => {
+//   const TaskCards = [
+//     {
+//       title: 'Task 1',
+//       hoursPlanned: 1,
+//       hoursWasted: 0,
+//       hoursWastedPerDay: [
+//         {
+//           singleHoursWasted: 0,
+//         },
+//       ],
+//       _id: '1',
+//     },
+
+//   ];
+
+//   return (
+//     <div>
+//       <ul className={styles.taskList}>
+//         {/* <Task /> */}
+//         {TaskCards.map(
+//           ({ _id, title, hoursPlanned, hoursWasted, hoursWastedPerDay }) => (
+//             <li key={_id} className={styles.taskCard}>
+//               <TaskListItem />
+//             </li>
+//           ),
+//         )}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default TaskList;

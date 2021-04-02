@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './TaskHeader.module.css';
 import MainModal from '../../../shared/mainModal/MainModal';
-import TaskCreator from '../../taskСreator/TaskCreator';
+import TaskForm from '../../taskForm/TaskForm';
 
 import ChangeTitle from '../../titleEditor/TitleEditor';
 // import style from '../sprintList/SprintList.module.css';
@@ -63,7 +63,7 @@ export default function SprintHeader({ handleInput }) {
         setShowModal={setShowModal}
         onClose={() => setShowModal(false)}
       >
-        <TaskCreator />
+        <TaskForm onClose={() => setShowModal('')}/>
       </MainModal>
     </div>
   );
