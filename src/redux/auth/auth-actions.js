@@ -12,6 +12,10 @@ const logoutRequest = createAction('auth/logoutRequest');
 const logoutSuccess = createAction('auth/logoutSuccess');
 const logoutError = createAction('auth/logoutError');
 
+const refreshRequest = createAction('auth/refreshRequest');
+const refreshSuccess = createAction('auth/refreshSuccess');
+const refreshError = createAction('auth/refreshError');
+
 export {
   registerRequest,
   registerSuccess,
@@ -22,4 +26,7 @@ export {
   logoutRequest,
   logoutSuccess,
   logoutError,
+  refreshRequest,
+  refreshSuccess,
+  refreshError,
 };

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { refreshOperation, token } from '../auth/auth-operations';
 import {
   createProjectError,
   createProjectRequest,
@@ -7,27 +8,30 @@ import {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
+  projectsError,
+  projectsRequest,
 } from './projects-actions';
 
-const getProjects = () => async (dispatch, getState) => {
+export const refreshTemplate = async (callback, error, dispatch) => {
+  if (error.response.status >= 400 && error.response.status < 500) {
+    try {
+      await dispatch(refreshOperation());
+      dispatch(callback());
+    } catch (error) {
+      token.unset();
+    }
+  }
+};
+
+const getProjects = () => async dispatch => {
+  dispatch(projectsRequest());
   try {
-    const response = await axios.get(
-      'https://sbc-backend.goit.global/project',
-      // {
-      //   headers: { Authorization: getState().auth.token?.accessToken },
-      // },
-    );
+    const response = await axios.get('https://sbc-backend.goit.global/project');
 
     dispatch(projectsSuccess(response.data));
   } catch (error) {
-    const response = await axios.post(
-      '/auth/refresh',
-      { sid: getState().auth.token?.sid },
-      {
-        headers: { Authorization: getState().auth.token?.refreshToken },
-      },
-    );
-    console.log(response);
+    dispatch(projectsError(error.message));
+    refreshTemplate(getProjects, error, dispatch);
   }
 };
 
@@ -39,10 +43,10 @@ const createProject = project => async dispatch => {
       'https://sbc-backend.goit.global/project',
       project,
     );
-    console.log(data)
     dispatch(createProjectSuccess({ ...data, _id: data.id }));
   } catch (error) {
-    dispatch(createProjectError(error));
+    dispatch(createProjectError(error.message));
+    refreshTemplate(() => createProject(project), error, dispatch);
   }
 };
 
@@ -56,6 +60,7 @@ const deleteProject = projectId => async dispatch => {
     dispatch(deleteProjectSuccess(newID));
   } catch (error) {
     dispatch(deleteProjectError(error.message));
+    refreshTemplate(() => deleteProject(projectId), error, dispatch);
   }
 };
 

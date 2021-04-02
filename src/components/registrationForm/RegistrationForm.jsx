@@ -84,7 +84,7 @@ export default function RegistrationForm() {
                 : 'rgba(24, 28, 39, 0.6)',
               borderBottom: formErrors.email
                 ? '1px solid rgba(204, 32, 41, 0.6)'
-                : '1px solid rgba(24, 28, 39, 0.2);',
+                : '1px solid rgba(24, 28, 39, 0.2)',
             }}
             type="email"
             name="email"
@@ -104,7 +104,7 @@ export default function RegistrationForm() {
                 : 'rgba(24, 28, 39, 0.6)',
               borderBottom: formErrors.password
                 ? '1px solid rgba(204, 32, 41, 0.6)'
-                : '1px solid rgba(24, 28, 39, 0.2);',
+                : '1px solid rgba(24, 28, 39, 0.2)',
             }}
             type="password"
             name="password"

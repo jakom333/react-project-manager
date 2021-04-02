@@ -10,6 +10,9 @@ import {
   logoutRequest,
   logoutSuccess,
   logoutError,
+  refreshRequest,
+  refreshSuccess,
+  refreshError,
 } from './auth-actions';
 
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
@@ -18,16 +21,15 @@ export const token = {
   token: '',
 
   set(token) {
-    // console.log(token);
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
     this.token = `Bearer ${token}`;
   },
   get() {
     return this.token;
   },
-  refresh(token) {
-    this.token = token;
-    axios.defaults.headers.common.Authorization = token;
+  refresh(refreshToken) {
+    this.token = refreshToken;
+    axios.defaults.headers.common.Authorization = refreshToken;
   },
   unset() {
     axios.defaults.headers.common.Authorization = '';
@@ -38,9 +40,7 @@ export const token = {
 const register = user => async dispatch => {
   dispatch(registerRequest());
   try {
-    // await axios.post('/auth/register', user);
     const response = await axios.post('/auth/register', user);
-    // console.log(response);
 
     token.set(response.data.accessToken);
 
@@ -78,13 +78,26 @@ const logIn = user => async dispatch => {
   }
 };
 
-//if (status.code === "401") {
-//axios.post("/auth/refresh", sid)
-//if(status.code="200"){
-//refreshToken
-//}
-//logout
-//}
+const refreshOperation = () => async (dispatch, getState) => {
+  dispatch(refreshRequest());
+  const { refreshToken, sid } = getState().auth.token;
+  token.refresh(refreshToken);
+  try {
+    const response = await axios.post('/auth/refresh', { sid });
+    token.set(response.data.newAccessToken);
+
+    dispatch(
+      refreshSuccess({
+        accessToken: `Bearer ${response.data.newAccessToken}`,
+        refreshToken: `Bearer ${response.data.newRefreshToken}`,
+        sid: response.data.newSid,
+      }),
+    );
+  } catch (error) {
+    dispatch(refreshError(error.message));
+    throw new Error(error.message);
+  }
+};
 
 const logOut = () => async dispatch => {
   dispatch(logoutRequest());
@@ -98,4 +111,4 @@ const logOut = () => async dispatch => {
   }
 };
 
-export { register, logIn, logOut };
+export { register, logIn, logOut, refreshOperation };
