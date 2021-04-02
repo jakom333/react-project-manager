@@ -17,7 +17,7 @@ const TaskFilter = ({ handleChange }) => {
         name="filter"
         value={filter}
         onChange={handleChange}
-        onClick={() => console.log('click')}
+        // onClick={() => console.log('click')}
         className={styles.searchInputActive}
       />
       <button type="submit" className={styles.searchBtn}>
