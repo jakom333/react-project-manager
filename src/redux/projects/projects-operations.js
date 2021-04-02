@@ -39,7 +39,7 @@ const createProject = project => async dispatch => {
       project,
     );
     console.log(data)
-    dispatch(createProjectSuccess(data));
+    dispatch(createProjectSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(createProjectError(error));
   }
