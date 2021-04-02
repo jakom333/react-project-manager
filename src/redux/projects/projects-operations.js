@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { refreshError } from '../auth/auth-actions';
 import { refreshOperation, token } from '../auth/auth-operations';
 import {
   createProjectError,
@@ -9,15 +8,18 @@ import {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
+  editProjectTitleRequest,
+  editProjectTitleSuccess,
+  editProjectTitleError,
   projectsRequest,
   addMemberError,
   addMemberRequest,
   addMemberSuccess,
+  projectsError,
 } from './projects-actions';
 
-axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 export const refreshTemplate = async (callback, error, dispatch) => {
-  if (error.response.status >= 400 && error.response.status < 500) {
+  if (error.response?.status === 401 || error.response?.status === 404) {
     try {
       await dispatch(refreshOperation());
       dispatch(callback());
@@ -30,30 +32,27 @@ export const refreshTemplate = async (callback, error, dispatch) => {
 const getProjects = () => async dispatch => {
   dispatch(projectsRequest());
   try {
-    const response = await axios.get('/project');
+    const response = await axios.get('https://sbc-backend.goit.global/project');
 
     dispatch(projectsSuccess(response.data));
-  } catch (error) {}
+  } catch (error) {
+    dispatch(projectsError(error.message));
+    refreshTemplate(getProjects, error, dispatch);
+  }
 };
 
 const createProject = project => async dispatch => {
-  token.set('');
   dispatch(createProjectRequest());
 
   try {
-    const { data } = await axios.post('/project', project);
-    console.log(data);
+    const { data } = await axios.post(
+      'https://sbc-backend.goit.global/project',
+      project,
+    );
     dispatch(createProjectSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(createProjectError(error.message));
-    if (error.response.status === 401 || error.response.status === 404) {
-      try {
-        await dispatch(refreshOperation());
-        await dispatch(createProject(project));
-      } catch (error) {
-        token.unset();
-      }
-    }
+    refreshTemplate(() => createProject(project), error, dispatch);
   }
 };
 
@@ -62,7 +61,7 @@ const deleteProject = projectId => async dispatch => {
   dispatch(deleteProjectRequest());
 
   try {
-    axios.delete(`/project/${newID}`);
+    axios.delete(`https://sbc-backend.goit.global/project/${newID}`);
 
     dispatch(deleteProjectSuccess(newID));
   } catch (error) {
@@ -70,6 +69,8 @@ const deleteProject = projectId => async dispatch => {
     refreshTemplate(() => deleteProject(projectId), error, dispatch);
   }
 };
+
+axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
 const addMember = (email, projectId) => async dispatch => {
   dispatch(addMemberRequest());
@@ -87,7 +88,20 @@ const addMember = (email, projectId) => async dispatch => {
     );
   } catch (error) {
     dispatch(addMemberError(error.message));
+    refreshTemplate(() => addMember(email, projectId), error, dispatch);
   }
 };
 
-export { getProjects, createProject, deleteProject, addMember };
+const editTitle = (projectId, title) => async dispatch => {
+  dispatch(editProjectTitleRequest());
+
+  try {
+    await axios.patch(`/project/title/${projectId}`, { title });
+    dispatch(editProjectTitleSuccess({ projectId, title }));
+  } catch (error) {
+    dispatch( editProjectTitleError(error));
+  }
+};
+
+export { getProjects, createProject, deleteProject, editTitle, addMember };
+

@@ -12,6 +12,9 @@ const deleteProjectRequest = createAction('projects/delete-project-request');
 const deleteProjectSuccess = createAction('projects/delete-project-success');
 const deleteProjectError = createAction('projects/delete-project-error');
 
+const editProjectTitleRequest = createAction('projects/edit-title-request');
+const editProjectTitleSuccess = createAction('projects/edit-title-success');
+const editProjectTitleError = createAction('projects/edit-title-error');
 const addMemberRequest = createAction('projects/add-member');
 const addMemberSuccess = createAction('projects/add-member-success');
 const addMemberError = createAction('projects/add-member-error');
@@ -26,6 +29,9 @@ export {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
+  editProjectTitleRequest,
+  editProjectTitleSuccess,
+  editProjectTitleError,
   addMemberError,
   addMemberRequest,
   addMemberSuccess,

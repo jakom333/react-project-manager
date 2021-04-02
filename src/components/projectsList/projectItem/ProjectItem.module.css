@@ -28,14 +28,15 @@
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+
 .buttonDelete{
     position: absolute;
     right: 10px;
     bottom: 10px;
-    cursor: progress;
-    z-index: 2;
-
+        z-index: 2;
 }
+
+
 @media screen and (max-width: 767px){
     .projectItem{
         padding: 10px;
@@ -242,4 +243,24 @@
 .projectItem:nth-child(8n + 8) .deleteIcon{
     fill: var( --orange);
 }
+
+
+
+.buttonDelete:hover{
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+
 

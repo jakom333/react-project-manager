@@ -5,6 +5,45 @@
   min-height: 170px;
   box-shadow: 0px 6px 26px rgba(0, 5, 97, 0.1);
   border-radius: 5px;
+  position: relative;
+}
+.sprintListItem:hover {
+  transform: scale(1.05);
+  transition-duration: 500ms;
+}
+
+.projectLink {
+  position: absolute;
+  height: 100%;
+  color: #000;
+  padding: 28px 30px;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.buttonDelete {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #a6a6a6;
+}
+
+.buttonDelete:hover {
+  background-color: #ff6c00;
+}
+
+.deleteIcon {
+  fill: #ffffff;
+  width: 16px;
+  height: 16px;
 }
 
 @media (min-width: 768px) {

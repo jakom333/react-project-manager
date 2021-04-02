@@ -1,3 +1,5 @@
+@value accentColor from '../../main.module.css';
+
 .card {
   width: 280px;
   padding: 20px 20px 10px 20px;
@@ -38,6 +40,9 @@
   border: none;
   outline: none;
   border-radius: 50%;
+}
+.button:hover{
+  background: accentColor;
 }
 .icon {
   width: 10px;

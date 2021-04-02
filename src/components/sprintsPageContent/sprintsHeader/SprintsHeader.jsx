@@ -6,9 +6,9 @@ import ButtonShow from '../../../shared/buttonShow/ButtonShow';
 import MainModal from '../../../shared/mainModal/MainModal';
 import AddMember from '../../addMember/AddMember';
 import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
-// import EditTitle from '../editTitle/EditTitle';
+import EditTitle from '../editTitle/EditTitle';
 
-const SprintsHeader = ({ project }) => {
+const SprintsHeader = ({project}) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.boxHead}>
@@ -19,12 +19,7 @@ const SprintsHeader = ({ project }) => {
       <div className={styles.head}>
         <div className={styles.titleBox}>
           <div className={styles.title}>
-            <h2 className={styles.pageTitle}>PROJECT 1</h2>
-            <button type="button" className={styles.buttonFix}>
-              <svg className={styles.iconPencil}>
-                <use href={sprite + '#icon-pencil'}></use>
-              </svg>
-            </button>
+            <EditTitle/>
           </div>
           <div className={styles.buttonBox}>
             <RoundButton onClick={() => setShowModal('createSprint')} />
