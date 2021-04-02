@@ -20,7 +20,7 @@ const fetchTasks = sprintId => async dispatch => {
   dispatch(fetchTaskRequest());
   try {
     const { data } = await axios.get(`/task/${sprintId}`);
-    dispatch(fetchTaskSuccess(data));
+    dispatch(fetchTaskSuccess(data.constructor.name === 'Array' ? data : []));
   } catch (error) {
     dispatch(fetchTaskError(error.message));
   }
@@ -30,7 +30,7 @@ const createTask = (task, sprintId) => async dispatch => {
   dispatch(createTaskRequest());
   try {
     const { data } = await axios.post(`/task/${sprintId}`, task);
-    dispatch(createTaskSuccess(data));
+    dispatch(createTaskSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(createTaskError(error.message));
   }

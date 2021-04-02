@@ -27,7 +27,6 @@ const fetchSprints = projectId => async dispatch => {
 
 const addSprint = (sprint, projectId) => async dispatch => {
   dispatch(addSprintRequest());
-  console.log(sprint, 'sprint');
   try {
     const { data } = await axios.post(`/sprint/${projectId}`, sprint);
     console.log(data, ' data');
