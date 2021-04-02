@@ -3,16 +3,15 @@ import styles from './ProjectItem.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
 import { useDispatch } from 'react-redux';
 import { Link, useRouteMatch } from 'react-router-dom';
-import { deleteProject } from '../../../redux/projects/projects-operations'
+import { deleteProject } from '../../../redux/projects/projects-operations';
 
-const ProjectItem = ({ item}) => {
-//  console.log(item)
+const ProjectItem = ({ item }) => {
+  //  console.log(item)
 
   const dispatch = useDispatch();
-  const deleteItem = () => dispatch(deleteProject(item._id))
+  const deleteItem = () => dispatch(deleteProject(item._id));
   const match = useRouteMatch();
   return (
-
     <li className={styles.projectItem}>
       <Link
         className={styles.projectLink}
@@ -22,7 +21,11 @@ const ProjectItem = ({ item}) => {
         <h3 className={styles.title}>{item.title}</h3>
         <p className={styles.description}>{item.description}</p>
       </Link>
-      <button type='button' className={styles.buttonDelete} onClick={deleteItem}>
+      <button
+        type="button"
+        className={styles.buttonDelete}
+        onClick={deleteItem}
+      >
         <svg className={styles.deleteIcon}>
           <use href={sprite + '#icon-delete-bin'}></use>
         </svg>

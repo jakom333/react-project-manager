@@ -7,21 +7,25 @@ import {
   loginError,
   logoutSuccess,
   logoutError,
+  refreshSuccess,
+  refreshError,
 } from './auth-actions';
-// import { projectsSuccess } from '../projects/projects-actions';
 
 const initialUserState = { email: null, password: null };
 
 const user = createReducer(initialUserState, {
   [registerSuccess]: (_, { payload }) => payload.user,
-  [loginSuccess]: (_, { payload }) => payload.user,
-  [logoutSuccess]: () => '',
+  [loginSuccess]: (_, { payload }) => payload,
+  [logoutSuccess]: () => initialUserState,
+  [refreshError]: () => initialUserState,
 });
 
 const token = createReducer(null, {
   [registerSuccess]: (_, { payload }) => payload,
   [loginSuccess]: (_, { payload }) => payload,
+  [refreshSuccess]: (_, { payload }) => payload,
   [logoutSuccess]: () => null,
+  [refreshError]: () => null,
 });
 
 const setError = (_, { payload }) => payload;
@@ -29,21 +33,13 @@ const setError = (_, { payload }) => payload;
 const error = createReducer(null, {
   [registerError]: setError,
   [loginError]: setError,
+  [refreshError]: setError,
   [logoutError]: setError,
+  [refreshError]: setError,
 });
-
-// const isAuthenticated = createReducer(false, {
-//   [projectsSuccess]: () => true,
-//   [registerSuccess]: () => true,
-//   [loginSuccess]: () => true,
-
-//   [registerError]: () => false,
-//   [loginError]: () => false,
-// });
 
 export default combineReducers({
   user,
-  // isAuthenticated,
   token,
   error,
 });

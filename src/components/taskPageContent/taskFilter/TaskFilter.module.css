@@ -1,0 +1,101 @@
+
+.iconSearch {
+  width: 20px;
+  height: 20px;
+}
+
+.searchBtn {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (max-width: 767px) {
+
+  .searchBtn {
+    position: absolute;
+    top: -112px;
+    left: 0px;
+  }
+
+  .searchInputActive {
+    position: absolute;
+    min-width: 280px;
+    top: -120px;
+    left: 0px;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    outline: none;
+    height: 35px;
+    padding-left: 30px;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+
+
+
+  .searchBtn {
+    position: absolute;
+    top: -125px;
+    right: 18px;
+  }
+
+  .searchInputActive {
+    position: absolute;
+    bottom: 145px;
+    left: 260px;
+    width: 185px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    background-color: #f1f2f7;
+    outline: none;
+    padding-left: 10px;
+    height: 40px;
+  }
+}
+
+
+@media screen and (min-width: 1280px) {
+
+  .searchInput {
+    display: none;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    background-color: #f1f2f7;
+    outline: none;
+    padding-left: 10px;
+    height: 40px;
+  }
+
+  .searchInputActive {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    width: 150px;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #271818;
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0);
+    background-color: #f1f2f7;
+    outline: none;
+    padding-left: 10px;
+    height: 35px;
+  }
+
+  .searchInputActive:hover {
+    border-bottom: 1px solid rgba(16, 16, 17, 0.212);
+  }
+}
