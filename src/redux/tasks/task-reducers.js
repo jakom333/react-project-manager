@@ -18,16 +18,13 @@ import {
 
 const tasks = createReducer([], {
   [fetchTaskSuccess]: (_, { payload }) => payload,
-  [createTaskSuccess]: (state, { payload }) => {
-    console.log(payload);
-    return [...state, payload];
-  },
+  [createTaskSuccess]: (state, { payload }) => [...state, payload],
   [deleteTaskSuccess]: (state, { payload }) => [
-    ...state.filter(item => item.id !== payload),
+    ...state.filter(item => item._id !== payload),
   ],
 
   [changeTaskSuccess]: (state, { payload }) => [
-    ...state.map(item => (item.id === payload.id ? payload : item)),
+    ...state.map(item => (item._id === payload.id ? payload : item)),
   ],
 });
 
