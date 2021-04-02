@@ -9,9 +9,11 @@ import { useParams } from 'react-router-dom';
 
 const formSchema = Yup.object().shape({
   title: Yup.string().required('* Task name is a required field'),
-  hoursPlanned: Yup.number('* Scheduled time has to be an appropriate number')
+  hoursPlanned: Yup.number('* Scheduled time has to be a number')
+    // .matches(/^0*([1-9]|8)$/, 'Must be less than 8h')
+    .lessThan(8, 'Must be less than 8h')
     .required('* Description is a required field')
-    .positive()
+    .positive('Must be a positive number')
     .integer(),
 });
 // ====================================== Stas

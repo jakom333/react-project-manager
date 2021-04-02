@@ -11,6 +11,7 @@ const initialProjectsState = [];
 const projects = createReducer(initialProjectsState, {
   [projectsSuccess]: (_, { payload }) => payload,
   [createProjectSuccess]: (state, { payload }) => [...state, payload],
+
   [addMemberSuccess]: (state, { payload }) =>
     state.map(project =>
       project._id === payload.projectId
