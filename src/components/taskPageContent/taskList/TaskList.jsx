@@ -27,39 +27,3 @@ const TaskList = () => {
 };
 
 export default TaskList;
-
-// ===============================================================
-
-// const TaskList = () => {
-//   const TaskCards = [
-//     {
-//       title: 'Task 1',
-//       hoursPlanned: 1,
-//       hoursWasted: 0,
-//       hoursWastedPerDay: [
-//         {
-//           singleHoursWasted: 0,
-//         },
-//       ],
-//       _id: '1',
-//     },
-
-//   ];
-
-//   return (
-//     <div>
-//       <ul className={styles.taskList}>
-//         {/* <Task /> */}
-//         {TaskCards.map(
-//           ({ _id, title, hoursPlanned, hoursWasted, hoursWastedPerDay }) => (
-//             <li key={_id} className={styles.taskCard}>
-//               <TaskListItem />
-//             </li>
-//           ),
-//         )}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default TaskList;
