@@ -8,12 +8,13 @@ import Button from '../../shared/button/Button';
 import { useParams } from 'react-router-dom';
 
 const formSchema = Yup.object().shape({
-  title: Yup.string().required('* Task name is a required field'),
-  hoursPlanned: Yup.number('* Scheduled time has to be a number')
-    .lessThan(9, 'Must be less than 8h')
-    .required('* Description is a required field')
-    .positive('Must be a positive number')
-    .integer(),
+  title: Yup.string().required('Task name is a required field'),
+  hoursPlanned: Yup.number('Planned hours must be a number')
+    // .matches(/^0*([1-9]|8)$/, 'Must be less than 8h')
+    .lessThan(9, 'Must be less or iqual to 8h')
+    .required('Planned hours  is a required field')
+    .positive('Planned hours  must be a positive number')
+    .integer('Planned hours  must be an integer'),
 });
 
 const TaskForm = ({ onClose }) => {
@@ -52,7 +53,7 @@ const TaskForm = ({ onClose }) => {
             className={styles.inputTime}
             name="hoursPlanned"
             type="number"
-            placeholder="Scheduled hours"
+            placeholder="Planned hours "
           />
 
           <ErrorMessage

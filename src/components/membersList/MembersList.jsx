@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './MembersList.module.css';
 import MembersListItem from '../membersListItem/MembersListItem';
-import { nanoid } from 'nanoid';
 
 const MembersList = ({ members }) => {
-  const id = nanoid();
   return (
     <div className={styles.container}>
       <p className={styles.addedMembers}> Total members: {members.length}</p>
@@ -12,8 +10,8 @@ const MembersList = ({ members }) => {
         <p className={styles.message}>You have added no users yet</p>
       )} */}
       <ul className={styles.membersList}>
-        {members.map(member => (
-          <MembersListItem member={member} key={id} />
+        {members.map((member, idx) => (
+          <MembersListItem member={member} key={idx} />
         ))}
       </ul>
     </div>
