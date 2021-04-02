@@ -7,6 +7,9 @@ import {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
+  addMemberError,
+  addMemberRequest,
+  addMemberSuccess,
 } from './projects-actions';
 
 const getProjects = () => async (dispatch, getState) => {
@@ -39,7 +42,7 @@ const createProject = project => async dispatch => {
       'https://sbc-backend.goit.global/project',
       project,
     );
-    console.log(data)
+    console.log(data);
     dispatch(createProjectSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(createProjectError(error));
@@ -59,4 +62,25 @@ const deleteProject = projectId => async dispatch => {
   }
 };
 
-export { getProjects, createProject, deleteProject };
+axios.defaults.baseURL = 'https://sbc-backend.goit.global';
+
+const addMember = (email, projectId) => async dispatch => {
+  dispatch(addMemberRequest());
+  try {
+    const { data } = await axios.patch(
+      `/project/contributor/${projectId}`,
+      email,
+    );
+    console.log(data);
+    dispatch(
+      addMemberSuccess({
+        members: data.newMembers,
+        projectId,
+      }),
+    );
+  } catch (error) {
+    dispatch(addMemberError(error.message));
+  }
+};
+
+export { getProjects, createProject, deleteProject, addMember };

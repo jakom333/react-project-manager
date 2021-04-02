@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import styles from './TaskHeader.module.css';
 import MainModal from '../../../shared/mainModal/MainModal';
 import TaskForm from '../../taskForm/TaskForm';
-
 import ChangeTitle from '../../titleEditor/TitleEditor';
 // import style from '../sprintList/SprintList.module.css';
 import RoundButton from '../../../shared/roundButton/RoundButton';
-import sprite from '../../../icons/symbol-defs.svg';
+import TaskFilter from '../taskFilter/TaskFilter';
 // import moment from 'moment';
 
-export default function SprintHeader({ handleInput }) {
+export default function SprintHeader() {
   const [showModal, setShowModal] = useState(false);
+
   return (
     <div className={styles.headerWrapper}>
       <section className={styles.sprintHeader}>
@@ -43,19 +43,7 @@ export default function SprintHeader({ handleInput }) {
           <p className={styles.tasksHeaderText}>Hours spent / per day </p>
           <p className={styles.tasksHeaderText}>Hours spent</p>
 
-          <label>
-            <input
-              type="text"
-              name="filter"
-              onChange={handleInput}
-              className={styles.searchInputActive}
-            ></input>
-            <button className={styles.searchBtn}>
-              <svg className={styles.iconSearch}>
-                <use href={sprite + '#icon-search'}></use>
-              </svg>
-            </button>
-          </label>
+          <TaskFilter />
         </div>
       </section>
       <MainModal
@@ -63,7 +51,7 @@ export default function SprintHeader({ handleInput }) {
         setShowModal={setShowModal}
         onClose={() => setShowModal(false)}
       >
-        <TaskForm onClose={() => setShowModal('')}/>
+        <TaskForm onClose={() => setShowModal('')} />
       </MainModal>
     </div>
   );

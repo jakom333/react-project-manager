@@ -16,6 +16,8 @@ const changeTaskRequest = createAction('tasks/changeTaskRequest');
 const changeTaskSuccess = createAction('tasks/changeTaskSuccess');
 const changeTaskError = createAction('tasks/changeTaskError');
 
+const changeFilter = createAction('tasks/changeFilter');
+
 export {
   fetchTaskRequest,
   fetchTaskSuccess,
@@ -29,4 +31,5 @@ export {
   changeTaskRequest,
   changeTaskSuccess,
   changeTaskError,
+  changeFilter,
 };

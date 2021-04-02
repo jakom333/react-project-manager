@@ -1,9 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { addMemberSuccess } from '../projectMembers/projectMembers-actions';
 import {
   createProjectSuccess,
   projectsSuccess,
   deleteProjectSuccess,
+  addMemberSuccess,
 } from './projects-actions';
 
 const initialProjectsState = [];

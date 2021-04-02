@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './MembersList.module.css';
 import MembersListItem from '../membersListItem/MembersListItem';
-import { nanoid } from 'nanoid';
 
 const MembersList = ({ members }) => {
-  let id = nanoid();
   return (
     <div className={styles.container}>
       <p className={styles.addedMembers}> Total members: {members.length}</p>
