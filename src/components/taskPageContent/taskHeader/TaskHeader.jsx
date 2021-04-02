@@ -6,7 +6,7 @@ import ChangeTitle from '../../titleEditor/TitleEditor';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import sprite from '../../../icons/symbol-defs.svg';
 
-export default function SprintHeader({ handleInput, title, id, dateArr }) {
+export default function SprintHeader({ handleInput }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
