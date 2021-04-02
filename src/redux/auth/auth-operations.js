@@ -80,27 +80,6 @@ const logIn = user => async dispatch => {
   }
 };
 
-const refreshOperation = () => async (dispatch, getState) => {
-  dispatch(refreshRequest());
-  const { refreshToken, sid } = getState().auth.token;
-  token.refresh(refreshToken);
-  try {
-    const response = await axios.post('/auth/refresh', { sid });
-    token.set(response.data.newAccessToken);
-
-    dispatch(
-      refreshSuccess({
-        accessToken: `Bearer ${response.data.newAccessToken}`,
-        refreshToken: `Bearer ${response.data.newRefreshToken}`,
-        sid: response.data.newSid,
-      }),
-    );
-  } catch (error) {
-    dispatch(refreshError(error.message));
-    throw new Error(error.message);
-  }
-};
-
 const logOut = () => async dispatch => {
   dispatch(logoutRequest());
   try {
