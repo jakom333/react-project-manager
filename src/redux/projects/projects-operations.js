@@ -7,7 +7,10 @@ import {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
-  } from './projects-actions';
+  changeTitleRequest,
+  changeTitleSuccess,
+  changeTitleError,
+} from './projects-actions';
 
 const getProjects = () => async (dispatch, getState) => {
   try {
@@ -20,12 +23,10 @@ const getProjects = () => async (dispatch, getState) => {
 
     dispatch(projectsSuccess(response.data));
   } catch (error) {
-    const response = await axios.post('/auth/refresh',
-      {
-        headers: { Authorization: getState().auth.token?.refreshToken },
-        data: getState().auth.token?.sid,
-      },
-    );
+    const response = await axios.post('/auth/refresh', {
+      headers: { Authorization: getState().auth.token?.refreshToken },
+      data: getState().auth.token?.sid,
+    });
     console.log(response);
   }
 };
@@ -38,14 +39,14 @@ const createProject = project => async dispatch => {
       'https://sbc-backend.goit.global/project',
       project,
     );
-    console.log(data)
+    console.log(data);
     dispatch(createProjectSuccess(data));
   } catch (error) {
     dispatch(createProjectError(error));
   }
 };
 
-const deleteProject = (projectId) => async dispatch => {
+const deleteProject = projectId => async dispatch => {
   const newID = projectId;
   dispatch(deleteProjectRequest());
 
@@ -58,4 +59,15 @@ const deleteProject = (projectId) => async dispatch => {
   }
 };
 
-export { getProjects, createProject, deleteProject };
+const editTitle = (projectId, title) => async dispatch => {
+  dispatch(changeTitleRequest());
+
+  try {
+    await axios.patch(`/project/title/${projectId}`, { title });
+    dispatch(changeTitleSuccess({ projectId, title }));
+  } catch (error) {
+    dispatch(changeTitleError(error));
+  }
+};
+
+export { getProjects, createProject, deleteProject, editTitle };

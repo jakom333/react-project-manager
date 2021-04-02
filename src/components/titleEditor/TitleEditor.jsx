@@ -1,30 +1,54 @@
 import React, { useState, useEffect } from 'react';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom';
 import styles from './TitleEditor.module.css';
 import sprite from '../../icons/symbol-defs.svg';
+import {
+  editTitle,
+  getProjects,
+} from '../../redux/projects/projects-operations';
+import { fetchSprints } from '../../redux/sprints/sprints-operations';
 
-export default function ChangeTitle({ titleValue }) {
-  const [title, setTitle] = useState(titleValue);
+export default function ChangeTitle() {
+  const dispatch = useDispatch();
   const [isUpdate, setUpdate] = useState(true);
+  const [input, setInput] = useState();
+  const { projectId } = useParams();
+  const projects = useSelector(state => state.projects);
+  const project = projects.find(item => item._id === projectId);
 
   useEffect(() => {
-    setTitle(titleValue);
-  }, [titleValue]);
+    dispatch(fetchSprints(projectId));
+    dispatch(getProjects());
+  }, [dispatch, projectId]);
+
+  const onChangeTitle = e => {
+    setUpdate(!isUpdate);
+    setInput(project.title);
+  };
+  const onHandleChange = e => {
+    setInput(e.target.value);
+  };
+  const onFormSubmit = e => {
+    e.preventDefault();
+    dispatch(editTitle(projectId, input));
+    setUpdate(!isUpdate);
+  };
 
   return (
     <>
-      {/* <label className={styles.wrapper}>
+      <form onSubmit={onFormSubmit} className={styles.wrapper}>
         <input
           type="text"
-          className={styles.titleChangeInput}
-          value={title}
-          onChange={e => setTitle(e.target.value)}
+          name="edit"
+          value={input}
+          onChange={onHandleChange}
           maxLength="25"
-        />
-
+          className={styles.titleChangeInput}
+        />{' '}
         <button
           className={styles.changeTitleButton}
-          type="button"
+          type="submit"
           onClick={() => {
             setUpdate(!isUpdate);
           }}
@@ -32,14 +56,11 @@ export default function ChangeTitle({ titleValue }) {
           <svg className={styles.changeTitleButton}>
             <use href={sprite + '#icon-save'}></use>
           </svg>
-        </button>
-      </label> */}
+        </button>{' '}
+      </form>
       <div className={styles.wrapper}>
-        <h1 className={styles.sprintTitle}>Sprint title</h1>
-        <button
-          onClick={() => setUpdate(!isUpdate)}
-          className={styles.changeTitleButton}
-        >
+        <h1 className={styles.sprintTitle}>{project?.title}</h1>
+        <button type="button" onClick={onChangeTitle}>
           <svg className={styles.changeTitleButton}>
             <use href={sprite + '#icon-pencil'}></use>
           </svg>
