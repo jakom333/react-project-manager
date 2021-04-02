@@ -60,12 +60,14 @@ const logIn = user => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await axios.post('/auth/login', user);
+    // console.log(response)
     token.set(response.data.accessToken);
     dispatch(
       loginSuccess({
         accessToken: token.get(),
         refreshToken: `Bearer ${response.data.refreshToken}`,
         sid: response.data.sid,
+        email: response.data.data.email,
       }),
     );
     const responseProjects = await axios.get('/project', {
@@ -111,4 +113,25 @@ const logOut = () => async dispatch => {
   }
 };
 
+const refreshOperation = () => async (dispatch, getState) => {
+  const { refreshToken, sid } = getState().auth.token;
+  token.refresh(refreshToken);
+  dispatch(refreshRequest());
+
+  try {
+    const response = await axios.post('auth/refresh', { sid: sid });
+
+    dispatch(
+      refreshSuccess({
+        accessToken: `Bearer ${response.data.newAccessToken}`,
+        refreshToken: `Bearer ${response.data.newRefreshToken}`,
+        sid: response.data.newSid,
+      }),
+    );
+  } catch (error) {
+    dispatch(refreshError(error.message));
+
+    throw new Error(error.message);
+  }
+};
 export { register, logIn, logOut, refreshOperation };
