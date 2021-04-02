@@ -39,8 +39,8 @@ const createProject = project => async dispatch => {
       'https://sbc-backend.goit.global/project',
       project,
     );
-    console.log(data);
-    dispatch(createProjectSuccess(data));
+    console.log(data)
+    dispatch(createProjectSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(createProjectError(error));
   }
