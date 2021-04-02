@@ -4,8 +4,6 @@ import { addMember } from '../../redux/projectMembers/projectMembers-operations'
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-addMember;
-
 const MembersListItem = ({ member, id }) => {
   const dispatch = useDispatch();
   const { projectId } = useParams();
