@@ -7,10 +7,10 @@ import {
 
 axios.defaults.baseURL = 'https://sbc-backend.goit.global';
 
-const addMember = ({ email }, projectId) => async dispatch => {
+const addMember = (email, projectId) => async dispatch => {
   dispatch(addMemberRequest());
   try {
-    const { data } = await axios.post(
+    const { data } = await axios.patch(
       `/project/contributor/${projectId}`,
       email,
     );
