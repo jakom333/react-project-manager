@@ -5,6 +5,7 @@
     top: 0;
     padding-left: 40px;
     min-width: 255px;
+    max-width: 255px;
     height: 100vh;
   }
 }
