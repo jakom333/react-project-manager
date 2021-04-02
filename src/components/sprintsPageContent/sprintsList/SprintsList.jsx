@@ -4,17 +4,21 @@ import styles from './SprintsList.module.css';
 import SprintsListItem from './sprintsListItem/SprintsListItem';
 import { getSprintsSelector } from '../../../redux/sprints/sprints-selectors';
 import { fetchSprints } from '../../../redux/sprints/sprints-operations';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const SprintsList = () => {
   const params = useParams();
   const sprints = useSelector(getSprintsSelector);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
-    dispatch(fetchSprints(params.projectId));
-  }, [dispatch, params.projectId]);
-  
+    const getResult = async () => {
+      await dispatch(fetchSprints(params.projectId));
+    };
+    getResult();
+  }, [dispatch, params.projectId, history]);
+
   return (
     <div>
       <div>
