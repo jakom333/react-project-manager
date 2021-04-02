@@ -6,10 +6,9 @@ import ButtonShow from '../../../shared/buttonShow/ButtonShow';
 import MainModal from '../../../shared/mainModal/MainModal';
 import AddMember from '../../addMember/AddMember';
 import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
-import EditTitle from '../editTitle/EditTitle';
+// import EditTitle from '../editTitle/EditTitle';
 
-const SprintsHeader = ({project}) => {
-  console.log(project)
+const SprintsHeader = ({ project }) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.boxHead}>

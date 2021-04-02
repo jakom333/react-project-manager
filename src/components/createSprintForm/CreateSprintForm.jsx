@@ -10,6 +10,9 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styles from './CreateSprintForm.module.css';
 
+// CSS Modules, react-datepicker-cssmodules.css
+// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+
 const formSchema = Yup.object().shape({
   title: Yup.string()
     .min(3, 'Too short!')
@@ -34,6 +37,7 @@ const CreateSprintForm = ({ onClose }) => {
   return (
     <div className={styles.formContainer}>
       <h2 className={styles.titleForm}>Create a sprint</h2>
+
       <Formik
         initialValues={{
           title: '',

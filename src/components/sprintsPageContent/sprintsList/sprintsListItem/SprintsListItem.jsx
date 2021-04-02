@@ -27,10 +27,10 @@ const SprintListItem = ({ item }) => {
           id={item._id}
         >
           <div>
-            <h3>{item.title}</h3>
-            <p>Start date{item.startDate}</p>
-            <p>End date{item.endDate}</p>
-            <p>Duration{item.duration}</p>
+            <h3>title</h3>
+            <p>Дата a начала</p>
+            <p>Дата конца</p>
+            <p>Дата длительность</p>
           </div>
         </Link>
         <button
