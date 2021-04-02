@@ -1,22 +1,18 @@
-import { useDispatch } from 'react-redux';
 import styles from './MembersListItem.module.css';
-import sprite from '../../icons/symbol-defs.svg';
+import DeleteButton from '../../shared/deleteButton/DeleteButton';
+import { addMember } from '../../redux/projectMembers/projectMembers-operations';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-const MembersListItem = ({ id, email }) => {
+const MembersListItem = ({ member, id }) => {
   const dispatch = useDispatch();
+  const { projectId } = useParams();
 
   return (
-    <li className={styles.memberListItem}>
-      <span className={styles.memberEmail}> {email}</span>
-      <button
-        type="button"
-        className={styles.deleteBtn}
-        // onClick={() => dispatch(removeContact(id))}
-      >
-        <svg className={styles.deleteIcon}>
-          <use href={sprite + '#icon-delete-bin'}></use>
-        </svg>
-      </button>
+    <li className={styles.membersListItem} key={id}>
+      <p className={styles.memberEmail}> {member}</p>
+      <DeleteButton />
+      {/* onClick= dispatch(addMember(values, projectId)); */}
     </li>
   );
 };

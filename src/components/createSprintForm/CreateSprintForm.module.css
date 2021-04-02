@@ -27,9 +27,6 @@
 /* 
 
 
-
-
-
 /*==================MOBILE=========================*/
 @value accentColor from '../../main.module.css';
 @value greyColor from '../../main.module.css';
@@ -48,7 +45,8 @@
     max-width: 480px;
  }
 
-  .titleForm {
+
+   .titleForm {
 background-color: white;
 font-weight: 500;
 font-size: 26px;
@@ -83,9 +81,20 @@ margin-bottom: 30px;
 } 
 
 .checkboxLabel{
-  margin-left: 5px;
-  font-size: 18px;
-line-height: 22px;
+  margin-left: 20px;
+  margin-bottom: -20px;
+  font-size: 16px;
+line-height: 20px;
+
+}
+
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+ width:100%;
+  flex-direction: column;
+
 }
 
    .inputTime {
@@ -201,10 +210,10 @@ line-height: 22px;
 .formContainer{
     max-width: 512px ;
     padding-top: 121px;
-    padding-left: 35px;
-    padding-right: 51px;
+    padding-left: 50px;
+    padding-right: 80px;
     margin-bottom: 40px;
-     width: 512px;
+     width: 530px;
  }
 
  
@@ -229,9 +238,10 @@ margin-bottom: 50px;
 } 
 
 .checkboxLabel{
-  margin-left: 5px;
   font-size: 18px;
- line-height: 22px;
+  line-height: 22px;
+  margin-left: 25px;
+
 }
 
   
@@ -241,7 +251,7 @@ margin-bottom: 50px;
     font-size: 18px;
     line-height: 22px;
     margin-bottom:40px ;
-    width: 220px;
+    width: 200px;
     align-items: left;
 
     
@@ -269,7 +279,7 @@ margin-bottom: 50px;
 .formContainer{
     max-width: 530px ;
     padding-left: 50px;
-    padding-right: 51px;
+    padding-right: 80px;
     width: 530px;
 
  }
@@ -289,8 +299,7 @@ margin-bottom: 50px;
    }
 
     .inputTime {
-     width: 220px;
-     margin-bottom:40px ;
+     width: 200px;
     margin-bottom: 60px;
 }  
 

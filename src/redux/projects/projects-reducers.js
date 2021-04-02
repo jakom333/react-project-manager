@@ -1,5 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { createProjectSuccess, projectsSuccess, deleteProjectSuccess } from './projects-actions';
+import {
+  createProjectSuccess,
+  projectsSuccess,
+  deleteProjectSuccess,
+} from './projects-actions';
 
 const initialProjectsState = [];
 
@@ -21,9 +25,7 @@ const projects = createReducer(initialProjectsState, {
 //  },
 });
 
-
 export default projects;
-
 
 //
 //export default combineReducers({
