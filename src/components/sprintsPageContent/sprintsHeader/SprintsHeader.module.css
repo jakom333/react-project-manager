@@ -140,6 +140,7 @@
 
     .titleBox {
         display: flex;
+        align-items: flex-start;
         justify-content: space-between;
     }
 
@@ -208,7 +209,7 @@
     .titleBox {
         min-width: 900px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
     }
 }
@@ -216,3 +217,4 @@
 .buttonAddPeople {
     margin: 30px 0px 0px 0px;
 }
+

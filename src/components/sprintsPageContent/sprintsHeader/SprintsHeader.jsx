@@ -8,7 +8,8 @@ import AddMember from '../../addMember/AddMember';
 import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
 import EditTitle from '../editTitle/EditTitle';
 
-const SprintsHeader = ({project}) => {
+
+const SprintsHeader = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.boxHead}>
@@ -27,7 +28,7 @@ const SprintsHeader = ({project}) => {
           </div>
         </div>
       </div>
-      <p className={styles.description}>Короткий опис проекту</p>
+      {/*<p className={styles.description}>Короткий опис проекту</p>*/}
       <div className={styles.addPeopleBox}>
         <button
           onClick={() => setShowModal('addPeople')}

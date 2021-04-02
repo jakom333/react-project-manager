@@ -1,7 +1,23 @@
 .box{
     width: 200px;
     display: flex;
+    flex-direction: column;
+
+}
+.current{
+    display: flex;
     align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+}
+
+.edit{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
 }
 
 .editForm{
