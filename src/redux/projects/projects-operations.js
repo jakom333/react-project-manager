@@ -7,7 +7,7 @@ import {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
-  } from './projects-actions';
+} from './projects-actions';
 
 const getProjects = () => async (dispatch, getState) => {
   try {
@@ -20,10 +20,11 @@ const getProjects = () => async (dispatch, getState) => {
 
     dispatch(projectsSuccess(response.data));
   } catch (error) {
-    const response = await axios.post('/auth/refresh',
+    const response = await axios.post(
+      '/auth/refresh',
+      { sid: getState().auth.token?.sid },
       {
         headers: { Authorization: getState().auth.token?.refreshToken },
-        data: getState().auth.token?.sid,
       },
     );
     console.log(response);
@@ -39,13 +40,13 @@ const createProject = project => async dispatch => {
       project,
     );
     console.log(data)
-    dispatch(createProjectSuccess(data));
+    dispatch(createProjectSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(createProjectError(error));
   }
 };
 
-const deleteProject = (projectId) => async dispatch => {
+const deleteProject = projectId => async dispatch => {
   const newID = projectId;
   dispatch(deleteProjectRequest());
 

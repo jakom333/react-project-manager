@@ -17,14 +17,17 @@ import {
 
 const tasks = createReducer([], {
   [fetchTaskSuccess]: (_, { payload }) => payload,
-  [createTaskSuccess]: (state, { payload }) => [...state, payload],
+  [createTaskSuccess]: (state, { payload }) => {
+    console.log(payload);
+    return [...state, payload];
+  },
   [deleteTaskSuccess]: (state, { payload }) => [
     ...state.filter(item => item.id !== payload),
   ],
 
-    [changeTaskSuccess]: (state, { payload }) => [
-      ...state.map(item => item.id === payload.id ? payload : item),
-    ],
+  [changeTaskSuccess]: (state, { payload }) => [
+    ...state.map(item => (item.id === payload.id ? payload : item)),
+  ],
 });
 
 const loading = createReducer(false, {
@@ -42,19 +45,19 @@ const loading = createReducer(false, {
   [changeTaskError]: () => false,
 });
 
-const handleError = (_, { payload }) => payload.response.data;
-const clearError = () => null;
+// const handleError = (_, { payload }) => payload.response.data;
+// const clearError = () => null;
 
-const error = createReducer(null, {
-  [fetchTaskRequest]: clearError,
-  [fetchTaskError]: handleError,
-  [createTaskRequest]: clearError,
-  [createTaskError]: handleError,
-  [deleteTaskRequest]: clearError,
-  [deleteTaskError]: handleError,
-  [changeTaskRequest]: clearError,
-  [changeTaskError]: handleError,
-});
+// const error = createReducer(null, {
+//   [fetchTaskRequest]: clearError,
+//   [fetchTaskError]: handleError,
+//   [createTaskRequest]: clearError,
+//   [createTaskError]: handleError,
+//   [deleteTaskRequest]: clearError,
+//   [deleteTaskError]: handleError,
+//   [changeTaskRequest]: clearError,
+//   [changeTaskError]: handleError,
+// });
 
 // const error = createReducer(null, {});
 

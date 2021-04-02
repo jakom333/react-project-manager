@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from '../../redux/auth/auth-operations.js';
 import Button from '../../shared/button/Button.jsx';
 import styles from './LoginForm.module.css';
-
 import Background from '../background/Background.jsx';
 import { Link } from 'react-router-dom';
 import { getAuthError } from '../../redux/auth/auth-selectors.js';
@@ -57,7 +56,6 @@ export default function LoginForm() {
           />
         </label>
         {error ? <span className={styles.warning}>Wrong input</span> : ''}
-
         <div className={styles.button_wrapper}>
           <Button>Sign in</Button>
         </div>

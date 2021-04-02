@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { deleteProject } from '../../../redux/projects/projects-operations';
 
-const ProjectItem = ({ item, project }) => {
-  // console.log(item)
+const ProjectItem = ({ item }) => {
+  //  console.log(item)
 
   const dispatch = useDispatch();
   const deleteItem = () => dispatch(deleteProject(item._id));

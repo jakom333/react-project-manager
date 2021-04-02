@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './ProjectSideBarList.module.css';
 import { getProjectsSelector } from '../../../redux/projects/projects-selectors';
 import { useSelector } from 'react-redux';
@@ -12,7 +12,12 @@ const ProjectSideBarList = () => {
       <ul className={styles.sideLeftList}>
         {projects.map(({ title, _id }) => (
           <li key={_id} className={styles.sideItem}>
-            <NavLink  activeClassName={styles.avtive} className={styles.sideItemLink} to={`${_id}`} id={_id}>
+            <NavLink
+              activeClassName={styles.avtive}
+              className={styles.sideItemLink}
+              to={`${_id}`}
+              id={_id}
+            >
               <p className={styles.sideItemName}>{title}</p>
             </NavLink>
           </li>
