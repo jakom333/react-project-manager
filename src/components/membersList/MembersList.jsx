@@ -12,8 +12,8 @@ const MembersList = ({ members }) => {
         <p className={styles.message}>You have added no users yet</p>
       )} */}
       <ul className={styles.membersList}>
-        {members.map(member => (
-          <MembersListItem member={member} key={id} />
+        {members.map((member, idx) => (
+          <MembersListItem member={member} key={idx} />
         ))}
       </ul>
     </div>
