@@ -1,9 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { addMemberSuccess } from '../projectMembers/projectMembers-actions';
 import {
   createProjectSuccess,
   projectsSuccess,
   deleteProjectSuccess,
+  addMemberSuccess,
 } from './projects-actions';
 
 const initialProjectsState = [];
@@ -11,6 +11,7 @@ const initialProjectsState = [];
 const projects = createReducer(initialProjectsState, {
   [projectsSuccess]: (_, { payload }) => payload,
   [createProjectSuccess]: (state, { payload }) => [...state, payload],
+
   [addMemberSuccess]: (state, { payload }) =>
     state.map(project =>
       project._id === payload.projectId

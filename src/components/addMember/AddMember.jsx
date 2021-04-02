@@ -2,12 +2,11 @@ import MembersList from '../membersList/MembersList';
 import styles from './AddMember.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { addMember } from '../../redux/projectMembers/projectMembers-operations';
+import { addMember } from '../../redux/projects/projects-operations';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProjectsSelector } from '../../redux/projects/projects-selectors';
 import Button from '../../shared/button/Button';
-import { useState } from 'react';
 
 const formSchema = Yup.object().shape({
   email: Yup.string()
@@ -15,16 +14,11 @@ const formSchema = Yup.object().shape({
     .email('* Email must be valid'),
 });
 
-const initialState = {
-  email: '',
-};
-
 const AddMember = () => {
   const { projectId } = useParams();
   const dispatch = useDispatch();
   const projects = useSelector(getProjectsSelector);
   const members = projects.find(item => item._id === projectId).members;
-  const [state, setState] = useState(initialState);
 
   return (
     <div>
@@ -36,13 +30,6 @@ const AddMember = () => {
           onSubmit={async (values, { resetForm }) => {
             // alert(JSON.stringify(values, null, 2));
             // console.log(values);
-
-            // setState(prevState => ({
-            //   ...prevState,
-            //   email: values,
-            // }));
-
-            // console.log(initialState);
 
             addMember(values);
             dispatch(addMember(values, projectId));
@@ -62,13 +49,12 @@ const AddMember = () => {
               component="span"
               name="email"
             />
-            <button type="submit"> done </button>
+            {/* <button type="submit"> done </button> */}
+            <MembersList members={members} />
+            <Button id="form">Done</Button>
           </Form>
         </Formik>
-        <MembersList members={members} />
       </div>
-
-      <Button id="form">Done</Button>
     </div>
   );
 };
