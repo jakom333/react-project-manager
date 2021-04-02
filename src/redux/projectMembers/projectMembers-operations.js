@@ -15,7 +15,7 @@ const addMember = (email, projectId) => async dispatch => {
       email,
     );
     console.log(data);
-    dispatch(addMemberSuccess(data));
+    dispatch(addMemberSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(addMemberError(error.message));
   }

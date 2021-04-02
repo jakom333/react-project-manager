@@ -62,13 +62,12 @@ const AddMember = () => {
               component="span"
               name="email"
             />
-            <button type="submit"> done </button>
+            {/* <button type="submit"> done </button> */}
+            <MembersList members={members} />
+            <Button id="form">Done</Button>
           </Form>
         </Formik>
-        <MembersList members={members} />
       </div>
-
-      <Button id="form">Done</Button>
     </div>
   );
 };

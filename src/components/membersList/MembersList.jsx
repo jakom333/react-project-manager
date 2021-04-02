@@ -4,7 +4,7 @@ import MembersListItem from '../membersListItem/MembersListItem';
 import { nanoid } from 'nanoid';
 
 const MembersList = ({ members }) => {
-  const id = nanoid();
+  let id = nanoid();
   return (
     <div className={styles.container}>
       <p className={styles.addedMembers}> Total members: {members.length}</p>
