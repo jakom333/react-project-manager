@@ -30,22 +30,23 @@ const Header = () => {
 
       {isAuthenticated && (
         <div className={styles.logOutData}>
-          <span>
-            <b>{name}</b>
-          </span>
-
           {!isMobileDevice ? (
-            <button
-              type="button"
-              onClick={onLogOut}
-              className={styles.logOutBtn}
-            >
-              <svg className={styles.iconLogOut}>
-                <use href={sprite + '#icon-logout'}></use>
-              </svg>
+            <>
+              <span>
+                <b>{name}</b>
+              </span>
+              <button
+                type="button"
+                onClick={onLogOut}
+                className={styles.logOutBtn}
+              >
+                <svg className={styles.iconLogOut}>
+                  <use href={sprite + '#icon-logout'}></use>
+                </svg>
 
-              <span>Log out</span>
-            </button>
+                <span>Log out</span>
+              </button>
+            </>
           ) : (
             <button
               type="button"
