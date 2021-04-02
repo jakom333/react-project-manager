@@ -7,6 +7,9 @@ import {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
+  editProjectTitleRequest,
+  editProjectTitleSuccess,
+  editProjectTitleError
 } from './projects-actions';
 
 const getProjects = () => async (dispatch, getState) => {
@@ -59,4 +62,15 @@ const deleteProject = projectId => async dispatch => {
   }
 };
 
-export { getProjects, createProject, deleteProject };
+const editTitle = (projectId, title) => async dispatch => {
+  dispatch(editProjectTitleRequest());
+
+  try {
+    await axios.patch(`/project/title/${projectId}`, { title });
+    dispatch(editProjectTitleSuccess({ projectId, title }));
+  } catch (error) {
+    dispatch( editProjectTitleError(error));
+  }
+};
+
+export { getProjects, createProject, deleteProject, editTitle };

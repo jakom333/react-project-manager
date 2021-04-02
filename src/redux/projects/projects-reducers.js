@@ -3,6 +3,7 @@ import {
   createProjectSuccess,
   projectsSuccess,
   deleteProjectSuccess,
+  editProjectTitleSuccess,
 } from './projects-actions';
 
 const initialProjectsState = [];
@@ -13,6 +14,15 @@ const projects = createReducer(initialProjectsState, {
   [deleteProjectSuccess]:  (state, { payload }) =>
     state.filter(item => item.id !== payload),
 
+  [editProjectTitleSuccess]: (state, { payload }) => {
+    const idx = state.findIndex(item => item._id === payload.projectId);
+    const project = state[idx];
+    return [
+      ...state.slice(0, idx),
+      { ...project, title: payload.title },
+      ...state.slice(idx + 1),
+    ];
+  },
 
 //  [deleteContactSuccess]: (state, { payload }) => {
 //  return [...state.filter(item => item.id.toString() !== payload.toString())];

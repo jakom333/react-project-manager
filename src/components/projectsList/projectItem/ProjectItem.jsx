@@ -11,7 +11,6 @@ const ProjectItem = ({ item}) => {
   const dispatch = useDispatch();
   const deleteItem = () => dispatch(deleteProject(item._id))
   const match = useRouteMatch();
-
   return (
 
     <li className={styles.projectItem}>

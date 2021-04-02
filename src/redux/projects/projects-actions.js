@@ -12,6 +12,10 @@ const deleteProjectRequest = createAction('projects/delete-project-request');
 const deleteProjectSuccess = createAction('projects/delete-project-success');
 const deleteProjectError = createAction('projects/delete-project-error');
 
+const editProjectTitleRequest = createAction('projects/edit-title-request');
+const editProjectTitleSuccess = createAction('projects/edit-title-success');
+const editProjectTitleError = createAction('projects/edit-title-error');
+
 export {
   projectsRequest,
   projectsSuccess,
@@ -22,4 +26,7 @@ export {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
+  editProjectTitleRequest,
+  editProjectTitleSuccess,
+  editProjectTitleError,
 };
