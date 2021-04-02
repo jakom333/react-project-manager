@@ -9,7 +9,6 @@ import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
 // import EditTitle from '../editTitle/EditTitle';
 
 const SprintsHeader = ({ project }) => {
-  console.log(project);
   const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.boxHead}>

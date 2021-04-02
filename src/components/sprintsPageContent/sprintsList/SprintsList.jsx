@@ -14,13 +14,13 @@ const SprintsList = () => {
   useEffect(() => {
     dispatch(fetchSprints(params.projectId));
   }, [dispatch, params.projectId]);
-  
+
   return (
     <div>
       <div>
         <ul className={styles.sprintList}>
-          {sprints.map(item => (
-            <SprintsListItem item={item} />
+          {sprints.map((item, idx) => (
+            <SprintsListItem item={item} key={idx} />
           ))}
         </ul>
       </div>

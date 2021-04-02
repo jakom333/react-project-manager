@@ -80,14 +80,6 @@ const logIn = user => async dispatch => {
   }
 };
 
-//if (status.code === "401") {
-//axios.post("/auth/refresh", sid)
-//if(status.code="200"){
-//refreshToken
-//}
-//logout
-//}
-
 const logOut = () => async dispatch => {
   dispatch(logoutRequest());
   try {

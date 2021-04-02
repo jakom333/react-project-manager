@@ -33,6 +33,7 @@ const setError = (_, { payload }) => payload;
 const error = createReducer(null, {
   [registerError]: setError,
   [loginError]: setError,
+  [refreshError]: setError,
   [logoutError]: setError,
   [refreshError]: setError,
 });
