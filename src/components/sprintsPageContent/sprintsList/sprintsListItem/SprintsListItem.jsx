@@ -5,17 +5,17 @@ import { Link, useRouteMatch } from 'react-router-dom';
 const SprintListItem = ({ item }) => {
   const match = useRouteMatch();
   return (
-    <div>
-      <Link to={`${match.url}/sprints/${item._id}`} id={item._id}>
-        <li className={styles.sprintListItem}>
+    <div key={item.id}>
+      <li className={styles.sprintListItem}>
+        <Link to={`${match.url}/sprints/${item._id}`} id={item._id}>
           <div>
-            <h3>{item.title}</h3>
-            <p>Start date{item.startDate}</p>
-            <p>End date{item.endDate}</p>
-            <p>Duration{item.duration}</p>
+            <h3>title</h3>
+            <p>Дата a начала</p>
+            <p>Дата конца</p>
+            <p>Дата длительность</p>
           </div>
-        </li>
-      </Link>
+        </Link>
+      </li>
     </div>
   );
 };
