@@ -13,6 +13,7 @@ import {
   changeTaskRequest,
   changeTaskSuccess,
   changeTaskError,
+  changeFilter,
 } from './task-actions.js';
 
 const tasks = createReducer([], {
@@ -45,6 +46,14 @@ const loading = createReducer(false, {
   [changeTaskError]: () => false,
 });
 
+const filter = createReducer('', {
+  [changeFilter]: (_, { payload }) => payload,
+});
+
+export default tasks;
+
+// export default combineReducers({ tasks, filter});
+
 // const handleError = (_, { payload }) => payload.response.data;
 // const clearError = () => null;
 
@@ -66,5 +75,3 @@ const loading = createReducer(false, {
 //   loading,
 //   error,
 // });
-
-export default tasks;
