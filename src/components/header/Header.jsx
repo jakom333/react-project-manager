@@ -9,6 +9,7 @@ import {
   getUsername,
 } from '../../redux/auth/auth-selectors';
 import { logOut } from '../../redux/auth/auth-operations';
+import { useDevice } from '../../hooks/useDevice.js';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const Header = () => {
     dispatch(logOut());
   }, [dispatch]);
 
+  const { isMobileDevice } = useDevice();
+
   const isAuthenticated = useSelector(getIsAuthenticated);
 
   return (
@@ -24,16 +27,38 @@ const Header = () => {
       <Link to="/projects">
         <img src={logo} className={styles.headerLogo} alt="Logo" />
       </Link>
-      <span>{name} </span>
 
       {isAuthenticated && (
-        <button type="button" onClick={onLogOut} className={styles.logOutBtn}>
-          <svg className={styles.iconSearch}>
-            <use href={sprite + '#icon-logout'}></use>
-          </svg>
+        <div className={styles.logOutData}>
+          {!isMobileDevice ? (
+            <>
+              <span>
+                <b>{name}</b>
+              </span>
+              <button
+                type="button"
+                onClick={onLogOut}
+                className={styles.logOutBtn}
+              >
+                <svg className={styles.iconLogOut}>
+                  <use href={sprite + '#icon-logout'}></use>
+                </svg>
 
-          <span className={styles.underlined}>Log out</span>
-        </button>
+                <span>Log out</span>
+              </button>
+            </>
+          ) : (
+            <button
+              type="button"
+              onClick={onLogOut}
+              className={styles.logOutBtnMobile}
+            >
+              <svg className={styles.iconLogOut}>
+                <use href={sprite + '#icon-logout'}></use>
+              </svg>
+            </button>
+          )}
+        </div>
       )}
     </div>
   );

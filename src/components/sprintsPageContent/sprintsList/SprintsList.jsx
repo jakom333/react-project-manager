@@ -20,7 +20,7 @@ const SprintsList = () => {
       <div>
         <ul className={styles.sprintList}>
           {sprints.map(item => (
-            <SprintsListItem key={item._id} item={item} />
+            <SprintsListItem item={item} />
           ))}
         </ul>
       </div>
