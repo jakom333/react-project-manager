@@ -1,24 +1,40 @@
 .titleChangeInput {
-  width: 87%;
-  border: none;
-  box-shadow: 2px 4px 8px rgba(0, 5, 97, 0.1);
-  border-radius: 5px;
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
   letter-spacing: 0.04em;
-
-  background-color: #ffffff;
-  padding: 6px 5px;
+  color: #181c27;
+  background-color: #ffffff00;
   outline: none;
 }
+
+/* .fontSize {
+  font-size: 36px;
+}
+
+.fontFamily {
+  font-family: 'Montserrat';
+}
+
+.fontWeight {
+  font-weight: 500;
+}
+
+.fontStyle {
+  font-style: normal;
+}
+
+.letterSpacing {
+  letter-spacing: 0.04em;
+} */
 
 .wrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 370px;
+  max-width: 170px;
   height: 30px;
   /* transform: translateY(-50%); */
 }

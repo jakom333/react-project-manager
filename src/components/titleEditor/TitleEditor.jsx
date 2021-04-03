@@ -5,6 +5,7 @@ import styles from './TitleEditor.module.css';
 import sprite from '../../icons/symbol-defs.svg';
 import { editTitle } from '../../redux/sprints/sprints-operations';
 import { getSprintsSelector } from '../../redux/sprints/sprints-selectors';
+import AutosizeInput from './AutosizeInput';
 // import { CSSTransition } from 'react-transition-group';
 // import transition from './Transition.module.css';
 
@@ -42,7 +43,9 @@ export default function ChangeTitle() {
   if (isActive) {
     return (
       <div className={styles.wrapper}>
-        <h1 className={styles.sprintTitle}>{sprint?.title} </h1>
+        <h1 className={styles.sprintTitle} onClick={onChangeTitle}>
+          {sprint?.title}
+        </h1>
         <button
           type="button"
           onClick={onChangeTitle}
@@ -59,15 +62,8 @@ export default function ChangeTitle() {
   if (!isActive) {
     return (
       <div>
-        {/* <CSSTransition
-        in={isActive}
-        unmountOnExit
-        mountOnEnter
-        timeout={50}
-        classNames={transition} */}
-
         <form className={styles.wrapper}>
-          <input
+          <AutosizeInput
             type="text"
             name="edit"
             value={input}
@@ -76,6 +72,7 @@ export default function ChangeTitle() {
             maxLength="25"
             className={styles.titleChangeInput}
             autoFocus
+            autocomplete="off"
           />
           <button
             className={styles.changeTitleButton}
@@ -87,18 +84,6 @@ export default function ChangeTitle() {
             </svg>
           </button>
         </form>
-        {/* </CSSTransition> */}
-        {/* <CSSTransition
-        in={isUpdate}
-        timeout={50}
-        unmountOnExit
-        mountOnEnter
-        onExited={() => setIsActive(true)}
-        onEnter={() => setIsActive(false)}
-        classNames={transition}
-      > */}
-
-        {/* </CSSTransition> */}
       </div>
     );
   }
