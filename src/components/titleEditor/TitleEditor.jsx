@@ -10,12 +10,12 @@ import { getSprintsSelector } from '../../redux/sprints/sprints-selectors';
 
 export default function ChangeTitle() {
   const dispatch = useDispatch();
-  const [isUpdate, setUpdate] = useState(true);
-  const [isActive, setActive] = useState(true);
   const [input, setInput] = useState();
+  const [isUpdate, setUpdate] = useState(true);
   const { sprintId } = useParams();
   const sprints = useSelector(getSprintsSelector);
   const sprint = sprints.find(sprint => sprint._id === sprintId);
+  const [isActive, setActive] = useState(true);
 
   // useEffect(() => {
   //   dispatch(fetchSprints(sprintId));
@@ -38,6 +38,7 @@ export default function ChangeTitle() {
     setUpdate(!isUpdate);
     setActive(() => setActive(true));
   };
+
   if (isActive) {
     return (
       <div className={styles.wrapper}>
