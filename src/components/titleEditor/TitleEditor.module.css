@@ -60,6 +60,7 @@
 }
 
 .changeTitleButton {
+  fill: rgb(78, 78, 78);
   width: 20px;
   height: 20px;
   border: none;
@@ -67,6 +68,10 @@
   outline: none;
   margin-left: 5px;
   margin-top: 2px;
+}
+
+.changeTitleButton:hover {
+  fill: #ff6b08;
 }
 
 .sprintTitle {
