@@ -16,11 +16,6 @@ export default function ChangeTitle() {
   const sprint = sprints.find(sprint => sprint._id === sprintId);
   const [isActive, setActive] = useState(true);
 
-  // useEffect(() => {
-  //   dispatch(fetchSprints(sprintId));
-  //   dispatch(fetchSprints());
-  // }, [dispatch, sprintId]);
-
   const onChangeTitle = e => {
     setActive(() => setActive(false));
     setUpdate(!isUpdate);
