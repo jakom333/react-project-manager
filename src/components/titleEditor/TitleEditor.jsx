@@ -6,8 +6,6 @@ import sprite from '../../icons/symbol-defs.svg';
 import { editTitle } from '../../redux/sprints/sprints-operations';
 import { getSprintsSelector } from '../../redux/sprints/sprints-selectors';
 import AutosizeInput from './AutosizeInput';
-// import { CSSTransition } from 'react-transition-group';
-// import transition from './Transition.module.css';
 
 export default function ChangeTitle() {
   const dispatch = useDispatch();
