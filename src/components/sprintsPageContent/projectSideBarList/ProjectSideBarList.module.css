@@ -47,9 +47,7 @@
         padding-inline-start:0;
         list-style: none;
         margin-left: 10px;
-
     }
-
 
     .sideItemBox{
         margin-right: 15px;
@@ -57,11 +55,9 @@
         height: 36px;
         background-color: #8c72df;
     }
-
 }
 
 @media screen and (min-width: 1280px){
-
 
     .sideLeftList{
         padding-inline-start:0;
@@ -69,14 +65,12 @@
         margin-left: 10px;
     }
 
-
     .sideItemBox{
         margin-right: 15px;
         width: 36px;
         height: 36px;
         background-color: #8c72df;
     }
-
 }
 
 .sideItem {
