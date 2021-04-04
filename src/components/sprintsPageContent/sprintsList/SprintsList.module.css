@@ -1,7 +1,7 @@
 .sprintList {
   margin: 0 auto;
   display: flex;
-  gap: 10px;
+  gap: 30px;
   flex-wrap: wrap;
   width: 280px;
 }
@@ -15,7 +15,7 @@
 
 @media (min-width: 1280px) {
   .sprintList {
-    gap: 30px;
+    gap: 20px;
     margin-left: 56px;
   }
 }
