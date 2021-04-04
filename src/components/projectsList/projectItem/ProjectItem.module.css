@@ -33,7 +33,7 @@
     position: absolute;
     right: 10px;
     bottom: 10px;
-        z-index: 2;
+    z-index: 2;
 }
 
 .title{
@@ -62,20 +62,16 @@
     .title{
         margin-top: 0;
         margin-bottom: 6px;
-        font-style: normal;
         font-weight: 800;
         font-size: 16px;
         line-height: 20px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 
     .description{
-        font-style: normal;
         font-weight: normal;
         font-size: 10px;
         line-height: 12px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 
@@ -103,7 +99,7 @@
         list-style: none;
         overflow: hidden;
         background-color: #8C72DF;
-         padding: 20px;
+        padding: 20px;
         width: 216px;
         height: 216px;
     }
@@ -118,19 +114,15 @@
         margin-bottom: 10px;
         font-size: 26px;
         line-height: 32px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
         margin-top: 0;
-        font-style: normal;
         font-weight: 800;
     }
 
     .description{
         font-size: 14px;
         line-height: 17px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
-        font-style: normal;
         font-weight: normal;
 
     }
@@ -173,14 +165,12 @@
         margin-bottom: 10px;
         font-size: 26px;
         line-height: 32px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 
     .description{
         font-size: 14px;
         line-height: 17px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 

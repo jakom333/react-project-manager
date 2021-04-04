@@ -17,7 +17,6 @@
     line-height: 22px;
     display: flex;
     align-items: center;
-    letter-spacing: 0.04em;
     text-decoration-line: underline;
     color: #181C27;
 }
@@ -73,8 +72,6 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
-        letter-spacing: 0.04em;
-        color: #181C27;
     }
 
 
@@ -94,7 +91,6 @@
     }
 
     .boxBackLink{
-        color: #181C27;
         display: flex;
     }
 }
@@ -124,9 +120,7 @@
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        letter-spacing: 0.04em;
         text-decoration-line: underline;
-        color: #181C27;
     }
 
     .titleBox {
@@ -159,12 +153,9 @@
 
     .pageText {
         margin-left: 20px;
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        letter-spacing: 0.04em;
-        color: #181C27;
     }
 
 
@@ -174,13 +165,10 @@
     }
 
     .addPeopleText {
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        letter-spacing: 0.04em;
         text-decoration-line: underline;
-        color: #181C27;
     }
 
 

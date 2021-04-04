@@ -85,22 +85,17 @@
     .pageTitle{
         padding-top: 40px;
         padding-bottom: 30px;
-        font-style: normal;
         font-weight: 500;
         font-size: 36px;
         line-height: 44px;
-        letter-spacing: 0.04em;
     }
 
     .pageText{
         display: block;
         margin-left: 20px;
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        letter-spacing: 0.04em;
-        color: #181C27;;
     }
 
     .pageBox{
