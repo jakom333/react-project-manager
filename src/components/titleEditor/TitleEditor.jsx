@@ -65,7 +65,7 @@ export default function ChangeTitle() {
             maxLength="25"
             className={styles.titleChangeInput}
             autoFocus
-            autocomplete="off"
+            autoComplete="off"
           />
           <button
             className={styles.changeTitleButton}
