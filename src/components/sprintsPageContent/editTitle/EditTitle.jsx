@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styles from './EditTitle.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
-import {editTitle } from '../../../redux/projects/projects-operations';
+import { editTitle } from '../../../redux/projects/projects-operations';
 import { getProjectsSelector } from '../../../redux/projects/projects-selectors';
 
-  const EditTitle = () => {
+const EditTitle = () => {
   const dispatch = useDispatch();
   const [input, setInput] = useState();
   const [isUpdate, setUpdate] = useState(true);
@@ -16,7 +16,7 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
   const [active, setActive] = useState(true);
 
   const onEditTitle = () => {
-    setActive(() => setActive(false))
+    setActive(() => setActive(false));
     setUpdate(!isUpdate);
     setInput(project.title);
   };
@@ -29,17 +29,19 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
     evt.preventDefault();
     dispatch(editTitle(projectId, input));
     setUpdate(!isUpdate);
-    setActive(() => setActive(true))
+    setActive(() => setActive(true));
   };
 
   if (active) {
     return (
       <div className={styles.box}>
         <div className={styles.current}>
-          <h2 className={styles.pageTitle}>
-            {project?.title}
-          </h2>
-          <button onClick={onEditTitle} type='button' className={styles.buttonFix}>
+          <h2 className={styles.pageTitle}>{project?.title}</h2>
+          <button
+            onClick={onEditTitle}
+            type="button"
+            className={styles.buttonFix}
+          >
             <svg className={styles.iconPencil}>
               <use href={sprite + '#icon-pencil'}></use>
             </svg>
@@ -47,7 +49,7 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
         </div>
         <p className={styles.description}>{project?.description}</p>
       </div>
-    )
+    );
   }
 
   if (!active) {
@@ -56,8 +58,8 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
         <div className={styles.edit}>
           <form className={styles.editForm}>
             <input
-              type='text'
-              name='edit'
+              type="text"
+              name="edit"
               value={input}
               placeholder="Enter new name"
               onChange={onHandleChange}
@@ -65,7 +67,11 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
               className={styles.editInput}
               autoFocus
             />
-            <button className={styles.buttonSave} onClick={onHandleSubmit} type='submit'>
+            <button
+              className={styles.buttonSave}
+              onClick={onHandleSubmit}
+              type="submit"
+            >
               <svg className={styles.iconSave}>
                 <use href={sprite + '#icon-save'}></use>
               </svg>
@@ -74,10 +80,8 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
         </div>
         <p className={styles.description}>{project?.description}</p>
       </div>
-
-    )
+    );
   }
-
-}
+};
 
 export default EditTitle;
