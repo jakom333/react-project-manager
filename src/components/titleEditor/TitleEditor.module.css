@@ -87,6 +87,7 @@
   /* background-color: #dadada6b; */
   border-radius: 8px;
   /* cursor: pointer; */
+  transition-duration: 200ms;
 }
 
 @media screen and (max-width: 767px) {
