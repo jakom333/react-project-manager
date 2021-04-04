@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import style from './TitleEditor.module.css';
+// import style from './TitleEditor.module.css';
 
 const sizerStyle = {
   // position: 'absolute',
@@ -29,12 +29,12 @@ const cleanInputProps = inputProps => {
 };
 
 const copyStyles = (styles, node) => {
-  style.fontSize = styles.fontSize;
-  style.fontFamily = styles.fontFamily;
-  style.fontWeight = styles.fontWeight;
-  style.fontStyle = styles.fontStyle;
-  style.letterSpacing = styles.letterSpacing;
-  node.textTransform = styles.textTransform;
+  node.style.fontSize = styles.fontSize;
+  node.style.fontFamily = styles.fontFamily;
+  node.style.fontWeight = styles.fontWeight;
+  node.style.fontStyle = styles.fontStyle;
+  node.style.letterSpacing = styles.letterSpacing;
+  node.style.textTransform = styles.textTransform;
 };
 
 const isIE =
