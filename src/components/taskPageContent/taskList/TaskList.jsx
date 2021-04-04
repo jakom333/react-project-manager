@@ -8,8 +8,8 @@ import { useParams } from 'react-router-dom';
 
 const TaskList = () => {
   const { sprintId } = useParams();
-  const tasks = useSelector(getTasks);
-  //  const tasks = useSelector(getVisibleTasks);
+  //const tasks = useSelector(getTasks);
+  const tasks = useSelector(getVisibleTasks);
 
   const dispatch = useDispatch();
 

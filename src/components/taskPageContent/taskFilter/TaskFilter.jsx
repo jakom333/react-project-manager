@@ -16,9 +16,8 @@ const TaskFilter = ({ handleChange }) => {
       <input
         type="text"
         name="filter"
-        // value={filter}
+        value={filter}
         onChange={handleChange}
-        // onClick={() => console.log('click')}
         className={styles.searchInputActive}
         placeholder="search task"
       />
