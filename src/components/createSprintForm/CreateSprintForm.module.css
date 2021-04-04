@@ -35,19 +35,8 @@
   border-bottom: solid 0.8px greyColor;
   font-size: 16px;
   line-height: 20px;
-  margin-bottom: 46px;
-  transition: all 0.5s;
-}
-
-.checkbox {
   margin-bottom: 45px;
-}
-
-.checkboxLabel {
-  margin-left: 20px;
-  margin-bottom: -20px;
-  font-size: 16px;
-  line-height: 20px;
+  transition: all 0.5s;
 }
 
 .form {
@@ -83,8 +72,8 @@
 .errorName {
   display: block;
   color: accentColor;
-  margin-top: -55px;
-}
+  margin-top: -38px;
+} 
 
 .errorTime {
   display: block;
@@ -178,6 +167,60 @@
   color: rgba(24, 28, 39, 0.6);
 }
 
+.checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 20px;
+}
+.checkbox__text {
+  position: relative;
+
+  padding: 0 0 0 40px;
+  cursor: pointer;
+
+  font-size: 16px;
+  line-height: 12px;
+  color: greyColor;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+}
+.checkbox__text:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 30px;
+  height: 15.5px;
+  border-radius: 30px;
+  background: #cdd1da;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+.checkbox__text:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  width: 13px;
+  height: 12px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+.checkbox input:checked + .checkbox__text:before {
+  background: #ff6b08;
+}
+.checkbox input:checked + .checkbox__text:after {
+  left: 15px;
+}
+.checkbox input:focus + .checkbox__text:before {
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2),
+    0 0 2px 2px rgba(241, 165, 0, 0.774);
+}
+
 /*==================TABLET=========================*/
 
 @media screen and (min-width: 768px) {
@@ -203,16 +246,6 @@
     font-size: 18px;
     line-height: 22px;
     margin-bottom: 59px;
-  }
-
-  .checkbox {
-    margin-bottom: 48px;
-  }
-
-  .checkboxLabel {
-    font-size: 18px;
-    line-height: 22px;
-    margin-left: 25px;
   }
 
   .inputTime {
