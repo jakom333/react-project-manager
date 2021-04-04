@@ -1,50 +1,83 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import styles from './TitleEditor.module.css';
 import sprite from '../../icons/symbol-defs.svg';
+import { editTitle } from '../../redux/sprints/sprints-operations';
+import { getSprintsSelector } from '../../redux/sprints/sprints-selectors';
+import AutosizeInput from './AutosizeInput';
 
-export default function ChangeTitle({ titleValue }) {
-  const [title, setTitle] = useState(titleValue);
+export default function ChangeTitle() {
+  const dispatch = useDispatch();
+  const [input, setInput] = useState();
   const [isUpdate, setUpdate] = useState(true);
+  const { sprintId } = useParams();
+  const sprints = useSelector(getSprintsSelector);
+  const sprint = sprints.find(sprint => sprint._id === sprintId);
+  const [isActive, setActive] = useState(true);
 
-  useEffect(() => {
-    setTitle(titleValue);
-  }, [titleValue]);
+  const onChangeTitle = e => {
+    setActive(() => setActive(false));
+    setUpdate(!isUpdate);
+    setInput(sprint.title);
+  };
 
-  return (
-    <>
-      {/* <label className={styles.wrapper}>
-        <input
-          type="text"
-          className={styles['title-change-input']}
-          value={title}
-          onChange={e => setTitle(e.target.value)}
-          maxLength="25"
-        />
+  const onHandleChange = e => {
+    setInput(e.target.value);
+  };
 
-        <button
-          className={styles['sprint-change-title-btn']}
-          type="button"
-          onClick={() => {
-            setUpdate(!isUpdate);
-          }}
-        >
-          <svg className={styles['sprint-change-title-btn']}>
-            <use href={sprite + '#icon-save'}></use>
-          </svg>
-        </button>
-      </label> */}
+  const onFormSubmit = e => {
+    e.preventDefault();
+    dispatch(editTitle(sprintId, input));
+    setUpdate(!isUpdate);
+    setActive(() => setActive(true));
+  };
+
+  if (isActive) {
+    return (
       <div className={styles.wrapper}>
-        <h1 className={styles['sprint-title']}>Sprint title</h1>
+        <h1 className={styles.sprintTitle} onClick={onChangeTitle}>
+          {sprint?.title}
+        </h1>
         <button
-          onClick={() => setUpdate(!isUpdate)}
-          className={styles['sprint-change-title-btn']}
+          type="button"
+          onClick={onChangeTitle}
+          className={styles.changeTitleButton}
         >
-          <svg className={styles['sprint-change-title-btn']}>
+          <svg className={styles.changeTitleButton}>
             <use href={sprite + '#icon-pencil'}></use>
           </svg>
         </button>
       </div>
-    </>
-  );
+    );
+  }
+
+  if (!isActive) {
+    return (
+      <>
+        <form className={styles.wrapper}>
+          <AutosizeInput
+            type="text"
+            name="edit"
+            value={input}
+            onChange={onHandleChange}
+            onBlur={onFormSubmit}
+            maxLength="25"
+            inputClassName={styles.titleChangeInput}
+            autoFocus
+            autoComplete="off"
+          />
+          <button
+            className={styles.changeTitleButton}
+            type="submit"
+            onClick={onFormSubmit}
+          >
+            <svg className={styles.changeTitleButton2}>
+              <use href={sprite + '#icon-save'}></use>
+            </svg>
+          </button>
+        </form>
+      </>
+    );
+  }
 }

@@ -8,6 +8,9 @@ import {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
+  changeTitleRequest,
+  changeTitleSuccess,
+  changeTitleError,
   editProjectTitleRequest,
   editProjectTitleSuccess,
   editProjectTitleError,
@@ -99,9 +102,8 @@ const editTitle = (projectId, title) => async dispatch => {
     await axios.patch(`/project/title/${projectId}`, { title });
     dispatch(editProjectTitleSuccess({ projectId, title }));
   } catch (error) {
-    dispatch( editProjectTitleError(error));
+    dispatch(editProjectTitleError(error));
   }
 };
 
 export { getProjects, createProject, deleteProject, editTitle, addMember };
-

@@ -1,26 +1,23 @@
-.title-change-input {
-  width: 87%;
-  border: none;
-  box-shadow: 2px 4px 8px rgba(0, 5, 97, 0.1);
-  border-radius: 5px;
+.titleChangeInput {
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
   letter-spacing: 0.04em;
-
-  background-color: #ffffff;
-  padding: 6px 5px;
+  color: #181c27;
   outline: none;
+  /* background-color: #dadada6b; */
+  border-radius: 10px;
+  word-wrap: break-word;
 }
 
 .wrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 370px;
+  max-width: 280px;
   height: 30px;
-  /* transform: translateY(-50%); */
 }
 
 .btn {
@@ -43,29 +40,36 @@
   height: 20px;
 }
 
-/* .sprint-change-title-btn {
-  composes: btn;
-} */
-
-.sprint-change-title-btn {
+.changeTitleButton {
+  fill: rgb(139, 139, 139);
   width: 20px;
   height: 20px;
   border: none;
   cursor: pointer;
   outline: none;
-  margin-left: 5px;
-
-  /* position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%); */
+  margin-left: 7px;
+  margin-top: 2px;
 }
 
-/* .sprint-change-title-btn:hover {
-  background-image: url('../../icons/symbol-defs.svg#icon-pencil');
-} */
+.changeTitleButton:hover,
+.changeTitleButton2:hover {
+  fill: #ff6b08;
+  transition-duration: 200ms;
+  transform: scale(1.1);
+}
 
-.sprint-title {
+.changeTitleButton2 {
+  fill: rgb(139, 139, 139);
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  /* margin-right: 5px; */
+  margin-top: 2px;
+}
+
+.sprintTitle {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
@@ -73,32 +77,48 @@
   line-height: 44px;
   letter-spacing: 0.04em;
   color: #181c27;
-  max-width: 340px;
+  max-width: 500px;
   word-wrap: break-word;
 }
 
-.project-header {
-  font-family: 'Montserrat';
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 44px;
-  letter-spacing: 0.04em;
-  color: #181c27;
-  display: inline-block;
-  margin-right: 20px;
-  word-wrap: break-word;
-  max-width: 300px;
+.sprintTitle:hover {
+  /* color: #ec6f35; */
+  background-color: #d1d1d16b;
+  /* background-color: #dadada6b; */
+  border-radius: 8px;
+  /* cursor: pointer; */
+  transition-duration: 200ms;
 }
 
-/* @media screen and (max-width: 767px) {
-  .wrapper {
-    display: flex;
-    justify-content: flex-end;
+@media screen and (max-width: 767px) {
+  .sprintTitle {
+    max-width: 270px;
   }
-} */
+  .wrapper {
+    max-width: 180px;
+  }
+
+  .titleChangeInput {
+    max-width: 380px;
+  }
+}
 
 @media screen and (max-width: 1279px) {
+  .sprintTitle {
+    max-width: 345px;
+  }
+
   .wrapper {
     max-width: 370px;
+  }
+
+  .inputWrapper {
+    max-width: 270px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    max-width: 500px;
   }
 }

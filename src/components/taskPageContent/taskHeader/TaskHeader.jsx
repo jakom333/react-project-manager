@@ -3,7 +3,6 @@ import styles from './TaskHeader.module.css';
 import MainModal from '../../../shared/mainModal/MainModal';
 import TaskForm from '../../taskForm/TaskForm';
 import ChangeTitle from '../../titleEditor/TitleEditor';
-// import style from '../sprintList/SprintList.module.css';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import TaskFilter from '../taskFilter/TaskFilter';
 import { useSelector } from 'react-redux';
@@ -54,7 +53,9 @@ export default function SprintHeader() {
           </div>
         </div>
         <div className={styles.control}>
-          <ChangeTitle />
+          <div className={styles.baseWrapper}>
+            <ChangeTitle />
+          </div>
           <div className={styles.buttonBox}>
             <RoundButton onClick={() => setShowModal(true)} />
             <p className={styles.buttonDescription}>Create task</p>
