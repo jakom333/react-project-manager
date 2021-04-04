@@ -13,13 +13,15 @@ import { NavLink } from 'react-router-dom';
 const SprintsHeader = () => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className={styles.boxHead}>
+    <>
       <div className={styles.boxBack}>
         <NavLink to="/projects" className={styles.boxBackLink} >
-        <ButtonShow />
-        <p className={styles.showProject}>Show projects</p>
+          <ButtonShow />
+          <p className={styles.showProject}>Show projects</p>
         </NavLink>
       </div>
+    <div className={styles.boxHead}>
+
       <div className={styles.head}>
         <div className={styles.titleBox}>
           <div className={styles.title}>
@@ -57,6 +59,7 @@ const SprintsHeader = () => {
         </MainModal>
       </div>
     </div>
+    </>
   );
 };
 

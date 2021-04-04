@@ -6,7 +6,7 @@
 }
 .current{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 20px;
 
@@ -22,7 +22,7 @@
 
 .editForm{
     display: flex;
- align-items: center;
+    align-items: center;
 }
 
 .editInput{
@@ -33,6 +33,7 @@
 }
 
 .buttonFix {
+    margin-top: 13px;
     width: 20px;
     height: 20px;
     background-color: transparent;
@@ -52,7 +53,6 @@
     border: none;
     outline: none;
     border-radius: 10%;
-    /*background-color: #A6A6A6;*/
 }
 
 .buttonSave:hover{
@@ -62,7 +62,7 @@
 }
 
 .iconPencil {
-    fill: black;
+    /*fill: black;*/
     width: 20px;
     height: 20px;
 }
@@ -91,11 +91,16 @@
         line-height: 32px;
         letter-spacing: 0.04em;
      }
+    .current{
+        min-width: 250px;
+    }
+    .buttonFix {
+        margin-top: 7px;
+    }
 }
 
 @media screen and  (min-width: 768px) and (max-width: 1279px) {
     .pageTitle {
-        /*min-width: 200px;*/
         max-width: 300px;
         margin-right: 20px;
         font-weight: 500;
@@ -104,12 +109,15 @@
         letter-spacing: 0.04em;
 
     }
+    .current{
+        min-width: 300px;
+    }
+
 
 }
 
 @media screen and (min-width: 1280px) {
     .pageTitle {
-        /*min-width: 400px;*/
         max-width: 400px;
         margin-right: 20px;
         font-weight: 500;
@@ -118,8 +126,11 @@
         letter-spacing: 0.04em;
 
     }
-}
 
+    .current{
+        min-width: 400px;
+    }
+}
 
 .boxEdit{
     display: flex;
