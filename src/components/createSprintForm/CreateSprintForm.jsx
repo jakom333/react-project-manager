@@ -18,10 +18,10 @@ const formSchema = Yup.object().shape({
     .min(3, 'Too short!')
     .required('* Sprint name is a required field'),
   duration: Yup.number()
-    .typeError(' Duration has to be a number')
-    .required(' Duration is a required field')
-    .positive('Duration must be a positive number')
-    .integer('Duration must be an integer'),
+    .typeError('* Duration has to be a number')
+    .required('* Duration is a required field')
+    .positive('* Duration must be a positive number')
+    .integer('* Duration must be an integer'),
 });
 
 const CreateSprintForm = ({ onClose }) => {
@@ -53,8 +53,9 @@ const CreateSprintForm = ({ onClose }) => {
         validationSchema={formSchema}
         onSubmit={async values => {
           const { title, duration } = values;
-          const endDate = `${startDate.getFullYear()}-${1 +
-            startDate.getMonth()}-${startDate.getDate()}`;
+          const endDate = `${startDate.getFullYear()}-${
+            1 + startDate.getMonth()
+          }-${startDate.getDate()}`;
           onHandleSubmit(title, endDate, duration);
           onClose();
         }}
@@ -62,14 +63,14 @@ const CreateSprintForm = ({ onClose }) => {
         <Form className={styles.form}>
           <Field
             className={styles.inputName}
-            name='title'
-            type='text'
-            placeholder='The name of the sprint'
+            name="title"
+            type="text"
+            placeholder="The name of the sprint"
           />
           <ErrorMessage
             className={styles.errorName}
-            component='span'
-            name='title'
+            component="span"
+            name="title"
           />
           <label className={styles.checkbox}>
             <Field
@@ -95,18 +96,18 @@ const CreateSprintForm = ({ onClose }) => {
           <div className={styles.form}>
             <Field
               className={styles.inputTime}
-              name='duration'
-              type='text'
-              placeholder='Duration (days)'
+              name="duration"
+              type="text"
+              placeholder="Duration (days)"
             />
 
             <ErrorMessage
               className={styles.errorTime}
-              component='span'
-              name='duration'
+              component="span"
+              name="duration"
             />
           </div>
-          <Button type='submit'>Done</Button>
+          <Button type="submit">Done</Button>
         </Form>
       </Formik>
     </div>

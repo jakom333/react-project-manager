@@ -1,6 +1,6 @@
 import React from 'react';
 import TaskList from '../../components/taskPageContent/taskList/TaskList';
-import TasktHeader from '../../components/taskPageContent/taskHeader/TaskHeader';
+import TaskHeader from '../../components/taskPageContent/taskHeader/TaskHeader';
 import MainPageContainer from '../../components/taskPageContainer/mainPageContainer/MainPageContainer';
 import LeftBar from '../../components/taskPageContainer/leftBar/LeftBar';
 import RightBar from '../../components/taskPageContainer/rightBar/RightBar';
@@ -14,7 +14,12 @@ const TasksPage = () => {
         <SprintListSideBar />
       </LeftBar>
       <RightBar>
-        <TasktHeader />
+        <TaskHeader
+        // handleInput={handleInput}
+        // title={sprint.title}
+        // id={sprint._id}
+        // dateArr={dateArr}
+        />
         <RightItemBar>
           <TaskList />
         </RightItemBar>
