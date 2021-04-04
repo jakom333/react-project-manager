@@ -7,6 +7,7 @@ import styles from './EditTitle.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
 import {editTitle } from '../../../redux/projects/projects-operations';
 import { getProjectsSelector } from '../../../redux/projects/projects-selectors';
+
   const EditTitle = () => {
   const dispatch = useDispatch();
   const [input, setInput] = useState();
@@ -21,7 +22,6 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
     setUpdate(!isUpdate);
     setInput(project.title);
   };
-console.log(project)
 
   const onHandleChange = evt => {
     setInput(evt.target.value);

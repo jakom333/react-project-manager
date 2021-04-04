@@ -11,23 +11,26 @@ const ProjectItem = ({ item }) => {
   const match = useRouteMatch();
   return (
     <li className={styles.projectItem}>
-      <Link
-        className={styles.projectLink}
-        to={`${match.url}/${item._id}`}
-        id={item._id}
-      >
-        <h3 className={styles.title}>{item.title}</h3>
-        <p className={styles.description}>{item.description}</p>
-      </Link>
-      <button
-        type="button"
-        className={styles.buttonDelete}
-        onClick={deleteItem}
-      >
-        <svg className={styles.deleteIcon}>
-          <use href={sprite + '#icon-delete-bin'}></use>
-        </svg>
-      </button>
+      <div className={styles.waveBox}>
+        <Link
+          className={styles.projectLink}
+          to={`${match.url}/${item._id}`}
+          id={item._id}
+        >
+          <h3 className={styles.title}>{item.title}</h3>
+          <p className={styles.description}>{item.description}</p>
+        </Link>
+        <button
+          type="button"
+          className={styles.buttonDelete}
+          onClick={deleteItem}
+        >
+          <svg className={styles.deleteIcon}>
+            <use href={sprite + '#icon-delete-bin'}></use>
+          </svg>
+        </button>
+      </div>
+
     </li>
   );
 };
