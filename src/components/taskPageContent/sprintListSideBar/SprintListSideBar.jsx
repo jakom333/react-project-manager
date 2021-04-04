@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import RoundButton from '../../../shared/roundButton/RoundButton';
-import sprite from '../../../icons/symbol-defs.svg';
 import styles from './SprintListSideBar.module.css';
 import MainModal from '../../../shared/mainModal/MainModal';
 import СreateSprintForm from '../../createSprintForm/CreateSprintForm';
@@ -9,8 +8,6 @@ import { getSprintsSelector } from '../../../redux/sprints/sprints-selectors';
 import { fetchSprints } from '../../../redux/sprints/sprints-operations';
 import { useParams, Link, NavLink } from 'react-router-dom';
 import ButtonShow from '../../../shared/buttonShow/ButtonShow';
-
-// import { NavLink } from 'react-router-dom';
 
 const SprintList = () => {
   const [showModal, setShowModal] = useState(false);
@@ -28,7 +25,6 @@ const SprintList = () => {
       <Link
         className={styles.sprintsButtonBackContainer}
         to={`/projects/${params.projectId}`}
-        activeClassName={styles.boxBackAvtive}
       >
         <ButtonShow />
         <p className={styles.showProject}>Show sprints</p>
@@ -38,7 +34,11 @@ const SprintList = () => {
         <ul className={styles.sprintsList}>
           {sprintsList.map(({ title, _id }) => (
             <li key={_id}>
-              <NavLink className={styles.item} activeClassName={styles.activeItem} to={`${_id}`}>
+              <NavLink
+                className={styles.item}
+                activeClassName={styles.activeItem}
+                to={`${_id}`}
+              >
                 <div className={styles.sprintIcon}></div>
                 <p>{title}</p>
               </NavLink>
@@ -46,7 +46,7 @@ const SprintList = () => {
           ))}
         </ul>
       </div>
-      <div className={styles.sprintsButtonCreateContainer}>
+      <div className={styles.sideButtonBox}>
         <RoundButton onClick={() => setShowModal(true)} />
 
         <p>create sprint</p>
@@ -55,7 +55,7 @@ const SprintList = () => {
           setShowModal={setShowModal}
           onClose={() => setShowModal(false)}
         >
-          <СreateSprintForm />
+          <СreateSprintForm onClose={() => setShowModal(false)} />
         </MainModal>
       </div>
     </div>

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import styles from './ChartModal.module.css';
 import Chart from '../Chart';
+import sprite from '../../../icons/symbol-defs.svg';
+import { connect } from 'react-redux';
+import { getTasks } from '../../../redux/tasks/task-selectors';
 
-export default class Modal extends Component {
+class Modal extends Component {
   state = {
     modal: false,
   };
@@ -23,7 +26,18 @@ export default class Modal extends Component {
   render() {
     return (
       <>
-        <button onClick={this.toggleModal}>Открыть модалку</button>
+        {this.props.tasks.length > 2 && (
+          <button
+            type="button"
+            className={styles.buttonAdd}
+            onClick={this.toggleModal}
+          >
+            <svg className={styles.icon}>
+              <use href={sprite + '#icon-analytics'}></use>
+            </svg>
+          </button>
+        )}
+
         {this.state.modal && (
           <div className={styles.Overlay}>
             <div className={styles.Modal}>
@@ -35,3 +49,9 @@ export default class Modal extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  tasks: getTasks(state),
+});
+
+export default connect(mapStateToProps)(Modal);

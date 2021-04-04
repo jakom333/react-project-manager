@@ -74,6 +74,13 @@ const CreateSprintForm = ({ onClose }) => {
               placeholder="Includes past days"
             />
           </label>
+          <label className={styles.dataPickerContainer}>
+            <span className={styles.dataPickerLabel}>End date</span>
+            <DatePicker
+              selected={startDate}
+              onChange={date => setStartDate(date)}
+            />
+          </label>
           <div className={styles.form}>
             <Field
               className={styles.inputTime}
@@ -91,7 +98,6 @@ const CreateSprintForm = ({ onClose }) => {
           <Button type="submit">Done</Button>
         </Form>
       </Formik>
-      <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
     </div>
   );
 };
