@@ -11,15 +11,15 @@ import {
   refreshError,
 } from './auth-actions';
 
-const initialUserState = { email: null, password: null };
+// const initialUserState = { email: null, password: null };
 
-const user = createReducer(initialUserState, {
-  [registerSuccess]: (_, { payload }) => payload.user,
-  [loginSuccess]: (_, { payload }) => payload,
-  [refreshSuccess]: (_, { payload }) => payload,
-  [logoutSuccess]: () => initialUserState,
-  [refreshError]: () => initialUserState,
-});
+// const user = createReducer(initialUserState, {
+//   [registerSuccess]: (_, { payload }) => payload.user,
+//   [loginSuccess]: (_, { payload }) => payload,
+//   [refreshSuccess]: (_, { payload }) => payload,
+//   [logoutSuccess]: () => null,
+//   [refreshError]: () => initialUserState,
+// });
 
 const token = createReducer(null, {
   [registerSuccess]: (_, { payload }) => payload,
@@ -40,7 +40,6 @@ const error = createReducer(null, {
 });
 
 export default combineReducers({
-  user,
   token,
   error,
 });
