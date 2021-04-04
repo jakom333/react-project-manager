@@ -13,12 +13,27 @@
 }
 
 .edit{
+    margin-top: 10px;
+    animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 20px;
-
 }
+
+@keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
 
 .editForm{
     display: flex;
@@ -62,13 +77,12 @@
 }
 
 .iconPencil {
-    /*fill: black;*/
+    fill: #a6a6a6;
     width: 20px;
     height: 20px;
 }
 .iconPencil:hover {
     fill: #f78335;
-
 }
 
 .iconSave{

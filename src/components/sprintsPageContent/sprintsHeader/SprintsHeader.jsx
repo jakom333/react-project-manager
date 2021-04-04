@@ -33,7 +33,6 @@ const SprintsHeader = () => {
           </div>
         </div>
       </div>
-      {/*<p className={styles.description}>Короткий опис проекту</p>*/}
       <div className={styles.addPeopleBox}>
         <button
           onClick={() => setShowModal('addPeople')}

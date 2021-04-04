@@ -45,20 +45,19 @@
 @media screen and (max-width: 767px){
     .projectItem{
         padding: 10px;
-        margin: 5px;
         position: relative;
         border-radius: 5px;
         list-style: none;
         overflow: hidden;
         background-color:  #8c72df;
-        width: 136px;
-        height: 136px;
+        width: 135px;
+        height: 135px;
     }
 
     .projectLink{
         padding: 10px;
-        width: 136px;
-        height: 136px;
+        width: 135px;
+        height: 135px;
     }
 
     .title{
@@ -105,8 +104,7 @@
         list-style: none;
         overflow: hidden;
         background-color: #8C72DF;
-        margin: 10px;
-        padding: 20px;
+         padding: 20px;
         width: 216px;
         height: 216px;
     }
@@ -166,7 +164,6 @@
         padding: 28px 30px;
         width: 270px;
         height: 270px;
-        margin: 15px;
     }
 
     .projectLink{
