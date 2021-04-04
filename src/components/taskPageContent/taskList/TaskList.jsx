@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './TaskList.module.css';
 import TaskListItem from '../../../components/taskListItem/TaskListItem';
-import { getTasks, getVisibleTasks } from '../../../redux/tasks/task-selectors';
+import { getVisibleTasks } from '../../../redux/tasks/task-selectors';
 import { fetchTasks } from '../../../redux/tasks/task-operations';
 import { useParams } from 'react-router-dom';
 

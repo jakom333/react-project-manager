@@ -7,8 +7,6 @@ const getVisibleTasks = createSelector(
   [getTasks, getFilter],
   (tasks, filter) => {
     const normalizedFilter = filter.toLowerCase();
-    console.log(filter);
-    // console.log(tasks);
     return tasks.filter(item =>
       item.title.toLowerCase().includes(normalizedFilter),
     );
