@@ -40,21 +40,33 @@
 }
 
 .changeTitleButton {
-  fill: rgb(78, 78, 78);
+  fill: rgb(139, 139, 139);
   width: 20px;
   height: 20px;
   border: none;
   cursor: pointer;
   outline: none;
-  margin-left: 5px;
+  margin-left: 14px;
   margin-top: 2px;
 }
 
-.changeTitleButton:hover {
+.changeTitleButton:hover,
+.changeTitleButton2:hover {
   fill: #ff6b08;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
   transform: scale(1.1);
+}
+
+.changeTitleButton2 {
+  fill: rgb(139, 139, 139);
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  /* margin-right: 5px; */
+  margin-top: 2px;
 }
 
 .sprintTitle {
@@ -73,7 +85,8 @@
   /* color: #ec6f35; */
   background-color: #d1d1d16b;
   /* background-color: #dadada6b; */
-  border-radius: 10px;
+  border-radius: 8px;
+  /* cursor: pointer; */
 }
 
 @media screen and (max-width: 1279px) {

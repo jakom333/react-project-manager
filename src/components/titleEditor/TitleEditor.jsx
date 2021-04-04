@@ -72,7 +72,7 @@ export default function ChangeTitle() {
             type="submit"
             onClick={onFormSubmit}
           >
-            <svg className={styles.changeTitleButton}>
+            <svg className={styles.changeTitleButton2}>
               <use href={sprite + '#icon-save'}></use>
             </svg>
           </button>
