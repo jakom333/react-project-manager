@@ -110,7 +110,7 @@
 
     }
     .current{
-        min-width: 300px;
+        min-width: 400px;
     }
 
 
@@ -128,7 +128,7 @@
     }
 
     .current{
-        min-width: 400px;
+        min-width: 500px;
     }
 }
 
