@@ -49,7 +49,7 @@ const SprintList = () => {
           ))}
         </ul>
       </div>
-      <div className={styles.sprintsButtonCreateContainer}>
+      <div className={styles.sideButtonBox}>
         <RoundButton onClick={() => setShowModal(true)} />
 
         <p>create sprint</p>
