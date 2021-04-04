@@ -25,13 +25,11 @@
 .box{
     margin-top: 150px;
     width: 210px;
-
     overflow-x:hidden;
     scroll-snap-type: x proximity;
 }
 .sideLeftList{
-
-    width: 210px;
+    width: 180px;
     height: 300px;
     border: none;
     margin-bottom: 10px;
@@ -48,7 +46,7 @@
     .sideLeftList{
         padding-inline-start:0;
         list-style: none;
-        margin-left: 20px;
+        margin-left: 10px;
 
     }
 
@@ -68,7 +66,7 @@
     .sideLeftList{
         padding-inline-start:0;
         list-style: none;
-        margin-left: 20px;
+        margin-left: 10px;
     }
 
 

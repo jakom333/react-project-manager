@@ -7,16 +7,21 @@ import MainModal from '../../../shared/mainModal/MainModal';
 import AddMember from '../../addMember/AddMember';
 import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
 import EditTitle from '../editTitle/EditTitle';
+import { NavLink } from 'react-router-dom';
 
 
 const SprintsHeader = () => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className={styles.boxHead}>
+    <>
       <div className={styles.boxBack}>
-        <ButtonShow />
-        <p className={styles.showProject}>Show projects</p>
+        <NavLink to="/projects" className={styles.boxBackLink} >
+          <ButtonShow />
+          <p className={styles.showProject}>Show projects</p>
+        </NavLink>
       </div>
+    <div className={styles.boxHead}>
+
       <div className={styles.head}>
         <div className={styles.titleBox}>
           <div className={styles.title}>
@@ -28,7 +33,6 @@ const SprintsHeader = () => {
           </div>
         </div>
       </div>
-      {/*<p className={styles.description}>Короткий опис проекту</p>*/}
       <div className={styles.addPeopleBox}>
         <button
           onClick={() => setShowModal('addPeople')}
@@ -54,6 +58,7 @@ const SprintsHeader = () => {
         </MainModal>
       </div>
     </div>
+    </>
   );
 };
 

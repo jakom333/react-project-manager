@@ -20,7 +20,7 @@ const ProjectSideBar = () => {
       <ProjectSideBarList />
       <div className={styles.sideButtonBox}>
         <RoundButton onClick={() => setShowModal(true)} />
-        <p className={styles.sidePlusText}>Створити проект</p>
+        <p className={styles.sidePlusText}>Create project</p>
         <MainModal
           showModal={showModal}
           setShowModal={setShowModal}

@@ -28,10 +28,17 @@ const CreateSprintForm = ({ onClose }) => {
   const dispatch = useDispatch();
   const params = useParams();
   const [startDate, setStartDate] = useState(new Date());
+  const [check, setCheck] = useState(false);
+
+  const minDate = check ? '' : new Date();
 
   const onHandleSubmit = (title, endDate, duration) => {
     addSprint(title, endDate, duration);
     dispatch(addSprint({ title, endDate, duration }, params.projectId));
+  };
+
+  const onCheck = event => {
+    setCheck(prev => !prev);
   };
 
   return (
@@ -65,22 +72,27 @@ const CreateSprintForm = ({ onClose }) => {
             component="span"
             name="title"
           />
-          <label>
-            <p className={styles.checkboxLabel}>Include previous days</p>
+          <label className={styles.checkbox}>
             <Field
-              className={styles.checkbox}
-              type="checkbox"
-              name="pastDays"
-              placeholder="Includes past days"
+              type='checkbox'
+              name='pastDays'
+              checked={check}
+              onClick={onCheck}
+              placeholder='Includes past days'
             />
+            <div className={styles.checkbox__text}>Include previous days</div>
           </label>
-          <label className={styles.dataPickerContainer}>
-            <span className={styles.dataPickerLabel}>End date</span>
-            <DatePicker
-              selected={startDate}
-              onChange={date => setStartDate(date)}
-            />
+          <label htmlFor='picker' className={styles.dataPickerContainer}>
+            {' '}
           </label>
+          <span className={styles.dataPickerLabel}>End date</span>
+          <DatePicker
+            selected={startDate}
+            onChange={date => setStartDate(date)}
+            minDate={minDate}
+            id='picker'
+          />
+
           <div className={styles.form}>
             <Field
               className={styles.inputTime}
