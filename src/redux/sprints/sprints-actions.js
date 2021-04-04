@@ -12,6 +12,10 @@ const deleteSprintRequest = createAction('sprints/deleteSprintRequest');
 const deleteSprintSucces = createAction('sprints/deleteSprintSucces');
 const deleteSprintError = createAction('sprints/deleteSprintError');
 
+const changeTitleRequest = createAction('sprints/changeTitleRequest');
+const changeTitleSuccess = createAction('sprints/changeTitleSuccess');
+const changeTitleError = createAction('sprints/changeTitleError');
+
 export {
   addSprintRequest,
   addSprintSucces,
@@ -22,4 +26,7 @@ export {
   fetchSprintsRequest,
   fetchSprintsSucces,
   fetchSprintsError,
+  changeTitleRequest,
+  changeTitleSuccess,
+  changeTitleError,
 };
