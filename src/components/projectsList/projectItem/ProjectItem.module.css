@@ -51,6 +51,7 @@
     }
 
     .projectLink{
+        padding: 10px;
         width: 136px;
         height: 136px;
     }
@@ -106,6 +107,7 @@
     }
 
     .projectLink{
+        padding: 20px;
         width: 216px;
         height: 216px;
     }
@@ -155,6 +157,10 @@
 @media screen and (min-width: 1280px) {
 
     .projectItem{
+        background-image:  url("../../../images/wave/Group-wave.png");
+        /*url("../../../images/wave/Vector2.png");*/
+        background-repeat: no-repeat;
+        background-position: left bottom -50px;
         box-sizing: border-box;
         padding: 28px 30px;
         width: 270px;
@@ -313,5 +319,103 @@
     }
 }
 
+/*=========Wave================*/
+
+@media screen and (min-width: 768px) {
+
+    .projectItem:nth-child(1n){
+        background-image:  url("../../../images/wave/Group-wave-tablet.png");
+        /*object-fit: contain;*/
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
 
 
+    .projectItem:nth-child(2n){
+        background-image:  url("../../../images/wave/Group-wave-tablet2.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
+
+    .projectItem:nth-child(3n){
+        background-image:  url("../../../images/wave/Group-wave-tablet3.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
+
+    .projectItem:nth-child(4n){
+        background-image:  url("../../../images/wave/Group-wave-tablet.png");
+        /*object-fit: contain;*/
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
+
+
+    .projectItem:nth-child(5n){
+        background-image:  url("../../../images/wave/Group-wave-tablet2.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
+
+    .projectItem:nth-child(6n){
+        background-image:  url("../../../images/wave/Group-wave-tablet3.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
+
+}
+
+
+@media screen and (min-width: 1280px) {
+
+    .projectItem:nth-child(1n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-repeat: no-repeat;
+        background-position: left bottom -35px;
+    }
+
+
+    .projectItem:nth-child(2n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-repeat: no-repeat;
+        background-position: left -310px bottom -35px;
+    }
+
+    .projectItem:nth-child(3n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+
+        background-repeat: no-repeat;
+        background-position: left -100px bottom -35px
+
+    }
+    .projectItem:nth-child(4n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-repeat: no-repeat;
+        background-position: left -370px bottom -35px
+    }
+
+    .projectItem:nth-child(5n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-repeat: no-repeat;
+        background-position: left bottom -35px;
+    }
+
+    .projectItem:nth-child(6n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-repeat: no-repeat;
+        background-position: left -310px bottom -35px;
+    }
+
+    .projectItem:nth-child(7n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-repeat: no-repeat;
+        background-position: left -100px bottom -30px
+
+    }
+    .projectItem:nth-child(8n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-repeat: no-repeat;
+        background-position: left -370px bottom -35px
+    }
+
+}

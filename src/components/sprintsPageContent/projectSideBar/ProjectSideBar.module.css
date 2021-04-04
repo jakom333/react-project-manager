@@ -1,7 +1,7 @@
 .projectSideBar{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .boxBack{
@@ -28,7 +28,7 @@
     margin-right: 50px;
     flex-direction: column;
     align-items: center;
-    margin-top: 173px;
+    margin-top: 90px;
 }
 
 
@@ -38,30 +38,17 @@
     }
 }
 
-/*.boxBackLink{*/
-/*    margin-left: 20px;*/
-/*    display: flex;*/
-/*    margin-top: 20px;*/
-/*}*/
-
-/*.showProject{*/
-/*    width: 50px;*/
-/*}*/
-
-/*.sidePlusText{*/
-/*    margin-top: 20px;*/
-/*    font-size: 14px;*/
-/*    line-height: 17px;*/
-/*    letter-spacing: 0.04em;*/
-/*    color: #181C27;*/
-/*}*/
 
 @media screen and  (min-width: 768px) and (max-width: 1279px){
-
+    .sidePlusText{
+        margin-top: 15px;
+    }
 }
 
 @media screen and (min-width: 1280px){
-
+    .sidePlusText{
+        margin-top: 15px;
+    }
 }
 
 
