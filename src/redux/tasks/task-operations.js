@@ -51,7 +51,6 @@ const changeTask = (date, hours, taskId) => async dispatch => {
   try {
     const { data } = await axios.patch(`/task/${taskId}`, {date, hours});
    
-
     dispatch(changeTaskSuccess(data));
   } catch (error) {
     dispatch(changeTaskError(error.message));

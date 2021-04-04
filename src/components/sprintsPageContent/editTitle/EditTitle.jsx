@@ -22,7 +22,6 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
     setInput(project.title);
   };
 
-
   const onHandleChange = evt => {
     setInput(evt.target.value);
   };
