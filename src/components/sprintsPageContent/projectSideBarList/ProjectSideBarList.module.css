@@ -8,11 +8,10 @@
 
 .box::-webkit-scrollbar {
     width: 24px; /* ширина для вертикального скролла */
-    /*height: 8px; !* высота для горизонтального скролла *!*/
     background-color:white;
 }
 
-/* ползунок скроллбара */
+
 .box::-webkit-scrollbar-thumb {
     background-color: #f78335;
     border-radius: 9em;
