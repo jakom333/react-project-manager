@@ -185,6 +185,57 @@
         color: #FFFFFF;
     }
 
+
+    /* .projectItem {
+        position: relative;
+    }
+
+    .projectItem:nth-child(4n + 1)::before,
+    .projectItem:nth-child(4n + 1)::after,
+    .projectItem:nth-child(4n + 2)::before,
+    .projectItem:nth-child(4n + 2)::after,
+    .projectItem:nth-child(4n + 3)::before,
+    .projectItem:nth-child(4n + 3)::after,
+    .projectItem:nth-child(4n + 4)::before,
+    .projectItem:nth-child(4n + 4)::after {
+        position: absolute;
+        left: 0;
+        top: 80px;
+    }
+
+    .projectItem:nth-child(4n + 1)::before {
+        content: url('./projectImg/Wave_1-1.png');
+    }
+
+    .projectItem:nth-child(4n + 1)::after {
+        content: url('./projectImg/Wave_1-2.png');
+    }
+
+    .projectItem:nth-child(4n + 2)::before {
+        content: url('./projectImg/Wave_2-1.png');
+    }
+
+    .projectItem:nth-child(4n + 2)::after {
+        content: url('./projectImg/Wave_2-2.png');
+    }
+
+    .projectItem:nth-child(4n + 3)::before {
+        content: url('./projectImg/Wave_3-1.png');
+    }
+
+    .projectItem:nth-child(4n + 3)::after {
+        content: url('./projectImg/Wave_3-2.png');
+    }
+
+    .projectItem:nth-child(4n + 4)::before {
+        content: url('./projectImg/Wave_4-1.png');
+    }
+
+    .projectItem:nth-child(4n + 4)::after {
+        content: url('./projectImg/Wave_4-2.png');
+    } */
+
+
 }
 
 /*====color cardProject=====*/
