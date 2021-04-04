@@ -10,6 +10,7 @@ const TaskFilter = ({ handleChange }) => {
   handleChange = event => {
     dispatch(changeFilter(event.target.value));
   };
+
   return (
     <label className={styles.searchCointainer}>
       <input
@@ -18,6 +19,7 @@ const TaskFilter = ({ handleChange }) => {
         value={filter}
         onChange={handleChange}
         className={styles.searchInputActive}
+        placeholder="search task"
       />
       <button type="submit" className={styles.searchBtn}>
         <svg className={styles.iconSearch}>
@@ -27,4 +29,5 @@ const TaskFilter = ({ handleChange }) => {
     </label>
   );
 };
+
 export default TaskFilter;
