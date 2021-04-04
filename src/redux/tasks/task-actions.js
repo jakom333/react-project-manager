@@ -8,26 +8,28 @@ const createTaskRequest = createAction('tasks/createTaskRequest');
 const createTaskSuccess = createAction('tasks/createTaskSuccess');
 const createTaskError = createAction('tasks/createTaskError');
 
-const deleteTaskRequest = createAction('tasks/createTaskRequest');
-const deleteTaskSuccess = createAction('tasks/createTaskSuccess');
-const deleteTaskError = createAction('tasks/createTaskError');
+const deleteTaskRequest = createAction('tasks/deleteTaskRequest');
+const deleteTaskSuccess = createAction('tasks/deleteTaskSuccess');
+const deleteTaskError = createAction('tasks/deleteTaskError');
 
 const changeTaskRequest = createAction('tasks/changeTaskRequest');
 const changeTaskSuccess = createAction('tasks/changeTaskSuccess');
 const changeTaskError = createAction('tasks/changeTaskError');
 
+const changeFilter = createAction('tasks/changeFilter');
 
 export {
-    fetchTaskRequest,
-    fetchTaskSuccess,
-    fetchTaskError,
-    createTaskRequest,
-    createTaskSuccess,
-    createTaskError,
-    deleteTaskRequest,
-    deleteTaskSuccess,
-    deleteTaskError,
-    changeTaskRequest,
-    changeTaskSuccess,
-    changeTaskError,
-}
+  fetchTaskRequest,
+  fetchTaskSuccess,
+  fetchTaskError,
+  createTaskRequest,
+  createTaskSuccess,
+  createTaskError,
+  deleteTaskRequest,
+  deleteTaskSuccess,
+  deleteTaskError,
+  changeTaskRequest,
+  changeTaskSuccess,
+  changeTaskError,
+  changeFilter,
+};

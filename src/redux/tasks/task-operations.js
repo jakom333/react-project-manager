@@ -20,17 +20,17 @@ const fetchTasks = sprintId => async dispatch => {
   dispatch(fetchTaskRequest());
   try {
     const { data } = await axios.get(`/task/${sprintId}`);
-    dispatch(fetchTaskSuccess(data));
+    dispatch(fetchTaskSuccess(data.constructor.name === 'Array' ? data : []));
   } catch (error) {
     dispatch(fetchTaskError(error.message));
   }
 };
 
-const createTask = sprintId => async dispatch => {
+const createTask = (task, sprintId) => async dispatch => {
   dispatch(createTaskRequest());
   try {
-    const { data } = await axios.post(`/task/${sprintId}`);
-    dispatch(createTaskSuccess(data));
+    const { data } = await axios.post(`/task/${sprintId}`, task);
+    dispatch(createTaskSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(createTaskError(error.message));
   }
@@ -39,17 +39,19 @@ const createTask = sprintId => async dispatch => {
 const deleteTask = taskId => async dispatch => {
   dispatch(deleteTaskRequest());
   try {
-    const { data } = await axios.delete(`/task/${taskId}`);
-    dispatch(deleteTaskSuccess(data));
+    await axios.delete(`/task/${taskId}`);
+    dispatch(deleteTaskSuccess(taskId));
   } catch (error) {
     dispatch(deleteTaskError(error.message));
   }
 };
 
-const changeTask = taskId => async dispatch => {
+const changeTask = (date, hours, taskId) => async dispatch => {
   dispatch(changeTaskRequest());
   try {
-    const { data } = await axios.patch(`/task/${taskId}`);
+    const { data } = await axios.patch(`/task/${taskId}`, {date, hours});
+   
+
     dispatch(changeTaskSuccess(data));
   } catch (error) {
     dispatch(changeTaskError(error.message));

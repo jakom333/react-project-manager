@@ -3,14 +3,6 @@
     align-items: center;
 }
 
-.buttonFix {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    outline: none;
-    border: none;
-}
-
 .buttonAddPeople {
     display: flex;
     align-items: center;
@@ -56,11 +48,6 @@
     }
 }
 
-.iconPencil {
-    fill: black;
-    width: 20px;
-    height: 20px;
-}
 
 .iconAddPeople {
     width: 20px;
@@ -95,31 +82,18 @@
         color: #181C27;
     }
 
-    .pageTitle {
-
-        margin-right: 15px;
-        display: flex;
-        align-items: center;
-        font-weight: 500;
-        font-size: 26px;
-        line-height: 32px;
-        letter-spacing: 0.04em;
-        color: #181C27;
-
-
-    }
 
     .pageText {
         display: none;
     }
 
     .boxBack {
+        display: flex;
         width: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 20px;
-        border-bottom: 1px solid rgba(24, 28, 39, 0.1);
-        display: flex;
+        /*border-bottom: 1px solid rgba(24, 28, 39, 0.1);*/
         align-items: center;
         margin-top: 10px;
 
@@ -138,8 +112,7 @@
 
 
     .head {
-        margin-top: 40px;
-        margin-bottom: 20px;
+         margin-bottom: 20px;
     }
 
     .pageText {
@@ -147,18 +120,7 @@
 
     }
 
-    .pageTitle {
-        max-width: 300px;
-        display: flex;
-        align-items: center;
-        margin-right: 20px;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 44px;
-        letter-spacing: 0.04em;
-        color: #181C27;
 
-    }
 
     .description {
         width: 400px;
@@ -177,7 +139,9 @@
     }
 
     .titleBox {
+        min-width: 400px;
         display: flex;
+        align-items: flex-start;
         justify-content: space-between;
     }
 
@@ -194,7 +158,6 @@
     }
 
     .head {
-        margin-top: 40px;
         margin-bottom: 20px;
     }
 
@@ -215,18 +178,6 @@
 
     }
 
-    .pageTitle {
-        max-width: 400px;
-        display: flex;
-        margin-right: 20px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 44px;
-        text-align: center;
-        letter-spacing: 0.04em;
-        color: #181C27;
-    }
 
     .description {
         width: 400px;
@@ -249,16 +200,16 @@
         width: 100%;
     }
 
-    .title {
-        display: flex;
-        justify-content: space-between;
+    /*.title {*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
 
-    }
+    /*}*/
 
     .titleBox {
         min-width: 900px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
     }
 }

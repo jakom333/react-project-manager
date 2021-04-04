@@ -1,61 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import RoundButton from '../../../shared/roundButton/RoundButton';
-import sprite from '../../../icons/symbol-defs.svg';
 import styles from './SprintListSideBar.module.css';
 import MainModal from '../../../shared/mainModal/MainModal';
 import СreateSprintForm from '../../createSprintForm/CreateSprintForm';
-
-const sprintsList = [
-  {
-    title: 'Sprint 1',
-    id: '1',
-  },
-  {
-    title: 'Sprint 2',
-    id: '2',
-  },
-  {
-    title: 'Sprint 3',
-    id: '3',
-  },
-  {
-    title: 'Sprint 4',
-    id: '4',
-  },
-  {
-    title: 'Sprint 5',
-    id: '5',
-  },
-  {
-    title: 'Sprint 6',
-    id: '6',
-  },
-];
+import { useSelector, useDispatch } from 'react-redux';
+import { getSprintsSelector } from '../../../redux/sprints/sprints-selectors';
+import { fetchSprints } from '../../../redux/sprints/sprints-operations';
+import { useParams, Link, NavLink } from 'react-router-dom';
+import ButtonShow from '../../../shared/buttonShow/ButtonShow';
 
 const SprintList = () => {
   const [showModal, setShowModal] = useState(false);
+  const sprintsList = useSelector(getSprintsSelector);
+
+  const params = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchSprints(params.projectId));
+  }, [dispatch, params.projectId, params.history]);
 
   return (
     <div className={styles.sprintsContainer}>
-      <div className={styles.sprintsButtonBackContainer}>
-        <button type="button" className={styles.buttonBack}>
-          <svg className={styles.iconBack}>
-            <use href={sprite + '#icon-Arrow-1'}></use>
-          </svg>
-          <p className={styles.showProject}>Show sprints</p>
-        </button>
-      </div>
+      <Link
+        className={styles.sprintsButtonBackContainer}
+        to={`/projects/${params.projectId}`}
+      >
+        <ButtonShow />
+        <p className={styles.showProject}>Show sprints</p>
+      </Link>
+
       <div className={styles.leftPanelSprintsContainer}>
         <ul className={styles.sprintsList}>
-          {sprintsList.map(({ title, id }) => (
-            <li key={id} className={styles.item}>
-              <div className={styles.sprintIcon}></div>
-              <p>{title}</p>
+          {sprintsList.map(({ title, _id }) => (
+            <li key={_id}>
+              <NavLink
+                className={styles.item}
+                activeClassName={styles.activeItem}
+                to={`${_id}`}
+              >
+                <div className={styles.sprintIcon}></div>
+                <p>{title}</p>
+              </NavLink>
             </li>
           ))}
         </ul>
       </div>
-      <div className={styles.sprintsButtonCreateContainer}>
+      <div className={styles.sideButtonBox}>
         <RoundButton onClick={() => setShowModal(true)} />
 
         <p>create sprint</p>
@@ -64,7 +55,7 @@ const SprintList = () => {
           setShowModal={setShowModal}
           onClose={() => setShowModal(false)}
         >
-          <СreateSprintForm />
+          <СreateSprintForm onClose={() => setShowModal(false)} />
         </MainModal>
       </div>
     </div>

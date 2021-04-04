@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './ProjectForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -7,8 +7,12 @@ import { createProject } from '../../redux/projects/projects-operations';
 import Button from '../../shared/button/Button';
 
 const formSchema = Yup.object().shape({
-  title: Yup.string().required('* Project Name is a required field'),
-  description: Yup.string().required('* Description is a required field'),
+  title: Yup.string()
+    .min(3, 'Too short!')
+    .required('* Project Name is a required field'),
+  description: Yup.string()
+    .min(4, 'Too short!')
+    .required('* Description is a required field'),
 });
 
 const ProjectForm = ({ onClose }) => {
@@ -44,15 +48,15 @@ const ProjectForm = ({ onClose }) => {
 
           <Field
             className={styles.inputDescription}
-            name='description'
-            type='text'
-            placeholder='Project description'
+            name="description"
+            type="text"
+            placeholder="Project description"
           />
 
           <ErrorMessage
             className={styles.errorDescription}
-            component='span'
-            name='description'
+            component="span"
+            name="description"
           />
           <Button type="submit">Done</Button>
         </Form>
@@ -60,7 +64,6 @@ const ProjectForm = ({ onClose }) => {
     </div>
   );
 };
-
 
 export default ProjectForm;
 
