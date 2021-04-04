@@ -53,8 +53,7 @@
 .changeTitleButton:hover,
 .changeTitleButton2:hover {
   fill: #ff6b08;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition-duration: 200ms;
   transform: scale(1.1);
 }
 
