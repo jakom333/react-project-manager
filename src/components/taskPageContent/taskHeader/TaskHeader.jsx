@@ -11,6 +11,8 @@ import TaskFilter from '../taskFilter/TaskFilter';
 export default function SprintHeader() {
   const [showModal, setShowModal] = useState(false);
 
+  const date = new Date().toJSON().slice(0, 10).split('-').reverse().join('.');
+
   return (
     <div className={styles.headerWrapper}>
       <section className={styles.sprintHeader}>
@@ -23,7 +25,7 @@ export default function SprintHeader() {
               <span className={styles.totalDays}>28</span>
               <div className={styles.rightArrow}>&#5171;</div>
             </div>
-            <span className={styles.date}>30.03.2021</span>
+            <span className={styles.date}>{date}</span>
           </div>
         </div>
         <div className={styles.control}>
