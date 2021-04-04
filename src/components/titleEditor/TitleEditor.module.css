@@ -96,6 +96,10 @@
   .wrapper {
     max-width: 180px;
   }
+
+  .titleChangeInput {
+    max-width: 380px;
+  }
 }
 
 @media screen and (max-width: 1279px) {
