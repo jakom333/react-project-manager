@@ -11,16 +11,12 @@ import { useParams } from 'react-router';
 
 export default function SprintHeader() {
   const [showModal, setShowModal] = useState(false);
-  const today = new Date().toJSON().slice(0, 10).split('-').reverse().join('.'); //today
+  const today = new Date().toJSON().slice(0, 10).split('-').reverse().join('.');
   const sprints = useSelector(getSprintsSelector);
-  console.log(sprints);
   const { sprintId } = useParams();
-  console.log(sprintId);
-  const startDate = sprints.find(item => item._id === sprintId).startDate;
-  // console.log(startDate);
-
+  const startDate = sprints.find(item => item._id === sprintId)?.startDate;
+  const duration = sprints.find(item => item._id === sprintId)?.duration;
   const todayReverse = today.split('.').reverse().join('-');
-  // console.log(todayReverse);
 
   const _MS_PER_DAY = 1000 * 60 * 60 * 24;
   // a and b are javascript Date objects
@@ -33,9 +29,7 @@ export default function SprintHeader() {
   const a = new Date(todayReverse), //today
     b = new Date(startDate), // startDate
     difference = dateDiffInDays(a, b);
-  const positiveDifference = Math.abs(difference);
-
-  console.log(difference);
+  const positiveDifference = Math.abs(difference) + 1;
 
   return (
     <div className={styles.headerWrapper}>
@@ -46,7 +40,7 @@ export default function SprintHeader() {
               <div className={styles.leftArrow}>&#5176;</div>
               <span className={styles.day}>{positiveDifference}</span>
               <span className={styles.separator}>/</span>
-              <span className={styles.totalDays}>4</span>
+              <span className={styles.totalDays}>{duration}</span>
               <div className={styles.rightArrow}>&#5171;</div>
             </div>
             <span className={styles.date}>{today}</span>
