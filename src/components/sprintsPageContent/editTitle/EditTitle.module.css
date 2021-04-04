@@ -128,7 +128,9 @@
     .current{
         min-width: 400px;
     }
-
+    .editInput{
+        min-width: 200px;
+    }
 
 }
 
@@ -146,6 +148,10 @@
     .current{
         min-width: 500px;
     }
+    .editInput{
+        min-width: 250px;
+    }
+
 }
 
 .boxEdit{

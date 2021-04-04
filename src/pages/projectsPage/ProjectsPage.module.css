@@ -45,10 +45,13 @@
         bottom: 20px;
         right: 20px;
     }
+    .pageBox{
+        max-width: 767px;
+    }
 
 }
 
-@media screen and (min-width: 767px){
+@media screen and (min-width: 768px){
 
     .pageCreate{
         display: flex;
@@ -71,7 +74,7 @@
         padding: 0 40px;
     }
 }
-@media screen and (min-width: 767px) and (max-width: 1279px){
+@media screen and (min-width: 768px) and (max-width: 1279px){
     .pageBox{
         max-width: 1279px;
     }
