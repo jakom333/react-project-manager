@@ -6,6 +6,21 @@ import { deleteSprint } from '../../../../redux/sprints/sprints-operations';
 import sprite from '../../../../icons/symbol-defs.svg';
 
 const SprintListItem = ({ item }) => {
+  const months = [
+    '',
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC',
+  ];
   // const date = '2020-4-1';
   //   const response = date
   //   .split('-')
@@ -13,10 +28,25 @@ const SprintListItem = ({ item }) => {
   //   .join('-');
 
   // console.log(response);
-
+  // console.log(item);
   const match = useRouteMatch();
   const dispatch = useDispatch();
   const deleteItem = () => dispatch(deleteSprint(item._id));
+  const { title, duration, endDate, startDate } = item;
+
+  const dateStart = startDate.split('-')[2];
+  const monthStart =
+    months[
+      startDate.split('-')[1][0] === 1
+        ? startDate.split('-')[1]
+        : startDate.split('-')[1][1]
+    ];
+
+  const dateEnd = endDate.split('-')[2].padStart(2, '0');
+  const monthEnd = months[endDate.split('-')[1]];
+
+  const start = `${dateStart} ${monthStart}`;
+  const end = `${dateEnd} ${monthEnd}`;
 
   return (
     <div>
@@ -26,11 +56,17 @@ const SprintListItem = ({ item }) => {
           to={`${match.url}/sprints/${item._id}`}
           id={item._id}
         >
-          <div>
-            <h3>title</h3>
-            <p>Дата a начала</p>
-            <p>Дата конца</p>
-            <p>Дата длительность</p>
+          <div className={styles.date}>
+            <h3 className={styles.cardTitle}>{title}</h3>
+            <p className={styles.cardDateContainer}>
+              Start date <span className={styles.cardDate}>{start}</span>
+            </p>
+            <p className={styles.cardDateContainer}>
+              End date <span className={styles.cardDate}>{end}</span>
+            </p>
+            <p className={styles.cardDateContainer}>
+              Duration <span className={styles.cardDate}>{duration}</span>
+            </p>
           </div>
         </Link>
         <button
