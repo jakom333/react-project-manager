@@ -1,4 +1,17 @@
-const getTasks = state => state.tasks;
-const getFilter = state => state.tasks.filter;
+import { createSelector } from '@reduxjs/toolkit';
 
-export { getTasks, getFilter };
+const getTasks = state => state.tasks;
+const getFilter = state => state.filter;
+
+const getVisibleTssks = createSelector(
+  [getTasks, getFilter],
+  (tasks, filter) => {
+    const normalizedFilter = filter.toLowerCase();
+
+    return tasks.filter(item =>
+      item.title.toLowerCase().includes(normalizedFilter),
+    );
+  },
+);
+
+export { getTasks, getFilter, getVisibleTssks };

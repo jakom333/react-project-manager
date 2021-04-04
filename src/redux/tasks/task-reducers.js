@@ -47,7 +47,7 @@ const filter = createReducer('', {
   [changeFilter]: (_, { payload }) => payload,
 });
 
-export default tasks;
+export { tasks, filter };
 
 // export default combineReducers({ tasks, filter});
 
