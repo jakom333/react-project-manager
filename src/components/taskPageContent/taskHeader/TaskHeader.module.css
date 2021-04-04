@@ -2,6 +2,11 @@
   padding-top: 20px;
 }
 
+.baseWrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
 .controlPanel {
   display: flex;
   align-items: center;
@@ -33,7 +38,7 @@
 
 .control {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 
@@ -126,6 +131,10 @@
   .rightArrow {
     font-size: 18px;
     line-height: 22px;
+  }
+
+  .searchLabel {
+    bottom: 35px;
   }
 
   .control {
@@ -276,13 +285,13 @@
 
   .searchBtn {
     position: absolute;
-    top: -125px;
+    top: -158px;
     right: 18px;
   }
 
   .searchInput {
     position: absolute;
-    bottom: 145px;
+    bottom: 180px;
     left: 260px;
     width: 185px;
     display: block;
@@ -301,14 +310,14 @@
 }
 
 @media screen and (min-width: 981px) and (max-width: 1215px) {
-  .title {
+  /* .title {
     max-width: 470px;
-  }
+  } */
 }
 @media screen and (min-width: 1216px) and (max-width: 1279px) {
-  .title {
+  /* .title {
     max-width: 680px;
-  }
+  } */
 }
 
 @media screen and (min-width: 1280px) {
@@ -320,7 +329,7 @@
 
   .title {
     margin-right: 25px;
-    max-width: 500px;
+    /* max-width: 500px; */
     padding-bottom: 30px;
   }
 

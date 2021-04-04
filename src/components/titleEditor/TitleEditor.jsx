@@ -54,7 +54,7 @@ export default function ChangeTitle() {
 
   if (!isActive) {
     return (
-      <div>
+      <>
         <form className={styles.wrapper}>
           <AutosizeInput
             type="text"
@@ -77,7 +77,7 @@ export default function ChangeTitle() {
             </svg>
           </button>
         </form>
-      </div>
+      </>
     );
   }
 }

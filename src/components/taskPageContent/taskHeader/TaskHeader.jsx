@@ -25,7 +25,9 @@ export default function SprintHeader({ handleInput }) {
           </div>
         </div>
         <div className={styles.control}>
-          <ChangeTitle />
+          <div className={styles.baseWrapper}>
+            <ChangeTitle />
+          </div>
           <div className={styles.buttonBox}>
             <RoundButton onClick={() => setShowModal(true)} />
             <p className={styles.buttonDescription}>Create task</p>
@@ -41,7 +43,7 @@ export default function SprintHeader({ handleInput }) {
           <p className={styles.tasksHeaderText}>Hours spent / per day </p>
           <p className={styles.tasksHeaderText}>Hours spent</p>
 
-          <label>
+          <label className={styles.searchLabel}>
             <input
               type="text"
               name="filter"
