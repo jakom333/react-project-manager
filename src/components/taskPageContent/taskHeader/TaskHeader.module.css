@@ -2,6 +2,11 @@
   padding-top: 20px;
 }
 
+.baseWrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
 .controlPanel {
   display: flex;
   align-items: center;
@@ -33,7 +38,7 @@
 
 .control {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 
@@ -118,7 +123,6 @@
   border-bottom: 1px solid #000;
   font-style: italic;
   font-weight: 500;
-  /* font-weight: 900; */
 }
 
 @media screen and (max-width: 767px) {
@@ -127,6 +131,10 @@
   .rightArrow {
     font-size: 18px;
     line-height: 22px;
+  }
+
+  .searchLabel {
+    bottom: 35px;
   }
 
   .control {
@@ -191,7 +199,7 @@
     left: 0px;
   }
 
-  .searchInputActive {
+  .searchInput {
     position: absolute;
     min-width: 280px;
     top: -120px;
@@ -277,13 +285,13 @@
 
   .searchBtn {
     position: absolute;
-    top: -125px;
+    top: -158px;
     right: 18px;
   }
 
-  .searchInputActive {
+  .searchInput {
     position: absolute;
-    bottom: 145px;
+    bottom: 180px;
     left: 260px;
     width: 185px;
     display: block;
@@ -302,19 +310,13 @@
 }
 
 @media screen and (min-width: 981px) and (max-width: 1215px) {
-  .title {
+  /* .title {
     max-width: 470px;
-  }
+  } */
 }
 @media screen and (min-width: 1216px) and (max-width: 1279px) {
-  .title {
+  /* .title {
     max-width: 680px;
-  }
-}
-
-@media screen and (max-width: 1279px) {
-  /* .input1280Wrapper {
-    display: none;
   } */
 }
 
@@ -327,14 +329,13 @@
 
   .title {
     margin-right: 25px;
-    max-width: 500px;
+    /* max-width: 500px; */
     padding-bottom: 30px;
   }
 
   .buttonBox {
     display: flex;
     align-items: center;
-    /* margin-right: 86px; */
   }
 
   .buttonDescription {
@@ -385,10 +386,6 @@
     margin-right: 85px;
   }
 
-  /* .tasksHeaderText:not(:last-child) {
-    margin-right: 100px;
-  } */
-
   .controlPanel {
     justify-content: start;
   }
@@ -400,16 +397,6 @@
   }
 
   .searchInput {
-    display: none;
-    border: none;
-    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
-    background-color: #f1f2f7;
-    outline: none;
-    padding-left: 10px;
-    height: 40px;
-  }
-
-  .searchInputActive {
     position: absolute;
     top: 0;
     right: 7px;
@@ -428,7 +415,7 @@
     height: 35px;
   }
 
-  .searchInputActive:hover {
+  .searchInput:hover {
     border-bottom: 1px solid rgba(16, 16, 17, 0.212);
   }
 }
