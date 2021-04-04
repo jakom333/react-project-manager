@@ -49,8 +49,7 @@ const deleteTask = taskId => async dispatch => {
 const changeTask = (date, hours, taskId) => async dispatch => {
   dispatch(changeTaskRequest());
   try {
-    const { data } = await axios.patch(`/task/${taskId}`, {date, hours});
-   
+    const {data} = await axios.patch(`/task/${taskId}`, {date, hours});
     dispatch(changeTaskSuccess(data));
   } catch (error) {
     dispatch(changeTaskError(error.message));
