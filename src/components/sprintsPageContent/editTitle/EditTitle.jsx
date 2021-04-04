@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-//import { Formik, Form, Field, ErrorMessage } from 'formik';
-//import * as Yup from 'yup';
 import styles from './EditTitle.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
 import {editTitle } from '../../../redux/projects/projects-operations';
@@ -47,7 +45,7 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
             </svg>
           </button>
         </div>
-        <p className={styles.description}>{project.description}</p>
+        <p className={styles.description}>{project?.description}</p>
       </div>
     )
   }
@@ -73,43 +71,8 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
               </svg>
             </button>
           </form>
-          {/*          <Formik*/}
-          {/*            initialValues={{*/}
-          {/*              title: '',*/}
-          {/*            }}*/}
-          {/*  //          validationSchema={formSchema}*/}
-          {/*            onSubmit={values => {*/}
-          {/*              setInput(values);*/}
-          {/*              setActive(() => setActive(false))*/}
-          {/*              setUpdate(!isUpdate);*/}
-          {/*              setInput(project.title);*/}
-          {/*              dispatch(editTitle(projectId, input));*/}
-          {/*              setUpdate(!isUpdate);*/}
-          {/*              setActive(() => setActive(true))*/}
-          {/*              onClose();*/}
-          {/*            }}*/}
-          {/*          >*/}
-          {/*            <Form className={styles.form}>*/}
-          {/*              <Field*/}
-          {/*                className={styles.inputName}*/}
-          {/*                name="title"*/}
-          {/*                type="text"*/}
-          {/*                placeholder="New project name"*/}
-          {/*              />*/}
-          {/*              <ErrorMessage*/}
-          {/*                className={styles.errorName}*/}
-          {/*                component="span"*/}
-          {/*                name="title"*/}
-          {/*              />*/}
-          {/*              <button className={styles.buttonSave} type='submit'>*/}
-          {/*                <svg className={styles.iconSave}>*/}
-          {/*                  <use href={sprite + '#icon-checkmark'}></use>*/}
-          {/*                </svg>*/}
-          {/*              </button>*/}
-          {/*            </Form>*/}
-          {/*          </Formik>*/}
         </div>
-        <p className={styles.description}>{project.description}</p>
+        <p className={styles.description}>{project?.description}</p>
       </div>
 
     )

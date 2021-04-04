@@ -7,6 +7,7 @@ import MainModal from '../../../shared/mainModal/MainModal';
 import AddMember from '../../addMember/AddMember';
 import CreateSprintForm from '../../createSprintForm/CreateSprintForm';
 import EditTitle from '../editTitle/EditTitle';
+import { NavLink } from 'react-router-dom';
 
 
 const SprintsHeader = () => {
@@ -14,8 +15,10 @@ const SprintsHeader = () => {
   return (
     <div className={styles.boxHead}>
       <div className={styles.boxBack}>
+        <NavLink to="/projects" className={styles.boxBackLink} >
         <ButtonShow />
         <p className={styles.showProject}>Show projects</p>
+        </NavLink>
       </div>
       <div className={styles.head}>
         <div className={styles.titleBox}>

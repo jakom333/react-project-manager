@@ -29,7 +29,7 @@
 }
 
 .showProject {
-    width: 100%;
+    width: 150px;
 }
 
 .buttonAddPeople {
@@ -98,6 +98,11 @@
         margin-top: 10px;
 
     }
+    .boxBackLink{
+        color: #181C27;
+        display: flex;
+    }
+
 
 
 }
@@ -197,14 +202,7 @@
 
     .showProject {
         margin-left: 20px;
-        width: 100%;
-    }
-
-    /*.title {*/
-    /*    display: flex;*/
-    /*    justify-content: space-between;*/
-
-    /*}*/
+     }
 
     .titleBox {
         min-width: 900px;
