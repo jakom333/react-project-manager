@@ -29,7 +29,7 @@ const projects = createReducer(initialProjectsState, {
         : project,
     ),
   [deleteProjectSuccess]: (state, { payload }) =>
-    state.filter(item => item.id !== payload),
+    state.filter(item => item._id !== payload),
 
   //  [deleteContactSuccess]: (state, { payload }) => {
   //  return [...state.filter(item => item.id.toString() !== payload.toString())];

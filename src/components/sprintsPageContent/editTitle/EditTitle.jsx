@@ -7,6 +7,7 @@ import styles from './EditTitle.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
 import {editTitle } from '../../../redux/projects/projects-operations';
 import { getProjectsSelector } from '../../../redux/projects/projects-selectors';
+
   const EditTitle = () => {
   const dispatch = useDispatch();
   const [input, setInput] = useState();
@@ -22,7 +23,6 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
     setInput(project.title);
   };
 
-
   const onHandleChange = evt => {
     setInput(evt.target.value);
   };
@@ -35,74 +35,83 @@ import { getProjectsSelector } from '../../../redux/projects/projects-selectors'
   };
 
   if (active) {
-    return (<div className={styles.box}>
-        <h2 className={styles.pageTitle}>
-          {project?.title}
-        </h2>
-        <button onClick={onEditTitle} type='button' className={styles.buttonFix}>
-          <svg className={styles.iconPencil}>
-            <use href={sprite + '#icon-pencil'}></use>
-          </svg>
-        </button>
-      </div>)
+    return (
+      <div className={styles.box}>
+        <div className={styles.current}>
+          <h2 className={styles.pageTitle}>
+            {project?.title}
+          </h2>
+          <button onClick={onEditTitle} type='button' className={styles.buttonFix}>
+            <svg className={styles.iconPencil}>
+              <use href={sprite + '#icon-pencil'}></use>
+            </svg>
+          </button>
+        </div>
+        <p className={styles.description}>{project.description}</p>
+      </div>
+    )
   }
 
   if (!active) {
     return (
       <div className={styles.box}>
-      <form className={styles.editForm}>
+        <div className={styles.edit}>
+          <form className={styles.editForm}>
             <input
-            type='text'
-            name='edit'
-            value={input}
-            placeholder="Enter new name"
-            onChange={onHandleChange}
-            onBlur={onHandleSubmit}
-            className={styles.editInput}
-            autoFocus
-          />
-          <button className={styles.buttonSave} onClick={onHandleSubmit} type='submit'>
-          <svg className={styles.iconSave}>
-            <use href={sprite + '#icon-save'}></use>
-          </svg>
-        </button>
-      </form>
-      {/*          <Formik*/}
-      {/*            initialValues={{*/}
-      {/*              title: '',*/}
-      {/*            }}*/}
-      {/*  //          validationSchema={formSchema}*/}
-      {/*            onSubmit={values => {*/}
-      {/*              setInput(values);*/}
-      {/*              setActive(() => setActive(false))*/}
-      {/*              setUpdate(!isUpdate);*/}
-      {/*              setInput(project.title);*/}
-      {/*              dispatch(editTitle(projectId, input));*/}
-      {/*              setUpdate(!isUpdate);*/}
-      {/*              setActive(() => setActive(true))*/}
-      {/*              onClose();*/}
-      {/*            }}*/}
-      {/*          >*/}
-      {/*            <Form className={styles.form}>*/}
-      {/*              <Field*/}
-      {/*                className={styles.inputName}*/}
-      {/*                name="title"*/}
-      {/*                type="text"*/}
-      {/*                placeholder="New project name"*/}
-      {/*              />*/}
-      {/*              <ErrorMessage*/}
-      {/*                className={styles.errorName}*/}
-      {/*                component="span"*/}
-      {/*                name="title"*/}
-      {/*              />*/}
-      {/*              <button className={styles.buttonSave} type='submit'>*/}
-      {/*                <svg className={styles.iconSave}>*/}
-      {/*                  <use href={sprite + '#icon-checkmark'}></use>*/}
-      {/*                </svg>*/}
-      {/*              </button>*/}
-      {/*            </Form>*/}
-      {/*          </Formik>*/}
+              type='text'
+              name='edit'
+              value={input}
+              placeholder="Enter new name"
+              onChange={onHandleChange}
+              onBlur={onHandleSubmit}
+              className={styles.editInput}
+              autoFocus
+            />
+            <button className={styles.buttonSave} onClick={onHandleSubmit} type='submit'>
+              <svg className={styles.iconSave}>
+                <use href={sprite + '#icon-save'}></use>
+              </svg>
+            </button>
+          </form>
+          {/*          <Formik*/}
+          {/*            initialValues={{*/}
+          {/*              title: '',*/}
+          {/*            }}*/}
+          {/*  //          validationSchema={formSchema}*/}
+          {/*            onSubmit={values => {*/}
+          {/*              setInput(values);*/}
+          {/*              setActive(() => setActive(false))*/}
+          {/*              setUpdate(!isUpdate);*/}
+          {/*              setInput(project.title);*/}
+          {/*              dispatch(editTitle(projectId, input));*/}
+          {/*              setUpdate(!isUpdate);*/}
+          {/*              setActive(() => setActive(true))*/}
+          {/*              onClose();*/}
+          {/*            }}*/}
+          {/*          >*/}
+          {/*            <Form className={styles.form}>*/}
+          {/*              <Field*/}
+          {/*                className={styles.inputName}*/}
+          {/*                name="title"*/}
+          {/*                type="text"*/}
+          {/*                placeholder="New project name"*/}
+          {/*              />*/}
+          {/*              <ErrorMessage*/}
+          {/*                className={styles.errorName}*/}
+          {/*                component="span"*/}
+          {/*                name="title"*/}
+          {/*              />*/}
+          {/*              <button className={styles.buttonSave} type='submit'>*/}
+          {/*                <svg className={styles.iconSave}>*/}
+          {/*                  <use href={sprite + '#icon-checkmark'}></use>*/}
+          {/*                </svg>*/}
+          {/*              </button>*/}
+          {/*            </Form>*/}
+          {/*          </Formik>*/}
+        </div>
+        <p className={styles.description}>{project.description}</p>
       </div>
+
     )
   }
 

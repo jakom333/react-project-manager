@@ -88,11 +88,12 @@
     }
 
     .boxBack {
-        display: block;
+        display: flex;
+        width: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 20px;
-        border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+        /*border-bottom: 1px solid rgba(24, 28, 39, 0.1);*/
         align-items: center;
         margin-top: 10px;
 
@@ -111,8 +112,7 @@
 
 
     .head {
-        margin-top: 40px;
-        margin-bottom: 20px;
+         margin-bottom: 20px;
     }
 
     .pageText {
@@ -139,7 +139,9 @@
     }
 
     .titleBox {
+        min-width: 400px;
         display: flex;
+        align-items: flex-start;
         justify-content: space-between;
     }
 
@@ -156,7 +158,6 @@
     }
 
     .head {
-        margin-top: 40px;
         margin-bottom: 20px;
     }
 
@@ -199,16 +200,16 @@
         width: 100%;
     }
 
-    .title {
-        display: flex;
-        justify-content: space-between;
+    /*.title {*/
+    /*    display: flex;*/
+    /*    justify-content: space-between;*/
 
-    }
+    /*}*/
 
     .titleBox {
         min-width: 900px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
     }
 }
