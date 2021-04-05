@@ -5,7 +5,6 @@
     --orange: #f78335;
 }
 
-
 .projectItem {
     position: relative;
     background-repeat: no-repeat;
@@ -13,7 +12,6 @@
     border: none;
     border-radius: 5px;
     overflow: hidden;
-
 }
 
 .projectLink {
@@ -25,20 +23,19 @@
     z-index: 1;
 }
 
-
 .projectItem:hover{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-
 .buttonDelete{
     position: absolute;
     right: 10px;
     bottom: 10px;
-        z-index: 2;
+    z-index: 2;
 }
+
 .title{
     overflow: hidden;
 }
@@ -65,20 +62,16 @@
     .title{
         margin-top: 0;
         margin-bottom: 6px;
-        font-style: normal;
         font-weight: 800;
         font-size: 16px;
         line-height: 20px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 
     .description{
-        font-style: normal;
         font-weight: normal;
         font-size: 10px;
         line-height: 12px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 
@@ -106,7 +99,7 @@
         list-style: none;
         overflow: hidden;
         background-color: #8C72DF;
-         padding: 20px;
+        padding: 20px;
         width: 216px;
         height: 216px;
     }
@@ -121,19 +114,15 @@
         margin-bottom: 10px;
         font-size: 26px;
         line-height: 32px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
         margin-top: 0;
-        font-style: normal;
         font-weight: 800;
     }
 
     .description{
         font-size: 14px;
         line-height: 17px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
-        font-style: normal;
         font-weight: normal;
 
     }
@@ -148,7 +137,6 @@
         border: none;
         border-radius: 50%;
         background-color: #FFFFFF;
-
     }
 
     .deleteIcon{
@@ -156,7 +144,6 @@
         width: 18px;
         height: 18px
     }
-
 }
 
 @media screen and (min-width: 1280px) {
@@ -173,36 +160,26 @@
         height: 270px;
     }
 
-
-
     .title{
         max-width: 210px;
         margin-bottom: 10px;
         font-size: 26px;
         line-height: 32px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 
     .description{
         font-size: 14px;
         line-height: 17px;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
-
 
     .projectItem {
         position: relative;
     }
-
 }
 
 /*====color cardProject=====*/
-
-.defaultColor{
-    background-color: #FFFFFF;
-}
 
 .projectItem:nth-child(8n + 3){
     background-color: var( --violet);
@@ -228,7 +205,6 @@
 .projectItem:nth-child(8n + 8){
     background-color: var( --orange);
 }
-
 
 .projectItem:nth-child(8n + 3) .deleteIcon{
     fill: var( --violet);
@@ -260,7 +236,6 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
 }
-
 
 @keyframes scale-up-center {
     0% {
@@ -394,6 +369,5 @@
     /*.projectItem:nth-child(4n + 4)::after {*/
     /*    content: url('./projectImg/Wave_4-2.png');*/
     /*}*/
-
 
 }
