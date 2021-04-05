@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import style from './TitleEditor.module.css';
 
 const sizerStyle = {
-  // position: 'absolute',
+  position: 'absolute',
   top: 0,
   left: 0,
   visibility: 'hidden',
