@@ -37,7 +37,12 @@ const getProjects = () => async dispatch => {
   try {
     const response = await axios.get('https://sbc-backend.goit.global/project');
 
-    dispatch(projectsSuccess(response.data));
+    dispatch(
+      projectsSuccess(
+        response.data.constructor.name === 'Array' ? response.data : [],
+      ),
+    );
+   
   } catch (error) {
     dispatch(projectsError(error.message));
     refreshTemplate(getProjects, error, dispatch);
