@@ -34,8 +34,8 @@
   text-align: right;
 }
 .button {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background: #a6a6a6;
   border: none;
   outline: none;
@@ -45,8 +45,8 @@
   background: accentColor;
 }
 .icon {
-  width: 10px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   fill: white;
 }
 

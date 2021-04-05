@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { date } from 'yup/lib/locale';
 import {
   fetchTaskRequest,
   fetchTaskSuccess,
@@ -46,13 +47,21 @@ const deleteTask = taskId => async dispatch => {
   }
 };
 
-const changeTask = (date, hours, taskId) => async dispatch => {
+const changeTask = (hoursWasted, taskId, currentDay) => async dispatch => {
   dispatch(changeTaskRequest());
   try {
-    const { data } = await axios.patch(`/task/${taskId}`, {date, hours});
-   
-
-    dispatch(changeTaskSuccess(data));
+    const { data } = await axios.patch(`/task/${taskId}`, {
+      date: currentDay,
+      hours: hoursWasted,
+    });
+    dispatch(
+      changeTaskSuccess({
+        currentDay: data.day.currentDay,
+        singleHoursWasted: data.day.singleHoursWasted,
+        hoursWasted: data.newWastedHours,
+        taskId,
+      }),
+    );
   } catch (error) {
     dispatch(changeTaskError(error.message));
   }

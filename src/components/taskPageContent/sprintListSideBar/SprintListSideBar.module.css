@@ -71,15 +71,18 @@
   transform: scale(1.03);
   transition-duration: 500ms;
 }
-
 .sideButtonBox {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  align-items: center;
+  display: none;
 }
 
 @media (min-width: 768px) {
+  .sideButtonBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .sprintsButtonBackContainer {
     margin-top: 20px;
     margin-left: 2px;
