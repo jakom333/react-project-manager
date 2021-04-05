@@ -71,22 +71,22 @@ const CreateSprintForm = ({ onClose }) => {
         <Form className={styles.form}>
           <Field
             className={styles.inputName}
-            name='title'
-            type='text'
-            placeholder='The name of the sprint'
+            name="title"
+            type="text"
+            placeholder="The name of the sprint"
           />
           <ErrorMessage
             className={styles.errorName}
-            component='span'
-            name='title'
+            component="span"
+            name="title"
           />
           <label className={styles.checkbox}>
             <Field
-              type='checkbox'
-              name='pastDays'
+              type="checkbox"
+              name="pastDays"
               checked={check}
               onClick={onCheck}
-              placeholder='Includes past days'
+              placeholder="Includes past days"
             />
             <div className={styles.checkbox__text}>Include previous days</div>
           </label>
@@ -101,29 +101,27 @@ const CreateSprintForm = ({ onClose }) => {
                 selected={startDate}
                 onChange={date => setStartDate(date)}
                 minDate={minDate}
-                id='picker'
-                dateFormat='MMMM dd'
+                id="picker"
+                dateFormat="MMMM dd"
               />
             </div>
 
             <div className={styles.formDuration}>
               <Field
                 className={styles.inputTime}
-                name='duration'
-                type='text'
-                placeholder='Duration (days)'
+                name="duration"
+                type="text"
+                placeholder="Duration (days)"
               />
 
               <ErrorMessage
                 className={styles.errorTime}
-                component='span'
-                name='duration'
+                component="span"
+                name="duration"
               />
             </div>
           </div>
-          <Button className={styles.buttomDone} type='submit'>
-            Done
-          </Button>
+          <Button>Done</Button>
         </Form>
       </Formik>
     </div>
