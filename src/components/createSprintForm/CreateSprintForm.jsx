@@ -41,6 +41,13 @@ const CreateSprintForm = ({ onClose }) => {
     setCheck(prev => !prev);
   };
 
+  const startToEndDay = (inputDay, inputDuration) => {
+    const dateToBackend = new Date(inputDay);
+    dateToBackend.setDate(dateToBackend.getDate() + Number(inputDuration) - 1);
+
+    return dateToBackend;
+  };
+
   return (
     <div className={styles.formContainer}>
       <h2 className={styles.titleForm}>Create a sprint</h2>
@@ -53,9 +60,10 @@ const CreateSprintForm = ({ onClose }) => {
         validationSchema={formSchema}
         onSubmit={async values => {
           const { title, duration } = values;
-          const endDate = `${startDate.getFullYear()}-${
-            1 + startDate.getMonth()
-          }-${startDate.getDate()}`;
+          const toBackEnd = startToEndDay(startDate, duration);
+
+          const endDate = `${toBackEnd.getFullYear()}-${1 +
+            toBackEnd.getMonth()}-${toBackEnd.getDate()}`;
           onHandleSubmit(title, endDate, duration);
           onClose();
         }}
@@ -84,8 +92,8 @@ const CreateSprintForm = ({ onClose }) => {
           </label>
           <div className={styles.tabletContainer}>
             <div>
-              <label htmlFor="picker" className={styles.dataPickerContainer}>
-                <span className={styles.dataPickerLabel}>End date</span>
+              <label htmlFor='picker' className={styles.dataPickerContainer}>
+                <span className={styles.dataPickerLabel}>Start date</span>
               </label>
 
               <DatePicker
