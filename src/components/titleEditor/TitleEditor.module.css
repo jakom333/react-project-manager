@@ -1,5 +1,4 @@
 .titleChangeInput {
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
@@ -58,6 +57,13 @@
   transform: scale(1.1);
 }
 
+
+.changeTitleButton2:hover {
+  fill:#71DF87;
+  transform: scale(1.1);
+}
+
+
 .changeTitleButton2 {
   fill: rgb(139, 139, 139);
   width: 20px;
@@ -70,7 +76,6 @@
 }
 
 .sprintTitle {
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
