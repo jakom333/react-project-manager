@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import './datepicker.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Button from '../../shared/button/Button';
@@ -53,9 +53,8 @@ const CreateSprintForm = ({ onClose }) => {
         validationSchema={formSchema}
         onSubmit={async values => {
           const { title, duration } = values;
-          const endDate = `${startDate.getFullYear()}-${
-            1 + startDate.getMonth()
-          }-${startDate.getDate()}`;
+          const endDate = `${startDate.getFullYear()}-${1 +
+            startDate.getMonth()}-${startDate.getDate()}`;
           onHandleSubmit(title, endDate, duration);
           onClose();
         }}
@@ -63,14 +62,14 @@ const CreateSprintForm = ({ onClose }) => {
         <Form className={styles.form}>
           <Field
             className={styles.inputName}
-            name="title"
-            type="text"
-            placeholder="The name of the sprint"
+            name='title'
+            type='text'
+            placeholder='The name of the sprint'
           />
           <ErrorMessage
             className={styles.errorName}
-            component="span"
-            name="title"
+            component='span'
+            name='title'
           />
           <label className={styles.checkbox}>
             <Field
@@ -82,32 +81,40 @@ const CreateSprintForm = ({ onClose }) => {
             />
             <div className={styles.checkbox__text}>Include previous days</div>
           </label>
-          <label htmlFor='picker' className={styles.dataPickerContainer}>
-            {' '}
-          </label>
-          <span className={styles.dataPickerLabel}>End date</span>
-          <DatePicker
-            selected={startDate}
-            onChange={date => setStartDate(date)}
-            minDate={minDate}
-            id='picker'
-          />
+          <div className={styles.tabletContainer}>
+            <div>
+              <label htmlFor='picker' className={styles.dataPickerContainer}>
+                <span className={styles.dataPickerLabel}>End date</span>
+              </label>
 
-          <div className={styles.form}>
-            <Field
-              className={styles.inputTime}
-              name="duration"
-              type="text"
-              placeholder="Duration (days)"
-            />
+              <DatePicker
+                className={styles.dataPicker}
+                selected={startDate}
+                onChange={date => setStartDate(date)}
+                minDate={minDate}
+                id='picker'
+                dateFormat='MMMM dd'
+              />
+            </div>
 
-            <ErrorMessage
-              className={styles.errorTime}
-              component="span"
-              name="duration"
-            />
+            <div className={styles.formDuration}>
+              <Field
+                className={styles.inputTime}
+                name='duration'
+                type='text'
+                placeholder='Duration (days)'
+              />
+
+              <ErrorMessage
+                className={styles.errorTime}
+                component='span'
+                name='duration'
+              />
+            </div>
           </div>
-          <Button type="submit">Done</Button>
+          <Button className={styles.buttomDone} type='submit'>
+            Done
+          </Button>
         </Form>
       </Formik>
     </div>
