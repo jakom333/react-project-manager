@@ -6,7 +6,6 @@ import { getProjectsSelector } from '../../redux/projects/projects-selectors';
 
 const ProjectsList = () => {
   const projects = useSelector(getProjectsSelector);
-  console.log(projects);
 
   return (
     <ul className={styles.projectList}>

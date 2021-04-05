@@ -14,6 +14,8 @@ import {
   changeTaskSuccess,
   changeTaskError,
   changeFilter,
+  changeCurrentDay,
+  setCurrentDay,
 } from './task-actions.js';
 
 const tasks = createReducer([], {
@@ -24,7 +26,21 @@ const tasks = createReducer([], {
   ],
 
   [changeTaskSuccess]: (state, { payload }) => [
-    ...state.map(item => (item._id === payload.id ? payload : item)),
+    ...state.map(task =>
+      task._id === payload.taskId
+        ? {
+            ...task,
+            hoursWasted: payload.hoursWasted,
+            hoursWastedPerDay: [
+              ...task.hoursWastedPerDay.map(item =>
+                item.currentDay === payload.currentDay
+                  ? { ...item, singleHoursWasted: payload.singleHoursWasted }
+                  : item,
+              ),
+            ],
+          }
+        : task,
+    ),
   ],
 });
 
@@ -45,6 +61,10 @@ const loading = createReducer(false, {
 
 const filter = createReducer('', {
   [changeFilter]: (_, { payload }) => payload,
+});
+
+const currentDay = createReducer(Date.now(), {
+  [changeCurrentDay]: (_, { payload }) => payload,
 });
 
 //export default tasks;
@@ -70,4 +90,5 @@ const filter = createReducer('', {
 export default combineReducers({
   tasks,
   filter,
+  currentDay,
 });
