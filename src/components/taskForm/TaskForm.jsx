@@ -7,6 +7,7 @@ import { createTask } from '../../redux/tasks/task-operations';
 import Button from '../../shared/button/Button';
 import { useParams } from 'react-router-dom';
 
+
 const formSchema = Yup.object().shape({
   title: Yup.string().required('Task name is a required field'),
   hoursPlanned: Yup.number('Planned hours must be a number')
@@ -64,6 +65,7 @@ const TaskForm = ({ onClose }) => {
           <Button type="submit">Done</Button>
         </Form>
       </Formik>
+      
     </div>
   );
 };
