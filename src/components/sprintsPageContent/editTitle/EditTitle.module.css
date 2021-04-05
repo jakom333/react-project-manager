@@ -2,14 +2,13 @@
     width: 200px;
     display: flex;
     flex-direction: column;
-
 }
+
 .current{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 20px;
-
 }
 
 .edit{
@@ -59,7 +58,6 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
     transform: scale(1.2);
-
 }
 
 .buttonSave{
@@ -81,6 +79,7 @@
     width: 20px;
     height: 20px;
 }
+
 .iconPencil:hover {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
@@ -105,11 +104,12 @@
         font-weight: 500;
         font-size: 26px;
         line-height: 32px;
-        letter-spacing: 0.04em;
      }
+
     .current{
         min-width: 250px;
     }
+
     .buttonFix {
         margin-top: 7px;
     }
@@ -122,14 +122,15 @@
         font-weight: 500;
         font-size: 30px;
         line-height: 44px;
-        letter-spacing: 0.04em;
-
     }
+
     .current{
         min-width: 400px;
     }
 
-
+    .editInput{
+        min-width: 200px;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -139,12 +140,14 @@
         font-weight: 500;
         font-size: 30px;
         line-height: 44px;
-        letter-spacing: 0.04em;
-
     }
 
     .current{
         min-width: 500px;
+    }
+
+    .editInput{
+        min-width: 250px;
     }
 }
 

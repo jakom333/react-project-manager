@@ -16,7 +16,6 @@ const TaskList = () => {
   useEffect(() => {
     dispatch(fetchTasks(sprintId));
   }, [dispatch, sprintId]);
-
   return (
     <ul className={styles.taskList}>
       {tasks.map(item => (
