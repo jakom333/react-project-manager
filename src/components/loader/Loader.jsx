@@ -12,7 +12,7 @@ export default class Loader extends Component {
         height={50}
         width={50}
         className={styles.spinner}
-        timeout={500}
+        timeout={0}
       />
     );
   }
