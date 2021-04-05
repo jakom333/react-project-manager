@@ -82,6 +82,7 @@
 @media (min-width: 768px) {
   .sprintsButtonBackContainer {
     margin-top: 20px;
+    margin-left: 2px;
     border-bottom: none;
     padding: 0;
     text-align: center;
@@ -93,11 +94,12 @@
 
   .leftPanelSprintsContainer {
     display: block;
-    margin-top: 90px;
-    padding: 0 20px;
+    margin-top: 93px;
+    padding-top: 2px;
+    padding-left: 2px;
     margin-bottom: 60px;
     overflow-y: scroll;
-    height: 55vh;
+    height: 310px;
   }
 
   .sprintsList {
@@ -120,6 +122,9 @@
 
   .leftPanelSprintsContainer::-webkit-scrollbar {
     width: 8px;
+  }
+  .buttonTag {
+    margin-top: 15px;
   }
 }
 @media (min-width: 1280px) {

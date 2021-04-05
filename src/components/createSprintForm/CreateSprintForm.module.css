@@ -2,6 +2,22 @@
 @value accentColor from '../../main.module.css';
 @value greyColor from '../../main.module.css';
 
+.dataPicker {
+  width: 280px;
+  border: none;
+  border-bottom: 1px solid greyColor;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #181c27;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.buttomDone {
+  margin-top: 20px;
+}
+
 .formContainer {
   background-color: white;
   min-width: 320px;
@@ -42,6 +58,14 @@
 .form {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 40px;
+  width: 100%;
+  flex-direction: column;
+}
+.formDuration {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
   width: 100%;
   flex-direction: column;
 }
@@ -73,7 +97,7 @@
   display: block;
   color: accentColor;
   margin-top: -38px;
-} 
+}
 
 .errorTime {
   display: block;
@@ -154,10 +178,11 @@
 
 .dataPickerLabel {
   font-family: Montserrat;
+  margin-top: 40px;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 12px;
+  line-height: 15px;
   /* identical to box height */
 
   display: flex;
@@ -224,9 +249,25 @@
 /*==================TABLET=========================*/
 
 @media screen and (min-width: 768px) {
+  .tabletContainer {
+    display: flex;
+  }
+
+  .dataPicker {
+    width: 115%;
+  }
+  .formDuration {
+    padding-top: 24.5px;
+  }
+  .inputTime {
+    margin-right: 0;
+    padding-bottom: 10px;
+    max-width: 180px;
+  }
+
   .formContainer {
     max-width: 512px;
-    padding-top: 121px;
+    padding-top: 80px;
     padding-left: 50px;
     padding-right: 80px;
     margin-bottom: 40px;
