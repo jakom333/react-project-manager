@@ -9,15 +9,13 @@
   position: relative;
 }
 
-.boxBackLink {
-  color: #181c27;
-  width: 200px;
-  height: 37px;
-  align-items: center;
-  position: absolute;
-  /* margin-left: 20px; */
-  display: flex;
-  margin-top: 20px;
+.boxBackLink{
+    color: #181C27;
+    width: 200px;
+    position: absolute;
+    margin-left: 20px;
+    display: flex;
+    margin-top: 20px;
 }
 
 .boxBackLink:hover {
@@ -34,10 +32,10 @@
   margin-top: 90px;
 }
 
-@media screen and (max-width: 767px) {
-  .projectSideBar {
-    display: none;
-  }
+@media screen and  (max-width: 767px){
+    .projectSideBar{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {

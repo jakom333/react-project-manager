@@ -17,7 +17,6 @@
     line-height: 22px;
     display: flex;
     align-items: center;
-    letter-spacing: 0.04em;
     text-decoration-line: underline;
     color: #181C27;
 }
@@ -29,6 +28,7 @@
 }
 
 .showProject {
+    color: #181C27;
     width: 150px;
 }
 
@@ -73,8 +73,6 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
-        letter-spacing: 0.04em;
-        color: #181C27;
     }
 
 
@@ -91,17 +89,12 @@
         border-bottom: 1px solid rgba(24, 28, 39, 0.1);
         align-items: center;
         margin-top: 10px;
-
     }
+
     .boxBackLink{
-        color: #181C27;
         display: flex;
     }
-
-
-
 }
-
 
 @media screen and  (min-width: 768px) and (max-width: 1279px) {
 
@@ -110,32 +103,25 @@
         margin-bottom: 165px;
     }
 
-
     .head {
          margin-bottom: 20px;
     }
 
     .pageText {
         display: none;
-
     }
-
-
 
     .description {
         width: 400px;
         margin-top: 0;
     }
 
-
     .addPeopleText {
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        letter-spacing: 0.04em;
         text-decoration-line: underline;
-        color: #181C27;
     }
 
     .titleBox {
@@ -144,7 +130,6 @@
         align-items: flex-start;
         justify-content: space-between;
     }
-
 }
 
 @media screen and (min-width: 1280px) {
@@ -169,13 +154,9 @@
 
     .pageText {
         margin-left: 20px;
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        letter-spacing: 0.04em;
-        color: #181C27;
-
     }
 
 
@@ -185,13 +166,10 @@
     }
 
     .addPeopleText {
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        letter-spacing: 0.04em;
         text-decoration-line: underline;
-        color: #181C27;
     }
 
 
