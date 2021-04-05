@@ -1,3 +1,7 @@
+.emptyMessage{
+    padding-top: 200px;
+}
+
 .projectList{
     padding-inline-start:0;
     display: flex;
