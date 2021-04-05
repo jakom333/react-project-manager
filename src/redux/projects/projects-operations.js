@@ -103,6 +103,7 @@ const editTitle = (projectId, title) => async dispatch => {
     dispatch(editProjectTitleSuccess({ projectId, title }));
   } catch (error) {
     dispatch(editProjectTitleError(error));
+    refreshTemplate(() => editTitle(projectId, title), error, dispatch);
   }
 };
 
