@@ -14,20 +14,6 @@
   line-height: 22px;
 }
 
-.buttomDone {
-  margin-top: 20px;
-}
-
-.formContainer {
-  background-color: white;
-  min-width: 320px;
-  /* width: 100%; */
-  padding-top: 63px;
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 480px;
-}
-
 .titleForm {
   background-color: white;
   font-weight: 500;
@@ -184,12 +170,11 @@
   font-size: 12px;
   line-height: 15px;
   /* identical to box height */
-
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-
   color: rgba(24, 28, 39, 0.6);
+  
 }
 
 .checkbox input {
@@ -197,19 +182,19 @@
   z-index: -1;
   opacity: 0;
   margin: 10px 0 0 20px;
+  margin-top: 20px;
 }
 .checkbox__text {
   position: relative;
-
   padding: 0 0 0 40px;
   cursor: pointer;
-
   font-size: 16px;
   line-height: 12px;
   color: greyColor;
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
+  margin-top: 20px;
 }
 .checkbox__text:before {
   content: '';
@@ -236,7 +221,7 @@
   transition: 0.2s;
 }
 .checkbox input:checked + .checkbox__text:before {
-  background: #ff6b08;
+  background: accentColor;
 }
 .checkbox input:checked + .checkbox__text:after {
   left: 15px;
@@ -265,14 +250,14 @@
     max-width: 180px;
   }
 
-  .formContainer {
+  /* .formContainer {
     max-width: 512px;
     padding-top: 80px;
     padding-left: 50px;
     padding-right: 80px;
     margin-bottom: 40px;
     width: 530px;
-  }
+  } */
 
   .titleForm {
     font-weight: 500;
@@ -316,12 +301,12 @@
 /*==================DESKTOP=========================*/
 
 @media screen and (min-width: 1280px) {
-  .formContainer {
+  /* .formContainer {
     max-width: 530px;
     padding-left: 50px;
     padding-right: 80px;
     width: 530px;
-  }
+  } */
 
   .titleForm {
     font-weight: 500;

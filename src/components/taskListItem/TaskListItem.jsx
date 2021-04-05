@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './TaskListItem.module.css';
 import sprite from '../../icons/symbol-defs.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTask, changeTask } from '../../redux/tasks/task-operations.js';
-
+import { getTasks } from '../../redux/tasks/task-selectors';
+import { useParams } from 'react-router-dom';
 
 const TaskListItem = ({ item }) => {
   const dispatch = useDispatch();
   const deleteItem = () => dispatch(deleteTask(item._id));
 
-  const changeHours = e => {
-    const hours = e.target.value;
-    const data = item.hoursWastedPerDay[0].currentDay;
-    
-    console.log(item.hoursWastedPerDay[0].currentDay);
-   
-    dispatch(changeTask(hours, data, item._id));
+  const date = item.hoursWastedPerDay[0].currentDay;
+
+  const [hours, setHours] = useState(0);
+
+  const onHandleChange = e => {
+    const hours = Number(e.target.value);
+
+    if (hours) {
+      setHours(hours);
+    }
+  };
+  
+  const onHandleSubmit = e => {
+    e.preventDefault();
+    dispatch(changeTask(date, hours, item._id));
   };
 
   return (
@@ -28,11 +37,19 @@ const TaskListItem = ({ item }) => {
         </li>
         <li className={styles.item}>
           <span className={styles.itemName}>Hours spent / per day</span>
-          <input className={styles.input} type="text" onChange={changeHours} />
+          <form>
+            <input
+              className={styles.input}
+              type="number"
+              onChange={onHandleChange}
+              onBlur={onHandleSubmit}
+              value={hours}
+            />
+          </form>
         </li>
         <li className={styles.item}>
           <span className={styles.itemName}>Hours spent</span>
-          <span>0</span>
+          <span>{hours}</span>
         </li>
         <li className={styles.item}>
           <span></span>
