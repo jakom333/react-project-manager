@@ -42,6 +42,7 @@ const getProjects = () => async dispatch => {
         response.data.constructor.name === 'Array' ? response.data : [],
       ),
     );
+   
   } catch (error) {
     dispatch(projectsError(error.message));
     refreshTemplate(getProjects, error, dispatch);
