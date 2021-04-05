@@ -1,4 +1,4 @@
- .button {
+.button {
   font-family: inherit;
   border-radius: 25px;
   padding: 11px 44px 11px 44px;
@@ -15,7 +15,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .button:hover {
@@ -24,4 +24,3 @@
   color: #ff6b08;
   box-shadow: 1px 1px 5px 1px #ff6b08;
 }
- 
