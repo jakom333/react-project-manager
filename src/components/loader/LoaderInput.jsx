@@ -7,10 +7,10 @@ export default class Loader extends Component {
   render() {
     return (
       <Spinner
-        type="Puff"
+        type="ThreeDots"
         color="#f78335"
-        height={100}
-        width={100}
+        height={50}
+        width={50}
         className={styles.spinner}
         timeout={0}
       />

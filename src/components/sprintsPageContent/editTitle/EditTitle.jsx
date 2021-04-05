@@ -4,8 +4,9 @@ import { useParams } from 'react-router-dom';
 import styles from './EditTitle.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
 import { editTitle } from '../../../redux/projects/projects-operations';
-import { getProjectsSelector } from '../../../redux/projects/projects-selectors';
+import { getProjectLoading, getProjectsSelector } from '../../../redux/projects/projects-selectors';
 import AutosizeInput from '../../titleEditor/AutosizeInput';
+import LoaderInput from '../../loader/LoaderInput';
 
 
 const EditTitle = () => {
@@ -14,6 +15,7 @@ const EditTitle = () => {
   const [isUpdate, setUpdate] = useState(true);
   const { projectId } = useParams();
   const projects = useSelector(getProjectsSelector);
+  const isLoading = useSelector(getProjectLoading);
   const project = projects.find(item => item._id === projectId);
   const [active, setActive] = useState(true);
 
@@ -38,16 +40,24 @@ const EditTitle = () => {
     return (
       <div className={styles.box}>
         <div className={styles.current}>
-          <h2 className={styles.pageTitle}>{project?.title}</h2>
-          <button
-            onClick={onEditTitle}
-            type="button"
-            className={styles.buttonFix}
-          >
-            <svg className={styles.iconPencil}>
-              <use href={sprite + '#icon-pencil'}></use>
-            </svg>
-          </button>
+          {isLoading ? (
+            <div className={styles.loader}>
+              <LoaderInput />
+            </div>
+          ) : (
+            <>
+              <h2 className={styles.pageTitle}>{project?.title}</h2>
+              <button
+                onClick={onEditTitle}
+                type="button"
+                className={styles.buttonFix}
+              >
+                <svg className={styles.iconPencil}>
+                  <use href={sprite + '#icon-pencil'}></use>
+                </svg>
+              </button>
+            </>
+          )}
         </div>
         <p className={styles.description}>{project?.description}</p>
       </div>

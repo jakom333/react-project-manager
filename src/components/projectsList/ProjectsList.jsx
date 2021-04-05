@@ -1,48 +1,46 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './ProjectsList.module.css';
 import ProjectItem from './projectItem/ProjectItem';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getProjectsSelector, getProjectLoading } from '../../redux/projects/projects-selectors';
-import { getProjects } from '../../redux/projects/projects-operations';
 import Loader from '../loader/Loader';
 
 const ProjectsList = () => {
   const projects = useSelector(getProjectsSelector);
   const isLoading = useSelector(getProjectLoading);
-//  const dispatch = useDispatch();
-
-  console.log(projects)
-  useEffect(() => {
-    getProjects();
-  }, []);
-
 
   return(
-    <>
+    <div className={styles.box}>
       {isLoading ? (
         <div className={styles.loader}>
           <Loader />
         </div>
       ) : (
         !projects.length && (
-          <h2 className={styles.emptyMessage}>
-            Your project collection is empty, use the "Create project" button.
-          </h2>
+          <div className={styles.emptyMessageBox}>
+            <h2 className={styles.emptyMessage}>
+              Your project collection is empty, use the "Create project" button.
+            </h2>
+          </div>
         )
       )}
-
-      {!!projects &&
-      <ul className={styles.projectList}>
-        {projects.map(item => (
-          <ProjectItem key={item._id} item={item} />
-        ))}
-      </ul>
+      {!!projects.length &&
+          <ul className={styles.projectList}>
+            {projects.map(item => (
+              <ProjectItem key={item._id} item={item} />
+            ))}
+          </ul>
       }
-
-    </>
+    </div>
   )
 
 };
 
 export default ProjectsList;
 
+//  const dispatch = useDispatch();
+//  console.log(projects)
+//  useEffect(() => {
+//    dispatch(getProjects());
+//  }, [dispatch]);
+//
