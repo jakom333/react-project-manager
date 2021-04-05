@@ -1,37 +1,20 @@
 .pageBox{
-    padding: 0 10px;
     position: relative;
+    padding: 0 20px;
 }
+
+.icon{
+    fill: white;
+    width: 20px;
+    height: 20px;
+}
+
 .pageTitle{
-    padding-left: 10px;
+    font-weight: 500;
 }
 
-@media screen and (min-width: 320px){
-    .pageTitle{
-        margin: 0;
-        padding-top: 20px;
-        padding-bottom: 36px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 26px;
-        line-height: 32px;
-        letter-spacing: 0.04em;
-        color: #181C27;
-    }
 
-    .pageText{
-       display: none;
-    }
-
-    .icon{
-        fill: white;
-        width: 20px;
-        height: 20px;
-    }
-
-}
-
-@media screen and (max-width: 767px){
+@media screen and (min-width: 320px) and (max-width: 767px){
     .pageText{
         display: none;
     }
@@ -42,20 +25,36 @@
         bottom: 20px;
         right: 20px;
     }
+    .pageBox{
+        padding: 0 20px;
+        max-width: 480px;
+    }
+    .pageText{
+        display: none;
+    }
+    .pageTitle{
+        padding-top: 20px;
+        padding-bottom: 36px;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+    }
+
 }
 
-@media screen and (min-width: 767px){
-
+@media screen and (min-width: 768px) and (max-width: 1279px){
     .pageCreate{
-        margin-right: 86px;
         display: flex;
         justify-content: space-between;
         align-items: baseline;
     }
 
-    .buttonBox{
-        display: flex;
-        align-items: center;
+    .pageBox{
+        max-width: 1279px;
+    }
+
+    .pageBox{
+        padding: 0 40px;
     }
 
     .pageTitle{
@@ -64,38 +63,49 @@
         font-size: 36px;
         line-height: 44px;
     }
+
+    .buttonBox{
+        display: flex;
+        align-items: center;
+    }
+
+    .pageText{
+        display: none;
+    }
 }
 
-@media screen and (min-width: 1279px){
-
+@media screen and (min-width: 1280px){
     .pageCreate{
-        margin-right: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-right: 65px;
     }
 
     .pageTitle{
-        font-style: normal;
+        padding-top: 40px;
+        padding-bottom: 30px;
         font-weight: 500;
         font-size: 36px;
         line-height: 44px;
-        letter-spacing: 0.04em;
     }
 
     .pageText{
         display: block;
         margin-left: 20px;
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        letter-spacing: 0.04em;
-        color: #181C27;;
     }
+
     .pageBox{
-        padding: 0 40px;
-
+        padding: 0 55px;
+        max-width: 1600px;
     }
 
-
+    .buttonBox{
+        display: flex;
+        align-items: center;
+    }
 }
-
 

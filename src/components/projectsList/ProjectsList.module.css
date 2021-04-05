@@ -5,5 +5,23 @@
     flex-wrap: wrap;
     list-style: none;
     padding-bottom: 100px;
+}
 
+@media screen and (min-width: 320px) {
+    .projectList{
+        gap:10px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .projectList{
+         gap: 20px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .projectList{
+        gap: 30px;
+    }
 }

@@ -10,6 +10,9 @@ import {
   fetchSprintsRequest,
   fetchSprintsSucces,
   fetchSprintsError,
+  changeTitleRequest,
+  changeTitleSuccess,
+  changeTitleError,
 } from './sprints-actions';
 
 // process.env.REACT_APP_BASE_URL;
@@ -51,4 +54,15 @@ const deleteSprint = sprindId => async dispatch => {
   }
 };
 
-export { addSprint, deleteSprint, fetchSprints };
+const editTitle = (sprintId, title) => async dispatch => {
+  dispatch(changeTitleRequest());
+
+  try {
+    await axios.patch(`/sprint/title/${sprintId}`, { title });
+    dispatch(changeTitleSuccess({ sprintId, title }));
+  } catch (error) {
+    dispatch(changeTitleError(error));
+  }
+};
+
+export { addSprint, deleteSprint, fetchSprints, editTitle };

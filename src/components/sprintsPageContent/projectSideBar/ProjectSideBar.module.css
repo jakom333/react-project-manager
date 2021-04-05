@@ -1,36 +1,36 @@
-.projectSideBar{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.projectSideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.boxBack{
-    width: 150px;
-    position: relative;
+.boxBack {
+  width: 150px;
+  position: relative;
 }
-
 
 .boxBackLink{
     color: #181C27;
-    width: 150px;
+    width: 200px;
     position: absolute;
     margin-left: 20px;
     display: flex;
     margin-top: 20px;
 }
 
-.boxBackLink:hover{
-    color: #FF6C00;
+.boxBackLink:hover {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  color: #ff6c00;
 }
 
-.sideButtonBox{
-    display: flex;
-    margin-right: 50px;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 90px;
+.sideButtonBox {
+  display: flex;
+  margin-right: 50px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
 }
-
 
 @media screen and  (max-width: 767px){
     .projectSideBar{
@@ -38,17 +38,33 @@
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .sidePlusText {
+    margin-top: 15px;
+  }
+  /* .boxBackLink {
+    width: 150px;
+    position: relative;
+    margin: 0;
+  } */
 
-@media screen and  (min-width: 768px) and (max-width: 1279px){
-    .sidePlusText{
-        margin-top: 15px;
-    }
+  .boxBackLink {
+    margin-left: 2px;
+  }
+
+  .sideButtonBox {
+    margin: 60px auto;
+  }
 }
 
-@media screen and (min-width: 1280px){
-    .sidePlusText{
-        margin-top: 15px;
-    }
+@media screen and (min-width: 1280px) {
+  .sidePlusText {
+    margin-top: 15px;
+  }
+  .sideButtonBox {
+    margin: 60px auto;
+  }
+  .boxBackLink {
+    margin-left: 2px;
+  }
 }
-
-

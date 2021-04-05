@@ -2,27 +2,41 @@
     width: 200px;
     display: flex;
     flex-direction: column;
-
 }
+
 .current{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 20px;
-
 }
 
 .edit{
+    margin-top: 10px;
+    animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 20px;
-
 }
+
+@keyframes scale-in-hor-center {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
 
 .editForm{
     display: flex;
- align-items: center;
+    align-items: center;
 }
 
 .editInput{
@@ -33,6 +47,7 @@
 }
 
 .buttonFix {
+    margin-top: 13px;
     width: 20px;
     height: 20px;
     background-color: transparent;
@@ -43,7 +58,6 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
     transform: scale(1.2);
-
 }
 
 .buttonSave{
@@ -52,7 +66,6 @@
     border: none;
     outline: none;
     border-radius: 10%;
-    /*background-color: #A6A6A6;*/
 }
 
 .buttonSave:hover{
@@ -62,13 +75,15 @@
 }
 
 .iconPencil {
-    fill: black;
+    fill: #a6a6a6;
     width: 20px;
     height: 20px;
 }
-.iconPencil:hover {
-    fill: #f78335;
 
+.iconPencil:hover {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    fill: #f78335;
 }
 
 .iconSave{
@@ -89,8 +104,15 @@
         font-weight: 500;
         font-size: 26px;
         line-height: 32px;
-        letter-spacing: 0.04em;
      }
+
+    .current{
+        min-width: 250px;
+    }
+
+    .buttonFix {
+        margin-top: 7px;
+    }
 }
 
 @media screen and  (min-width: 768px) and (max-width: 1279px) {
@@ -100,10 +122,15 @@
         font-weight: 500;
         font-size: 30px;
         line-height: 44px;
-        letter-spacing: 0.04em;
-
     }
 
+    .current{
+        min-width: 400px;
+    }
+
+    .editInput{
+        min-width: 200px;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -113,11 +140,16 @@
         font-weight: 500;
         font-size: 30px;
         line-height: 44px;
-        letter-spacing: 0.04em;
+    }
 
+    .current{
+        min-width: 500px;
+    }
+
+    .editInput{
+        min-width: 250px;
     }
 }
-
 
 .boxEdit{
     display: flex;
