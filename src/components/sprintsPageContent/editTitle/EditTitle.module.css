@@ -1,7 +1,18 @@
+.loader{
+    width: 50px;
+    height: 50px;
+}
 .box{
     width: 200px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
+}
+.loader{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 20px;
 }
 
 .current{
@@ -12,25 +23,10 @@
 }
 
 .edit{
-    margin-top: 10px;
-    animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 20px;
-}
-
-@keyframes scale-in-hor-center {
-    0% {
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-        opacity: 1;
-    }
 }
 
 
@@ -42,8 +38,8 @@
 .editInput{
     border: none;
     outline: none;
-    border-bottom: 1px solid rgba(24, 28, 39, 0.2);
     margin-right: 15px;
+    word-wrap: break-word;
 }
 
 .buttonFix {
@@ -57,7 +53,7 @@
 .buttonFix:hover{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .buttonSave{
@@ -71,7 +67,7 @@
 .buttonSave:hover{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .iconPencil {
@@ -100,10 +96,12 @@
 
 @media screen and (max-width: 767px) {
     .pageTitle {
+        max-width: 250px;
         margin-right: 15px;
         font-weight: 500;
         font-size: 26px;
         line-height: 32px;
+        letter-spacing: 0.04em;
      }
 
     .current{
@@ -113,33 +111,50 @@
     .buttonFix {
         margin-top: 7px;
     }
+    .edit{
+        max-width: 250px;
+    }
+
+    .editInput{
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.04em;
+    }
 }
 
 @media screen and  (min-width: 768px) and (max-width: 1279px) {
     .pageTitle {
-        max-width: 300px;
+        max-width: 400px;
         margin-right: 20px;
         font-weight: 500;
-        font-size: 30px;
+        font-size: 36px;
         line-height: 44px;
+        letter-spacing: 0.04em;
     }
+
 
     .current{
         min-width: 400px;
     }
 
     .editInput{
-        min-width: 200px;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: 0.04em;
     }
+
 }
 
 @media screen and (min-width: 1280px) {
     .pageTitle {
-        max-width: 400px;
+        max-width: 500px;
         margin-right: 20px;
         font-weight: 500;
-        font-size: 30px;
+        font-size: 36px;
         line-height: 44px;
+        letter-spacing: 0.04em;
     }
 
     .current{
@@ -147,7 +162,9 @@
     }
 
     .editInput{
-        min-width: 250px;
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: 0.04em;
     }
 }
 
