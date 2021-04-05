@@ -5,6 +5,8 @@ import styles from './EditTitle.module.css';
 import sprite from '../../../icons/symbol-defs.svg';
 import { editTitle } from '../../../redux/projects/projects-operations';
 import { getProjectsSelector } from '../../../redux/projects/projects-selectors';
+import AutosizeInput from '../../titleEditor/AutosizeInput';
+
 
 const EditTitle = () => {
   const dispatch = useDispatch();
@@ -57,14 +59,15 @@ const EditTitle = () => {
       <div className={styles.box}>
         <div className={styles.edit}>
           <form className={styles.editForm}>
-            <input
+            <AutosizeInput
               type="text"
               name="edit"
               value={input}
-              placeholder="Enter new name"
+              autoComplete="off"
               onChange={onHandleChange}
               onBlur={onHandleSubmit}
-              className={styles.editInput}
+              inputClassName={styles.editInput}
+              maxLength="25"
               autoFocus
             />
             <button

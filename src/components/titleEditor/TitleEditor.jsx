@@ -62,7 +62,7 @@ export default function ChangeTitle() {
             value={input}
             onChange={onHandleChange}
             onBlur={onFormSubmit}
-            maxLength="25"
+            maxLength="22"
             inputClassName={styles.titleChangeInput}
             autoFocus
             autoComplete="off"
