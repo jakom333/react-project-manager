@@ -6,25 +6,22 @@ import { deleteTask, changeTask } from '../../redux/tasks/task-operations.js';
 import { getTasks } from '../../redux/tasks/task-selectors';
 import { useParams } from 'react-router-dom';
 
-
 const TaskListItem = ({ item }) => {
   const dispatch = useDispatch();
   const deleteItem = () => dispatch(deleteTask(item._id));
 
   const date = item.hoursWastedPerDay[0].currentDay;
-  console.log(date)
-  // const date = "2021-04-04";
 
-  const [hours, setHours] = useState();
- 
+  const [hours, setHours] = useState(0);
+
   const onHandleChange = e => {
     const hours = Number(e.target.value);
-    // const hours = e.target.value;
-    if (hours > 0) {
+
+    if (hours) {
       setHours(hours);
     }
   };
-
+  
   const onHandleSubmit = e => {
     e.preventDefault();
     dispatch(changeTask(date, hours, item._id));
@@ -46,7 +43,7 @@ const TaskListItem = ({ item }) => {
               type="number"
               onChange={onHandleChange}
               onBlur={onHandleSubmit}
-              // value={hours}
+              value={hours}
             />
           </form>
         </li>
