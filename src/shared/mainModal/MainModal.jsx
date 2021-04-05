@@ -1,7 +1,10 @@
 import React, { useRef } from 'react';
+import { createPortal } from "react-dom";
 import styles from './MainModal.module.css';
 import sprite from '../../icons/symbol-defs.svg';
 import CancelButton from '../cancelButton/CancelButton';
+
+const modalRoot  = document.querySelector("#modal_root")
 
 const MainModal = ({ children, showModal, onClose, setShowModal }) => {
   const modalRef = useRef();
@@ -12,7 +15,7 @@ const MainModal = ({ children, showModal, onClose, setShowModal }) => {
     }
   };
 
-  return (
+  return createPortal(
     showModal && (
       <div className={styles.mainModal} ref={modalRef} onClick={closeModal}>
         <div className={styles.container}>
@@ -30,7 +33,7 @@ const MainModal = ({ children, showModal, onClose, setShowModal }) => {
           <CancelButton onClose={onClose} />
         </div>
       </div>
-    )
+    ), modalRoot
   );
 };
 
