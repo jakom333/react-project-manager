@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './ProjectsList.module.css';
 import ProjectItem from './projectItem/ProjectItem';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getProjectsSelector, getProjectLoading } from '../../redux/projects/projects-selectors';
 import Loader from '../loader/Loader';
+import { getProjects } from '../../redux/projects/projects-operations';
 
 const ProjectsList = () => {
   const projects = useSelector(getProjectsSelector);
   const isLoading = useSelector(getProjectLoading);
+  const dispatch = useDispatch();
+
+//
+//  useEffect(() => {
+//    const getResult = async () => {
+//        await dispatch(getProjects());
+//    };
+//    getResult();
+//  }, [dispatch]);
 
   return(
     <div className={styles.box}>
@@ -24,7 +34,7 @@ const ProjectsList = () => {
           </div>
         )
       )}
-      {!!projects.length &&
+      {!projects.message &&
           <ul className={styles.projectList}>
             {projects.map(item => (
               <ProjectItem key={item._id} item={item} />
@@ -37,10 +47,3 @@ const ProjectsList = () => {
 };
 
 export default ProjectsList;
-
-//  const dispatch = useDispatch();
-//  console.log(projects)
-//  useEffect(() => {
-//    dispatch(getProjects());
-//  }, [dispatch]);
-//

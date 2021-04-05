@@ -6,8 +6,7 @@ import sprite from '../../icons/symbol-defs.svg';
 import { editTitle } from '../../redux/sprints/sprints-operations';
 import { getSprintsSelector } from '../../redux/sprints/sprints-selectors';
 import AutosizeInput from './AutosizeInput';
-import { getProjectLoading } from '../../redux/projects/projects-selectors';
-import LoaderInput from '../loader/LoaderInput';
+
 
 export default function ChangeTitle() {
   const dispatch = useDispatch();
@@ -17,7 +16,7 @@ export default function ChangeTitle() {
   const sprints = useSelector(getSprintsSelector);
   const sprint = sprints.find(sprint => sprint._id === sprintId);
   const [isActive, setActive] = useState(true);
-  const isLoading = useSelector(getProjectLoading);
+
 
   const onChangeTitle = e => {
     setActive(() => setActive(false));
@@ -39,10 +38,7 @@ export default function ChangeTitle() {
   if (isActive) {
     return (
       <div className={styles.wrapper}>
-        {isLoading ? (
-          <LoaderInput />
-       ) : (
-        <>
+
         <h1 className={styles.sprintTitle} onClick={onChangeTitle}>
           {sprint?.title}
         </h1>
@@ -55,9 +51,7 @@ export default function ChangeTitle() {
             <use href={sprite + '#icon-pencil'}></use>
           </svg>
         </button>
-        </>
-        )}
-      </div>
+        </div>
     );
   }
 
