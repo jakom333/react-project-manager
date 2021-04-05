@@ -1,8 +1,13 @@
+
+@value accentColor from '../../main.module.css';
+@value greyColor from '../../main.module.css';
+
+
 .button {
   font-family: inherit;
   border-radius: 25px;
   padding: 11px 44px 11px 44px;
-  background-color: #ff6b08;
+  background-color: accentColor;
   color: white;
   border: none;
   transition: 0.2s ease-in-out;
@@ -15,12 +20,12 @@
   border: none;
   outline: none;
   cursor: pointer;
-  /* margin-top: 20px; */
+  margin-top: 100px;
 }
 
 .button:hover {
   background: white;
   transition: 0.5s ease-in-out;
-  color: #ff6b08;
-  box-shadow: 1px 1px 5px 1px #ff6b08;
+  color: accentColor;
+  box-shadow: 1px 1px 5px 1px accentColor;
 }

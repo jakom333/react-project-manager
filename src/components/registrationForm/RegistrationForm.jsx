@@ -137,7 +137,7 @@ export default function RegistrationForm() {
         {formErrors.confirm_password}
 
         <div className={styles.button_wrapper}>
-          <Button>Sign up</Button>
+          <Button className={styles.button}>Sign up</Button>
         </div>
         <p className={styles.textUnderbutton}>
           Already have an account?
