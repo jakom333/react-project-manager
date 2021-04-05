@@ -93,7 +93,14 @@ function LineDemo() {
   return (
     <div className={styles.chartContainer}>
       <h2>Burndown Chart (Calendar Team)</h2>
-      <Line data={data} />
+      <div className={styles.graphcontainer}>
+        <Line
+          data={data}
+          width={900}
+          height={460}
+          options={{ maintainAspectRatio: false }}
+        />
+      </div>
     </div>
   );
 }
