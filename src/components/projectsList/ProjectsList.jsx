@@ -26,12 +26,12 @@ const ProjectsList = () => {
       ) : (
         !projects.length && (
           <h2 className={styles.emptyMessage}>
-            Your project collection is empty, use the "Create project" button
+            Your project collection is empty, use the "Create project" button.
           </h2>
         )
       )}
 
-      {projects &&
+      {!!projects &&
       <ul className={styles.projectList}>
         {projects.map(item => (
           <ProjectItem key={item._id} item={item} />
