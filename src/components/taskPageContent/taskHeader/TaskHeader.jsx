@@ -1,14 +1,29 @@
 import React, { useState } from 'react';
+// import { useSelector } from 'react-redux';
+// import { useParams } from 'react-router-dom';
 import styles from './TaskHeader.module.css';
 import MainModal from '../../../shared/mainModal/MainModal';
 import TaskForm from '../../taskForm/TaskForm';
 import ChangeTitle from '../../titleEditor/TitleEditor';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import TaskFilter from '../taskFilter/TaskFilter';
-// import moment from 'moment';
+import moment from 'moment';
 
-export default function SprintHeader() {
+export default function SprintHeader({ dateArr }) {
   const [showModal, setShowModal] = useState(false);
+
+  const sprintEndDay = dateArr.length;
+  const today = moment(new Date()).format('MMM Do');
+  const todayIs = moment(new Date()).format('DD.MM.YYYY');
+  function currentDay(today, dateArr) {
+    const dayOf = dateArr.indexOf(today);
+    if (dayOf === -1) {
+      return 1;
+    } else {
+      return dayOf + 1;
+    }
+  }
+  const dayOf = currentDay(today, dateArr);
 
   return (
     <div className={styles.headerWrapper}>
@@ -17,12 +32,12 @@ export default function SprintHeader() {
           <div className={styles.controlPanel}>
             <div className={styles.switch}>
               <div className={styles.leftArrow}>&#5176;</div>
-              <span className={styles.day}>1</span>
+              <span className={styles.day}>{dayOf}</span>
               <span className={styles.separator}>/</span>
-              <span className={styles.totalDays}>22</span>
+              <span className={styles.totalDays}>{sprintEndDay}</span>
               <div className={styles.rightArrow}>&#5171;</div>
             </div>
-            <span className={styles.date}>02.04.2021</span>
+            <span className={styles.date}>{todayIs}</span>
           </div>
         </div>
         <div className={styles.control}>

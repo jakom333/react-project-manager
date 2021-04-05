@@ -187,6 +187,7 @@ class AutosizeInput extends Component {
       color: '#181c27',
       border: 'none',
       outline: 'none',
+      paddingRight: '5px',
     };
 
     const { ...inputProps } = this.props;

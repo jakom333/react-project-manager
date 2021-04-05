@@ -38,6 +38,7 @@
   fill: black;
   width: 20px;
   height: 20px;
+  padding-left: 5px;
 }
 
 .changeTitleButton {
@@ -65,7 +66,7 @@
   border: none;
   cursor: pointer;
   outline: none;
-  /* margin-right: 5px; */
+  margin-right: 5px;
   margin-top: 2px;
 }
 
