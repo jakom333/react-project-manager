@@ -5,10 +5,31 @@ import TaskForm from '../../taskForm/TaskForm';
 import ChangeTitle from '../../titleEditor/TitleEditor';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import TaskFilter from '../taskFilter/TaskFilter';
-// import moment from 'moment';
+import { useSelector } from 'react-redux';
+import { getSprintsSelector } from '../../../redux/sprints/sprints-selectors';
+import { useParams } from 'react-router';
 
 export default function SprintHeader() {
   const [showModal, setShowModal] = useState(false);
+  const today = new Date().toJSON().slice(0, 10).split('-').reverse().join('.');
+  const sprints = useSelector(getSprintsSelector);
+  const { sprintId } = useParams();
+  const startDate = sprints.find(item => item._id === sprintId)?.startDate;
+  const duration = sprints.find(item => item._id === sprintId)?.duration;
+  const todayReverse = today.split('.').reverse().join('-');
+
+  const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+  // a and b are javascript Date objects
+  function dateDiffInDays(a, b) {
+    const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+    const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+    return Math.floor((utc2 - utc1) / _MS_PER_DAY);
+  }
+  // test it
+  const a = new Date(todayReverse), //today
+    b = new Date(startDate), // startDate
+    difference = dateDiffInDays(a, b);
+  const positiveDifference = Math.abs(difference) + 1;
 
   return (
     <div className={styles.headerWrapper}>
@@ -17,12 +38,12 @@ export default function SprintHeader() {
           <div className={styles.controlPanel}>
             <div className={styles.switch}>
               <div className={styles.leftArrow}>&#5176;</div>
-              <span className={styles.day}>1</span>
+              <span className={styles.day}>{positiveDifference}</span>
               <span className={styles.separator}>/</span>
-              <span className={styles.totalDays}>22</span>
+              <span className={styles.totalDays}>{duration}</span>
               <div className={styles.rightArrow}>&#5171;</div>
             </div>
-            <span className={styles.date}>02.04.2021</span>
+            <span className={styles.date}>{today}</span>
           </div>
         </div>
         <div className={styles.control}>
