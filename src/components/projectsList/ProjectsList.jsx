@@ -31,7 +31,7 @@ const ProjectsList = () => {
         )
       )}
 
-      {!isLoading &&
+      {projects &&
       <ul className={styles.projectList}>
         {projects.map(item => (
           <ProjectItem key={item._id} item={item} />
