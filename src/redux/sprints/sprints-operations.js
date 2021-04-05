@@ -41,16 +41,16 @@ const addSprint = (sprint, projectId) => async dispatch => {
   }
 };
 
-const deleteSprint = sprindId => async dispatch => {
+const deleteSprint = sprintId => async dispatch => {
   dispatch(deleteSprintRequest());
 
   try {
-    axios.delete(`/sprint/${sprindId}`);
+    axios.delete(`/sprint/${sprintId}`);
 
-    dispatch(deleteSprintSucces(sprindId));
+    dispatch(deleteSprintSucces(sprintId));
   } catch (error) {
     dispatch(deleteSprintError(error.message));
-    refreshTemplate(() => deleteSprint(sprindId), error, dispatch);
+    refreshTemplate(() => deleteSprint(sprintId), error, dispatch);
   }
 };
 
@@ -62,6 +62,7 @@ const editTitle = (sprintId, title) => async dispatch => {
     dispatch(changeTitleSuccess({ sprintId, title }));
   } catch (error) {
     dispatch(changeTitleError(error));
+    refreshTemplate(() => editTitle(sprintId, title), error, dispatch);
   }
 };
 

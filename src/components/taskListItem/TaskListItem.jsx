@@ -1,30 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './TaskListItem.module.css';
 import sprite from '../../icons/symbol-defs.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTask, changeTask } from '../../redux/tasks/task-operations.js';
-import { getTasks } from '../../redux/tasks/task-selectors';
+import { getCurrentDay, getTasks } from '../../redux/tasks/task-selectors';
 import { useParams } from 'react-router-dom';
+import { padStart } from 'lodash-es';
+import taskReducers from '../../redux/tasks/task-reducers';
 
 const TaskListItem = ({ item }) => {
   const dispatch = useDispatch();
+  const currentDay = useSelector(getCurrentDay);
   const deleteItem = () => dispatch(deleteTask(item._id));
-
-  const date = item.hoursWastedPerDay[0].currentDay;
-
   const [hours, setHours] = useState(0);
+
+  useEffect(() => {
+    setHours(
+      item.hoursWastedPerDay.find(
+        item =>
+          new Date(item.currentDay).getDate() ===
+          new Date(currentDay).getDate(),
+      )?.singleHoursWasted,
+    );
+  }, [currentDay]);
+
+  // useEffect(() => {
+  //   dispatch(changeTask(hours, item._id, currentDay));
+  // }, [hours, dispatch]);
 
   const onHandleChange = e => {
     const hours = Number(e.target.value);
+    if (hours > 8) return;
 
     if (hours) {
       setHours(hours);
     }
   };
-  
+
   const onHandleSubmit = e => {
     e.preventDefault();
-    dispatch(changeTask(date, hours, item._id));
+    const date = new Date(currentDay);
+    const day = `${date.getFullYear()}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+    dispatch(changeTask(hours, item._id, day));
   };
 
   return (

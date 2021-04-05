@@ -18,6 +18,8 @@ const changeTaskError = createAction('tasks/changeTaskError');
 
 const changeFilter = createAction('tasks/changeFilter');
 
+const changeCurrentDay = createAction('tasks/changeCurrentDay');
+
 export {
   fetchTaskRequest,
   fetchTaskSuccess,
@@ -32,4 +34,5 @@ export {
   changeTaskSuccess,
   changeTaskError,
   changeFilter,
+  changeCurrentDay,
 };
