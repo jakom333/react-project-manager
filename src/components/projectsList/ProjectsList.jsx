@@ -9,7 +9,6 @@ const ProjectsList = () => {
   const projects = useSelector(getProjectsSelector);
   const isLoading = useSelector(getProjectLoading);
 
-
   return (
     <div className={styles.box}>
       {isLoading ? (

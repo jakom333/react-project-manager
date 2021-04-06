@@ -39,7 +39,6 @@ const getProjects = () => async dispatch => {
         response.data.constructor.name === 'Array' ? response.data : [],
       ),
     );
-   
   } catch (error) {
     dispatch(projectsError(error.message));
     refreshTemplate(getProjects, error, dispatch);
@@ -84,7 +83,6 @@ const addMember = (email, projectId) => async dispatch => {
       `/project/contributor/${projectId}`,
       email,
     );
-    console.log(data);
     dispatch(
       addMemberSuccess({
         members: data.newMembers,

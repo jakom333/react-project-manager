@@ -15,7 +15,6 @@ import {
   changeTaskError,
   changeFilter,
   changeCurrentDay,
-  setCurrentDay,
 } from './task-actions.js';
 
 const tasks = createReducer([], {

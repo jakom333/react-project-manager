@@ -21,14 +21,7 @@ const SprintListItem = ({ item }) => {
     'NOV',
     'DEC',
   ];
-  // const date = '2020-4-1';
-  //   const response = date
-  //   .split('-')
-  //   .map(item => (item.length < 2 ? (item = '0' + item) : item))
-  //   .join('-');
 
-  // console.log(response);
-  // console.log(item);
   const match = useRouteMatch();
   const dispatch = useDispatch();
   const deleteItem = () => dispatch(deleteSprint(item._id));
@@ -70,7 +63,7 @@ const SprintListItem = ({ item }) => {
           </div>
         </Link>
         <button
-          type='button'
+          type="button"
           className={styles.buttonDelete}
           onClick={deleteItem}
         >

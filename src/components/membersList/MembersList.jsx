@@ -6,9 +6,6 @@ const MembersList = ({ members }) => {
   return (
     <div className={styles.container}>
       <p className={styles.addedMembers}> Total members: {members.length}</p>
-      {/* {!!members.length && (
-        <p className={styles.message}>You have added no users yet</p>
-      )} */}
       <ul className={styles.membersList}>
         {members.map((member, idx) => (
           <MembersListItem member={member} key={idx} />
