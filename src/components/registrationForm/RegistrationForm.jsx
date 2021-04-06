@@ -139,7 +139,6 @@ export default function RegistrationForm() {
           <button className={styles.button} type="submit">
             Sign up
           </button>
-          {/* <Button className={styles.button}>Sign up</Button> */}
         </div>
         <p className={styles.textUnderbutton}>
           Already have an account?
