@@ -12,8 +12,16 @@
 }
 
 .Modal {
+  position: relative;
+
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
+}
+@media screen and (max-width: 767px) {
+  .Modal {
+    overflow-x: scroll;
+    width: 320px;
+  }
 }
 .CastModalImg {
   margin-left: 50px;

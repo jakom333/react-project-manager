@@ -3,16 +3,19 @@
   padding: 20px;
   width: 100%;
 }
+.graph-container {
+  /* position: relative; */
+  overflow-x: scroll;
+  width: 500px;
+  width: 100%;
+}
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .chartContainer {
-    position: relative;
-    overflow-x: scroll;
-    width: 100%;
+    /* position: absolute; */
+
+    /* margin: auto; */
+    /* transform: translate(-50%, -50%); */
+    width: 1000px;
   }
 }
-/* .graph-container {
-  height: 500px;
-  width: 100%;
-  min-width: 100%;
-} */
