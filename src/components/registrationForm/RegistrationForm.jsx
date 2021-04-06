@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/auth-operations.js';
-import Button from '../../shared/button/Button.jsx';
 import styles from './RegistrationForm.module.css';
 import Background from '../background/Background.jsx';
 import { Link } from 'react-router-dom';
