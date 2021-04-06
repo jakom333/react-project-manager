@@ -8,25 +8,27 @@ const TaskFilter = ({ handleChange }) => {
   const dispatch = useDispatch();
   const filter = useSelector(getFilter);
   handleChange = event => {
+    event.preventDefault();
     dispatch(changeFilter(event.target.value));
   };
 
   return (
-    <label className={styles.searchCointainer}>
-      <input
-        type="text"
-        name="filter"
-        value={filter}
-        onChange={handleChange}
-        className={styles.searchInputActive}
-        placeholder="search task"
-      />
-      <button type="submit" className={styles.searchBtn}>
-        <svg className={styles.iconSearch}>
-          <use href={sprite + '#icon-search'}></use>
-        </svg>
-      </button>
-    </label>
+    <div className={styles.search}>
+      <label className={styles.searchCointainer}>
+        <input
+          type="text"
+          name="filter"
+          value={filter}
+          onChange={handleChange}
+          className={styles.searchInputActive}
+        />
+        <button type="submit" className={styles.searchBtn}>
+          <svg className={styles.iconSearch}>
+            <use href={sprite + '#icon-search'}></use>
+          </svg>
+        </button>
+      </label>
+    </div>
   );
 };
 

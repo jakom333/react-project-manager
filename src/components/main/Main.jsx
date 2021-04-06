@@ -3,11 +3,13 @@ import { Switch } from 'react-router';
 import mainRoutes from '../../routes/mainRoutes';
 import PrivateRoute from '../routes/PrivateRoutes';
 import PublicRoute from '../routes/PublicRoutes';
+import Loader from '../loader/Loader';
+
 
 const Main = () => {
   return (
     <>
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<Loader/>}>
         <Switch>
           {mainRoutes.map(route =>
             route.private ? (

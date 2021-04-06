@@ -14,6 +14,7 @@ import {
   changeTaskSuccess,
   changeTaskError,
   changeFilter,
+  changeCurrentDay,
 } from './task-actions.js';
 
 const tasks = createReducer([], {
@@ -24,7 +25,21 @@ const tasks = createReducer([], {
   ],
 
   [changeTaskSuccess]: (state, { payload }) => [
-    ...state.map(item => (item._id === payload.id ? payload : item)),
+    ...state.map(task =>
+      task._id === payload.taskId
+        ? {
+            ...task,
+            hoursWasted: payload.hoursWasted,
+            hoursWastedPerDay: [
+              ...task.hoursWastedPerDay.map(item =>
+                item.currentDay === payload.currentDay
+                  ? { ...item, singleHoursWasted: payload.singleHoursWasted }
+                  : item,
+              ),
+            ],
+          }
+        : task,
+    ),
   ],
 });
 
@@ -47,27 +62,31 @@ const filter = createReducer('', {
   [changeFilter]: (_, { payload }) => payload,
 });
 
-//export default tasks;
+const currentDay = createReducer(Date.now(), {
+  [changeCurrentDay]: (_, { payload }) => payload,
+});
 
-// export default combineReducers({ tasks, filter});
 
-// const handleError = (_, { payload }) => payload.response.data;
-// const clearError = () => null;
+const handleError = (_, { payload }) => payload.response.data;
+const clearError = () => null;
 
-// const error = createReducer(null, {
-//   [fetchTaskRequest]: clearError,
-//   [fetchTaskError]: handleError,
-//   [createTaskRequest]: clearError,
-//   [createTaskError]: handleError,
-//   [deleteTaskRequest]: clearError,
-//   [deleteTaskError]: handleError,
-//   [changeTaskRequest]: clearError,
-//   [changeTaskError]: handleError,
-// });
-
-// const error = createReducer(null, {});
+const error = createReducer(null, {
+    [fetchTaskRequest]: clearError,
+    [fetchTaskError]: handleError,
+    [createTaskRequest]: clearError,
+    [createTaskError]: handleError,
+    [deleteTaskRequest]: clearError,
+    [deleteTaskError]: handleError,
+    [changeTaskRequest]: clearError,
+    [changeTaskError]: handleError,
+  });
+  
+  // const error = createReducer(null, {});
 
 export default combineReducers({
   tasks,
   filter,
+  currentDay,
+  loading,
+  error,
 });

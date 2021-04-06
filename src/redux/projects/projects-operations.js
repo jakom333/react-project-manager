@@ -8,9 +8,6 @@ import {
   deleteProjectRequest,
   deleteProjectSuccess,
   deleteProjectError,
-  changeTitleRequest,
-  changeTitleSuccess,
-  changeTitleError,
   editProjectTitleRequest,
   editProjectTitleSuccess,
   editProjectTitleError,
@@ -42,7 +39,6 @@ const getProjects = () => async dispatch => {
         response.data.constructor.name === 'Array' ? response.data : [],
       ),
     );
-   
   } catch (error) {
     dispatch(projectsError(error.message));
     refreshTemplate(getProjects, error, dispatch);
@@ -87,7 +83,6 @@ const addMember = (email, projectId) => async dispatch => {
       `/project/contributor/${projectId}`,
       email,
     );
-    console.log(data);
     dispatch(
       addMemberSuccess({
         members: data.newMembers,
@@ -108,6 +103,7 @@ const editTitle = (projectId, title) => async dispatch => {
     dispatch(editProjectTitleSuccess({ projectId, title }));
   } catch (error) {
     dispatch(editProjectTitleError(error));
+    refreshTemplate(() => editTitle(projectId, title), error, dispatch);
   }
 };
 
