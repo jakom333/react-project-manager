@@ -1,0 +1,206 @@
+@value accentColor from '../../main.module.css';
+@value greyColor from '../../main.module.css';
+
+
+
+/*==================MOBILE=========================*/
+
+@media screen and (min-width: 320px) {
+
+  .titleForm {
+background-color: white;
+font-weight: 500;
+font-size: 26px;
+line-height: 32px;
+display: block;
+align-items: center;
+text-align: center;
+margin-bottom: 30px;
+}
+  
+
+
+  .inputName {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border-color: greyColor;
+    border: none;
+    border-bottom: solid .8px greyColor;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom:58px ;
+    transition: all .5s;
+    
+  }
+
+   .inputDescription {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 100%;
+     outline: none;
+    border-color: greyColor;
+    border: none;
+    border-bottom: solid .8px greyColor;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom:40px ;
+    transition: all .5s;
+    
+  }
+ 
+.inputName:focus,
+ .inputDescription:focus{
+  box-shadow: none;
+  outline: none;
+  border-color:accentColor ;
+}
+
+
+.errorName{
+  display:block;
+  color: accentColor;
+  margin-top: -55px;
+} 
+
+.errorDescription{
+  display:block;
+  color: accentColor;
+  margin-top: -38px;
+} 
+
+.inputName::-webkit-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputName::-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputName:-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputName:-ms-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputName:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputName:focus::-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputName:focus:-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputName:focus:-ms-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+
+.inputDescription::-webkit-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription::-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:-ms-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:focus::-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:focus:-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.inputDescription:focus:-ms-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+}
+
+
+/*==================TABLET=========================*/
+
+@media screen and (min-width: 768px) {
+
+  .titleForm {
+font-weight: 500;
+font-size: 36px;
+line-height: 44px;
+display: block;
+margin-bottom: 50px;
+}
+  
+  .inputName {
+    padding-left: 5px;
+     font-size: 18px;
+    line-height: 22px;
+    margin-bottom:50px ;
+    width: 100%; 
+  }
+ 
+   .inputDescription {
+    padding-left: 5px;
+    font-size: 18px;
+    line-height: 22px;
+     /* margin-bottom:40px ; */
+
+    
+  }
+
+  .errorName{
+  display:block;
+  color: accentColor;
+  margin-top: -50px;
+} 
+
+}
+
+/*==================DESKTOP=========================*/
+
+@media screen and (min-width: 1280px) {
+  .titleForm {
+font-weight: 500;
+font-size: 36px;
+line-height: 44px;
+margin-bottom: 50px;
+}
+  
+  .inputName {
+    padding-left: 5px;
+     font-size: 18px;
+    line-height: 30px;
+    margin-bottom:50px ;
+    width: 100%; 
+  }
+
+.errorDescription{
+  display:block;
+  color: accentColor;
+  margin-top: -35px;
+} 
+
+}

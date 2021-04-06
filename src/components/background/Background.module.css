@@ -1,0 +1,94 @@
+.wrapper {
+  position: relative;
+}
+
+.elipse1 {
+  position: absolute;
+  width: 298px;
+  height: 298px;
+  left: -8px;
+  bottom: -87px;
+  z-index: 0;
+}
+.elipse2 {
+  position: absolute;
+  width: 252px;
+  height: 252px;
+  left: 24px;
+  bottom: -63px;
+  opacity: 0.85;
+  z-index: 34;
+}
+.elipse3 {
+  position: absolute;
+  width: 118px;
+  height: 118px;
+  left: 111px;
+  top: 367px;
+  z-index: 0;
+}
+.elipse4 {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 230px;
+  top: 240px;
+  z-index: 0;
+}
+.elipse5 {
+  position: absolute;
+  width: 78px;
+  height: 78px;
+  left: -20px;
+  top: 19px;
+}
+.elipse6 {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 129px;
+  right: 225px;
+  z-index: 0;
+}
+
+.union {
+  position: absolute;
+  bottom: 28px;
+  right: 0;
+  width: 342px;
+  height: 302px;
+  z-index: 1;
+}
+
+.union_white {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  width: 403px;
+  height: 368px;
+}
+
+@media screen and (min-width: 1200px) {
+  .elipse1 {
+    width: 298px;
+    height: 298px;
+    left: 144px;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  .elipse2 {
+    width: 252px;
+    height: 252px;
+    left: 178px;
+    bottom: 25px;
+    z-index: 34;
+    opacity: 0.85;
+  }
+
+  .elipse5 {
+    right: 311px;
+    top: 120px;
+  }
+}

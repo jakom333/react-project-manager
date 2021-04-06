@@ -1,0 +1,374 @@
+:root {
+    --violet: #8c72df;
+    --coral: #FF765F;
+    --green: #71DF87;
+    --orange: #f78335;
+}
+
+.projectItem {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.projectLink {
+    position: absolute;
+    padding: 28px 30px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.projectItem:hover{
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.buttonDelete{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+}
+
+.title{
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+
+@media screen and (max-width: 767px){
+    .projectItem{
+        padding: 10px;
+        position: relative;
+        border-radius: 5px;
+        list-style: none;
+        overflow: hidden;
+        background-color:  #8c72df;
+        width: 135px;
+        height: 135px;
+    }
+
+    .projectLink{
+        padding: 10px;
+        width: 135px;
+        height: 135px;
+    }
+
+    .title{
+        margin-top: 0;
+        margin-bottom: 6px;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 20px;
+        color: #FFFFFF;
+    }
+
+    .description{
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        color: #FFFFFF;
+    }
+
+    .buttonDelete{
+        outline: none;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: #FFFFFF;
+    }
+
+    .deleteIcon{
+        fill: #8c72df;
+        width: 16px;
+        height: 16px
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .projectItem{
+        position: relative;
+        border-radius: 5px;
+        list-style: none;
+        overflow: hidden;
+        background-color: #8C72DF;
+        padding: 20px;
+        width: 216px;
+        height: 216px;
+    }
+
+    .projectLink{
+        padding: 20px;
+        width: 216px;
+        height: 216px;
+    }
+
+    .title{
+        margin-bottom: 10px;
+        font-size: 26px;
+        line-height: 32px;
+        color: #FFFFFF;
+        margin-top: 0;
+        font-weight: 800;
+    }
+
+    .description{
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+        font-weight: normal;
+
+    }
+
+    .buttonDelete{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 34px;
+        height: 34px;
+        outline: none;
+        border: none;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+    }
+
+    .deleteIcon{
+        fill: #8c72df;
+        width: 18px;
+        height: 18px
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+    .projectItem{
+        box-sizing: border-box;
+        padding: 28px 30px;
+        width: 270px;
+        height: 270px;
+    }
+
+    .projectLink{
+        width: 270px;
+        height: 270px;
+    }
+
+    .title{
+        max-width: 210px;
+        margin-bottom: 10px;
+        font-size: 26px;
+        line-height: 32px;
+        color: #FFFFFF;
+    }
+
+    .description{
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
+
+    .projectItem {
+        position: relative;
+    }
+}
+
+/*====color cardProject=====*/
+
+.projectItem:nth-child(8n + 3){
+    background-color: var( --violet);
+}
+.projectItem:nth-child(8n + 1){
+    background-color: var( --coral);
+}
+.projectItem:nth-child(8n + 2){
+    background-color:  var( --green);
+}
+.projectItem:nth-child(8n + 6){
+    background-color: var( --orange);
+}
+.projectItem:nth-child(8n + 5){
+    background-color: var( --violet);
+}
+.projectItem:nth-child(8n + 4){
+    background-color: var( --coral);
+}
+.projectItem:nth-child(8n + 7){
+    background-color:  var( --green);
+}
+.projectItem:nth-child(8n + 8){
+    background-color: var( --orange);
+}
+
+.projectItem:nth-child(8n + 3) .deleteIcon{
+    fill: var( --violet);
+}
+.projectItem:nth-child(8n + 1) .deleteIcon{
+    fill: var( --coral);
+}
+.projectItem:nth-child(8n + 2) .deleteIcon{
+    fill: var( --green);
+}
+.projectItem:nth-child(8n + 6) .deleteIcon{
+    fill:  var( --orange);
+}
+.projectItem:nth-child(8n + 5) .deleteIcon{
+    fill: var( --violet);
+}
+.projectItem:nth-child(8n + 4) .deleteIcon{
+    fill: var( --coral);
+}
+.projectItem:nth-child(8n + 7) .deleteIcon{
+    fill: var( --green);
+}
+.projectItem:nth-child(8n + 8) .deleteIcon{
+    fill: var( --orange);
+}
+
+.buttonDelete:hover{
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+/*=========Wave================*/
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+
+    .projectItem:nth-child(1n){
+        background-image:  url("../../../images/wave/Group-wave-tablet.png");
+    }
+
+    .projectItem:nth-child(2n){
+        background-image:  url("../../../images/wave/Group-wave-tablet2.png");
+    }
+
+    .projectItem:nth-child(3n){
+        background-image:  url("../../../images/wave/Group-wave-tablet3.png");
+    }
+
+    .projectItem:nth-child(4n){
+        background-image:  url("../../../images/wave/Group-wave-tablet.png");
+    }
+
+    .projectItem:nth-child(5n){
+        background-image:  url("../../../images/wave/Group-wave-tablet2.png");
+    }
+
+    .projectItem:nth-child(6n){
+        background-image:  url("../../../images/wave/Group-wave-tablet3.png");
+    }
+
+}
+
+
+@media screen and (min-width: 1280px) {
+
+    .projectItem:nth-child(1n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-position: left bottom -35px;
+    }
+
+    .projectItem:nth-child(2n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-position: left -310px bottom -35px;
+    }
+
+    .projectItem:nth-child(3n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+
+        background-position: left -100px bottom -35px
+
+    }
+    .projectItem:nth-child(4n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-position: left -370px bottom -35px
+    }
+
+    .projectItem:nth-child(5n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-position: left bottom -35px;
+    }
+
+    .projectItem:nth-child(6n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-repeat: no-repeat;
+        background-position: left -310px bottom -35px;
+    }
+
+    .projectItem:nth-child(7n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-position: left -100px bottom -30px
+
+    }
+    .projectItem:nth-child(8n){
+        background-image:  url("../../../images/wave/Group-wave.png");
+        background-position: left -370px bottom -35px
+    }
+
+    /*===============*/
+
+    /*.projectItem:nth-child(4n + 1)::before,*/
+    /*.projectItem:nth-child(4n + 1)::after,*/
+    /*.projectItem:nth-child(4n + 2)::before,*/
+    /*.projectItem:nth-child(4n + 2)::after,*/
+    /*.projectItem:nth-child(4n + 3)::before,*/
+    /*.projectItem:nth-child(4n + 3)::after,*/
+    /*.projectItem:nth-child(4n + 4)::before,*/
+    /*.projectItem:nth-child(4n + 4)::after {*/
+    /*    position: absolute;*/
+    /*    left: 0;*/
+    /*    top: 80px;*/
+    /*}*/
+
+    /*.projectItem:nth-child(4n + 1)::before {*/
+    /*    content: url('./projectImg/Wave_1-1.png');*/
+    /*}*/
+
+    /*.projectItem:nth-child(4n + 1)::after {*/
+    /*    content: url('./projectImg/Wave_1-2.png');*/
+    /*}*/
+
+    /*.projectItem:nth-child(4n + 2)::before {*/
+    /*    content: url('./projectImg/Wave_2-1.png');*/
+    /*}*/
+
+    /*.projectItem:nth-child(4n + 2)::after {*/
+    /*    content: url('./projectImg/Wave_2-2.png');*/
+    /*}*/
+
+    /*.projectItem:nth-child(4n + 3)::before {*/
+    /*    content: url('./projectImg/Wave_3-1.png');*/
+    /*}*/
+
+    /*.projectItem:nth-child(4n + 3)::after {*/
+    /*    content: url('./projectImg/Wave_3-2.png');*/
+    /*}*/
+
+    /*.projectItem:nth-child(4n + 4)::before {*/
+    /*    content: url('./projectImg/Wave_4-1.png');*/
+    /*}*/
+
+    /*.projectItem:nth-child(4n + 4)::after {*/
+    /*    content: url('./projectImg/Wave_4-2.png');*/
+    /*}*/
+
+}

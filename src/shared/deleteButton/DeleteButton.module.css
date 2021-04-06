@@ -1,0 +1,21 @@
+.deleteBtn{
+  display: inline-block;
+  outline: none;
+   border: none;
+  background-color:#A6A6A6;
+  border-radius: 50%;
+  width: 23px;
+  height: 22px;
+}
+
+.deleteBtn:hover{
+  transition: all .3s;
+  transform:scale(1.05);
+  cursor: pointer;
+}
+
+   .deleteIcon{
+        fill:white;
+        width: 12px;
+        height: 12px;
+    }

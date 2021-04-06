@@ -1,0 +1,20 @@
+.iconBack{
+    margin-right: 20px;
+    width: 30px;
+    height: 10px;
+}
+
+.buttonBack{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+/*.buttonBack{*/
+/*color:  #FF6C00;*/
+/*}*/
+
+
+/*.buttonBack .iconBack:hover{*/
+/*  fill: #FF6C00;;*/
+/*}*/

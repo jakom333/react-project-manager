@@ -1,0 +1,186 @@
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.buttonAddPeople {
+    display: flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.addPeopleText {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-decoration-line: underline;
+    color: #181C27;
+}
+
+.description {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.showProject {
+    color: #181C27;
+    width: 150px;
+}
+
+
+.titleBox {
+    margin-bottom: 30px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .boxBack {
+        display: none;
+    }
+}
+
+
+.iconAddPeople {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .head {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    .buttonBox {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 5;
+        margin-right: 0;
+    }
+
+    .description {
+        padding-right: 20px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+
+    .pageText {
+        display: none;
+    }
+
+    .boxBack {
+        display: flex;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .boxBackLink{
+        display: flex;
+    }
+}
+
+@media screen and  (min-width: 768px) and (max-width: 1279px) {
+
+    .boxBack {
+        width: 130px;
+        margin-bottom: 165px;
+    }
+
+    .head {
+         margin-bottom: 20px;
+    }
+
+    .pageText {
+        display: none;
+    }
+
+    .description {
+        width: 400px;
+        margin-top: 0;
+    }
+
+    .addPeopleText {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-decoration-line: underline;
+    }
+
+    .titleBox {
+        min-width: 400px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .boxHead {
+        padding-left: 55px;
+    }
+
+    .boxBack {
+        width: 130px;
+        margin-bottom: 165px;
+    }
+
+    .head {
+        margin-bottom: 20px;
+    }
+
+    .buttonBox {
+        display: flex;
+        align-items: center;
+        margin-right: 86px;
+    }
+
+    .pageText {
+        margin-left: 20px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+
+    .description {
+        width: 400px;
+        margin-top: 0;
+    }
+
+    .addPeopleText {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-decoration-line: underline;
+    }
+
+
+    .showProject {
+        margin-left: 20px;
+     }
+
+    .titleBox {
+        min-width: 900px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}
