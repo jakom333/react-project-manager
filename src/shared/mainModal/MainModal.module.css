@@ -17,11 +17,10 @@
     padding-bottom: 20px;
     margin-bottom: 20px;
     margin: 0 auto;
-    max-width: 480px;
+    width: 320px;
    position: absolute;
     height: 100vh;
   background: #fff;
-  max-width: 480px;
 }
 
 .closeBtn {
