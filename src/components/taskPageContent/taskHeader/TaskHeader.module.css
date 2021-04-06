@@ -48,8 +48,8 @@
 }
 .title {
   font-weight: 500;
-
   color: #181c27;
+ 
 }
 
 /* .iconSearch {
@@ -118,6 +118,7 @@
 .edit:hover {
   cursor: pointer;
   transform: scale(1.1);
+
 }
 .focused {
   border-bottom: 1px solid #000;
