@@ -7,9 +7,8 @@ import { fetchTasks } from '../../../redux/tasks/task-operations';
 import { useParams } from 'react-router-dom';
 import ChartModal from '../../graph/modal/ChartModal';
 
-const TaskList = () => {
+const TaskList = ({ taskDate }) => {
   const { sprintId } = useParams();
-  //const tasks = useSelector(getTasks);
   const tasks = useSelector(getVisibleTasks);
 
   const dispatch = useDispatch();
@@ -22,7 +21,7 @@ const TaskList = () => {
       <ul className={styles.taskList}>
         {tasks.map(item => (
           <li key={item._id} className={styles.taskCard}>
-            <TaskListItem item={item} />
+            <TaskListItem item={item} taskDate={taskDate} />
           </li>
         ))}
       </ul>

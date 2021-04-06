@@ -1,23 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './ProjectsList.module.css';
 import ProjectItem from './projectItem/ProjectItem';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   getProjectsSelector,
   getProjectLoading,
 } from '../../redux/projects/projects-selectors';
 import Loader from '../loader/Loader';
-//import { getProjects } from '../../redux/projects/projects-operations';
 
 const ProjectsList = () => {
   const projects = useSelector(getProjectsSelector);
   const isLoading = useSelector(getProjectLoading);
-
-  //const dispatch = useDispatch();
-  //  useEffect(() => {
-  //    dispatch(getProjects());
-  //  }, [dispatch]);
-  //  console.log(projects)
 
   return (
     <div className={styles.box}>

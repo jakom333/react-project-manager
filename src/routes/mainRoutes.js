@@ -2,6 +2,14 @@ import { lazy } from 'react';
 
 const mainRoutes = [
   {
+    path: '/',
+    label: 'Home',
+    exact: true,
+    component: lazy(() => import('../pages/registerPage/RegistrationPage')),
+    private: false,
+    restricted: true,
+  },
+  {
     path: '/registration',
     label: 'Registration',
     exact: true,
