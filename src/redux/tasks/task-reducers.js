@@ -66,28 +66,27 @@ const currentDay = createReducer(Date.now(), {
   [changeCurrentDay]: (_, { payload }) => payload,
 });
 
-//export default tasks;
 
-// export default combineReducers({ tasks, filter});
+const handleError = (_, { payload }) => payload.response.data;
+const clearError = () => null;
 
-// const handleError = (_, { payload }) => payload.response.data;
-// const clearError = () => null;
-
-// const error = createReducer(null, {
-//   [fetchTaskRequest]: clearError,
-//   [fetchTaskError]: handleError,
-//   [createTaskRequest]: clearError,
-//   [createTaskError]: handleError,
-//   [deleteTaskRequest]: clearError,
-//   [deleteTaskError]: handleError,
-//   [changeTaskRequest]: clearError,
-//   [changeTaskError]: handleError,
-// });
-
-// const error = createReducer(null, {});
+const error = createReducer(null, {
+    [fetchTaskRequest]: clearError,
+    [fetchTaskError]: handleError,
+    [createTaskRequest]: clearError,
+    [createTaskError]: handleError,
+    [deleteTaskRequest]: clearError,
+    [deleteTaskError]: handleError,
+    [changeTaskRequest]: clearError,
+    [changeTaskError]: handleError,
+  });
+  
+  // const error = createReducer(null, {});
 
 export default combineReducers({
   tasks,
   filter,
   currentDay,
+  loading,
+  error,
 });

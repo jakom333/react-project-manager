@@ -36,10 +36,13 @@
   display: none;
 }
 
+
+
 .control {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+   justify-content: center;
+
 }
 
 .titleBlock {
@@ -48,8 +51,8 @@
 }
 .title {
   font-weight: 500;
-
   color: #181c27;
+ 
 }
 
 /* .iconSearch {
@@ -118,6 +121,7 @@
 .edit:hover {
   cursor: pointer;
   transform: scale(1.1);
+
 }
 .focused {
   border-bottom: 1px solid #000;
@@ -137,6 +141,8 @@
 
   .control {
     margin-bottom: 30px;
+
+
   }
 
   /* .tasksHeader {
@@ -231,6 +237,14 @@
     width: 100%;
   }
 
+  .control {
+    margin-bottom: 30px;
+      display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  }
+
+
   .tasksHeader {
     position: relative;
     display: flex;
@@ -300,6 +314,8 @@
     padding-left: 10px;
     height: 40px;
   }
+
+  
 }
 @media screen and (min-width: 768px) and (max-width: 980px) {
   .title {
@@ -307,22 +323,21 @@
   }
 }
 
-@media screen and (min-width: 981px) and (max-width: 1215px) {
-  /* .title {
-    max-width: 470px;
-  } */
-}
-@media screen and (min-width: 1216px) and (max-width: 1279px) {
-  /* .title {
-    max-width: 680px;
-  } */
-}
 
 @media screen and (min-width: 1280px) {
   .sprintHeader {
     padding-left: 70px;
     padding-right: 86px;
     padding-top: 20px;
+  }
+
+
+  .control {
+    margin-bottom: 30px;
+      display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
   }
 
   .title {
@@ -362,6 +377,7 @@
     line-height: 17px;
     color: #181c27;
     padding-left: 25px;
+ align-items: center;
   }
   .tasksHeaderText {
     font-family: 'Montserrat';

@@ -27,6 +27,7 @@
   scroll-snap-type: x proximity;
 }
 .sideLeftList {
+  overflow: hidden;
   width: 180px;
   height: 300px;
   border: none;
@@ -96,6 +97,14 @@
 
 .avtive {
   font-weight: bold;
+}
+
+
+.sideItem{
+    word-wrap: break-word;
+}
+.sideItemName{
+    max-width: 130px;
 }
 
 .sideItemLink:not(:last-child) {

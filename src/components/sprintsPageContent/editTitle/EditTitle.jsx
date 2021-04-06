@@ -75,7 +75,7 @@ const EditTitle = () => {
               onChange={onHandleChange}
               onBlur={onHandleSubmit}
               inputClassName={styles.editInput}
-              maxLength="25"
+              maxLength="30"
               autoFocus
             />
             <button

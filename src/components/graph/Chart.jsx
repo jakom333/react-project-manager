@@ -96,6 +96,7 @@ function LineDemo() {
       <div className={styles.graphcontainer}>
         <Line
           data={data}
+          // (windows.width = 1200 ? 900 : 500)
           width={900}
           height={460}
           options={{ maintainAspectRatio: false }}
