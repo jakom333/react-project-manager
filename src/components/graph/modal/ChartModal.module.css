@@ -12,9 +12,27 @@
 }
 
 .Modal {
+  position: relative;
+
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
 }
+@media screen and (max-width: 767px) {
+  .Modal {
+    overflow-x: scroll;
+    width: 320px;
+  }
+  .Modal::-webkit-scrollbar {
+    height: 7px;
+    background-color: #fff;
+  }
+  .Modal::-webkit-scrollbar-thumb {
+    background-color: #f78335;
+    border-radius: 25em;
+    box-shadow: inset 1px 1px 1px #f78335;
+  }
+}
+
 .CastModalImg {
   margin-left: 50px;
   width: 50%;
@@ -55,4 +73,9 @@
   fill: white;
   width: 18px;
   height: 18px;
+}
+.Modal::-webkit-scrollbar-thumb {
+  background-color: #f78335;
+  border-radius: 9em;
+  box-shadow: inset 1px 1px 10px #f78335;
 }
