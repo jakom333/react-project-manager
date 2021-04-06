@@ -1,19 +1,19 @@
-// import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 import {
-  // addSprintRequest,
+  addSprintRequest,
   addSprintSucces,
-  // addSprintError,
-  // deleteSprintRequest,
+  addSprintError,
+  deleteSprintRequest,
   deleteSprintSucces,
-  // deleteSprintError,
-  // fetchSprintsRequest,
+  deleteSprintError,
+  fetchSprintsRequest,
   fetchSprintsSucces,
   changeTitleSuccess,
-  // fetchSprintsError,
+  fetchSprintsError,
 } from './sprints-actions';
 
-const sprints = createReducer([], {
+const sprintsReducer = createReducer([], {
   [changeTitleSuccess]: (state, { payload }) => {
     const idx = state.findIndex(item => item._id === payload.sprintId);
     const sprint = state[idx];
@@ -29,23 +29,22 @@ const sprints = createReducer([], {
     state.filter(item => item._id !== payload),
 });
 
-// const loading = createReducer(false, {
-//   [addSprintRequest]: () => true,
-//   [addSprintSucces]: () => false,
-//   [addSprintError]: () => false,
-//   [deleteSprintRequest]: () => true,
-//   [deleteSprintSucces]: () => false,
-//   [deleteSprintError]: () => false,
-//   [fetchSprintsRequest]: () => true,
-//   [fetchSprintsSucces]: () => false,
-//   [fetchSprintsError]: () => false,
-// });
+const loading = createReducer(false, {
+  [addSprintRequest]: () => true,
+  [addSprintSucces]: () => false,
+  [addSprintError]: () => false,
+  [deleteSprintRequest]: () => true,
+  [deleteSprintSucces]: () => false,
+  [deleteSprintError]: () => false,
+  [fetchSprintsRequest]: () => true,
+  [fetchSprintsSucces]: () => false,
+  [fetchSprintsError]: () => false,
+});
 
-// const error = createReducer(null, {  });
+const error = createReducer(null, {});
 
-// export default combineReducers({
-//   sprints,
-//   loading,
-// });
-
-export default sprints;
+export default combineReducers({
+  sprintsReducer,
+  loading,
+  error,
+});

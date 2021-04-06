@@ -4,14 +4,19 @@ import styles from './SprintListSideBar.module.css';
 import MainModal from '../../../shared/mainModal/MainModal';
 import СreateSprintForm from '../../createSprintForm/CreateSprintForm';
 import { useSelector, useDispatch } from 'react-redux';
-import { getSprintsSelector } from '../../../redux/sprints/sprints-selectors';
+import {
+  getSprintsSelector,
+  loaderSelector,
+} from '../../../redux/sprints/sprints-selectors';
 import { fetchSprints } from '../../../redux/sprints/sprints-operations';
 import { useParams, Link, NavLink } from 'react-router-dom';
 import ButtonShow from '../../../shared/buttonShow/ButtonShow';
+import Loader from '../../loader/Loader';
 
 const SprintList = () => {
   const [showModal, setShowModal] = useState(false);
   const sprintsList = useSelector(getSprintsSelector);
+  const isLoading = useSelector(loaderSelector);
 
   const params = useParams();
   const dispatch = useDispatch();
@@ -32,18 +37,22 @@ const SprintList = () => {
 
       <div className={styles.leftPanelSprintsContainer}>
         <ul className={styles.sprintsList}>
-          {sprintsList.map(({ title, _id }) => (
-            <li key={_id}>
-              <NavLink
-                className={styles.item}
-                activeClassName={styles.activeItem}
-                to={`${_id}`}
-              >
-                <div className={styles.sprintIcon}></div>
-                <p>{title}</p>
-              </NavLink>
-            </li>
-          ))}
+          {isLoading ? (
+            <Loader />
+          ) : (
+            sprintsList.map(({ title, _id }) => (
+              <li key={_id}>
+                <NavLink
+                  className={styles.item}
+                  activeClassName={styles.activeItem}
+                  to={`${_id}`}
+                >
+                  <div className={styles.sprintIcon}></div>
+                  <p>{title}</p>
+                </NavLink>
+              </li>
+            ))
+          )}
         </ul>
       </div>
       <div className={styles.sideButtonBox}>
