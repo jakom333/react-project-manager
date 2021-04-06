@@ -13,8 +13,6 @@ import {
   editProjectTitleRequest,
   editProjectTitleSuccess,
   editProjectTitleError,
-  addMemberError,
-  addMemberRequest,
   addMemberSuccess,
 } from './projects-actions';
 
