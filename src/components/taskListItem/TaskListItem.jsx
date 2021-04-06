@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './TaskListItem.module.css';
 import sprite from '../../icons/symbol-defs.svg';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { deleteTask, changeTask } from '../../redux/tasks/task-operations.js';
-import { getCurrentDay, getTasks } from '../../redux/tasks/task-selectors';
-import { useParams } from 'react-router-dom';
-import { padStart } from 'lodash-es';
-import taskReducers from '../../redux/tasks/task-reducers';
 
-const TaskListItem = ({ item }) => {
+const TaskListItem = ({ item, taskDate }) => {
   const dispatch = useDispatch();
-  const currentDay = useSelector(getCurrentDay);
   const deleteItem = () => dispatch(deleteTask(item._id));
   const [hours, setHours] = useState(0);
 
@@ -18,15 +13,10 @@ const TaskListItem = ({ item }) => {
     setHours(
       item.hoursWastedPerDay.find(
         item =>
-          new Date(item.currentDay).getDate() ===
-          new Date(currentDay).getDate(),
+          new Date(item.currentDay).getDate() === new Date(taskDate).getDate(),
       )?.singleHoursWasted,
     );
-  }, [currentDay]);
-
-  // useEffect(() => {
-  //   dispatch(changeTask(hours, item._id, currentDay));
-  // }, [hours, dispatch]);
+  }, [taskDate, item]);
 
   const onHandleChange = e => {
     const hours = Number(e.target.value);
@@ -39,7 +29,7 @@ const TaskListItem = ({ item }) => {
 
   const onHandleSubmit = e => {
     e.preventDefault();
-    const date = new Date(currentDay);
+    const date = new Date(taskDate);
     const day = `${date.getFullYear()}-${(date.getMonth() + 1)
       .toString()
       .padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
@@ -56,7 +46,10 @@ const TaskListItem = ({ item }) => {
         </li>
         <li className={styles.item}>
           <span className={styles.itemName}>Hours spent / per day</span>
-          <form>
+          {new Date(item?.hoursWastedPerDay[0].currentDay).getDate() >
+          new Date(taskDate).getDate() ? (
+            <span className={styles.itemName}>0</span>
+          ) : (
             <input
               className={styles.input}
               type="number"
@@ -64,11 +57,11 @@ const TaskListItem = ({ item }) => {
               onBlur={onHandleSubmit}
               value={hours}
             />
-          </form>
+          )}
         </li>
         <li className={styles.item}>
           <span className={styles.itemName}>Hours spent</span>
-          <span>{hours}</span>
+          <span>{item.hoursWasted}</span>
         </li>
         <li className={styles.item}>
           <span></span>

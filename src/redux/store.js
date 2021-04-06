@@ -27,7 +27,7 @@ const middleware = [
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'], 
+  whitelist: ['token'],
 };
 
 const store = configureStore({
@@ -43,78 +43,3 @@ const store = configureStore({
 const persistor = persistStore(store);
 
 export { store, persistor };
-
-// projects: () => [
-//   {
-//     members: ['ivan12345@example.com'],
-//     sprints: [
-//       {
-//         title: 'Sprint 1',
-//         startDate: '2020-12-30',
-//         endDate: '2020-12-31',
-//         duration: 1,
-//         tasks: [
-//           {
-//             title: 'Task 1',
-//             hoursPlanned: 1,
-//             hoursWasted: 0,
-//             hoursWastedPerDay: [
-//               {
-//                 currentDay: '2020-12-31',
-//                 singleHoursWasted: 0,
-//               },
-//             ],
-//             _id: '507f1f77bcf86cd799439011',
-//             __v: 0,
-//           },
-//           {
-//             title: 'Task 2',
-//             hoursPlanned: 1,
-//             hoursWasted: 0,
-//             hoursWastedPerDay: [
-//               {
-//                 currentDay: '2020-12-31',
-//                 singleHoursWasted: 0,
-//               },
-//             ],
-//             _id: '507f1f77bcf86cd799439012',
-//             __v: 0,
-//           },
-//         ],
-//         projectId: '6062c86ec94bd96215a2029b',
-//         _id: '507f1f77bcf86cd799439014',
-//         __v: 0,
-//       },
-//       {
-//         title: 'Sprint 2',
-//         startDate: '2020-12-30',
-//         endDate: '2020-12-31',
-//         duration: 1,
-//         tasks: ['507f1f77bcf86cd799439011'],
-//         projectId: '6062c86ec94bd96215a2029b',
-//         _id: '507f1f77bcf86cd799439015',
-//         __v: 0,
-//       },
-//     ],
-//     _id: '6062c86ec94bd96215a2029b',
-//     title: 'Project 1',
-//     description: 'Project 1 description',
-//     __v: 0,
-//   },
-//   {
-//     members: ['ivan12345@example.com'],
-//     sprints: [],
-//     _id: '6062c8d3c94bd96215a2029d',
-//     title: 'Project 2',
-//     description: 'Project 2 description',
-//     __v: 0,
-//   },
-//   {
-//     members: ['ivan12345@example.com'],
-//     sprints: [],
-//     _id: '6062c8d9c94bd96215a2029e',
-//     title: 'Project 3',
-//     description: 'Project 3 description',
-//     __v: 0,
-//   },
-// ],
