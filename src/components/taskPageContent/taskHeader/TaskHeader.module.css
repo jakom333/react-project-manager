@@ -36,10 +36,13 @@
   display: none;
 }
 
+
+
 .control {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+   justify-content: center;
+
 }
 
 .titleBlock {
@@ -138,6 +141,8 @@
 
   .control {
     margin-bottom: 30px;
+
+
   }
 
   /* .tasksHeader {
@@ -232,6 +237,13 @@
     width: 100%;
   }
 
+  .control {
+    margin-bottom: 30px;
+      display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  }
   .tasksHeader {
     position: relative;
     display: flex;
@@ -301,6 +313,8 @@
     padding-left: 10px;
     height: 40px;
   }
+
+  
 }
 @media screen and (min-width: 768px) and (max-width: 980px) {
   .title {

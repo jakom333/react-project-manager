@@ -29,19 +29,21 @@
   .searchBtn {
     position: absolute;
     top: -112px;
-    left: 0px;
+    left: 53px;
   }
 
   .searchInputActive {
     position: absolute;
     min-width: 280px;
     top: -120px;
-    left: 0px;
+    left: 43px;
     border: none;
     border-bottom: 1px solid rgba(24, 28, 39, 0.1);
     outline: none;
     height: 35px;
     padding-left: 30px;
+      color: #181C27;
+  font-size: 16px;
   
   }
 }
