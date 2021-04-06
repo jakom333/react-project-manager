@@ -377,6 +377,7 @@
     line-height: 17px;
     color: #181c27;
     padding-left: 25px;
+ align-items: center;
   }
   .tasksHeaderText {
     font-family: 'Montserrat';
