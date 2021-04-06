@@ -50,40 +50,37 @@ export default function SprintHeader({ setTaskDate }) {
       <section className={styles.sprintHeader}>
         <div className={styles.controlAndSearchBlock}>
           <div className={styles.controlPanel}>
-            {!!sprintDay &&
-              !!duration &&
-              new Date(startDate).getDate() <=
-                new Date(currentDay).getDate() && (
-                <div className={styles.switch}>
-                  <button
-                    type="button"
-                    className={styles.leftArrow}
-                    onClick={onDecrement}
-                    disabled={
-                      new Date(startDate).getDate() ===
-                      new Date(currentDay).getDate()
-                    }
-                  >
-                    &#5176;
-                  </button>
+            {!!sprintDay && !!duration && Date.parse(startDate) <= currentDay && (
+              <div className={styles.switch}>
+                <button
+                  type="button"
+                  className={styles.leftArrow}
+                  onClick={onDecrement}
+                  disabled={
+                    new Date(startDate).getDate() ===
+                    new Date(currentDay).getDate()
+                  }
+                >
+                  &#5176;
+                </button>
 
-                  <span className={styles.day}>{sprintDay}</span>
-                  <span className={styles.separator}>/</span>
-                  <span className={styles.totalDays}>{duration}</span>
+                <span className={styles.day}>{sprintDay}</span>
+                <span className={styles.separator}>/</span>
+                <span className={styles.totalDays}>{duration}</span>
 
-                  <button
-                    type="button"
-                    className={styles.rightArrow}
-                    onClick={onIncrement}
-                    disabled={
-                      new Date(endDate).getDate() ===
-                      new Date(currentDay).getDate()
-                    }
-                  >
-                    &#5171;
-                  </button>
-                </div>
-              )}
+                <button
+                  type="button"
+                  className={styles.rightArrow}
+                  onClick={onIncrement}
+                  disabled={
+                    new Date(endDate).getDate() ===
+                    new Date(currentDay).getDate()
+                  }
+                >
+                  &#5171;
+                </button>
+              </div>
+            )}
             <span className={styles.date}>
               {new Date(currentDay)
                 .toJSON()
