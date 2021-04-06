@@ -1,4 +1,3 @@
-
 .iconSearch {
   width: 20px;
   height: 20px;
@@ -7,58 +6,54 @@
 .searchBtn {
   position: absolute;
   right: 0px;
-  top: 10px;
+  top: 8px;
   display: block;
   border: none;
   background-color: transparent;
-  cursor: pointer;
   outline: none;
 }
 
-  .searchLabel {
-    bottom: 35px;
-  }
+.searchLabel {
+  bottom: 35px;
+}
 
-.iconSearch:hover{
- transform: scale(1.3);
- fill:#FF6C00;
+.searchInputActive:hover + .iconSearch {
+  transform: scale(1.3);
+  fill: #ff6c00;
 }
 
 @media screen and (max-width: 767px) {
-
   .searchBtn {
     position: absolute;
-    top: -112px;
+    top: -152px;
     left: 0px;
   }
 
   .searchInputActive {
     position: absolute;
-    min-width: 280px;
-    top: -120px;
+    font-size: 18px;
+    width: 280px;
+    top: -160px;
     left: 0px;
     border: none;
     border-bottom: 1px solid rgba(24, 28, 39, 0.1);
     outline: none;
     height: 35px;
     padding-left: 30px;
-    color:  #FF6C00;
   }
 }
 
-
-
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-
   .searchBtn {
     position: absolute;
-    top: -125px;
+    top: -160px;
     right: 18px;
   }
 
   .searchInputActive {
     position: absolute;
-    bottom: 188px;
+    font-size: 16px;
+    bottom: 180px;
     left: 260px;
     width: 185px;
     display: block;
@@ -71,9 +66,7 @@
   }
 }
 
-
 @media screen and (min-width: 1280px) {
-
   .searchInput {
     display: none;
     border: none;
@@ -87,8 +80,8 @@
   .searchInputActive {
     position: absolute;
     top: 0;
-    right: 7px;
-    width: 150px;
+    right: -4px;
+    width: 154px;
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;
@@ -97,15 +90,13 @@
     background-color: #f1f2f7;
     outline: none;
     padding-left: 10px;
+    padding-right: 35px;
     height: 35px;
   }
 
-   .searchInputActive:hover,
-   .searchInputActive:focus
-   {
-     box-shadow: 0px 3px 18px -1px #FF6C00;
-   }
-
-
+  .searchInputActive:hover,
+  .searchInputActive:focus {
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.212);
+  }
 }
-

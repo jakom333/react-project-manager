@@ -83,6 +83,7 @@
 .rightArrow {
   color: #181c27;
   font-family: 'Montserrat';
+  border: none;
 }
 
 .date:hover,
@@ -132,8 +133,6 @@
     font-size: 18px;
     line-height: 22px;
   }
-
-
 
   .control {
     margin-bottom: 30px;

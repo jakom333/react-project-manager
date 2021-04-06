@@ -22,11 +22,11 @@ const TaskFilter = ({ handleChange }) => {
           onChange={handleChange}
           className={styles.searchInputActive}
         />
-        <button type="submit" className={styles.searchBtn}>
+        <span className={styles.searchBtn}>
           <svg className={styles.iconSearch}>
             <use href={sprite + '#icon-search'}></use>
           </svg>
-        </button>
+        </span>
       </label>
     </div>
   );
