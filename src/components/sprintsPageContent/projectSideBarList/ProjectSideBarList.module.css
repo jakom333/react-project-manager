@@ -27,6 +27,7 @@
   scroll-snap-type: x proximity;
 }
 .sideLeftList {
+  overflow: hidden;
   width: 180px;
   height: 300px;
   border: none;
@@ -38,36 +39,34 @@
   /*background-color: #f78335;*/
 }
 
-@media screen and  (min-width: 768px) and (max-width: 1279px){
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .sideLeftList {
+    padding-inline-start: 0;
+    list-style: none;
+    margin-left: 10px;
+  }
 
-    .sideLeftList{
-        padding-inline-start:0;
-        list-style: none;
-        margin-left: 10px;
-    }
-
-    .sideItemBox{
-        margin-right: 15px;
-        width: 36px;
-        height: 36px;
-        background-color: #8c72df;
-    }
+  .sideItemBox {
+    margin-right: 15px;
+    width: 36px;
+    height: 36px;
+    background-color: #8c72df;
+  }
 }
 
-@media screen and (min-width: 1280px){
+@media screen and (min-width: 1280px) {
+  .sideLeftList {
+    padding-inline-start: 0;
+    list-style: none;
+    margin-left: 10px;
+  }
 
-    .sideLeftList{
-        padding-inline-start:0;
-        list-style: none;
-        margin-left: 10px;
-    }
-
-    .sideItemBox{
-        margin-right: 15px;
-        width: 36px;
-        height: 36px;
-        background-color: #8c72df;
-    }
+  .sideItemBox {
+    margin-right: 15px;
+    width: 36px;
+    height: 36px;
+    background-color: #8c72df;
+  }
 }
 
 .sideItem {
@@ -82,22 +81,30 @@
 }
 
 .sideItemLink {
-    width: 100%;
-    min-height: 36px;
-    padding-left: 50px;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    color: #181c27;
-    text-decoration: none;
-    position: relative;
-    display: flex;
-    align-items: center;
-    word-wrap: break-word;
+  width: 100%;
+  min-height: 36px;
+  padding-left: 50px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #181c27;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  word-wrap: break-word;
 }
 
 .avtive {
   font-weight: bold;
+}
+
+
+.sideItem{
+    word-wrap: break-word;
+}
+.sideItemName{
+    max-width: 130px;
 }
 
 .sideItemLink:not(:last-child) {
