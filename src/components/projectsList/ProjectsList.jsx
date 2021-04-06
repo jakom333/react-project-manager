@@ -12,10 +12,8 @@ const ProjectsList = () => {
   return (
     <div className={styles.box}>
       {isLoading ? (
-        <div className={styles.loader}>
-          <Loader />
-        </div>
-      ) : (
+        <Loader />
+        ) : (
         !projects.length && (
           <div className={styles.emptyMessageBox}>
             <h2 className={styles.emptyMessage}>
