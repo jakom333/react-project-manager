@@ -22,7 +22,7 @@ const ProjectsList = () => {
           </div>
         )
       )}
-      {projects.length && (
+      {!!projects.length && (
         <ul className={styles.projectList}>
           {projects.map(item => (
             <ProjectItem key={item._id} item={item} />
