@@ -7,9 +7,9 @@ import Background from '../background/Background.jsx';
 import { Link } from 'react-router-dom';
 
 const initialState = {
-  email: 'test@mail.com',
-  password: 'qwerty',
-  confirm_password: 'qwerty',
+  email: '',
+  password: '',
+  confirm_password: '',
 };
 
 export default function RegistrationForm() {
@@ -63,7 +63,6 @@ export default function RegistrationForm() {
             password: user.password,
           }),
         );
-        setUser(initialState);
       };
       submitForm();
     }

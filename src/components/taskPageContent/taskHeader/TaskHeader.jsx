@@ -5,52 +5,35 @@ import TaskForm from '../../taskForm/TaskForm';
 import ChangeTitle from '../../titleEditor/TitleEditor';
 import RoundButton from '../../../shared/roundButton/RoundButton';
 import TaskFilter from '../taskFilter/TaskFilter';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getSprintsSelector } from '../../../redux/sprints/sprints-selectors';
 import { useParams } from 'react-router-dom';
-import { changeCurrentDay } from '../../../redux/tasks/task-actions';
 import { getCurrentDay } from '../../../redux/tasks/task-selectors';
 
-export default function SprintHeader() {
+export default function SprintHeader({ setTaskDate }) {
   const [showModal, setShowModal] = useState(false);
-  const today = new Date().toJSON().slice(0, 10).split('-').reverse().join('.');
   const sprints = useSelector(getSprintsSelector);
   const { sprintId } = useParams();
   const startDate = sprints.find(item => item._id === sprintId)?.startDate;
   const duration = sprints.find(item => item._id === sprintId)?.duration;
   const endDate = sprints.find(item => item._id === sprintId)?.endDate;
-  const todayReverse = today.split('.').reverse().join('-');
-  const dispatch = useDispatch();
   const _MS_PER_DAY = 1000 * 60 * 60 * 24;
   const [currentDay, setCurrentDay] = useState(Date.now());
   const [sprintDay, setSprintDay] = useState(0);
   const curDay = useSelector(getCurrentDay);
 
-  // a and b are javascript Date objects
-  function dateDiffInDays(a, b) {
-    const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
-    const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
-    return Math.floor((utc2 - utc1) / _MS_PER_DAY);
-  }
-  // test it
-  const a = new Date(todayReverse), //today
-    b = new Date(startDate), // startDate
-    difference = dateDiffInDays(a, b);
-  const positiveDifference = Math.abs(difference) + 1;
-
   useEffect(() => {
     const result = (Date.now() - Date.parse(startDate)) / _MS_PER_DAY;
     setSprintDay(Math.floor(result + 1));
-    dispatch(changeCurrentDay(currentDay));
-  }, [startDate, _MS_PER_DAY]);
+  }, [startDate, _MS_PER_DAY, sprintId]);
 
   useEffect(() => {
-    dispatch(changeCurrentDay(currentDay));
-  }, [currentDay]);
+    setCurrentDay(curDay);
+  }, [sprintId, curDay]);
 
   useEffect(() => {
-    setCurrentDay(Date.parse(new Date(curDay)));
-  }, [curDay]);
+    setTaskDate(currentDay);
+  }, [sprintDay, setTaskDate, currentDay]);
 
   const onDecrement = () => {
     setCurrentDay(prev => prev - _MS_PER_DAY);
