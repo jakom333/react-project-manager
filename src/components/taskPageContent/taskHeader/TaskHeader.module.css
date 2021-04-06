@@ -79,6 +79,8 @@
   line-height: 15px;
   font-weight: normal;
   color: rgba(24, 28, 39, 0.6);
+  outline: none;
+  border:none,
 }
 
 .day,
@@ -86,6 +88,8 @@
 .rightArrow {
   color: #181c27;
   font-family: 'Montserrat';
+    outline: none;
+  border:none,
 }
 
 .date:hover,
@@ -94,10 +98,14 @@
   cursor: pointer;
   transform: scale(1.1);
   color: #000;
+   outline: none;
+  border:none,
 }
 
 .leftArrow {
   margin-right: 20px;
+    outline: none;
+  border:none,
 }
 .rightArrow {
   margin-left: 20px;
@@ -135,6 +143,8 @@
   .rightArrow {
     font-size: 18px;
     line-height: 22px;
+    border:none;
+    outline: none;
   }
 
 
