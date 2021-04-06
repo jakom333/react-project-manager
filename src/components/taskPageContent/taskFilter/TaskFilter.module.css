@@ -28,15 +28,19 @@
 
   .searchBtn {
     position: absolute;
-    top: -112px;
-    left: 53px;
+    top: -129px;
+    left: -12px;
   }
+
+   .searchContainer {
+    position: relative;
+  } 
 
   .searchInputActive {
     position: absolute;
     min-width: 280px;
-    top: -120px;
-    left: 43px;
+    top: -135px;
+    left: -20px;
     border: none;
     border-bottom: 1px solid rgba(24, 28, 39, 0.1);
     outline: none;

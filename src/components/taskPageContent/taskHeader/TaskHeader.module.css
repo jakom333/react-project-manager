@@ -55,21 +55,6 @@
  
 }
 
-/* .iconSearch {
-  width: 20px;
-  height: 20px;
-} */
-
-/* .searchBtn {
-  position: absolute;
-  right: 0px;
-  top: 10px;
-  display: block;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  outline: none;
-} */
 
 .totalDays,
 .separator,
@@ -104,8 +89,7 @@
 
 .leftArrow {
   margin-right: 20px;
-    outline: none;
-  border:none,
+
 }
 .rightArrow {
   margin-left: 20px;
@@ -155,9 +139,6 @@
 
   }
 
-  /* .tasksHeader {
-    display: none;
-  } */
 
   .tasksHeaderText {
     display: none;
@@ -247,6 +228,15 @@
     width: 100%;
   }
 
+  .day,
+  .leftArrow,
+  .rightArrow {
+    font-size: 18px;
+    line-height: 22px;
+    border:none;
+    outline: none;
+  }
+
   .control {
     margin-bottom: 30px;
       display: flex;
@@ -258,8 +248,7 @@
   .tasksHeader {
     position: relative;
     display: flex;
-    /* max-width: 870px; */
-    height: 50px;
+     height: 50px;
     font-weight: normal;
     font-style: normal;
     margin-top: 40px;
