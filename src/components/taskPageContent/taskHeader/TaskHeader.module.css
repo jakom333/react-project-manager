@@ -242,8 +242,9 @@
       display: flex;
   align-items: baseline;
   justify-content: space-between;
-
   }
+
+
   .tasksHeader {
     position: relative;
     display: flex;
@@ -322,22 +323,21 @@
   }
 }
 
-@media screen and (min-width: 981px) and (max-width: 1215px) {
-  /* .title {
-    max-width: 470px;
-  } */
-}
-@media screen and (min-width: 1216px) and (max-width: 1279px) {
-  /* .title {
-    max-width: 680px;
-  } */
-}
 
 @media screen and (min-width: 1280px) {
   .sprintHeader {
     padding-left: 70px;
     padding-right: 86px;
     padding-top: 20px;
+  }
+
+
+  .control {
+    margin-bottom: 30px;
+      display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
   }
 
   .title {
