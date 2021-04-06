@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/auth-operations.js';
 import Button from '../../shared/button/Button.jsx';
 import styles from './RegistrationForm.module.css';
-
 import Background from '../background/Background.jsx';
 import { Link } from 'react-router-dom';
 
@@ -137,7 +136,10 @@ export default function RegistrationForm() {
         {formErrors.confirm_password}
 
         <div className={styles.button_wrapper}>
-          <Button className={styles.button}>Sign up</Button>
+          <button className={styles.button} type="submit">
+            Sign up
+          </button>
+          {/* <Button className={styles.button}>Sign up</Button> */}
         </div>
         <p className={styles.textUnderbutton}>
           Already have an account?
