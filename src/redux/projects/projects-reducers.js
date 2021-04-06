@@ -56,7 +56,21 @@ const loadingReducer = createReducer(false, {
   [editProjectTitleError]: () => false,
 });
 
-const errorReducers = createReducer(null, {});
+const handleError = (_, { payload }) => payload.response.data;
+const clearError = () => null;
+
+const errorReducers = createReducer(null, {
+    [projectsRequest]: clearError,
+    [projectsError]: handleError,
+    [createProjectRequest]: clearError,
+    [createProjectError]: handleError,
+    [deleteProjectRequest]: clearError,
+    [deleteProjectError]: handleError,
+    [editProjectTitleRequest]: clearError,
+    [editProjectTitleError]: handleError,
+  });
+
+//const errorReducers = createReducer(null, {});
 
 const projects = combineReducers({
   projects: projectsReducers,
