@@ -13,11 +13,8 @@ import {
   editProjectTitleRequest,
   editProjectTitleSuccess,
   editProjectTitleError,
-  addMemberError,
-  addMemberRequest,
   addMemberSuccess,
 } from './projects-actions';
-
 
 const initialProjectsState = [];
 
@@ -42,8 +39,7 @@ const projectsReducers = createReducer(initialProjectsState, {
     ),
   [deleteProjectSuccess]: (state, { payload }) =>
     state.filter(item => item._id !== payload),
-
-  });
+});
 
 const loadingReducer = createReducer(false, {
   [projectsRequest]: () => true,
@@ -68,4 +64,3 @@ const projects = combineReducers({
   error: errorReducers,
 });
 export default projects;
-

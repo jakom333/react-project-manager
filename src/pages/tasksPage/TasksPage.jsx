@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TaskList from '../../components/taskPageContent/taskList/TaskList';
 import TaskHeader from '../../components/taskPageContent/taskHeader/TaskHeader';
 import MainPageContainer from '../../components/taskPageContainer/mainPageContainer/MainPageContainer';
@@ -8,20 +8,16 @@ import RightItemBar from '../../components/taskPageContainer/rightItemBar/RightI
 import SprintListSideBar from '../../components/taskPageContent/sprintListSideBar/SprintListSideBar';
 
 const TasksPage = () => {
+  const [taskDate, setTaskDate] = useState(Date.now());
   return (
     <MainPageContainer>
       <LeftBar>
         <SprintListSideBar />
       </LeftBar>
       <RightBar>
-        <TaskHeader
-        // handleInput={handleInput}
-        // title={sprint.title}
-        // id={sprint._id}
-        // dateArr={dateArr}
-        />
+        <TaskHeader setTaskDate={setTaskDate} />
         <RightItemBar>
-          <TaskList />
+          <TaskList taskDate={taskDate} />
         </RightItemBar>
       </RightBar>
     </MainPageContainer>

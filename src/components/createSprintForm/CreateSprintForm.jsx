@@ -10,9 +10,6 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styles from './CreateSprintForm.module.css';
 
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-
 const formSchema = Yup.object().shape({
   title: Yup.string()
     .min(3, 'Too short!')
@@ -62,8 +59,9 @@ const CreateSprintForm = ({ onClose }) => {
           const { title, duration } = values;
           const toBackEnd = startToEndDay(startDate, duration);
 
-          const endDate = `${toBackEnd.getFullYear()}-${1 +
-            toBackEnd.getMonth()}-${toBackEnd.getDate()}`;
+          const endDate = `${toBackEnd.getFullYear()}-${
+            1 + toBackEnd.getMonth()
+          }-${toBackEnd.getDate()}`;
           onHandleSubmit(title, endDate, duration);
           onClose();
         }}
@@ -92,7 +90,7 @@ const CreateSprintForm = ({ onClose }) => {
           </label>
           <div className={styles.tabletContainer}>
             <div>
-              <label htmlFor='picker' className={styles.dataPickerContainer}>
+              <label htmlFor="picker" className={styles.dataPickerContainer}>
                 <span className={styles.dataPickerLabel}>Start date</span>
               </label>
 

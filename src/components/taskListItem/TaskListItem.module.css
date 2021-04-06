@@ -32,6 +32,7 @@
   outline: none;
   border-bottom: 1px solid rgba(24, 28, 39, 0.2);
   text-align: right;
+  cursor: pointer;
 }
 .button {
   width: 25px;
