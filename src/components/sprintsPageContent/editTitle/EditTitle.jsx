@@ -6,7 +6,7 @@ import sprite from '../../../icons/symbol-defs.svg';
 import { editTitle } from '../../../redux/projects/projects-operations';
 import { getProjectLoading, getProjectsSelector } from '../../../redux/projects/projects-selectors';
 import AutosizeInput from '../../titleEditor/AutosizeInput';
-import LoaderInput from '../../loader/LoaderInput';
+import Loader from '../../loader/Loader';
 
 
 const EditTitle = () => {
@@ -42,7 +42,7 @@ const EditTitle = () => {
         <div className={styles.current}>
           {isLoading ? (
             <div className={styles.loader}>
-              <LoaderInput />
+              <Loader />
             </div>
           ) : (
             <>
