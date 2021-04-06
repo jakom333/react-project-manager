@@ -10,8 +10,7 @@ const ProjectsList = () => {
   const isLoading = useSelector(getProjectLoading);
 
 
-   return(
-
+  return (
     <div className={styles.box}>
       {isLoading ? (
         <div className={styles.loader}>
@@ -26,17 +25,15 @@ const ProjectsList = () => {
           </div>
         )
       )}
-      {projects.length &&
-          <ul className={styles.projectList}>
-            {projects.map(item => (
-              <ProjectItem key={item._id} item={item} />
-            ))}
-          </ul>
-      }
+      {projects.length && (
+        <ul className={styles.projectList}>
+          {projects.map(item => (
+            <ProjectItem key={item._id} item={item} />
+          ))}
+        </ul>
+      )}
     </div>
-  )
-
+  );
 };
 
 export default ProjectsList;
-

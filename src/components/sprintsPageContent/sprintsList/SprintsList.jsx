@@ -19,6 +19,8 @@ const SprintsList = () => {
     getResult();
   }, [dispatch, params.projectId, history]);
 
+  useEffect(() => {}, []);
+
   return (
     <div>
       <div>
