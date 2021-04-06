@@ -28,9 +28,6 @@ const AddMember = () => {
           initialValues={{ email: '' }}
           validationSchema={formSchema}
           onSubmit={async (values, { resetForm }) => {
-            // alert(JSON.stringify(values, null, 2));
-            // console.log(values);
-
             addMember(values);
             dispatch(addMember(values, projectId));
             resetForm({});
@@ -49,7 +46,6 @@ const AddMember = () => {
               component="span"
               name="email"
             />
-            {/* <button type="submit"> done </button> */}
             <MembersList members={members} />
             <Button id="form">Done</Button>
           </Form>
@@ -60,48 +56,3 @@ const AddMember = () => {
 };
 
 export default AddMember;
-
-// const AddMember = () => {
-//   const [member, setMember] = useState(initialState);
-
-//   const handleChange = event => {
-//     setMember({ ...member, [event.target.name]: event.target.value });
-//   };
-
-//   const handleSubmit = event => {
-//     event.preventDefault();
-//     console.log(member.email);
-
-//     setMember({
-//       email: '',
-//     });
-//   };
-
-//   return (
-//     // <MainModal>
-//     <div className={styles.formContainer}>
-//       <h2 className={styles.titleForm}>Add new project member</h2>
-//       <form onSubmit={handleSubmit} className={styles.memberForm}>
-//         <div className={styles.formGroup}>
-//           <input
-//             className={styles.input}
-//             name="email"
-//             type="text"
-//             placeholder="E-mail"
-//             onChange={handleChange}
-//             value={member.email}
-//           />
-//           <label htmlFor="email" className={styles.formLabel}>
-//             E-mail
-//           </label>
-//         </div>
-//         <MembersList />
-//         <Button>Done</Button>
-//       </form>
-//       <CancelButton />
-//     </div>
-//     // </MainModal>
-//   );
-// };
-
-// export default AddMember;

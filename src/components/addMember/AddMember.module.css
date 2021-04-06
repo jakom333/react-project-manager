@@ -8,18 +8,6 @@
 
 @media screen and (min-width: 320px) {
 
-.formContainer{
-background-color: white;
-    max-width: 320px ;
-    padding-top: 67px;
-    padding-left: 20px;
-    padding-right: 20px;
-    /* padding-bottom: 75px; */
-  /* text-align: center; */
-    margin: 0 auto;
-    max-width: 480px;
- }
-
  .memberForm{
    background-color: white;
  }
@@ -52,7 +40,6 @@ font-size: 16px;
 line-height: 20px;
    transition: all .3s;
 } */
-
 
 
   .input {
@@ -144,16 +131,6 @@ line-height: 20px;
 
 @media screen and (min-width: 768px) {
 
-.formContainer{
-    max-width: 512px ;
-    padding-top: 121px;
-    padding-left: 20px;
-    padding-right: 62px;
-    padding-bottom: 75px;
-  /* text-align: center; */
-    width: 512px;
- }
-
  
   .titleForm {
 font-weight: 500;
@@ -188,15 +165,6 @@ line-height: 22px;
 /*==================DESKTOP=========================*/
 
 @media screen and (min-width: 1280px) {
-
-.formContainer{
-    max-width: 530px ;
-     padding-top: 121px;
-    padding-left: 50px;
-    padding-right: 100px;
-    width: 530px;
-
- }
  
   .titleForm {
 font-weight: 500;

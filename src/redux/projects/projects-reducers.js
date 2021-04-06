@@ -1,15 +1,24 @@
+import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 import {
-  createProjectSuccess,
+  projectsRequest,
   projectsSuccess,
+  projectsError,
+  createProjectRequest,
+  createProjectSuccess,
+  createProjectError,
+  deleteProjectRequest,
   deleteProjectSuccess,
+  deleteProjectError,
+  editProjectTitleRequest,
   editProjectTitleSuccess,
+  editProjectTitleError,
   addMemberSuccess,
 } from './projects-actions';
 
 const initialProjectsState = [];
 
-const projects = createReducer(initialProjectsState, {
+const projectsReducers = createReducer(initialProjectsState, {
   [projectsSuccess]: (_, { payload }) => payload,
   [createProjectSuccess]: (state, { payload }) => [...state, payload],
 
@@ -30,8 +39,28 @@ const projects = createReducer(initialProjectsState, {
     ),
   [deleteProjectSuccess]: (state, { payload }) =>
     state.filter(item => item._id !== payload),
-
 });
 
-export default projects;
+const loadingReducer = createReducer(false, {
+  [projectsRequest]: () => true,
+  [projectsSuccess]: () => false,
+  [projectsError]: () => false,
+  [createProjectRequest]: () => true,
+  [createProjectSuccess]: () => false,
+  [createProjectError]: () => false,
+  [deleteProjectRequest]: () => true,
+  [deleteProjectSuccess]: () => false,
+  [deleteProjectError]: () => false,
+  [editProjectTitleRequest]: () => true,
+  [editProjectTitleSuccess]: () => false,
+  [editProjectTitleError]: () => false,
+});
 
+const errorReducers = createReducer(null, {});
+
+const projects = combineReducers({
+  projects: projectsReducers,
+  loading: loadingReducer,
+  error: errorReducers,
+});
+export default projects;

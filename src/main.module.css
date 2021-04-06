@@ -22,10 +22,6 @@ a {
   text-decoration: none;
 }
 
-/* svg {
-  fill: rgba(24, 28, 39, 0.6);
-} */
-
 input {
   background-color: transparent;
 }
@@ -38,5 +34,5 @@ body {
   line-height: 1.66;
   letter-spacing: 0.04em;
   color: blackColor;
-  background-color: #e5e5e5;
+  background-color: #f1f2f7;
 }

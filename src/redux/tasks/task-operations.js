@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { refreshTemplate } from '../projects/projects-operations.js';
 import {
   fetchTaskRequest,
   fetchTaskSuccess,
@@ -23,6 +24,7 @@ const fetchTasks = sprintId => async dispatch => {
     dispatch(fetchTaskSuccess(data.constructor.name === 'Array' ? data : []));
   } catch (error) {
     dispatch(fetchTaskError(error.message));
+    refreshTemplate(() => fetchTasks(sprintId), error, dispatch);
   }
 };
 
@@ -33,6 +35,7 @@ const createTask = (task, sprintId) => async dispatch => {
     dispatch(createTaskSuccess({ ...data, _id: data.id }));
   } catch (error) {
     dispatch(createTaskError(error.message));
+    refreshTemplate(() => createTask(task, sprintId), error, dispatch);
   }
 };
 
@@ -43,16 +46,32 @@ const deleteTask = taskId => async dispatch => {
     dispatch(deleteTaskSuccess(taskId));
   } catch (error) {
     dispatch(deleteTaskError(error.message));
+    refreshTemplate(() => deleteTask(taskId), error, dispatch);
   }
 };
 
-const changeTask = (date, hours, taskId) => async dispatch => {
+const changeTask = (hoursWasted, taskId, currentDay) => async dispatch => {
   dispatch(changeTaskRequest());
   try {
-    const {data} = await axios.patch(`/task/${taskId}`, {date, hours});
-    dispatch(changeTaskSuccess(data));
+    const { data } = await axios.patch(`/task/${taskId}`, {
+      date: currentDay,
+      hours: hoursWasted,
+    });
+    dispatch(
+      changeTaskSuccess({
+        currentDay: data.day.currentDay,
+        singleHoursWasted: data.day.singleHoursWasted,
+        hoursWasted: data.newWastedHours,
+        taskId,
+      }),
+    );
   } catch (error) {
     dispatch(changeTaskError(error.message));
+    refreshTemplate(
+      () => changeTask(hoursWasted, taskId, currentDay),
+      error,
+      dispatch,
+    );
   }
 };
 

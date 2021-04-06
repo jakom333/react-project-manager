@@ -7,6 +7,7 @@ import { editTitle } from '../../redux/sprints/sprints-operations';
 import { getSprintsSelector } from '../../redux/sprints/sprints-selectors';
 import AutosizeInput from './AutosizeInput';
 
+
 export default function ChangeTitle() {
   const dispatch = useDispatch();
   const [input, setInput] = useState();
@@ -15,6 +16,7 @@ export default function ChangeTitle() {
   const sprints = useSelector(getSprintsSelector);
   const sprint = sprints.find(sprint => sprint._id === sprintId);
   const [isActive, setActive] = useState(true);
+
 
   const onChangeTitle = e => {
     setActive(() => setActive(false));
@@ -36,6 +38,7 @@ export default function ChangeTitle() {
   if (isActive) {
     return (
       <div className={styles.wrapper}>
+
         <h1 className={styles.sprintTitle} onClick={onChangeTitle}>
           {sprint?.title}
         </h1>
@@ -48,7 +51,7 @@ export default function ChangeTitle() {
             <use href={sprite + '#icon-pencil'}></use>
           </svg>
         </button>
-      </div>
+        </div>
     );
   }
 
@@ -62,7 +65,7 @@ export default function ChangeTitle() {
             value={input}
             onChange={onHandleChange}
             onBlur={onFormSubmit}
-            maxLength="25"
+            maxLength="22"
             inputClassName={styles.titleChangeInput}
             autoFocus
             autoComplete="off"

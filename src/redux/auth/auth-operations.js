@@ -1,8 +1,6 @@
 import axios from 'axios';
-import { projectsSuccess } from '../projects/projects-actions';
 import {
   registerRequest,
-  registerSuccess,
   registerError,
   loginRequest,
   loginSuccess,
@@ -40,17 +38,8 @@ export const token = {
 const register = user => async dispatch => {
   dispatch(registerRequest());
   try {
-    const response = await axios.post('/auth/register', user);
-    // console.log(response);
-    token.set(response.data.accessToken);
-
-    dispatch(
-      registerSuccess({
-        accessToken: token.get(),
-        refreshToken: `Bearer ${response.data.refreshToken}`,
-        sid: response.data.sid,
-      }),
-    );
+    await axios.post('/auth/register', user);
+    dispatch(logIn(user));
   } catch (error) {
     dispatch(registerError(error.message));
   }
@@ -60,7 +49,6 @@ const logIn = user => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await axios.post('/auth/login', user);
-    // console.log(response)
     token.set(response.data.accessToken);
     dispatch(
       loginSuccess({
@@ -70,11 +58,6 @@ const logIn = user => async dispatch => {
         email: response.data.data.email,
       }),
     );
-    const responseProjects = await axios.get('/project', {
-      headers: { Authorization: token.get() },
-    });
-
-    dispatch(projectsSuccess(responseProjects.data));
   } catch (error) {
     dispatch(loginError(error.message));
   }

@@ -7,18 +7,6 @@
 
 @media screen and (min-width: 320px) {
 
-.formContainer{
-    background-color: white;
-    max-width: 320px ;
-    padding-top: 67px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    margin: 0 auto;
-    max-width: 480px;
- }
-
   .titleForm {
 background-color: white;
 font-weight: 500;
@@ -49,7 +37,6 @@ margin-bottom: 30px;
     
   }
 
-
    .inputDescription {
     display: block;
     margin-left: auto;
@@ -66,7 +53,6 @@ margin-bottom: 30px;
     transition: all .5s;
     
   }
-
  
 .inputName:focus,
  .inputDescription:focus{
@@ -160,18 +146,6 @@ margin-bottom: 30px;
 
 @media screen and (min-width: 768px) {
 
-.formContainer{
-  display:block;
-    max-width: 512px ;
-    padding-top: 121px;
-    padding-left: 32px;
-    padding-right: 51px;
-    padding-bottom: 100px;
-    margin-bottom: 40px;
-    width: 512px;
- }
-
- 
   .titleForm {
 font-weight: 500;
 font-size: 36px;
@@ -180,9 +154,6 @@ display: block;
 margin-bottom: 50px;
 }
   
-
-
-
   .inputName {
     padding-left: 5px;
      font-size: 18px;
@@ -190,14 +161,12 @@ margin-bottom: 50px;
     margin-bottom:50px ;
     width: 100%; 
   }
-
-
-  
+ 
    .inputDescription {
     padding-left: 5px;
     font-size: 18px;
     line-height: 22px;
-    /* margin-bottom:40px ; */
+     /* margin-bottom:40px ; */
 
     
   }
@@ -208,25 +177,11 @@ margin-bottom: 50px;
   margin-top: -50px;
 } 
 
-
-
- 
 }
 
 /*==================DESKTOP=========================*/
 
 @media screen and (min-width: 1280px) {
-
-.formContainer{
-    max-width: 530px ;
-     padding-top: 121px;
-    padding-left: 50px;
-    padding-right: 51px;
-    width: 530px;
-
- }
-
- 
   .titleForm {
 font-weight: 500;
 font-size: 36px;
@@ -234,7 +189,6 @@ line-height: 44px;
 margin-bottom: 50px;
 }
   
-
   .inputName {
     padding-left: 5px;
      font-size: 18px;
@@ -242,12 +196,6 @@ margin-bottom: 50px;
     margin-bottom:50px ;
     width: 100%; 
   }
-
-
-  
-   /* .inputDescription {  
-      margin-bottom: 60px;
-}   */
 
 .errorDescription{
   display:block;
