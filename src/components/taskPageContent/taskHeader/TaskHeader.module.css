@@ -84,6 +84,7 @@
   color: #181c27;
   font-family: 'Montserrat';
   border: none;
+  outline: none;
 }
 
 .date:hover,
@@ -96,9 +97,13 @@
 
 .leftArrow {
   margin-right: 20px;
+  border: none;
 }
-.rightArrow {
+.rightArrow,
+.rightArrow:focus {
   margin-left: 20px;
+  border: none;
+  outline: none;
 }
 
 .controlAndSearchBlock {
@@ -132,6 +137,7 @@
   .rightArrow {
     font-size: 18px;
     line-height: 22px;
+    border: none;
   }
 
   .control {
