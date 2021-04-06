@@ -25,9 +25,15 @@ const SprintsList = () => {
     <div>
       <div>
         <ul className={styles.sprintList}>
-          {sprints.map((item, idx) => (
-            <SprintsListItem item={item} key={idx} />
-          ))}
+          {sprints.length ? (
+            sprints.map((item, idx) => (
+              <SprintsListItem item={item} key={idx} />
+            ))
+          ) : (
+            <h2 className={styles.emptyMessage}>
+              Your sprint collection is empty, use the "Create sprint" button.
+            </h2>
+          )}
         </ul>
       </div>
     </div>
