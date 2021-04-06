@@ -49,9 +49,6 @@ const Header = () => {
             </>
           ) : (
             <>
-              <span>
-                <b>{name}</b>
-              </span>
               <button
                 type="button"
                 onClick={onLogOut}
