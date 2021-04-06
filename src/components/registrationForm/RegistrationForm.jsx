@@ -32,14 +32,18 @@ export default function RegistrationForm() {
     let errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!user.email) {
-      errors.email = <span className={styles.warning}>Cannot be blank</span>;
+      errors.email = (
+        <span className={styles.warning}> Email is a required field</span>
+      );
     } else if (!regex.test(user.email)) {
       errors.email = (
         <span className={styles.warning}>Invalid email format</span>
       );
     }
     if (!user.password) {
-      errors.password = <span className={styles.warning}>Cannot be blank</span>;
+      errors.password = (
+        <span className={styles.warning}> Password is a required field</span>
+      );
     } else if (user.password.length < 6) {
       errors.password = (
         <span className={styles.warning}>

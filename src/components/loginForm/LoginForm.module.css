@@ -1,7 +1,7 @@
-.container {
+/* .container {
   padding: 0 20px;
   max-width: 320px;
-}
+} */
 
 .wrapper {
   position: relative;
@@ -29,6 +29,7 @@
   line-height: 32px;
   letter-spacing: 0.04em;
   text-align: center;
+  margin-top: 20px;
 }
 
 .label {
