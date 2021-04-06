@@ -4,10 +4,10 @@
 }
 .emptyMessage {
   font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    padding-top: 150px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 150px;
 }
 
 .taskList {
@@ -49,6 +49,7 @@
 
   .taskCard {
     width: 216px;
+    margin-left: 0;
   }
 }
 
