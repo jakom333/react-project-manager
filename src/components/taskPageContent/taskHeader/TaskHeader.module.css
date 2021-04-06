@@ -269,6 +269,14 @@
     cursor: default;
   }
 
+    .day,
+  .leftArrow,
+  .rightArrow {
+    font-size: 18px;
+    line-height: 22px;
+    border:none;
+    outline: none;
+  }
   .tasksHeaderText:first-child {
     display: none;
   }
@@ -330,7 +338,15 @@
     padding-top: 20px;
   }
 
-
+  .day,
+  .leftArrow,
+  .rightArrow {
+    font-size: 18px;
+    line-height: 22px;
+    border:none;
+    outline: none;
+  }
+  
   .control {
     margin-bottom: 30px;
       display: flex;
