@@ -1,18 +1,9 @@
-.loader{
-    width: 50px;
-    height: 50px;
-}
+
 .box{
     width: 200px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-}
-.loader{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-bottom: 20px;
 }
 
 .current{
@@ -125,7 +116,7 @@
 
 @media screen and  (min-width: 768px) and (max-width: 1279px) {
     .pageTitle {
-        max-width: 400px;
+        max-width: 300px;
         margin-right: 20px;
         font-weight: 500;
         font-size: 36px;
@@ -135,7 +126,7 @@
 
 
     .current{
-        min-width: 400px;
+        min-width: 300px;
     }
 
     .editInput{

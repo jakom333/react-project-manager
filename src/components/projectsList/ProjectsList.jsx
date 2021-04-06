@@ -2,10 +2,7 @@ import React from 'react';
 import styles from './ProjectsList.module.css';
 import ProjectItem from './projectItem/ProjectItem';
 import { useSelector } from 'react-redux';
-import {
-  getProjectsSelector,
-  getProjectLoading,
-} from '../../redux/projects/projects-selectors';
+import { getProjectsSelector, getProjectLoading } from '../../redux/projects/projects-selectors';
 import Loader from '../loader/Loader';
 
 const ProjectsList = () => {
@@ -15,10 +12,8 @@ const ProjectsList = () => {
   return (
     <div className={styles.box}>
       {isLoading ? (
-        <div className={styles.loader}>
-          <Loader />
-        </div>
-      ) : (
+        <Loader />
+        ) : (
         !projects.length && (
           <div className={styles.emptyMessageBox}>
             <h2 className={styles.emptyMessage}>
