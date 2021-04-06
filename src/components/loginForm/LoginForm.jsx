@@ -51,7 +51,7 @@ export default function LoginForm() {
             name="password"
             value={user.password}
             onChange={handleChange}
-            className={styles.input}
+            className={styles.inputPassword}
             placeholder="Password"
           />
         </label>
@@ -60,7 +60,7 @@ export default function LoginForm() {
           <Button>Sign in</Button>
         </div>
         <p className={styles.textUnderbutton}>
-          Don't yet have an account?
+          Don't have an account yet?
           <Link to="/registration" className={styles.underlined}>
             Sign up
           </Link>

@@ -14,7 +14,7 @@
 
 .form {
   max-width: 320px;
-  top: 50%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -70%);
   position: fixed;
@@ -30,6 +30,8 @@
   letter-spacing: 0.04em;
   text-align: center;
   margin-top: 20px;
+      margin-top: -3px;
+    margin-bottom: 55px;
 }
 
 .label {
@@ -67,9 +69,37 @@
   color: rgba(24, 28, 39, 0.2);
 }
 
+
+.inputPassword {
+  width: 280px;
+  padding: 9px;
+  border: none;
+  padding: 5px;
+  outline: none;
+  border-bottom: 1px solid rgba(24, 28, 39, 0.2);
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+
+  color: rgb(24, 28, 39);
+}
+
+.inputPassword::placeholder {
+  font-family: inherit;
+  color: rgba(24, 28, 39, 0.2);
+}
+
 .warning {
   color: rgba(204, 32, 41, 0.6);
 }
+
+
 
 .textUnderbutton {
   font-family: 'Montserrat', sans-serif;
@@ -99,21 +129,23 @@
     background: rgba(241, 242, 247, 1);
   }
   .form {
-    outline: 1px solid rgba(24, 28, 39, 0.2);
+   outline: 1px solid rgba(24, 28, 39, 0.2);
     position: absolute;
     padding: 47px 70px;
-    top: 40%;
+    padding-bottom: 117px;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 570px;
     max-height: 538px;
     z-index: 10;
     background-color: #fafafa;
+    box-shadow: 0px 6px 26px 0px rgb(0 5 97 / 10%);
+
   }
 
   .input {
-    font-family: 'Montserrat', sans-serif;
-    width: 430px;
+      width: 430px;
     height: 55px;
   }
 
@@ -121,4 +153,16 @@
     font-size: 36px;
     line-height: 44px;
   }
+
+.inputPassword{
+  margin-bottom: -23px;
+     width: 430px;
+    height: 55px;
+}
+
+.title {
+   margin-top: -3px;
+    margin-bottom: 55px;
+}
+
 }
