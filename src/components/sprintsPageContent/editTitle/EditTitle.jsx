@@ -41,9 +41,7 @@ const EditTitle = () => {
       <div className={styles.box}>
         <div className={styles.current}>
           {isLoading ? (
-            <div className={styles.loader}>
               <Loader />
-            </div>
           ) : (
             <>
               <h2 className={styles.pageTitle}>{project?.title}</h2>
