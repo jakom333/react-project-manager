@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
+import React,  { useRef } from 'react';
+import { createPortal } from "react-dom";
 import Spinner from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import styles from './Loader.module.css';
 
-export default class Loader extends Component {
-  render() {
-    return (
-      <div className={styles.overlay}>
+
+const loaderRoot  = document.querySelector("#modal_loader")
+
+const Loader = ()=>{
+  const loaderRef = useRef();
+    return  createPortal(
+     ( <div className={styles.overlay} ref={loaderRef}>
         <Spinner
           type="Puff"
           color="#f78335"
@@ -15,7 +19,7 @@ export default class Loader extends Component {
           className={styles.spinner}
           timeout={0}
         />
-      </div>
+      </div>), loaderRoot
     );
-  }
 }
+export default Loader
