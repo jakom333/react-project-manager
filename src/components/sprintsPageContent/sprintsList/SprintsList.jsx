@@ -24,25 +24,24 @@ const SprintsList = () => {
     getResult();
   }, [dispatch, params.projectId, history]);
 
-  useEffect(() => {}, []);
-
   return (
     <div>
       <div>
         {isLoading ? (
           <Loader />
-        ) : sprints.length ? (
-          <ul className={styles.sprintList}>
-            {sprints.map((item, idx) => (
-              <SprintsListItem item={item} key={idx} />
-            ))}{' '}
-          </ul>
         ) : (
-          !!sprints.length && (
+          !sprints.length && (
             <h2 className={styles.emptyMessage}>
               Your sprint collection is empty, use the "Create sprint" button.
             </h2>
           )
+        )}
+        {!!sprints.length && (
+          <ul className={styles.sprintList}>
+            {sprints.map((item, idx) => (
+              <SprintsListItem item={item} key={idx} />
+            ))}
+          </ul>
         )}
       </div>
     </div>
