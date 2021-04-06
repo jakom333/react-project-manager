@@ -41,7 +41,17 @@ const loading = createReducer(false, {
   [fetchSprintsError]: () => false,
 });
 
-const error = createReducer(null, {});
+const handleError = (_, { payload }) => payload.response.data;
+const clearError = () => null;
+
+const error = createReducer(null, {
+  [fetchSprintsRequest]: clearError,
+  [fetchSprintsError]: handleError,
+  [addSprintRequest]: clearError,
+  [addSprintError]: handleError,
+  [deleteSprintRequest]: clearError,
+  [deleteSprintError]: handleError,
+});
 
 export default combineReducers({
   sprintsReducer,
