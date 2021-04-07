@@ -99,6 +99,10 @@
   color: rgba(204, 32, 41, 0.6);
 }
 
+.warningPassword{
+  margin-top: 5px;
+   color: rgba(204, 32, 41, 0.6);
+}
 
 
 .textUnderbutton {
@@ -155,7 +159,7 @@
   }
 
 .inputPassword{
-  margin-bottom: -23px;
+  margin-bottom: 6px;
      width: 430px;
     height: 55px;
 }
