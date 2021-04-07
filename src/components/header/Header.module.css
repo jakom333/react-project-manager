@@ -20,6 +20,10 @@
   height: 30px;
 }
 
+.usernav{
+  display: flex;
+}
+
 .underlined {
   color: rgba(24, 28, 39, 0.6);
   margin-left: 4px;

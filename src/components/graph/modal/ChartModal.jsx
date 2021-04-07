@@ -12,6 +12,12 @@ class Modal extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.handlekeydown);
   }
+
+  componentDidUpdate() {
+    const body = document.querySelector('body');
+    body.style.overflow = this.state.modal ? 'hidden' : 'auto';
+  }
+
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handlekeydown);
   }

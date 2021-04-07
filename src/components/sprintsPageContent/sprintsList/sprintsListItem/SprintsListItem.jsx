@@ -28,12 +28,7 @@ const SprintListItem = ({ item }) => {
   const { title, duration, endDate, startDate } = item;
 
   const dateStart = startDate.split('-')[2];
-  const monthStart =
-    months[
-      startDate.split('-')[1][0] === 1
-        ? startDate.split('-')[1]
-        : startDate.split('-')[1][1]
-    ];
+  const monthStart = months[startDate.split('-')[1].replace(/(^|\s)0/g, '$1')];
 
   const dateEnd = endDate.split('-')[2].padStart(2, '0');
   const monthEnd = months[endDate.split('-')[1]];

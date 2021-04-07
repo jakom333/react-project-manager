@@ -48,15 +48,17 @@ const Header = () => {
               </button>
             </>
           ) : (
-            <button
-              type="button"
-              onClick={onLogOut}
-              className={styles.logOutBtnMobile}
-            >
-              <svg className={styles.iconLogOut}>
-                <use href={sprite + '#icon-logout'}></use>
-              </svg>
-            </button>
+            <>
+              <button
+                type="button"
+                onClick={onLogOut}
+                className={styles.logOutBtnMobile}
+              >
+                <svg className={styles.iconLogOut}>
+                  <use href={sprite + '#icon-logout'}></use>
+                </svg>
+              </button>
+            </>
           )}
         </div>
       )}

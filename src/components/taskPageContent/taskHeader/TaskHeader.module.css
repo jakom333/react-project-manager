@@ -121,6 +121,11 @@
   font-weight: 500;
 }
 
+.invisibleArrow{
+  display: inline-block;
+  width: 37px;
+}
+
 @media screen and (max-width: 767px) {
   .day,
   .leftArrow,

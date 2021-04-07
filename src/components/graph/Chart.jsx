@@ -7,14 +7,21 @@ import _ from 'lodash';
 
 function LineDemo() {
   const getAll = useSelector(getTasks);
-  // const getAll = JSON.parse(JSON.stringify(getAllTasks));
-  // getAll[0].hoursWastedPerDay[0].singleHoursWasted = 3;
-  // getAll[1].hoursWastedPerDay[0].singleHoursWasted = 5;
-  // getAll[2].hoursWastedPerDay[0].singleHoursWasted = 4;
-
-  // getAll[0].hoursWastedPerDay[1].singleHoursWasted = 2;
-  // getAll[1].hoursWastedPerDay[1].singleHoursWasted = 6;
-  // getAll[2].hoursWastedPerDay[1].singleHoursWasted = 6;
+  const months = [
+    '',
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC',
+  ];
 
   const sumRedLine = getAll.reduce(function (cnt, getAll) {
     return cnt + getAll.hoursPlanned;
@@ -42,11 +49,16 @@ function LineDemo() {
   };
 
   const labelsDate = getAll[0].hoursWastedPerDay.map(i => i.currentDay);
+
+  const result = labelsDate.map(day => {
+    const arr = day.split('-');
+    return `${arr[2]} ${months[arr[1].replace(/(^|\s)0/g, '$1')]}`;
+  });
   const data = {
-    labels: labelsDate,
+    labels: result,
     datasets: [
       {
-        label: 'Актуальные оставшиеся трудозатраты в часах',
+        label: 'Actual remaining labor in hours',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -67,7 +79,7 @@ function LineDemo() {
         data: [sumRedLine, ...otherDaysBlueLine()],
       },
       {
-        label: 'Запланированные оставшиеся трудозатраты в часах',
+        label: 'Planned remaining work in hours',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(150,150,0,0.4)',
