@@ -56,5 +56,6 @@
 @media (min-width: 1280px) {
   .taskCard {
     width: 869px;
+    margin: 0 auto;
   }
 }
