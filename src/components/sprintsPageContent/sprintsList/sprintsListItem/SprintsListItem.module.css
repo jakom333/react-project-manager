@@ -1,0 +1,91 @@
+.sprintListItem {
+  width: 280px;
+  background-color: #ffffff;
+
+  min-height: 100%;
+  box-shadow: 0px 6px 26px rgba(0, 5, 97, 0.1);
+  border-radius: 5px;
+  position: relative;
+}
+.sprintListItem:hover {
+  transform: scale(1.05);
+  transition-duration: 500ms;
+}
+
+.projectLink {
+  display: block;
+  min-width: 100%;
+  min-height: 170px;
+  padding: 20px 20px 60px;
+  overflow: auto;
+  color: #000;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.buttonDelete {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #a6a6a6;
+}
+
+.buttonDelete:hover {
+  background-color: #ff6c00;
+}
+
+.deleteIcon {
+  fill: #ffffff;
+  width: 16px;
+  height: 16px;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.cardDateContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  line-height: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .sprintListItem {
+    width: 216px;
+    min-height: 100%;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .cardDateContainer {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sprintListItem {
+    width: 270px;
+    min-height: 224px;
+  }
+
+  .projectLink {
+    padding: 20px 30px 60px 30px;
+  }
+}

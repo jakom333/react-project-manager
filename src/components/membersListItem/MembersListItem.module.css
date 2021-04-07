@@ -1,0 +1,23 @@
+@media screen and (min-width: 320px){
+.membersListItem {
+display: flex;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    line-height: 20px;
+     letter-spacing: 0.04em;
+    color: #181C27;
+    margin-bottom: 10px;
+}
+
+}
+
+@media screen and (min-width:7680px){
+.membersListItem {
+    font-size: 18px;
+     line-height: 22px;
+}
+}

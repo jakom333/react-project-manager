@@ -1,0 +1,130 @@
+.titleChangeInput {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  color: #181c27;
+  outline: none;
+  /* background-color: #dadada6b; */
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 280px;
+  height: 30px;
+}
+
+.btn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.iconPencil {
+  fill: black;
+  width: 20px;
+  height: 20px;
+}
+
+.iconSave {
+  fill: black;
+  width: 20px;
+  height: 20px;
+}
+
+.changeTitleButton {
+  fill: rgb(139, 139, 139);
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-left: 7px;
+  margin-top: 17px;
+}
+
+.changeTitleButton:hover,
+.changeTitleButton2:hover {
+  fill: #ff6b08;
+  transition-duration: 200ms;
+  transform: scale(1.1);
+}
+
+
+.changeTitleButton2:hover {
+  fill:#71DF87;
+  transform: scale(1.1);
+}
+
+
+.changeTitleButton2 {
+  fill: rgb(139, 139, 139);
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  /* margin-right: 5px; */
+  margin-top: 2px;
+}
+
+.sprintTitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.04em;
+  color: #181c27;
+  max-width: 500px;
+  word-wrap: break-word;
+  margin-top: 50px;
+}
+
+.sprintTitle:hover {
+  /* color: #ec6f35; */
+  background-color: #d1d1d16b;
+  /* background-color: #dadada6b; */
+  border-radius: 8px;
+  /* cursor: pointer; */
+  transition-duration: 200ms;
+}
+
+@media screen and (max-width: 767px) {
+  .sprintTitle {
+    max-width: 270px;
+  }
+  .wrapper {
+    max-width: 180px;
+  }
+
+  .titleChangeInput {
+    max-width: 380px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .sprintTitle {
+    max-width: 345px;
+  }
+
+  .wrapper {
+    max-width: 370px;
+  }
+
+  .inputWrapper {
+    max-width: 270px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    max-width: 500px;
+  }
+}

@@ -1,0 +1,103 @@
+@value accentColor from '../../main.module.css';
+
+.card {
+  width: 280px;
+  padding: 20px 20px 10px 20px;
+}
+.title {
+  width: 240px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(24, 28, 39, 0.2);
+  margin-bottom: 20px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.04em;
+}
+.item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.input {
+  width: 60px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(24, 28, 39, 0.2);
+  text-align: right;
+  cursor: pointer;
+
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.04em;
+}
+.button {
+  width: 25px;
+  height: 25px;
+  background: #a6a6a6;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+.button:hover{
+  background: accentColor;
+}
+.icon {
+  width: 15px;
+  height: 15px;
+  fill: white;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 216px;
+  }
+  .title {
+    width: 176px;
+  }
+  .item {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .input {
+    width: 77px;
+
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .card {
+    width: 868px;
+    display: flex;
+  }
+  .title {
+    width: 170px;
+  }
+  .input {
+    width: 105px;
+    text-align: center;
+  }
+  .list {
+    width: 698px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .itemName {
+    display: none;
+  }
+  .item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}

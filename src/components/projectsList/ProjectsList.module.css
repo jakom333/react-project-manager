@@ -1,0 +1,51 @@
+.emptyMessageBox {
+  width: 100%;
+  height: 100vh;
+}
+.emptyMessage {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  padding-top: 150px;
+}
+
+.projectList {
+  padding-inline-start: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-bottom: 100px;
+}
+
+@media screen and (min-width: 320px) {
+  .projectList {
+    gap: 10px;
+  }
+  .emptyMessage {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    padding-top: 150px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .projectList {
+    gap: 20px;
+  }
+  .emptyMessage {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    padding-top: 150px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .projectList {
+    gap: 30px;
+  }
+}

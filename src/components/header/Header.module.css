@@ -1,0 +1,93 @@
+.header {
+  display: flex;
+  padding: 5px 20px;
+  height: 60px;
+  background-color: rgba(241, 242, 247, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+}
+
+.logOutData {
+  display: flex;
+}
+
+.headerLogo {
+  margin-top: 5px;
+  height: 60px;
+  width: 100px;
+  height: 30px;
+}
+
+.usernav{
+  display: flex;
+}
+
+.underlined {
+  color: rgba(24, 28, 39, 0.6);
+  margin-left: 4px;
+}
+
+.logOutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-left: 60px;
+  color: rgba(24, 28, 39, 0.6);
+  fill: rgba(24, 28, 39, 0.6);
+}
+
+.logOutBtnMobile {
+  background-color: #a6a6a6;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 6px;
+  fill: white;
+}
+
+.logOutBtnMobile:hover,
+.logOutBtn:hover {
+  fill: #ff6b08;
+  color: #ff6b08;
+  transition: all 0.3s linear;
+}
+.iconLogOut {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+.underlined:hover {
+  color: #ff6b08;
+  transition: all 0.3s linear;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0 40px;
+    /* border-bottom: 1px solid rgba(24, 28, 39, 0.1); */
+    height: 80px;
+  }
+
+  .headerLogo {
+    width: 140px;
+    height: 42px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    padding: 0 55px;
+  }
+}

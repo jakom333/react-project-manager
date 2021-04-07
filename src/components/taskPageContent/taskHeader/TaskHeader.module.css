@@ -1,0 +1,455 @@
+.sprintHeader {
+  padding-top: 20px;
+}
+
+.baseWrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.controlPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+}
+.separator {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.input {
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+  background-color: #f1f2f7;
+  outline: none;
+  padding-left: 10px;
+}
+
+.buttonDescription {
+  display: none;
+}
+
+
+
+.control {
+  display: flex;
+  align-items: baseline;
+   justify-content: center;
+
+}
+
+.titleBlock {
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-weight: 500;
+  color: #181c27;
+ 
+}
+
+
+.totalDays,
+.separator,
+.date {
+  font-family: 'Montserrat';
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: normal;
+  color: rgba(24, 28, 39, 0.6);
+  outline: none;
+  border:none,
+}
+
+.day,
+.leftArrow,
+.rightArrow {
+  color: #181c27;
+  font-family: 'Montserrat';
+    outline: none;
+  border:none,
+}
+
+.date:hover,
+.leftArrow:hover,
+.rightArrow:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: #000;
+   outline: none;
+  border:none,
+}
+
+.leftArrow {
+  margin-right: 20px;
+
+}
+.rightArrow {
+  margin-left: 20px;
+}
+
+.controlAndSearchBlock {
+  position: relative;
+}
+
+.inputWrapper,
+.inputWrapper:after {
+  display: block;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: #5e6064;
+  position: absolute;
+  pointer-events: none;
+}
+
+.edit:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+
+}
+.focused {
+  border-bottom: 1px solid #000;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.invisibleArrow{
+  display: inline-block;
+  width: 37px;
+}
+
+@media screen and (max-width: 767px) {
+  .day,
+  .leftArrow,
+  .rightArrow {
+    font-size: 18px;
+    line-height: 22px;
+    border:none;
+    outline: none;
+  }
+
+
+
+  .control {
+    margin-bottom: 30px;
+
+
+  }
+
+
+  .tasksHeaderText {
+    display: none;
+  }
+
+  .input {
+    width: 250px;
+
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .inputWrapper,
+  .inputWrapper:after {
+    left: 20px;
+    bottom: 10px;
+  }
+
+  .titleBlock {
+    justify-content: space-between;
+
+    width: 280px;
+  }
+
+  .title {
+    flex-basis: 250px;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .sprintHeader {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .focused {
+    flex-basis: 250px;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .buttonBox {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 5;
+    margin-right: 0;
+  }
+
+  .searchBtn {
+    position: absolute;
+    top: -112px;
+    left: 0px;
+  }
+
+  .searchInput {
+    position: absolute;
+    min-width: 280px;
+    top: -120px;
+    left: 0px;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    outline: none;
+    height: 35px;
+    padding-left: 30px;
+  }
+
+  label {
+    position: relative;
+  }
+
+  .controlPanel {
+    padding-bottom: 80px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .sprintHeader {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 40px;
+    padding-left: 20px;
+  }
+  .controlAndSearchBlock {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .day,
+  .leftArrow,
+  .rightArrow {
+    font-size: 18px;
+    line-height: 22px;
+    border:none;
+    outline: none;
+  }
+
+  .control {
+    margin-bottom: 30px;
+      display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  }
+
+
+  .tasksHeader {
+    position: relative;
+    display: flex;
+     height: 50px;
+    font-weight: normal;
+    font-style: normal;
+    margin-top: 40px;
+    margin-bottom: 9px;
+
+    font-size: 14px;
+    line-height: 17px;
+    color: #181c27;
+    padding-left: 20px;
+  }
+
+  .tasksHeaderText {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    max-width: 100px;
+    cursor: default;
+  }
+
+    .day,
+  .leftArrow,
+  .rightArrow {
+    font-size: 18px;
+    line-height: 22px;
+    border:none;
+    outline: none;
+  }
+  .tasksHeaderText:first-child {
+    display: none;
+  }
+
+  .tasksHeaderText:not(:last-child) {
+    margin-right: 60px;
+  }
+
+  .switch {
+    margin-right: 40px;
+  }
+  .input {
+    width: 215px;
+  }
+
+  .inputWrapper,
+  .inputWrapper:after {
+    right: 15px;
+    bottom: 10px;
+  }
+
+  .edit {
+    margin-left: 15px;
+  }
+
+  .searchBtn {
+    position: absolute;
+    top: -158px;
+    right: 18px;
+  }
+
+  .searchInput {
+    position: absolute;
+    bottom: 180px;
+    left: 260px;
+    width: 185px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0.1);
+    background-color: #f1f2f7;
+    outline: none;
+    padding-left: 10px;
+    height: 40px;
+  }
+
+  
+}
+@media screen and (min-width: 768px) and (max-width: 980px) {
+  .title {
+    max-width: 335px;
+  }
+}
+
+
+@media screen and (min-width: 1280px) {
+  .sprintHeader {
+    padding-left: 70px;
+    padding-right: 86px;
+    padding-top: 20px;
+  }
+
+  .day,
+  .leftArrow,
+  .rightArrow {
+    font-size: 18px;
+    line-height: 22px;
+    border:none;
+    outline: none;
+  }
+  
+  .control {
+    margin-bottom: 30px;
+      display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  }
+
+  .title {
+    margin-right: 25px;
+    /* max-width: 500px; */
+    padding-bottom: 30px;
+  }
+
+  .buttonBox {
+    display: flex;
+    align-items: center;
+  }
+
+  .buttonDescription {
+    display: inline-block;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    line-height: 17px;
+    font-weight: 500;
+    font-style: normal;
+    margin-left: 20px;
+    line-height: 22px;
+    color: #181c27;
+  }
+
+  .tasksHeader {
+    position: relative;
+    display: flex;
+    max-width: 870px;
+    height: 30px;
+    font-weight: normal;
+    font-style: normal;
+    margin-top: 40px;
+    margin-bottom: 9px;
+
+    font-size: 14px;
+    line-height: 17px;
+    color: #181c27;
+    padding-left: 25px;
+ align-items: center;
+  }
+  .tasksHeaderText {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    max-width: 100px;
+    cursor: default;
+  }
+
+  .tasksHeaderText:nth-child(1) {
+    margin-right: 170px;
+  }
+
+  .tasksHeaderText:nth-child(2) {
+    margin-right: 90px;
+  }
+
+  .tasksHeaderText:nth-child(3) {
+    margin-right: 85px;
+  }
+
+  .controlPanel {
+    justify-content: start;
+  }
+  .switch {
+    margin-right: 40px;
+  }
+  .sprintHeader {
+    position: relative;
+  }
+
+  .searchInput {
+    position: absolute;
+    top: 0;
+    right: 7px;
+    width: 150px;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #271818;
+    display: block;
+    border: none;
+    border-bottom: 1px solid rgba(24, 28, 39, 0);
+    background-color: #f1f2f7;
+    outline: none;
+    padding-left: 10px;
+    height: 35px;
+  }
+
+  .searchInput:hover {
+    border-bottom: 1px solid rgba(16, 16, 17, 0.212);
+  }
+}

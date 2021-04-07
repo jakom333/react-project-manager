@@ -1,0 +1,41 @@
+@value accentColor: #FF6B08;
+@value greyColor:  rgba(24, 28, 39, 0.6);
+@value blackColor: #181C27;
+
+/*@value greyColor from '../../main.module.css';*/
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  background-color: transparent;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  color: blackColor;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.66;
+  letter-spacing: 0.04em;
+  color: blackColor;
+  background-color: #f1f2f7;
+}

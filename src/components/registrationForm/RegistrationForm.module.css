@@ -1,0 +1,157 @@
+@value accentColor from '../../main.module.css';
+@value greyColor:  rgba(24, 28, 39, 0.6);
+
+.container {
+  padding: 0 20px;
+  max-width: 320px;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafa;
+}
+
+.warning {
+  color: rgba(204, 32, 41, 0.6);
+}
+
+.form {
+  width: 100%;
+  height: 100vh;
+  padding-top: 86px;
+  box-shadow: 0px 6px 26px 0px rgba(0, 5, 97, 0.1);
+}
+
+.button_wrapper {
+  margin-top: 35px;
+}
+
+.label {
+  margin-top: 15px;
+}
+
+.title {
+  margin-bottom: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  font-family: 'Montserrat', sans-serif;
+  width: 280px;
+  padding: 9px;
+  border: none;
+  padding: 5px;
+  outline: none;
+  border-bottom: 1px solid rgba(24, 28, 39, 0.2);
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+
+  margin: 0 auto;
+  color: rgb(24, 28, 39);
+}
+
+.input::placeholder {
+  font-family: inherit;
+  color: rgba(24, 28, 39, 0.2);
+  
+}
+
+.textUnderbutton {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0.04em;
+  color: greyColor;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.underlined {
+  color: greyColor;
+  text-decoration: underline;
+}
+
+.underlined:hover {
+  color: accentColor;
+  transition: all 0.3s linear;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    background: rgba(241, 242, 247, 1);
+  }
+  .form {
+    outline: 1px solid rgba(24, 28, 39, 0.2);
+    position: absolute;
+    padding: 47px 70px;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 570px;
+    max-height: 538px;
+    z-index: 10;
+    background-color: #fafafa;
+  }
+
+  .input {
+    width: 430px;
+    height: 55px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+
+
+.button {
+  font-family: inherit;
+  border-radius: 25px;
+  padding: 11px 44px 11px 44px;
+  background-color: accentColor;
+  color: white;
+  border: none;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.button:hover {
+  background: white;
+  transition: 0.5s ease-in-out;
+  color: accentColor;
+  box-shadow: 1px 1px 5px 1px accentColor;
+}

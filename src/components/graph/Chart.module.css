@@ -1,0 +1,11 @@
+.chartContainer {
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .chartContainer {
+    width: 1000px;
+  }
+}

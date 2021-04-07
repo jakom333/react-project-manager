@@ -1,0 +1,190 @@
+
+@value accentColor from '../../main.module.css';
+@value greyColor from '../../main.module.css';
+
+
+
+/*==================MOBILE=========================*/
+
+@media screen and (min-width: 320px) {
+
+ .memberForm{
+   background-color: white;
+ }
+ 
+  .titleForm {
+    background-color: white;
+font-weight: 500;
+font-size: 26px;
+line-height: 32px;
+display: block;
+align-items: center;
+text-align: center;
+margin-bottom: 30px;
+}
+  
+/* .formGroup{
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  transition: all .3s;
+}
+
+.formLabel{
+  display: inline-block;
+    margin-bottom:30px ;
+    max-width: 280px;
+    color:greyColor;
+    transform: translate(20px,-60px) ;
+font-size: 16px;
+line-height: 20px;
+   transition: all .3s;
+} */
+
+
+  .input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border-color: greyColor;
+    border: none;
+    border-bottom: solid .8px greyColor;
+    font-size: 16px;
+    margin-bottom:8px ;
+    transition: all .5s;
+    
+  }
+/*    
+  .input::placeholder{
+    color:transparent;
+    pointer-events: none;
+  } */
+
+ 
+.input:focus{
+  box-shadow: none;
+  outline: none;
+  border-color:accentColor ;
+}
+/* 
+.input:focus + .formLabel,
+.input:not(:placeholder-shown)+ .formLabel{
+  transform: translate(15px,-80px) scale(.8);
+}
+
+.formGroup:focus-within{
+  transform:scale(1.08,1.08);
+} */
+
+.error{
+  background-color: white;
+  color: accentColor;
+  margin-top: -125px;
+} 
+
+
+.input::-webkit-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.input::-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.input:-moz-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.input:-ms-input-placeholder {
+  text-indent: 0px;
+  transition: text-indent 0.3s ease;
+}
+.input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.input:focus::-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.input:focus:-moz-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+.input:focus:-ms-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
+
+
+
+
+
+}
+
+
+/*==================TABLET=========================*/
+
+@media screen and (min-width: 768px) {
+
+ 
+  .titleForm {
+font-weight: 500;
+font-size: 36px;
+line-height: 44px;
+display: block;
+margin-bottom: 49px;
+}
+  
+
+/* .formLabel{
+  margin-bottom:30px ;
+  max-width: 280px;
+  color:greyColor;
+  transform: translate(20px,-60px) ;
+font-size: 18px;
+line-height: 22px;
+
+} */
+
+
+  .input {
+    padding: 10px;
+     font-size: 18px;
+    line-height: 22px;
+    margin-bottom:10px ;
+    width: 100%; 
+  }
+ 
+}
+
+/*==================DESKTOP=========================*/
+
+@media screen and (min-width: 1280px) {
+ 
+  .titleForm {
+font-weight: 500;
+font-size: 36px;
+line-height: 44px;
+margin-bottom: 50px;
+}
+  
+/* 
+.formLabel{
+  line-height: 22px;
+   font-size: 18px;
+  margin-bottom:30px ;
+  
+} */
+
+  .input {
+    font-size: 18px;
+     line-height: 22px;
+     width: 100%;
+    }
+ 
+}  
