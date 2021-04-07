@@ -44,7 +44,11 @@ export default function LoginForm() {
             placeholder="E-mail"
           />
         </label>
-
+        {error ? (
+          <span className={styles.warning}>This user does not exist</span>
+        ) : (
+          ''
+        )}
         <label className={styles.label}>
           <input
             type="password"
@@ -55,7 +59,11 @@ export default function LoginForm() {
             placeholder="Password"
           />
         </label>
-        {error ? <span className={styles.warning}>Wrong input</span> : ''}
+        {error ? (
+          <span className={styles.warningPassword}>Wrong input</span>
+        ) : (
+          ''
+        )}
         <div className={styles.button_wrapper}>
           <Button>Sign in</Button>
         </div>
