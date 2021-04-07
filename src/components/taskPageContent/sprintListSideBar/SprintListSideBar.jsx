@@ -25,6 +25,11 @@ const SprintList = () => {
     dispatch(fetchSprints(params.projectId));
   }, [dispatch, params.projectId, params.history]);
 
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.style.overflow = showModal ? 'hidden' : 'auto';
+  }, [showModal]);
+
   return (
     <div className={styles.sprintsContainer}>
       <Link

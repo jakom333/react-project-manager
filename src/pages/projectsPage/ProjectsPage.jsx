@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectsList from '../../components/projectsList/ProjectsList';
 import styles from './ProjectsPage.module.css';
 import RoundButton from '../../shared/roundButton/RoundButton';
@@ -8,6 +8,11 @@ import { container } from '../../container.module.css';
 
 const ProjectsPage = () => {
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.style.overflow = showModal ? 'hidden' : 'auto';
+  }, [showModal]);
 
   return (
     <div className={container}>
@@ -29,7 +34,6 @@ const ProjectsPage = () => {
         </MainModal>
       </div>
     </div>
-
   );
 };
 

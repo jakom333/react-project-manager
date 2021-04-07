@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 import { getAuthError } from '../../redux/auth/auth-selectors.js';
 
 const initialState = {
-  email: 'test123@mail.com',
-  password: 'test123',
+  email: '',
+  password: '',
 };
 export default function LoginForm() {
   const [user, setUser] = useState(initialState);

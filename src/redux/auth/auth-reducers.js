@@ -9,6 +9,9 @@ import {
   logoutError,
   refreshSuccess,
   refreshError,
+  registerRequest,
+  loginRequest,
+  logoutRequest,
 } from './auth-actions';
 
 // const initialUserState = { email: null, password: null };
@@ -29,12 +32,16 @@ const token = createReducer(null, {
   [refreshError]: () => null,
 });
 
-const setError = (_, { payload }) => payload;
+const setError = (_, { payload }) => payload?.response?.data;
+const clearError = () => null;
 
 const error = createReducer(null, {
+  [registerRequest]: clearError,
   [registerError]: setError,
+  [loginRequest]: clearError,
   [loginError]: setError,
   [refreshError]: setError,
+  [logoutRequest]: clearError,
   [logoutError]: setError,
   [refreshError]: setError,
 });

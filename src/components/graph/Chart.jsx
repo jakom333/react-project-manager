@@ -58,7 +58,7 @@ function LineDemo() {
     labels: result,
     datasets: [
       {
-        label: 'Актуальные оставшиеся трудозатраты в часах',
+        label: 'Actual remaining labor in hours',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -79,7 +79,7 @@ function LineDemo() {
         data: [sumRedLine, ...otherDaysBlueLine()],
       },
       {
-        label: 'Запланированные оставшиеся трудозатраты в часах',
+        label: 'Planned remaining work in hours',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(150,150,0,0.4)',

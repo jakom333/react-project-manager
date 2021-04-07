@@ -24,7 +24,7 @@ const fetchSprints = projectId => async dispatch => {
     const { data } = await axios.get(`/sprint/${projectId}`);
     dispatch(fetchSprintsSucces(data.sprints ? data.sprints : []));
   } catch (error) {
-    dispatch(fetchSprintsError(error.message));
+    dispatch(fetchSprintsError(error?.message));
     refreshTemplate(() => fetchSprints(projectId), error, dispatch);
   }
 };
@@ -35,7 +35,7 @@ const addSprint = (sprint, projectId) => async dispatch => {
     const { data } = await axios.post(`/sprint/${projectId}`, sprint);
     dispatch(addSprintSucces({ ...data, _id: data.id }));
   } catch (error) {
-    dispatch(addSprintError(error.message));
+    dispatch(addSprintError(error?.message));
     refreshTemplate(() => addSprint(sprint, projectId), error, dispatch);
   }
 };
@@ -48,7 +48,7 @@ const deleteSprint = sprintId => async dispatch => {
 
     dispatch(deleteSprintSucces(sprintId));
   } catch (error) {
-    dispatch(deleteSprintError(error.message));
+    dispatch(deleteSprintError(error?.message));
     refreshTemplate(() => deleteSprint(sprintId), error, dispatch);
   }
 };
@@ -60,7 +60,7 @@ const editTitle = (sprintId, title) => async dispatch => {
     await axios.patch(`/sprint/title/${sprintId}`, { title });
     dispatch(changeTitleSuccess({ sprintId, title }));
   } catch (error) {
-    dispatch(changeTitleError(error));
+    dispatch(changeTitleError(error?.message));
     refreshTemplate(() => editTitle(sprintId, title), error, dispatch);
   }
 };

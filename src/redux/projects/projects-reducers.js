@@ -56,7 +56,7 @@ const loadingReducer = createReducer(false, {
   [editProjectTitleError]: () => false,
 });
 
-const handleError = (_, { payload }) => payload.response.data;
+const handleError = (_, { payload }) => payload?.response?.data;
 const clearError = () => null;
 
 const errorReducers = createReducer(null, {

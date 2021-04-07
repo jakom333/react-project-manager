@@ -41,7 +41,7 @@ const register = user => async dispatch => {
     await axios.post('/auth/register', user);
     dispatch(logIn(user));
   } catch (error) {
-    dispatch(registerError(error.message));
+    dispatch(registerError(error?.message));
   }
 };
 
@@ -59,7 +59,7 @@ const logIn = user => async dispatch => {
       }),
     );
   } catch (error) {
-    dispatch(loginError(error.message));
+    dispatch(loginError(error?.message));
   }
 };
 
@@ -71,7 +71,7 @@ const logOut = () => async dispatch => {
     dispatch(logoutSuccess());
     window.location.reload();
   } catch (error) {
-    dispatch(logoutError(error.message));
+    dispatch(logoutError(error?.message));
   }
 };
 
@@ -91,9 +91,9 @@ const refreshOperation = () => async (dispatch, getState) => {
       }),
     );
   } catch (error) {
-    dispatch(refreshError(error.message));
+    dispatch(refreshError(error?.message));
 
-    throw new Error(error.message);
+    throw new Error(error?.message);
   }
 };
 export { register, logIn, logOut, refreshOperation };

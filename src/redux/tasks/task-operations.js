@@ -23,7 +23,7 @@ const fetchTasks = sprintId => async dispatch => {
     const { data } = await axios.get(`/task/${sprintId}`);
     dispatch(fetchTaskSuccess(data.constructor.name === 'Array' ? data : []));
   } catch (error) {
-    dispatch(fetchTaskError(error.message));
+    dispatch(fetchTaskError(error?.message));
     refreshTemplate(() => fetchTasks(sprintId), error, dispatch);
   }
 };
@@ -34,7 +34,7 @@ const createTask = (task, sprintId) => async dispatch => {
     const { data } = await axios.post(`/task/${sprintId}`, task);
     dispatch(createTaskSuccess({ ...data, _id: data.id }));
   } catch (error) {
-    dispatch(createTaskError(error.message));
+    dispatch(createTaskError(error?.message));
     refreshTemplate(() => createTask(task, sprintId), error, dispatch);
   }
 };
@@ -45,7 +45,7 @@ const deleteTask = taskId => async dispatch => {
     await axios.delete(`/task/${taskId}`);
     dispatch(deleteTaskSuccess(taskId));
   } catch (error) {
-    dispatch(deleteTaskError(error.message));
+    dispatch(deleteTaskError(error?.message));
     refreshTemplate(() => deleteTask(taskId), error, dispatch);
   }
 };
@@ -66,7 +66,7 @@ const changeTask = (hoursWasted, taskId, currentDay) => async dispatch => {
       }),
     );
   } catch (error) {
-    dispatch(changeTaskError(error.message));
+    dispatch(changeTaskError(error?.message));
     refreshTemplate(
       () => changeTask(hoursWasted, taskId, currentDay),
       error,

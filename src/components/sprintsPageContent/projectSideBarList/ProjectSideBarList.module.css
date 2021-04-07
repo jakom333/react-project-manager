@@ -23,11 +23,11 @@
 .box {
   margin-top: 150px;
   width: 100%;
-  overflow-x: hidden;
+  overflow-y: scroll;
   scroll-snap-type: x proximity;
 }
 .sideLeftList {
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 180px;
   height: 300px;
   border: none;

@@ -35,6 +35,11 @@ export default function SprintHeader({ setTaskDate }) {
     setTaskDate(currentDay);
   }, [sprintDay, setTaskDate, currentDay]);
 
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.style.overflow = showModal ? 'hidden' : 'auto';
+  }, [showModal]);
+
   const onDecrement = () => {
     setCurrentDay(prev => prev - _MS_PER_DAY);
     setSprintDay(prev => prev - 1);

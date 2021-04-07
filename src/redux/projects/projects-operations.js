@@ -40,7 +40,7 @@ const getProjects = () => async dispatch => {
       ),
     );
   } catch (error) {
-    dispatch(projectsError(error.message));
+    dispatch(projectsError(error?.message));
     refreshTemplate(getProjects, error, dispatch);
   }
 };
@@ -55,7 +55,7 @@ const createProject = project => async dispatch => {
     );
     dispatch(createProjectSuccess({ ...data, _id: data.id }));
   } catch (error) {
-    dispatch(createProjectError(error.message));
+    dispatch(createProjectError(error?.message));
     refreshTemplate(() => createProject(project), error, dispatch);
   }
 };
@@ -69,7 +69,7 @@ const deleteProject = projectId => async dispatch => {
 
     dispatch(deleteProjectSuccess(newID));
   } catch (error) {
-    dispatch(deleteProjectError(error.message));
+    dispatch(deleteProjectError(error?.message));
     refreshTemplate(() => deleteProject(projectId), error, dispatch);
   }
 };
@@ -90,7 +90,7 @@ const addMember = (email, projectId) => async dispatch => {
       }),
     );
   } catch (error) {
-    dispatch(addMemberError(error.message));
+    dispatch(addMemberError(error?.message));
     refreshTemplate(() => addMember(email, projectId), error, dispatch);
   }
 };
@@ -102,7 +102,7 @@ const editTitle = (projectId, title) => async dispatch => {
     await axios.patch(`/project/title/${projectId}`, { title });
     dispatch(editProjectTitleSuccess({ projectId, title }));
   } catch (error) {
-    dispatch(editProjectTitleError(error));
+    dispatch(editProjectTitleError(error?.message));
     refreshTemplate(() => editTitle(projectId, title), error, dispatch);
   }
 };
